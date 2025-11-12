@@ -1,0 +1,16 @@
+# robots.txt - Allow search engines to crawl the site
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json
+
+Sitemap: https://jaetravel.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
