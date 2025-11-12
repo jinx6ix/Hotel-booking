@@ -6,10 +6,5 @@
   "regions": ["iad1"],
   "env": {
     "NEXT_PUBLIC_APP_URL": "https://jaetravel.com"
-  },
-  "functions": {
-    "api/**/route.ts": {
-      "maxDuration": 30
-    }
   }
 }
