@@ -8,7 +8,7 @@
     "NEXT_PUBLIC_APP_URL": "https://jaetravel.com"
   },
   "functions": {
-    "api/**": {
+    "api/**/route.ts": {
       "maxDuration": 30
     }
   }
