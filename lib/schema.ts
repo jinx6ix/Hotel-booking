@@ -1,3 +1,5 @@
+// @/lib/schema.ts
+
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
@@ -47,7 +49,7 @@ export function generateHotelSchema(hotel: any) {
     ratingCount: Math.floor(hotel.rating * 50),
     priceRange: `$$${hotel.price > 300 ? "$" : ""}`,
     url: `https://jaetravel.com/hotels/${hotel.id}`,
-    amenityFeature: hotel.amenities.map((amenity) => ({
+    amenityFeature: hotel.amenities.map((amenity: string) => ({
       "@type": "LocationFeatureSpecification",
       name: amenity,
     })),
@@ -74,14 +76,14 @@ export function generateLocationSchema(location: any) {
       addressLocality: location.name,
       addressCountry: "KE",
     },
-    touristAttraction: location.attractions.map((attraction) => ({
+    touristAttraction: location.attractions.map((attraction: string) => ({
       "@type": "TouristAttraction",
       name: attraction,
     })),
   }
 }
 
-export function generateFAQSchema(faqs: any[]) {
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -96,7 +98,7 @@ export function generateFAQSchema(faqs: any[]) {
   }
 }
 
-export function generateBreadcrumbSchema(items: any[]) {
+export function generateBreadcrumbSchema(items: { label: string; href?: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -106,5 +108,94 @@ export function generateBreadcrumbSchema(items: any[]) {
       name: item.label,
       item: `https://jaetravel.com${item.href || ""}`,
     })),
+  }
+}
+
+/**
+ * Generate Schema.org Vehicle (as Product) for car hire
+ * @see https://schema.org/Vehicle
+ * @see https://schema.org/RentalCar
+ */
+export function generateVehicleSchema({
+  name,
+  description,
+  price,
+  image,
+  url,
+  passengers,
+  fuelType = "Diesel",
+  vehicleConfiguration = "4x4 Pop-up Roof",
+  brand = "Toyota",
+  model = "Land Cruiser",
+}: {
+  name: string
+  description: string
+  price: string
+  image: string
+  url: string
+  passengers?: number
+  fuelType?: string
+  vehicleConfiguration?: string
+  brand?: string
+  model?: string
+}) {
+  const priceMatch = price.match(/\$(\d+)/)
+  const priceValue = priceMatch ? parseInt(priceMatch[1], 10) : 0
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name,
+    description,
+    image: `https://jaetravel.com${image}`,
+    url,
+    brand: {
+      "@type": "Brand",
+      name: brand,
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "USD",
+      price: priceValue,
+      priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split("T")[0],
+      availability: "https://schema.org/InStock",
+      url,
+      seller: {
+        "@type": "Organization",
+        name: "Jaetravel Expeditions",
+      },
+      offeredBy: {
+        "@type": "Organization",
+        name: "Jaetravel Expeditions",
+      },
+    },
+    // Vehicle-specific properties
+    ...(passengers && {
+      additionalProperty: [
+        {
+          "@type": "PropertyValue",
+          name: "Passenger Capacity",
+          value: passengers,
+        },
+      ],
+    }),
+    vehicleConfiguration,
+    fuelType,
+    model,
+    // Optional: Enhance with RentalCar if applicable
+    "@id": `${url}#vehicle`,
+    subjectOf: {
+      "@type": "Car",
+      name,
+      brand: {
+        "@type": "Brand",
+        name: brand,
+      },
+      model,
+      fuelType,
+      vehicleConfiguration,
+      numberOfDoors: 5,
+      vehicleSeatingCapacity: passengers || 6,
+    },
   }
 }

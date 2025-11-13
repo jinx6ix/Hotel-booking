@@ -51,8 +51,8 @@ export function Header() {
                 ))}
               </div>
             </div>
-            <Link href="/hotels" className="text-black hover:text-orange-300 font-medium transition">
-              Hotels
+            <Link href="/car-hire" className="text-black hover:text-orange-300 font-medium transition">
+              Car Hire
             </Link>
             <Link href="/about" className="text-black hover:text-orange-300 font-medium transition">
               About
@@ -97,10 +97,10 @@ export function Header() {
               Home
             </Link>
             <Link
-              href="/hotels"
+              href="/car-hire"
               className="block px-4 py-2 text-white hover:text-orange-300 hover:bg-white/5 rounded transition"
             >
-              Hotels
+              Car Hire
             </Link>
             <Link
               href="/about"
