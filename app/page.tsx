@@ -7,8 +7,6 @@ import { MapPin, Star, Users, Award, Accessibility } from "lucide-react"
 import { SchemaRenderer } from "@/components/schema-renderer"
 import { generateBreadcrumbSchema } from "@/lib/schema"
 import { QuickBooking } from "@/components/quick-booking"
-import { QuickBookings } from "@/components/accessible-quick-booking"
-import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Jaetravel Expeditions - Kenya Safari Tours, Luxury & Accessible Hotel Bookings | Maasai Mara, Amboseli, Nairobi",
@@ -53,22 +51,20 @@ export default function Home() {
       {/* Hero Section - Original Preserved + Accessible Booking Added */}
       <section className="relative min-h-screen bg-gradient-to-r from-orange-500 to-orange-600 text-white overflow-hidden pt-20">
         <div className="absolute inset-0">
-          <Image
+          <img
             src="/kenya-safari-landscape.jpg"
             alt="Kenya Safari Landscape - Great Migration in Maasai Mara with wildebeest crossing river"
             className="w-full h-full object-cover opacity-40"
             loading="eager"
-            width={1920}
-            height={1080}
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-              Experience Kenya&apos;s Finest Accessible Safari Accomodations
+              Experience Kenya&apos;s Finest Safari Adventures
             </h1>
             <p className="text-xl md:text-2xl mb-12 max-w-2xl mx-auto text-orange-50">
-              Book luxury hotel-based safari accomodations across 9 incredible Kenya destinations. Great Migration, wildlife,
+              Book luxury hotel-based safari tours across 9 incredible Kenya destinations. Great Migration, wildlife,
               cultural tours, and 5-star lodges.
             </p>
           </div>
@@ -96,7 +92,7 @@ export default function Home() {
               <p className="text-sm text-blue-50 mb-4 leading-relaxed">
                 Book wheelchair-accessible rooms, ramp-equipped vehicles, and inclusive safari experiences designed for travelers with disabilities.
               </p>
-              <QuickBookings accessible={true} />
+              <QuickBooking accessible={true} />
             </div>
           </div>
 
@@ -219,13 +215,11 @@ export default function Home() {
                 href={`/destinations/${location.slug}`}
                 className="group relative h-64 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <Image
+                <img
                   src={location.image || "/placeholder.svg"}
                   alt={`${location.name} Kenya Safari - ${location.description} | Luxury & Accessible Tours`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
-                  width={400}
-                  height={300}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                   <div>
