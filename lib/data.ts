@@ -261,10 +261,10 @@ export const hotels: Hotel[] = [
     price: 350,
     image: "/safari park hotel.jpg?height=300&width=400",
     gallery: [
-      "/luxury-safari-park-hotel-room.jpg",
-      "/safari-park-hotel-restaurant.jpg",
-      "/safari-park-hotel-pool.jpg",
-      "/safari-park-hotel-lounge.jpg",
+      "/safari park hotel1.jpg",
+      "/safari park hotel2.jpg",
+      "/safari park hotel3.jpg",
+      "/safari park hotel4.jpg",
     ],
     description:
       "Luxury safari-themed hotel with direct view of Nairobi National Park. World-class amenities and gourmet dining experiences.",
@@ -383,7 +383,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.3,
     price: 180,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Ibis Styles Nairobi.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -403,7 +403,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.6,
     price: 290,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Radisson Blu Nairobi.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -424,7 +424,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.5,
     price: 260,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Four Points by Sheraton.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -444,7 +444,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.4,
     price: 200,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Mercure Hotel Nairobi.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -464,7 +464,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.2,
     price: 190,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Country Club Hotel.jpeg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
