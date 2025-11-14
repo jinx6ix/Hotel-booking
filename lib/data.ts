@@ -42,7 +42,7 @@ export const locations: Location[] = [
     name: "Nairobi",
     slug: "nairobi",
     description: "Kenya's vibrant capital city with world-class amenities",
-    image: "/nairobi-city-skyline-kenya.jpg",
+    image: "/Nairobi.avif",
     longDescription:
       "Nairobi is Kenya's dynamic capital and largest city, serving as the gateway to Kenya's tourism industry. Known as the \"Silicon Savanna,\" Nairobi blends modern sophistication with African charm. The city offers exceptional cultural experiences, including world-renowned museums, vibrant nightlife, shopping districts, and exceptional dining. Home to the Nairobi National Park, visitors can enjoy thrilling safari experiences just minutes from the city center. The city is well-connected with top-tier accommodations, making it an ideal base for exploring Kenya's attractions.",
     attractions: [
@@ -60,7 +60,7 @@ export const locations: Location[] = [
     name: "Naivasha",
     slug: "naivasha",
     description: "Scenic lake town perfect for relaxation and water activities",
-    image: "/naivasha-lake-kenya-scenic.jpg",
+    image: "/naivasha.jpeg",
     longDescription:
       "Naivasha is a picturesque town located on the shores of freshwater Lake Naivasha, situated approximately 90 kilometers from Nairobi. This scenic destination is famous for its stunning lake vistas, abundant birdlife, and diverse wildlife including zebras, giraffes, and hippos. The lake offers excellent opportunities for fishing, boating, and kayaking. Nearby attractions include Hell's Gate National Park, Crater Lake National Park, and numerous geothermal hot springs. The town serves as an excellent stop on the way to or from the Rift Valley region.",
     attractions: [
@@ -78,7 +78,7 @@ export const locations: Location[] = [
     name: "Nakuru",
     slug: "nakuru",
     description: "Home to Lake Nakuru National Park with its famous flamingos",
-    image: "/nakuru-lake-flamingos-kenya.jpg",
+    image: "/nakuru.jpg",
     longDescription:
       "Nakuru is a vibrant town centered around Lake Nakuru National Park, one of Kenya's most spectacular natural wonders. The lake is famous for its masses of brilliant pink flamingos that create a breathtaking natural spectacle. Beyond the flamingos, the park protects diverse ecosystems including acacia forests and grasslands, home to lions, leopards, buffalo, zebras, and numerous bird species. Nakuru town offers excellent facilities and serves as a base for exploring the Rift Valley. The park's diverse attractions make it a must-visit destination for wildlife enthusiasts and photographers.",
     attractions: ["Lake Nakuru", "Flamingos", "African Wildlife", "Menengai Crater", "Nakuru Museum", "Nature Walks"],
@@ -89,7 +89,7 @@ export const locations: Location[] = [
     name: "Samburu",
     slug: "samburu",
     description: "Remote northern reserve with unique wildlife and landscapes",
-    image: "/samburu-national-reserve-kenya.jpg",
+    image: "/samburu.webp",
     longDescription:
       "Samburu National Reserve is located in northern Kenya along the Ewaso Nyiro River and offers a remote, authentic safari experience. This pristine reserve is known for its unique and diverse wildlife, including species not found elsewhere in Kenya such as the reticulated giraffe, Grevy's zebra, and the beisa oryx. The dramatic red earth and rocky outcrops create stunning landscapes perfect for photography. With fewer tourists than southern reserves, Samburu offers an intimate wilderness experience. The reserve is home to Samburu pastoralist communities, offering visitors insights into traditional African cultures.",
     attractions: [
@@ -107,7 +107,7 @@ export const locations: Location[] = [
     name: "Nanyuki",
     slug: "nanyuki",
     description: "Gateway to Mount Kenya and northern Kenya adventures",
-    image: "/mount-kenya-nanyuki.jpg",
+    image: "/nanyuki.jpg",
     longDescription:
       "Nanyuki is a thriving town situated on the equator in central Kenya, serving as an important gateway to Mount Kenya and northern Kenya destinations. The town is a major hub for trekking Mount Kenya, with various routes starting from nearby areas. Beyond mountain activities, Nanyuki offers access to beautiful countryside, tea and coffee plantations, and numerous adventure activities. The town is well-developed with excellent facilities, making it an ideal base for mountain climbers and adventure seekers. Its strategic location makes it an important stop on routes to Samburu and other northern destinations.",
     attractions: [
@@ -125,7 +125,7 @@ export const locations: Location[] = [
     name: "Maasai Mara",
     slug: "maasai-mara",
     description: "Iconic safari destination and home to the Great Migration",
-    image: "/maasai-mara-great-migration-kenya.jpg",
+    image: "/maasai mara.jpeg",
     longDescription:
       "Maasai Mara National Reserve is Kenya's most famous and premier wildlife destination, consistently ranked among the world's best safari experiences. The reserve is renowned for the annual Great Migration when millions of wildebeest, zebras, and antelopes traverse the reserve in search of fresh grazing. Maasai Mara offers exceptional year-round wildlife viewing including the Big Five, big cats, and over 500 bird species. The name derives from the Maasai people who inhabit the region, and visitors have opportunities to experience authentic Maasai culture. Maasai Mara provides unparalleled safari experiences with luxury accommodations ranging from tented camps to exclusive lodges.",
     attractions: ["Great Migration", "Big Five", "Maasai Culture", "Hot Air Balloons", "Game Drives", "Bird Watching"],
@@ -136,7 +136,7 @@ export const locations: Location[] = [
     name: "Amboseli",
     slug: "amboseli",
     description: "Stunning views of Mount Kilimanjaro and diverse wildlife",
-    image: "/amboseli-mount-kilimanjaro-view.jpg",
+    image: "/amboseli.avif",
     longDescription:
       "Amboseli National Park is located in southern Kenya near the Tanzanian border, famous for its stunning views of Mount Kilimanjaro across the border. The park sits on ancient lava flows and features diverse ecosystems from swamps to grasslands, supporting abundant wildlife populations. Amboseli is particularly known for its large elephant herds, lions, buffalo, zebras, and extensive birdlife. The park's iconic swamps attract numerous water-dependent species. The backdrop of Africa's highest mountain, Kilimanjaro, creates one of the world's most photogenic landscapes. Amboseli offers a unique combination of excellent wildlife viewing and spectacular scenery.",
     attractions: [
@@ -154,7 +154,7 @@ export const locations: Location[] = [
     name: "Tsavo East",
     slug: "tsavo-east",
     description: "Vast wilderness with red soil and abundant wildlife",
-    image: "/tsavo-east-national-park-kenya.jpg",
+    image: "/tsavo east.jpeg",
     longDescription:
       "Tsavo East National Park is one of Kenya's largest and most remote national parks, spanning vast arid and semi-arid landscapes. The park is famous for its characteristic red soil and volcanic formations that create dramatic landscapes. Home to one of the world's largest elephant populations, Tsavo East also supports lions, buffaloes, zebras, giraffes, and numerous other species. The Galana River provides vital water sources attracting wildlife. The remote wilderness atmosphere offers an authentic safari experience away from crowded tourist routes. Rock formations like Yatta Plateau and Mudanda Rock provide spectacular viewpoints and interesting geological formations.",
     attractions: [
@@ -172,7 +172,7 @@ export const locations: Location[] = [
     name: "Tsavo West",
     slug: "tsavo-west",
     description: "Rugged terrain and unique wildlife experiences in western Tsavo",
-    image: "/tsavo-west-national-park-kenya.jpg",
+    image: "/tsavo west.jpeg",
     longDescription:
       "Tsavo West National Park is a larger reserve known for its rugged terrain, volcanic mountains, and dense vegetation. The park features dramatic landscapes including the Chyulu Hills, Mzima Springs, and numerous volcanic cones. Mzima Springs, one of the world's clearest spring water sources, supports unique aquatic wildlife including hippos and fish viewing. Tsavo West hosts diverse wildlife including lions, buffalo, zebras, and large elephant populations. The park's dense vegetation and volcanic formations create scenic beauty unlike other Kenyan reserves. Adventure activities include rock climbing, hiking, and exceptional wildlife photography opportunities.",
     attractions: [
@@ -259,7 +259,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.8,
     price: 350,
-    image: "/luxury-hotel-nairobi-safari-park.jpg",
+    image: "/safari park hotel.jpg?height=300&width=400",
     gallery: [
       "/luxury-safari-park-hotel-room.jpg",
       "/safari-park-hotel-restaurant.jpg",
@@ -280,7 +280,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.6,
     price: 280,
-    image: "/crowne-plaza-nairobi-hotel.jpg",
+    image: "/Crowne Plaza Nairobi.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -300,7 +300,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.7,
     price: 320,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Serena Hotel Nairobi.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -321,7 +321,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.9,
     price: 400,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Villa Rosa Kempinski.avif?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -342,7 +342,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.5,
     price: 250,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/The Bomas of Kenya Resort.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
@@ -363,7 +363,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.4,
     price: 230,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/Hilton Nairobi.jpg?height=300&width=400",
     gallery: [
       "/placeholder.svg?height=400&width=600",
       "/placeholder.svg?height=400&width=600",
