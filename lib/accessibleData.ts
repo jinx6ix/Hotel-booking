@@ -288,10 +288,10 @@ export interface Room {
       price: 350,
       image: "/luxury-hotel-nairobi-safari-park.jpg",
       gallery: [
-        "/luxury-safari-park-hotel-room.jpg",
-        "/safari-park-hotel-restaurant.jpg",
-        "/safari-park-hotel-pool.jpg",
-        "/safari-park-hotel-lounge.jpg",
+        "/safari park hotel1.jpg",
+        "/safari park hotel2.jpg",
+        "/safari park hotel3.jpg",
+        "/safari park hotel4.jpg",
       ],
       description:
         "Luxury safari-themed hotel with direct view of Nairobi National Park. World-class amenities and gourmet dining experiences.",
