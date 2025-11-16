@@ -1,7 +1,6 @@
-// app/hotels/[id]/HotelClient.tsx
 'use client';
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import {
   Star,
   Wifi,
@@ -16,20 +15,12 @@ import {
 import Image from "next/image";
 
 import { hotels as allHotels } from "@/lib/data";
-import { accessibleRooms } from "@/lib/accessibleData";
-
-// Extend the base Room type with optional accessibility fields
-type ExtendedRoom = typeof allHotels[number]["rooms"][number] & {
-  accessible?: boolean;
-  accessibilityFeatures?: string[];
-};
-
 
 /* ------------------------------------------------------------------ */
 /*  Types – derived from the real data files                           */
 /* ------------------------------------------------------------------ */
 type Hotel = typeof allHotels[number];
-type Room = ExtendedRoom; // normal rooms
+type Room = Hotel["rooms"][number];
 
 interface HotelClientProps {
   hotel: Hotel;
@@ -47,7 +38,99 @@ const amenityIcons: Record<string, React.ReactNode> = {
 };
 
 /* ------------------------------------------------------------------ */
-/*  Component                                                         */
+/*  Room Image Carousel Component                                     */
+/* ------------------------------------------------------------------ */
+interface RoomImageCarouselProps {
+  images: string[];
+  roomType: string;
+  className?: string;
+}
+
+function RoomImageCarousel({ images, roomType, className = "" }: RoomImageCarouselProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // If no images, use fallback
+  const displayImages = images && images.length > 0 
+    ? images 
+    : ["/placeholder.svg?height=300&width=400"];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % displayImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + displayImages.length) % displayImages.length);
+  };
+
+  const goToImage = (index: number) => {
+    setCurrentImageIndex(index);
+  };
+
+  return (
+    <div className={`relative bg-gray-100 rounded-lg overflow-hidden ${className}`}>
+      {/* Main Image */}
+      <div className="aspect-video relative">
+        <Image
+          src={displayImages[currentImageIndex]}
+          alt={`${roomType} - Image ${currentImageIndex + 1}`}
+          fill
+          className="object-cover"
+          onError={(e) => {
+            // Fallback if image fails to load
+            const target = e.target as HTMLImageElement;
+            target.src = "/placeholder.svg?height=300&width=400";
+          }}
+        />
+        
+        {/* Navigation Arrows */}
+        {displayImages.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 rounded-full hover:bg-opacity-70 transition"
+              aria-label="Previous image"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 rounded-full hover:bg-opacity-70 transition"
+              aria-label="Next image"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Image Indicators */}
+      {displayImages.length > 1 && (
+        <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
+          {displayImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToImage(index)}
+              className={`w-2 h-2 rounded-full transition-colors ${
+                index === currentImageIndex ? "bg-white" : "bg-white bg-opacity-50"
+              }`}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Image Counter */}
+      {displayImages.length > 1 && (
+        <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+          {currentImageIndex + 1} / {displayImages.length}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Main Component                                                    */
 /* ------------------------------------------------------------------ */
 export default function HotelClient({ hotel, location }: HotelClientProps) {
   /* --------------------------- State --------------------------- */
@@ -57,7 +140,6 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [showMap, setShowMap] = useState(false);
   const [showMoreFacilities, setShowMoreFacilities] = useState(false);
-  const [currentRoomImageIndex, setCurrentRoomImageIndex] = useState(0);
 
   /* --------------------------- Refs --------------------------- */
   const sectionRefs = {
@@ -74,17 +156,8 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
     sectionRefs[section].current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  /* --------------------- Autoplay carousel -------------------- */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRoomImageIndex((prev) => (prev + 1) % 3);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   /* --------------------------- Data --------------------------- */
   const allImages = [hotel.image, ...(hotel.gallery || [])];
-  const roomImages = ["/room-bed.jpg", "/room-bath.jpg", "/room-sitting.jpg"];
 
   const reviews = [
     { name: "John D.", rating: 5, text: "Amazing stay! Beautiful views and excellent service." },
@@ -104,17 +177,14 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
   /* --------------------- Room filtering --------------------- */
   const getFilteredRooms = (): Room[] => {
     if (roomFilter === "accessible") {
-      // Find the matching accessible hotel (by id)
-      const accHotel = accessibleRooms.find((h) => h.id === hotel.id);
       // Return only rooms that have `accessible: true`
-      return (
-        accHotel?.rooms.filter(
-          (r): r is Room & { accessible: true; accessibilityFeatures: string[] } =>
-            !!r.accessible && Array.isArray(r.accessibilityFeatures)
-        ) ?? []
+      return hotel.rooms.filter(
+        (room): room is Room & { accessible: true; accessibilityFeatures: string[] } =>
+          !!room.accessible && Array.isArray(room.accessibilityFeatures)
       );
     }
-    return hotel.rooms ?? [];
+    // Return only normal rooms (not accessible)
+    return hotel.rooms.filter(room => !room.accessible);
   };
 
   const filteredRooms = getFilteredRooms();
@@ -297,90 +367,114 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
             {roomFilter === "accessible" ? "Accessible Rooms" : "Rooms"}
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Room list */}
-            <div className="lg:col-span-2 space-y-6">
-              {filteredRooms.length > 0 ? (
-                filteredRooms.slice(0, 5).map((room) => (
-                  <div key={room.id} className="bg-gray-50 p-6 rounded-lg border">
-                    <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-                      {room.type}
-                      {room.accessible && (
-                        <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full flex items-center gap-1">
-                          <Accessibility size={14} aria-hidden="true" />
-                          Accessible
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-gray-600 mb-3">{room.description}</p>
+          <div className="space-y-8">
+            {filteredRooms.length > 0 ? (
+              filteredRooms.map((room) => (
+                <div key={room.id} className="bg-white rounded-lg border shadow-sm overflow-hidden">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+                    {/* Room Images */}
+                    <div className="lg:col-span-1">
+                      <RoomImageCarousel 
+                        images={room.images}
+                        roomType={room.type}
+                        className="h-64 lg:h-full"
+                      />
+                    </div>
 
-                    {/* Accessibility features – only for accessible rooms */}
-                    {room.accessible && room.accessibilityFeatures && (
-                      <div className="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                        <p className="text-sm font-semibold text-blue-800 mb-2">
-                          Accessibility Features:
-                        </p>
-                        <ul className="text-xs text-blue-700 space-y-1">
-                          {room.accessibilityFeatures.slice(0, 4).map((feat: string, idx: number) => (
-                            <li key={idx} className="flex items-start gap-1">
-                              <span className="text-blue-500 mt-0.5">•</span>
-                              <span>{feat}</span>
-                            </li>
-                          ))}
-                          {room.accessibilityFeatures.length > 4 && (
-                            <li className="text-blue-600 italic text-xs">
-                              +{room.accessibilityFeatures.length - 4} more
-                            </li>
+                    {/* Room Details */}
+                    <div className="lg:col-span-2">
+                      <div className="flex flex-col h-full">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
+                            {room.type}
+                            {room.accessible && (
+                              <span className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                <Accessibility size={14} aria-hidden="true" />
+                                Accessible
+                              </span>
+                            )}
+                          </h3>
+                          
+                          <p className="text-gray-600 mb-4">{room.description}</p>
+
+                          {/* Room Amenities */}
+                          <div className="mb-4">
+                            <p className="text-sm font-semibold text-gray-800 mb-2">Room Amenities:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {room.amenities.slice(0, 4).map((amenity, index) => (
+                                <span
+                                  key={index}
+                                  className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded"
+                                >
+                                  {amenity}
+                                </span>
+                              ))}
+                              {room.amenities.length > 4 && (
+                                <span className="text-gray-500 text-xs">
+                                  +{room.amenities.length - 4} more
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Accessibility features – only for accessible rooms */}
+                          {room.accessible && room.accessibilityFeatures && (
+                            <div className="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                              <p className="text-sm font-semibold text-blue-800 mb-2">
+                                Accessibility Features:
+                              </p>
+                              <ul className="text-xs text-blue-700 space-y-1">
+                                {room.accessibilityFeatures.slice(0, 4).map((feat: string, idx: number) => (
+                                  <li key={idx} className="flex items-start gap-1">
+                                    <span className="text-blue-500 mt-0.5">•</span>
+                                    <span>{feat}</span>
+                                  </li>
+                                ))}
+                                {room.accessibilityFeatures.length > 4 && (
+                                  <li className="text-blue-600 italic text-xs">
+                                    +{room.accessibilityFeatures.length - 4} more
+                                  </li>
+                                )}
+                              </ul>
+                            </div>
                           )}
-                        </ul>
-                      </div>
-                    )}
 
-                    <div className="flex justify-between items-center mt-4">
-                      <p className="text-2xl font-bold text-orange-600">${room.price}/night</p>
-                      <button
-                        className="bg-orange-500 text-white px-5 py-2 rounded-lg hover:bg-orange-600 transition font-medium"
-                        aria-label={`Book ${room.type}`}
-                      >
-                        Book Now
-                      </button>
+                          {/* Room Details */}
+                          <div className="grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4">
+                            <div>
+                              <span className="font-semibold">Max Occupancy:</span> {room.maxOccupancy}
+                            </div>
+                            <div>
+                              <span className="font-semibold">Available:</span> {room.available}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Price and Book Button */}
+                        <div className="flex justify-between items-center pt-4 border-t">
+                          <div>
+                            <p className="text-2xl font-bold text-orange-600">${room.price}/night</p>
+                            <p className="text-sm text-gray-500">Includes taxes and fees</p>
+                          </div>
+                          <button
+                            className="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition font-medium"
+                            aria-label={`Book ${room.type}`}
+                          >
+                            Book Now
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                ))
-              ) : (
-                <p className="text-gray-500 italic">
+                </div>
+              ))
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-gray-500 italic text-lg">
                   No {roomFilter === "accessible" ? "accessible" : "normal"} rooms available.
                 </p>
-              )}
-            </div>
-
-            {/* Autoplay carousel (right side) */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden sticky top-24">
-                <Image
-                  src={roomImages[currentRoomImageIndex]}
-                  alt={["Bedroom", "Bathroom", "Sitting Area"][currentRoomImageIndex]}
-                  width={400}
-                  height={256}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-4">
-                  <p className="text-center text-sm text-gray-600">
-                    {["Bedroom", "Bathroom", "Sitting Area"][currentRoomImageIndex]}
-                  </p>
-                  <div className="flex justify-center gap-1 mt-2">
-                    {roomImages.map((_, i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full transition-colors ${
-                          i === currentRoomImageIndex ? "bg-orange-500" : "bg-gray-300"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>
