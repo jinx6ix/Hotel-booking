@@ -7,6 +7,7 @@ import { MapPin, Star, Users, Award, Accessibility } from "lucide-react"
 import { SchemaRenderer } from "@/components/schema-renderer"
 import { generateBreadcrumbSchema } from "@/lib/schema"
 import { QuickBooking } from "@/components/quick-booking"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Jaetravel Expeditions - Kenya Safari Tours, Luxury & Accessible Hotel Bookings | Maasai Mara, Amboseli, Nairobi",
@@ -51,11 +52,13 @@ export default function Home() {
       {/* Hero Section - Original Preserved + Accessible Booking Added */}
       <section className="relative min-h-screen bg-gradient-to-r from-orange-500 to-orange-600 text-white overflow-hidden pt-20">
         <div className="absolute inset-0">
-          <img
-            src="/kenya-safari-landscape.jpg"
+          <Image
+            src="/kenya-safari-landscape.webp"
             alt="Kenya Safari Landscape - Great Migration in Maasai Mara with wildebeest crossing river"
             className="w-full h-full object-cover opacity-40"
             loading="eager"
+            width={1920}
+            height={1080}
           />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -215,11 +218,13 @@ export default function Home() {
                 href={`/destinations/${location.slug}`}
                 className="group relative h-64 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <img
+                <Image
                   src={location.image || "/placeholder.svg"}
                   alt={`${location.name} Kenya Safari - ${location.description} | Luxury & Accessible Tours`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width={400}
+                  height={300}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                   <div>
