@@ -440,10 +440,10 @@ export const hotels: Hotel[] = [
     price: 280,
     image: "/Crowne Plaza Nairobi.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/chero1.jpeg?height=400&width=600",
+      "/chero2.webp?height=400&width=600",
+      "/chero3.gif?height=400&width=600",
+      "/chero4.jpg?height=400&width=600",
     ],
     description: "Premium 5-star hotel in Upper Hill with contemporary African decor and exceptional service.",
     amenities: ["WiFi", "Pool", "Fitness Center", "Multiple Restaurants", "Bar", "Spa", "Concierge", "Parking"],
@@ -451,17 +451,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 249 2000",
     email: "info@crowneplaza-nairobi.com",
     rooms: createRooms("nairobi-002", 280, {
-      standard: ["/crowne-plaza-standard-1.jpg", "/crowne-plaza-standard-2.jpg", "/crowne-plaza-standard-bathroom.jpg"],
-      deluxe: ["/crowne-plaza-deluxe-1.jpg", "/crowne-plaza-deluxe-2.jpg", "/crowne-plaza-deluxe-bathroom.jpg"],
-      suite: ["/crowne-plaza-suite-living.jpg", "/crowne-plaza-suite-bedroom.jpg", "/crowne-plaza-suite-bathroom.jpg"],
-      family: ["/crowne-plaza-family-1.jpg", "/crowne-plaza-family-2.jpg", "/crowne-plaza-family-bathroom.jpg"],
-      executive: ["/crowne-plaza-executive-1.jpg", "/crowne-plaza-executive-2.jpg", "/crowne-plaza-executive-bathroom.jpg"],
-      presidential: ["/crowne-plaza-presidential-1.jpg", "/crowne-plaza-presidential-2.jpg", "/crowne-plaza-presidential-bathroom.jpg"],
-      accessibleStandard: ["/crowne-plaza-accessible-standard-1.jpg", "/crowne-plaza-accessible-standard-2.jpg", "/crowne-plaza-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/crowne-plaza-accessible-deluxe-1.jpg", "/crowne-plaza-accessible-deluxe-2.jpg", "/crowne-plaza-accessible-bathroom.jpg"],
-      accessibleSuite: ["/crowne-plaza-accessible-suite-1.jpg", "/crowne-plaza-accessible-suite-2.jpg", "/crowne-plaza-accessible-bathroom.jpg"],
-      accessibleFamily: ["/crowne-plaza-accessible-family-1.jpg", "/crowne-plaza-accessible-family-2.jpg", "/crowne-plaza-accessible-bathroom.jpg"],
-      accessiblePremium: ["/crowne-plaza-accessible-premium-1.jpg", "/crowne-plaza-accessible-premium-2.jpg", "/crowne-plaza-accessible-bathroom.jpg"]
+      standard: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      deluxe: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      suite: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      family: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      executive: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      presidential: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/crowneroom1.jpg", 
+        "/crowneroom2.jpg", 
+        "/crowneroom3.jpg"
+      ]
     })
   },
   {
@@ -472,10 +516,10 @@ export const hotels: Hotel[] = [
     price: 320,
     image: "/Serena Hotel Nairobi.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/shero1.jpg?height=400&width=600",
+      "/shero2.jpg?height=400&width=600",
+      "/shero3.jpg?height=400&width=600",
+      "/shero4.jpg?height=400&width=600",
     ],
     description: "Elegant hotel combining contemporary architecture with African artistic elements. Award-winning service and dining.",
     amenities: ["WiFi", "Pool", "Spa", "Fine Dining", "Business Center", "Fitness Center", "Parking", "Concierge"],
@@ -483,17 +527,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 272 2000",
     email: "reservations@serena-nairobi.com",
     rooms: createRooms("nairobi-003", 320, {
-      standard: ["/serena-standard-1.jpg", "/serena-standard-2.jpg", "/serena-standard-bathroom.jpg"],
-      deluxe: ["/serena-deluxe-1.jpg", "/serena-deluxe-2.jpg", "/serena-deluxe-bathroom.jpg"],
-      suite: ["/serena-suite-living.jpg", "/serena-suite-bedroom.jpg", "/serena-suite-bathroom.jpg"],
-      family: ["/serena-family-1.jpg", "/serena-family-2.jpg", "/serena-family-bathroom.jpg"],
-      executive: ["/serena-executive-1.jpg", "/serena-executive-2.jpg", "/serena-executive-bathroom.jpg"],
-      presidential: ["/serena-presidential-1.jpg", "/serena-presidential-2.jpg", "/serena-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-accessible-standard-1.jpg", "/serena-accessible-standard-2.jpg", "/serena-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-accessible-deluxe-1.jpg", "/serena-accessible-deluxe-2.jpg", "/serena-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-accessible-suite-1.jpg", "/serena-accessible-suite-2.jpg", "/serena-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-accessible-family-1.jpg", "/serena-accessible-family-2.jpg", "/serena-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-accessible-premium-1.jpg", "/serena-accessible-premium-2.jpg", "/serena-accessible-bathroom.jpg"]
+      standard: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      deluxe: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      suite: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      family: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      executive: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      presidential: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/sroom1.jpg", 
+        "/sroom2.jpg", 
+        "/sroom3.jpg"
+      ]
     })
   },
   {
@@ -504,10 +592,10 @@ export const hotels: Hotel[] = [
     price: 400,
     image: "/Villa Rosa Kempinski.avif?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/khero1.jpg?height=400&width=600",
+      "/khero2.avif?height=400&width=600",
+      "/khero3.jpg?height=400&width=600",
+      "/khero4.jpg?height=400&width=600",
     ],
     description: "Ultra-luxury 5-star hotel with impeccable service. Fine dining restaurants and world-class spa facilities.",
     amenities: ["WiFi", "Luxury Pool", "Spa", "5 Restaurants", "Bar", "Gym", "Valet Parking", "24/7 Concierge"],
@@ -515,17 +603,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 328 2000",
     email: "reservations@kempinski.com",
     rooms: createRooms("nairobi-004", 400, {
-      standard: ["/kempinski-standard-1.jpg", "/kempinski-standard-2.jpg", "/kempinski-standard-bathroom.jpg"],
-      deluxe: ["/kempinski-deluxe-1.jpg", "/kempinski-deluxe-2.jpg", "/kempinski-deluxe-bathroom.jpg"],
-      suite: ["/kempinski-suite-living.jpg", "/kempinski-suite-bedroom.jpg", "/kempinski-suite-bathroom.jpg"],
-      family: ["/kempinski-family-1.jpg", "/kempinski-family-2.jpg", "/kempinski-family-bathroom.jpg"],
-      executive: ["/kempinski-executive-1.jpg", "/kempinski-executive-2.jpg", "/kempinski-executive-bathroom.jpg"],
-      presidential: ["/kempinski-presidential-1.jpg", "/kempinski-presidential-2.jpg", "/kempinski-presidential-bathroom.jpg"],
-      accessibleStandard: ["/kempinski-accessible-standard-1.jpg", "/kempinski-accessible-standard-2.jpg", "/kempinski-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/kempinski-accessible-deluxe-1.jpg", "/kempinski-accessible-deluxe-2.jpg", "/kempinski-accessible-bathroom.jpg"],
-      accessibleSuite: ["/kempinski-accessible-suite-1.jpg", "/kempinski-accessible-suite-2.jpg", "/kempinski-accessible-bathroom.jpg"],
-      accessibleFamily: ["/kempinski-accessible-family-1.jpg", "/kempinski-accessible-family-2.jpg", "/kempinski-accessible-bathroom.jpg"],
-      accessiblePremium: ["/kempinski-accessible-premium-1.jpg", "/kempinski-accessible-premium-2.jpg", "/kempinski-accessible-bathroom.jpg"]
+      standard: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      deluxe: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      suite: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      family: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      executive: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      presidential: [
+        "/kproom1.avif", 
+        "/kproom2.avif", 
+        "/kproom3.avif"
+      ],
+      accessibleStandard: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/kroom1.avif", 
+        "/kroom2.avif", 
+        "/kroom3.jpg"
+      ]
     })
   },
   {
@@ -534,12 +666,12 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.5,
     price: 250,
-    image: "/The Bomas of Kenya Resort.jpg?height=300&width=400",
+    image: "/bhero.webp?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/bhero1.jpg?height=400&width=600",
+      "/bhero2.jpg?height=400&width=600",
+      "/bhero3.jpg?height=400&width=600",
+      "/bhero4.webp?height=400&width=600",
     ],
     description: "Unique resort featuring authentic Kenyan cultural experiences with traditional and modern accommodations.",
     amenities: ["WiFi", "Restaurant", "Cultural Shows", "Garden", "Meeting Rooms", "Parking", "Bar", "Tours"],
@@ -547,17 +679,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 886 5800",
     email: "info@bomasofkenya.com",
     rooms: createRooms("nairobi-005", 250, {
-      standard: ["/bomas-standard-1.jpg", "/bomas-standard-2.jpg", "/bomas-standard-bathroom.jpg"],
-      deluxe: ["/bomas-deluxe-1.jpg", "/bomas-deluxe-2.jpg", "/bomas-deluxe-bathroom.jpg"],
-      suite: ["/bomas-suite-living.jpg", "/bomas-suite-bedroom.jpg", "/bomas-suite-bathroom.jpg"],
-      family: ["/bomas-family-1.jpg", "/bomas-family-2.jpg", "/bomas-family-bathroom.jpg"],
-      executive: ["/bomas-executive-1.jpg", "/bomas-executive-2.jpg", "/bomas-executive-bathroom.jpg"],
-      presidential: ["/bomas-presidential-1.jpg", "/bomas-presidential-2.jpg", "/bomas-presidential-bathroom.jpg"],
-      accessibleStandard: ["/bomas-accessible-standard-1.jpg", "/bomas-accessible-standard-2.jpg", "/bomas-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/bomas-accessible-deluxe-1.jpg", "/bomas-accessible-deluxe-2.jpg", "/bomas-accessible-bathroom.jpg"],
-      accessibleSuite: ["/bomas-accessible-suite-1.jpg", "/bomas-accessible-suite-2.jpg", "/bomas-accessible-bathroom.jpg"],
-      accessibleFamily: ["/bomas-accessible-family-1.jpg", "/bomas-accessible-family-2.jpg", "/bomas-accessible-bathroom.jpg"],
-      accessiblePremium: ["/bomas-accessible-premium-1.jpg", "/bomas-accessible-premium-2.jpg", "/bomas-accessible-bathroom.jpg"]
+      standard: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      deluxe: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      suite: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      family: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      executive: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      presidential: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      accessibleStandard: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      accessibleSuite: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      accessibleFamily: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ],
+      accessiblePremium: [
+        "/broom1.jpg", 
+        "/broom2.jpg", 
+        "/broom3.jpg"
+      ]
     })
   },
   {
@@ -568,10 +744,10 @@ export const hotels: Hotel[] = [
     price: 230,
     image: "/Hilton Nairobi.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/hihero1.jpg?height=400&width=600",
+      "/hihero2.jpg?height=400&width=600",
+      "/hihero3.jpg?height=400&width=600",
+      "/hihero4.webp?height=400&width=600",
     ],
     description: "Modern 4-star hotel with convenient downtown location. Perfect for business and leisure travelers.",
     amenities: ["WiFi", "Fitness Center", "Restaurant", "Bar", "Business Center", "Parking", "Lounge", "Room Service"],
@@ -579,17 +755,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 222 0000",
     email: "info@hilton-nairobi.com",
     rooms: createRooms("nairobi-006", 230, {
-      standard: ["/hilton-standard-1.jpg", "/hilton-standard-2.jpg", "/hilton-standard-bathroom.jpg"],
-      deluxe: ["/hilton-deluxe-1.jpg", "/hilton-deluxe-2.jpg", "/hilton-deluxe-bathroom.jpg"],
-      suite: ["/hilton-suite-living.jpg", "/hilton-suite-bedroom.jpg", "/hilton-suite-bathroom.jpg"],
-      family: ["/hilton-family-1.jpg", "/hilton-family-2.jpg", "/hilton-family-bathroom.jpg"],
-      executive: ["/hilton-executive-1.jpg", "/hilton-executive-2.jpg", "/hilton-executive-bathroom.jpg"],
-      presidential: ["/hilton-presidential-1.jpg", "/hilton-presidential-2.jpg", "/hilton-presidential-bathroom.jpg"],
-      accessibleStandard: ["/hilton-accessible-standard-1.jpg", "/hilton-accessible-standard-2.jpg", "/hilton-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/hilton-accessible-deluxe-1.jpg", "/hilton-accessible-deluxe-2.jpg", "/hilton-accessible-bathroom.jpg"],
-      accessibleSuite: ["/hilton-accessible-suite-1.jpg", "/hilton-accessible-suite-2.jpg", "/hilton-accessible-bathroom.jpg"],
-      accessibleFamily: ["/hilton-accessible-family-1.jpg", "/hilton-accessible-family-2.jpg", "/hilton-accessible-bathroom.jpg"],
-      accessiblePremium: ["/hilton-accessible-premium-1.jpg", "/hilton-accessible-premium-2.jpg", "/hilton-accessible-bathroom.jpg"]
+      standard: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      deluxe: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      suite: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      family: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      executive: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      presidential: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/hiroom1.webp", 
+        "/hiroom2.webp", 
+        "/hiroom3.jpg"
+      ]
     })
   },
   {
@@ -600,10 +820,10 @@ export const hotels: Hotel[] = [
     price: 180,
     image: "/Ibis Styles Nairobi.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/ibhero1.jpg?height=400&width=600",
+      "/ibhero2.jpg?height=400&width=600",
+      "/ibhero3.jpg?height=400&width=600",
+      "/ibhero4.jpg?height=400&width=600",
     ],
     description: "Contemporary 3-star hotel offering excellent value with comfortable rooms and quality service.",
     amenities: ["WiFi", "Restaurant", "Bar", "Meeting Rooms", "Parking", "TV", "Air Conditioning", "Elevator"],
@@ -611,17 +831,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 222 5000",
     email: "info@ibis-nairobi.com",
     rooms: createRooms("nairobi-007", 180, {
-      standard: ["/ibis-standard-1.jpg", "/ibis-standard-2.jpg", "/ibis-standard-bathroom.jpg"],
-      deluxe: ["/ibis-deluxe-1.jpg", "/ibis-deluxe-2.jpg", "/ibis-deluxe-bathroom.jpg"],
-      suite: ["/ibis-suite-living.jpg", "/ibis-suite-bedroom.jpg", "/ibis-suite-bathroom.jpg"],
-      family: ["/ibis-family-1.jpg", "/ibis-family-2.jpg", "/ibis-family-bathroom.jpg"],
-      executive: ["/ibis-executive-1.jpg", "/ibis-executive-2.jpg", "/ibis-executive-bathroom.jpg"],
-      presidential: ["/ibis-presidential-1.jpg", "/ibis-presidential-2.jpg", "/ibis-presidential-bathroom.jpg"],
-      accessibleStandard: ["/ibis-accessible-standard-1.jpg", "/ibis-accessible-standard-2.jpg", "/ibis-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/ibis-accessible-deluxe-1.jpg", "/ibis-accessible-deluxe-2.jpg", "/ibis-accessible-bathroom.jpg"],
-      accessibleSuite: ["/ibis-accessible-suite-1.jpg", "/ibis-accessible-suite-2.jpg", "/ibis-accessible-bathroom.jpg"],
-      accessibleFamily: ["/ibis-accessible-family-1.jpg", "/ibis-accessible-family-2.jpg", "/ibis-accessible-bathroom.jpg"],
-      accessiblePremium: ["/ibis-accessible-premium-1.jpg", "/ibis-accessible-premium-2.jpg", "/ibis-accessible-bathroom.jpg"]
+      standard: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      deluxe: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      suite: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      family: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      executive: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      presidential: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      accessibleStandard: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      accessibleDeluxe: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      accessibleSuite: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      accessibleFamily: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ],
+      accessiblePremium: [
+        "/ibis-standard-1.jpg", 
+        "/ibis-standard-2.jpg", 
+        "/ibis-standard-bathroom.jpg"
+      ]
     })
   },
   {
@@ -632,10 +896,10 @@ export const hotels: Hotel[] = [
     price: 290,
     image: "/Radisson Blu Nairobi.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/rahero1.jpg?height=400&width=600",
+      "/rahero2.webp?height=400&width=600",
+      "/rahero3.jpg?height=400&width=600",
+      "/rahero4.avif?height=400&width=600",
     ],
     description: "Premium 5-star hotel with modern amenities and attentive service. Located in prime business district.",
     amenities: ["WiFi", "Pool", "Spa", "Multiple Restaurants", "Gym", "Business Center", "Parking", "Concierge"],
@@ -643,17 +907,39 @@ export const hotels: Hotel[] = [
     phone: "+254 20 329 3000",
     email: "info@radissonblu-nairobi.com",
     rooms: createRooms("nairobi-008", 290, {
-      standard: ["/radisson-standard-1.jpg", "/radisson-standard-2.jpg", "/radisson-standard-bathroom.jpg"],
-      deluxe: ["/radisson-deluxe-1.jpg", "/radisson-deluxe-2.jpg", "/radisson-deluxe-bathroom.jpg"],
-      suite: ["/radisson-suite-living.jpg", "/radisson-suite-bedroom.jpg", "/radisson-suite-bathroom.jpg"],
-      family: ["/radisson-family-1.jpg", "/radisson-family-2.jpg", "/radisson-family-bathroom.jpg"],
-      executive: ["/radisson-executive-1.jpg", "/radisson-executive-2.jpg", "/radisson-executive-bathroom.jpg"],
-      presidential: ["/radisson-presidential-1.jpg", "/radisson-presidential-2.jpg", "/radisson-presidential-bathroom.jpg"],
-      accessibleStandard: ["/radisson-accessible-standard-1.jpg", "/radisson-accessible-standard-2.jpg", "/radisson-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/radisson-accessible-deluxe-1.jpg", "/radisson-accessible-deluxe-2.jpg", "/radisson-accessible-bathroom.jpg"],
-      accessibleSuite: ["/radisson-accessible-suite-1.jpg", "/radisson-accessible-suite-2.jpg", "/radisson-accessible-bathroom.jpg"],
-      accessibleFamily: ["/radisson-accessible-family-1.jpg", "/radisson-accessible-family-2.jpg", "/radisson-accessible-bathroom.jpg"],
-      accessiblePremium: ["/radisson-accessible-premium-1.jpg", "/radisson-accessible-premium-2.jpg", "/radisson-accessible-bathroom.jpg"]
+      standard: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      deluxe: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      suite: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      family: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      executive: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      presidential: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"
+      ]
     })
   },
   {
@@ -664,10 +950,10 @@ export const hotels: Hotel[] = [
     price: 260,
     image: "/Four Points by Sheraton.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/fohero1.avif?height=400&width=600",
+      "/fohero2.jpg?height=400&width=600",
+      "/fohero3.jpg?height=400&width=600",
+      "/fohero4.webp?height=400&width=600",
     ],
     description: "Contemporary 4-star hotel offering excellent dining options and business facilities.",
     amenities: ["WiFi", "Pool", "Restaurant", "Bar", "Fitness Center", "Business Center", "Parking", "Room Service"],
@@ -675,17 +961,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 322 3000",
     email: "info@fourpoints-nairobi.com",
     rooms: createRooms("nairobi-009", 260, {
-      standard: ["/fourpoints-standard-1.jpg", "/fourpoints-standard-2.jpg", "/fourpoints-standard-bathroom.jpg"],
-      deluxe: ["/fourpoints-deluxe-1.jpg", "/fourpoints-deluxe-2.jpg", "/fourpoints-deluxe-bathroom.jpg"],
-      suite: ["/fourpoints-suite-living.jpg", "/fourpoints-suite-bedroom.jpg", "/fourpoints-suite-bathroom.jpg"],
-      family: ["/fourpoints-family-1.jpg", "/fourpoints-family-2.jpg", "/fourpoints-family-bathroom.jpg"],
-      executive: ["/fourpoints-executive-1.jpg", "/fourpoints-executive-2.jpg", "/fourpoints-executive-bathroom.jpg"],
-      presidential: ["/fourpoints-presidential-1.jpg", "/fourpoints-presidential-2.jpg", "/fourpoints-presidential-bathroom.jpg"],
-      accessibleStandard: ["/fourpoints-accessible-standard-1.jpg", "/fourpoints-accessible-standard-2.jpg", "/fourpoints-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/fourpoints-accessible-deluxe-1.jpg", "/fourpoints-accessible-deluxe-2.jpg", "/fourpoints-accessible-bathroom.jpg"],
-      accessibleSuite: ["/fourpoints-accessible-suite-1.jpg", "/fourpoints-accessible-suite-2.jpg", "/fourpoints-accessible-bathroom.jpg"],
-      accessibleFamily: ["/fourpoints-accessible-family-1.jpg", "/fourpoints-accessible-family-2.jpg", "/fourpoints-accessible-bathroom.jpg"],
-      accessiblePremium: ["/fourpoints-accessible-premium-1.jpg", "/fourpoints-accessible-premium-2.jpg", "/fourpoints-accessible-bathroom.jpg"]
+      standard: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      deluxe: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      suite: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      family: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      executive: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      presidential: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/foroom1.jpeg", 
+        "/foroom2.jpg", 
+        "/foroom3.jpg"
+      ]
     })
   },
   {
@@ -696,10 +1026,10 @@ export const hotels: Hotel[] = [
     price: 200,
     image: "/Mercure Hotel Nairobi.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/mehero1.jpeg?height=400&width=600",
+      "/mehero2.jpg?height=400&width=600",
+      "/mehero3.jpeg?height=400&width=600",
+      "/mehero4.jpeg?height=400&width=600",
     ],
     description: "4-star hotel with excellent location and comfortable rooms. Great value for money.",
     amenities: ["WiFi", "Restaurant", "Bar", "Garden", "Meeting Rooms", "Parking", "TV", "Room Service"],
@@ -707,17 +1037,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 244 5000",
     email: "info@mercure-nairobi.com",
     rooms: createRooms("nairobi-010", 200, {
-      standard: ["/mercure-standard-1.jpg", "/mercure-standard-2.jpg", "/mercure-standard-bathroom.jpg"],
-      deluxe: ["/mercure-deluxe-1.jpg", "/mercure-deluxe-2.jpg", "/mercure-deluxe-bathroom.jpg"],
-      suite: ["/mercure-suite-living.jpg", "/mercure-suite-bedroom.jpg", "/mercure-suite-bathroom.jpg"],
-      family: ["/mercure-family-1.jpg", "/mercure-family-2.jpg", "/mercure-family-bathroom.jpg"],
-      executive: ["/mercure-executive-1.jpg", "/mercure-executive-2.jpg", "/mercure-executive-bathroom.jpg"],
-      presidential: ["/mercure-presidential-1.jpg", "/mercure-presidential-2.jpg", "/mercure-presidential-bathroom.jpg"],
-      accessibleStandard: ["/mercure-accessible-standard-1.jpg", "/mercure-accessible-standard-2.jpg", "/mercure-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/mercure-accessible-deluxe-1.jpg", "/mercure-accessible-deluxe-2.jpg", "/mercure-accessible-bathroom.jpg"],
-      accessibleSuite: ["/mercure-accessible-suite-1.jpg", "/mercure-accessible-suite-2.jpg", "/mercure-accessible-bathroom.jpg"],
-      accessibleFamily: ["/mercure-accessible-family-1.jpg", "/mercure-accessible-family-2.jpg", "/mercure-accessible-bathroom.jpg"],
-      accessiblePremium: ["/mercure-accessible-premium-1.jpg", "/mercure-accessible-premium-2.jpg", "/mercure-accessible-bathroom.jpg"]
+      standard: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      deluxe: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      suite: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      family: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      executive: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      presidential: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/meroom1.jpg", 
+        "/meroom2.jpg", 
+        "/meroom3.jpg"
+      ]
     })
   },
   {
@@ -728,10 +1102,10 @@ export const hotels: Hotel[] = [
     price: 190,
     image: "/Country Club Hotel.jpeg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/cohero1.jpg?height=400&width=600",
+      "/cohero2.webp?height=400&width=600",
+      "/cohero3.webp?height=400&width=600",
+      "/cohero4.jpg?height=400&width=600",
     ],
     description: "Budget-friendly 3-star hotel with warm hospitality and convenient location.",
     amenities: ["WiFi", "Restaurant", "Bar", "Parking", "Garden", "Room Service", "TV", "Air Conditioning"],
@@ -739,17 +1113,61 @@ export const hotels: Hotel[] = [
     phone: "+254 20 333 0000",
     email: "info@countryclub-nairobi.com",
     rooms: createRooms("nairobi-011", 190, {
-      standard: ["/countryclub-standard-1.jpg", "/countryclub-standard-2.jpg", "/countryclub-standard-bathroom.jpg"],
-      deluxe: ["/countryclub-deluxe-1.jpg", "/countryclub-deluxe-2.jpg", "/countryclub-deluxe-bathroom.jpg"],
-      suite: ["/countryclub-suite-living.jpg", "/countryclub-suite-bedroom.jpg", "/countryclub-suite-bathroom.jpg"],
-      family: ["/countryclub-family-1.jpg", "/countryclub-family-2.jpg", "/countryclub-family-bathroom.jpg"],
-      executive: ["/countryclub-executive-1.jpg", "/countryclub-executive-2.jpg", "/countryclub-executive-bathroom.jpg"],
-      presidential: ["/countryclub-presidential-1.jpg", "/countryclub-presidential-2.jpg", "/countryclub-presidential-bathroom.jpg"],
-      accessibleStandard: ["/countryclub-accessible-standard-1.jpg", "/countryclub-accessible-standard-2.jpg", "/countryclub-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/countryclub-accessible-deluxe-1.jpg", "/countryclub-accessible-deluxe-2.jpg", "/countryclub-accessible-bathroom.jpg"],
-      accessibleSuite: ["/countryclub-accessible-suite-1.jpg", "/countryclub-accessible-suite-2.jpg", "/countryclub-accessible-bathroom.jpg"],
-      accessibleFamily: ["/countryclub-accessible-family-1.jpg", "/countryclub-accessible-family-2.jpg", "/countryclub-accessible-bathroom.jpg"],
-      accessiblePremium: ["/countryclub-accessible-premium-1.jpg", "/countryclub-accessible-premium-2.jpg", "/countryclub-accessible-bathroom.jpg"]
+      standard: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      deluxe: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      suite: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      family: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      executive: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      presidential: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      accessibleStandard: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      accessibleDeluxe: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      accessibleSuite: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      accessibleFamily: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ],
+      accessiblePremium: [
+        "/coroom1.jpeg", 
+        "/coroom2.jpg", 
+        "/coroom3.avif"
+      ]
     })
   },
 
@@ -760,12 +1178,12 @@ export const hotels: Hotel[] = [
     location: "Naivasha",
     rating: 4.7,
     price: 320,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/cresent lake.avif?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/crehero1.jpeg?height=400&width=600",
+      "/crehero2.jpeg?height=400&width=600",
+      "/crehero3.jpeg?height=400&width=600",
+      "/crehero4.jpg?height=400&width=600",
     ],
     description: "Luxury tented camp on Lake Naivasha shores with stunning lake views and excellent wildlife viewing.",
     amenities: ["WiFi", "Restaurant", "Bar", "Lake Activities", "Safari Drives", "Spa", "Lounge", "Room Service"],
@@ -773,17 +1191,61 @@ export const hotels: Hotel[] = [
     phone: "+254 50 2021888",
     email: "info@crescentcamp.com",
     rooms: createRooms("naivasha-001", 320, {
-      standard: ["/crescent-standard-1.jpg", "/crescent-standard-2.jpg", "/crescent-standard-bathroom.jpg"],
-      deluxe: ["/crescent-deluxe-1.jpg", "/crescent-deluxe-2.jpg", "/crescent-deluxe-bathroom.jpg"],
-      suite: ["/crescent-suite-living.jpg", "/crescent-suite-bedroom.jpg", "/crescent-suite-bathroom.jpg"],
-      family: ["/crescent-family-1.jpg", "/crescent-family-2.jpg", "/crescent-family-bathroom.jpg"],
-      executive: ["/crescent-executive-1.jpg", "/crescent-executive-2.jpg", "/crescent-executive-bathroom.jpg"],
-      presidential: ["/crescent-presidential-1.jpg", "/crescent-presidential-2.jpg", "/crescent-presidential-bathroom.jpg"],
-      accessibleStandard: ["/crescent-accessible-standard-1.jpg", "/crescent-accessible-standard-2.jpg", "/crescent-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/crescent-accessible-deluxe-1.jpg", "/crescent-accessible-deluxe-2.jpg", "/crescent-accessible-bathroom.jpg"],
-      accessibleSuite: ["/crescent-accessible-suite-1.jpg", "/crescent-accessible-suite-2.jpg", "/crescent-accessible-bathroom.jpg"],
-      accessibleFamily: ["/crescent-accessible-family-1.jpg", "/crescent-accessible-family-2.jpg", "/crescent-accessible-bathroom.jpg"],
-      accessiblePremium: ["/crescent-accessible-premium-1.jpg", "/crescent-accessible-premium-2.jpg", "/crescent-accessible-bathroom.jpg"]
+      standard: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      deluxe: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      suite: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      family: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      executive: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      presidential: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      accessibleStandard: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      accessibleDeluxe: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      accessibleSuite: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      accessibleFamily: [
+        "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ],
+      accessiblePremium: [
+              "/creroom1.jpg", 
+        "/creroom2.jpg", 
+        "/creroom3.avif"
+      ]
     })
   },
   {
@@ -792,12 +1254,12 @@ export const hotels: Hotel[] = [
     location: "Naivasha",
     rating: 4.6,
     price: 300,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/serena camp.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/sehero1.jpg?height=400&width=600",
+      "/sehero2.avif?height=400&width=600",
+      "/sehero3.jpg?height=400&width=600",
+      "/sehero4.jpg?height=400&width=600",
     ],
     description: "All-inclusive tented camp with authentic safari experience and exceptional hospitality.",
     amenities: ["Meals Included", "Safari Drives", "Lake Activities", "Fireplace", "Bar", "Spa", "Photography", "WiFi"],
@@ -805,34 +1267,75 @@ export const hotels: Hotel[] = [
     phone: "+254 50 2020600",
     email: "reservations@naivasha-serena.com",
     rooms: createRooms("naivasha-002", 300, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
+      standard: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      deluxe: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      suite: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      family: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      executive: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      presidential: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/seroom1.jpg", 
+        "/seroom2.jpg", 
+        "/seroom3.jpg"
+      ]
     })
   },
-  // ... Continuing with ALL remaining hotels in the same pattern
-  // Due to length constraints, I'll show the pattern for a few more and note that all follow the same structure
-
   {
     id: "naivasha-003",
     name: "Hells Gate Game Lodge",
     location: "Naivasha",
     rating: 4.5,
     price: 280,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/hells gate.jpeg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/gahero1.avif?height=400&width=600",
+      "/gahero2.jpg?height=400&width=600",
+      "/gahero3.jpg?height=400&width=600",
+      "/gahero4.jpeg?height=400&width=600",
     ],
     description: "Game lodge near Hell's Gate National Park with excellent safari opportunities and friendly atmosphere.",
     amenities: ["Restaurant", "Bar", "Safari Drives", "Hiking", "Rock Climbing", "Parking", "WiFi", "Room Service"],
@@ -840,276 +1343,61 @@ export const hotels: Hotel[] = [
     phone: "+254 50 2020800",
     email: "info@hellsgate-lodge.com",
     rooms: createRooms("naivasha-003", 280, {
-      standard: ["/hellsgate-standard-1.jpg", "/hellsgate-standard-2.jpg", "/hellsgate-standard-bathroom.jpg"],
-      deluxe: ["/hellsgate-deluxe-1.jpg", "/hellsgate-deluxe-2.jpg", "/hellsgate-deluxe-bathroom.jpg"],
-      suite: ["/hellsgate-suite-living.jpg", "/hellsgate-suite-bedroom.jpg", "/hellsgate-suite-bathroom.jpg"],
-      family: ["/hellsgate-family-1.jpg", "/hellsgate-family-2.jpg", "/hellsgate-family-bathroom.jpg"],
-      executive: ["/hellsgate-executive-1.jpg", "/hellsgate-executive-2.jpg", "/hellsgate-executive-bathroom.jpg"],
-      presidential: ["/hellsgate-presidential-1.jpg", "/hellsgate-presidential-2.jpg", "/hellsgate-presidential-bathroom.jpg"],
-      accessibleStandard: ["/hellsgate-accessible-standard-1.jpg", "/hellsgate-accessible-standard-2.jpg", "/hellsgate-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/hellsgate-accessible-deluxe-1.jpg", "/hellsgate-accessible-deluxe-2.jpg", "/hellsgate-accessible-bathroom.jpg"],
-      accessibleSuite: ["/hellsgate-accessible-suite-1.jpg", "/hellsgate-accessible-suite-2.jpg", "/hellsgate-accessible-bathroom.jpg"],
-      accessibleFamily: ["/hellsgate-accessible-family-1.jpg", "/hellsgate-accessible-family-2.jpg", "/hellsgate-accessible-bathroom.jpg"],
-      accessiblePremium: ["/hellsgate-accessible-premium-1.jpg", "/hellsgate-accessible-premium-2.jpg", "/hellsgate-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-004",
-    name: "Villa Rosa Kempinski",
-    location: "Nairobi",
-    rating: 4.9,
-    price: 400,
-    image: "/Villa Rosa Kempinski.avif?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description:
-      "Ultra-luxury 5-star hotel with impeccable service. Fine dining restaurants and world-class spa facilities.",
-    amenities: ["WiFi", "Luxury Pool", "Spa", "5 Restaurants", "Bar", "Gym", "Valet Parking", "24/7 Concierge"],
-    address: "Museum Hill, Nairobi",
-    phone: "+254 20 328 2000",
-    email: "reservations@kempinski.com",
-    rooms: createRooms("naivasha-004", 300, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-005",
-    name: "The Bomas of Kenya Resort",
-    location: "Nairobi",
-    rating: 4.5,
-    price: 250,
-    image: "/The Bomas of Kenya Resort.jpg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description:
-      "Unique resort featuring authentic Kenyan cultural experiences with traditional and modern accommodations.",
-    amenities: ["WiFi", "Restaurant", "Cultural Shows", "Garden", "Meeting Rooms", "Parking", "Bar", "Tours"],
-    address: "P.O. Box 51510, Nairobi",
-    phone: "+254 20 886 5800",
-    email: "info@bomasofkenya.com",
-    rooms: createRooms("naivasha-005", 300, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-006",
-    name: "Hilton Nairobi",
-    location: "Nairobi",
-    rating: 4.4,
-    price: 230,
-    image: "/Hilton Nairobi.jpg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description: "Modern 4-star hotel with convenient downtown location. Perfect for business and leisure travelers.",
-    amenities: ["WiFi", "Fitness Center", "Restaurant", "Bar", "Business Center", "Parking", "Lounge", "Room Service"],
-    address: "Mama Ngina Street, Nairobi",
-    phone: "+254 20 222 0000",
-    email: "info@hilton-nairobi.com",
-    rooms: createRooms("naivasha-006", 230, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-007",
-    name: "Ibis Styles Nairobi",
-    location: "Nairobi",
-    rating: 4.3,
-    price: 180,
-    image: "/Ibis Styles Nairobi.jpg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description: "Contemporary 3-star hotel offering excellent value with comfortable rooms and quality service.",
-    amenities: ["WiFi", "Restaurant", "Bar", "Meeting Rooms", "Parking", "TV", "Air Conditioning", "Elevator"],
-    address: "Kenyatta Avenue, Nairobi",
-    phone: "+254 20 222 5000",
-    email: "info@ibis-nairobi.com",
-    rooms: createRooms("naivasha-007", 180, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-008",
-    name: "Radisson Blu Nairobi",
-    location: "Nairobi",
-    rating: 4.6,
-    price: 290,
-    image: "/Radisson Blu Nairobi.jpg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description:
-      "Premium 5-star hotel with modern amenities and attentive service. Located in prime business district.",
-    amenities: ["WiFi", "Pool", "Spa", "Multiple Restaurants", "Gym", "Business Center", "Parking", "Concierge"],
-    address: "Westlands, Nairobi",
-    phone: "+254 20 329 3000",
-    email: "info@radissonblu-nairobi.com",
-    rooms: createRooms("naivasha-008", 290, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-009",
-    name: "Four Points by Sheraton",
-    location: "Nairobi",
-    rating: 4.5,
-    price: 260,
-    image: "/Four Points by Sheraton.jpg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description: "Contemporary 4-star hotel offering excellent dining options and business facilities.",
-    amenities: ["WiFi", "Pool", "Restaurant", "Bar", "Fitness Center", "Business Center", "Parking", "Room Service"],
-    address: "Westlands, Nairobi",
-    phone: "+254 20 322 3000",
-    email: "info@fourpoints-nairobi.com",
-    rooms: createRooms("naivasha-009", 260, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-010",
-    name: "Mercure Hotel Nairobi",
-    location: "Nairobi",
-    rating: 4.4,
-    price: 200,
-    image: "/Mercure Hotel Nairobi.jpg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description: "4-star hotel with excellent location and comfortable rooms. Great value for money.",
-    amenities: ["WiFi", "Restaurant", "Bar", "Garden", "Meeting Rooms", "Parking", "TV", "Room Service"],
-    address: "Njiro Road, Nairobi",
-    phone: "+254 20 244 5000",
-    email: "info@mercure-nairobi.com",
-    rooms: createRooms("naivasha-010", 200, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
-    })
-  },
-  {
-    id: "nairobi-011",
-    name: "Country Club Hotel",
-    location: "Nairobi",
-    rating: 4.2,
-    price: 190,
-    image: "/Country Club Hotel.jpeg?height=300&width=400",
-    gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-    ],
-    description: "Budget-friendly 3-star hotel with warm hospitality and convenient location.",
-    amenities: ["WiFi", "Restaurant", "Bar", "Parking", "Garden", "Room Service", "TV", "Air Conditioning"],
-    address: "Kenyatta Avenue, Nairobi",
-    phone: "+254 20 333 0000",
-    email: "info@countryclub-nairobi.com",
-    rooms: createRooms("naivasha-002", 190, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
+      standard: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      deluxe: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      suite: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      family: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      executive: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      presidential: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      accessibleStandard: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      accessibleDeluxe: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      accessibleSuite: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      accessibleFamily: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ],
+      accessiblePremium: [
+        "/garoom1.jpeg", 
+        "/garoom2.jpg", 
+        "/garoom3.webp"
+      ]
     })
   },
 
@@ -1120,12 +1408,12 @@ export const hotels: Hotel[] = [
     location: "Nakuru",
     rating: 4.6,
     price: 290,
-    image: "/placeholder.svg?height=300&width=400",
+    image: "/sarova-stanley-exterior.jpg?height=300&width=400",
     gallery: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/sahero1.jpg?height=400&width=600",
+      "/sahero2.jpg?height=400&width=600",
+      "/sahero3.jpg?height=400&width=600",
+      "/sahero4.jpg?height=400&width=600",
     ],
     description: "Premium 4-star hotel with excellent service and beautiful gardens in central Nakuru.",
     amenities: ["WiFi", "Restaurant", "Bar", "Garden", "Meeting Rooms", "Parking", "Room Service", "Fitness Center"],
@@ -1133,20 +1421,64 @@ export const hotels: Hotel[] = [
     phone: "+254 51 2211111",
     email: "reservations@sarova-stanley.com",
     rooms: createRooms("nakuru-001", 290, {
-      standard: ["/serena-naivasha-standard-1.jpg", "/serena-naivasha-standard-2.jpg", "/serena-naivasha-standard-bathroom.jpg"],
-      deluxe: ["/serena-naivasha-deluxe-1.jpg", "/serena-naivasha-deluxe-2.jpg", "/serena-naivasha-deluxe-bathroom.jpg"],
-      suite: ["/serena-naivasha-suite-living.jpg", "/serena-naivasha-suite-bedroom.jpg", "/serena-naivasha-suite-bathroom.jpg"],
-      family: ["/serena-naivasha-family-1.jpg", "/serena-naivasha-family-2.jpg", "/serena-naivasha-family-bathroom.jpg"],
-      executive: ["/serena-naivasha-executive-1.jpg", "/serena-naivasha-executive-2.jpg", "/serena-naivasha-executive-bathroom.jpg"],
-      presidential: ["/serena-naivasha-presidential-1.jpg", "/serena-naivasha-presidential-2.jpg", "/serena-naivasha-presidential-bathroom.jpg"],
-      accessibleStandard: ["/serena-naivasha-accessible-standard-1.jpg", "/serena-naivasha-accessible-standard-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/serena-naivasha-accessible-deluxe-1.jpg", "/serena-naivasha-accessible-deluxe-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleSuite: ["/serena-naivasha-accessible-suite-1.jpg", "/serena-naivasha-accessible-suite-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessibleFamily: ["/serena-naivasha-accessible-family-1.jpg", "/serena-naivasha-accessible-family-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"],
-      accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
+      standard: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      deluxe: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      suite: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      family: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      executive: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      presidential: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      accessibleStandard: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      accessibleDeluxe: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      accessibleSuite: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      accessibleFamily: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ],
+      accessiblePremium: [
+        "/saroom1.jpg", 
+        "/saroom2.jpeg", 
+        "/saroom3.jpg"
+      ]
     })
   },
-  {
+/**   {
     id: "nakuru-002",
     name: "Eldoret Kenya Hotel",
     location: "Nakuru",
@@ -1178,6 +1510,8 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/serena-naivasha-accessible-premium-1.jpg", "/serena-naivasha-accessible-premium-2.jpg", "/serena-naivasha-accessible-bathroom.jpg"]
     })
   },
+
+  */
   {
     id: "nakuru-003",
     name: "Nakuru Game House",
