@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 import { SchemaRenderer } from "@/components/schema-renderer"
 import { generateOrganizationSchema } from "@/lib/schema"
+import Script from "next/script"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -55,6 +56,12 @@ export const metadata: Metadata = {
     title: "Jaetravel Expeditions - Kenya Safari Tours",
     description: "Book hotel-based tours across Kenya with luxury accommodations",
   },
+  verification: {
+    google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
+    yandex: "b585127e41b6a92f",
+    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
+    // bing removed — not supported in Next.js Metadata
+  },
   robots: {
     index: true,
     follow: true,
@@ -95,6 +102,22 @@ export default function RootLayout({
         {/* DNS prefetch */}
         <link rel="dns-prefetch" href="https://cdn.vercel-analytics.com" />
         <SchemaRenderer schema={organizationSchema} />
+        {/* Google Analytics - Fixed with next/script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q6Y2Y3PSXH"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q6Y2Y3PSXH', { 
+              page_path: window.location.pathname,
+              transport_type: 'beacon'
+            });
+          `}
+        </Script>
       </head>
       <body className={`${geist.className} antialiased bg-white text-gray-900`} suppressHydrationWarning>
         {children}
