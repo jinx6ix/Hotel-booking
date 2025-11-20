@@ -83,6 +83,7 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <link rel="canonical" href="https://jaetravel.com" />
+        <meta name="google-site-verification" content="IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U" />
         <link rel="alternate" hrefLang="en" href="https://jaetravel.com" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" href="/favicon.png" />
