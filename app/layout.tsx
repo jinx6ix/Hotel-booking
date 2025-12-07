@@ -89,6 +89,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="kwFIGPeAktZ683/wY5zKWA" async></script>
         <link rel="canonical" href="https://jaetravel.com" />
         <meta name="google-site-verification" content="IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U" />
         <link rel="alternate" hrefLang="en" href="https://jaetravel.com" />
@@ -118,6 +119,13 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <script>
+          var ahrefs_analytics_script = document.createElement('script');
+          ahrefs_analytics_script.async = true;
+          ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+          ahrefs_analytics_script.setAttribute('data-key', 'kwFIGPeAktZ683/wY5zKWA');
+          document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+        </script>
       </head>
       <body className={`${geist.className} antialiased bg-white text-gray-900`} suppressHydrationWarning>
         {children}
