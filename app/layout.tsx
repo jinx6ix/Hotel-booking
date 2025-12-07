@@ -120,11 +120,11 @@ export default function RootLayout({
           `}
         </Script>
         <script>
-          var ahrefs_analytics_script = document.createElement('script');
+          var ahrefs_analytics_script = document.createElement(&apos;script&apos;);
           ahrefs_analytics_script.async = true;
-          ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-          ahrefs_analytics_script.setAttribute('data-key', 'kwFIGPeAktZ683/wY5zKWA');
-          document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+          ahrefs_analytics_script.src = &apos;https://analytics.ahrefs.com/analytics.js&apos;;
+          ahrefs_analytics_script.setAttribute(&apos;data-key&apos;, &apos;kwFIGPeAktZ683/wY5zKWA&apos;);
+          document.getElementsByTagName(&apos;head&apos;)[0].appendChild(ahrefs_analytics_script);
         </script>
       </head>
       <body className={`${geist.className} antialiased bg-white text-gray-900`} suppressHydrationWarning>
