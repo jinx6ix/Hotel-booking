@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   description:
     "Experience authentic Kenya hotel-based tours across 9 incredible destinations. Explore Maasai Mara, Amboseli, Nairobi & more with luxury accommodations. Book now!",
   keywords: "Kenya safari tours, hotel bookings, Maasai Mara, Nairobi hotels, safari accommodation, Kenya travel",
-  metadataBase: new URL("https://jaetravel.com"),
+  metadataBase: new URL("https://www.jaetravel.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jaetravel.com",
+    url: "https://www.jaetravel.com",
     siteName: "Jaetravel Expeditions",
     title: "Kenya Safari Tours & Hotel Bookings | Jaetravel Expeditions",
     description:
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://jaetravel.com",
+    canonical: "https://www.jaetravel.com",
   },
 }
 
@@ -90,9 +90,9 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="kwFIGPeAktZ683/wY5zKWA" async></script>
-        <link rel="canonical" href="https://jaetravel.com" />
+        <link rel="canonical" href="https://www.jaetravel.com" />
         <meta name="google-site-verification" content="IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U" />
-        <link rel="alternate" hrefLang="en" href="https://jaetravel.com" />
+        <link rel="alternate" hrefLang="en" href="ravel.com" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

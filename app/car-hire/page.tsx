@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Safari Car Hire Kenya - Landcruiser, Accessible & Photography Vehicles",
     description: "Professional 4x4 safari vehicles with drivers, pop-up roofs, and accessibility features for your Kenya adventure.",
-    url: "https://jaetravel.com/car-hire",
+    url: "https://www.jaetravel.com/car-hire",
     type: "website",
     images: [
       {
-        url: "https://jaetravel.com/car-hire/safari-landcruiser.jpg",
+        url: "https://www.jaetravel.com/car-hire/safari-landcruiser.jpg",
         width: 1200,
         height: 630,
         alt: "Safari Landcruiser with Pop-up Roof in Maasai Mara",
       },
     ],
   },
-  alternates: { canonical: "https://jaetravel.com/car-hire" },
+  alternates: { canonical: "https://www.jaetravel.com/car-hire" },
   robots: "index, follow",
 }
 

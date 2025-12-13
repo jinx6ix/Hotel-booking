@@ -25,9 +25,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: `${vehicle.name} - Safari Car Hire Kenya`,
       description: vehicle.description,
-      images: [{ url: `https://jaetravel.com${vehicle.heroImage}`, width: 1200, height: 630 }],
+      images: [{ url: `https://www.jaetravel.com${vehicle.heroImage}`, width: 1200, height: 630 }],
     },
-    alternates: { canonical: `https://jaetravel.com/car-hire/${slug}` },
+    alternates: { canonical: `https://www.jaetravel.com/car-hire/${slug}` },
   }
 }
 
@@ -51,7 +51,7 @@ export default async function VehiclePage({ params }: Props) {
     description: vehicle.description,
     price: vehicle.price.split(" ")[0],
     image: vehicle.image,
-    url: `https://jaetravel.com/car-hire/${slug}`,
+    url: `https://www.jaetravel.com/car-hire/${slug}`,
     passengers: parseInt(vehicle.specs[0].match(/\d+/)?.[0] || "6"),
     fuelType: vehicle.technical.fuel,
     vehicleConfiguration: vehicle.photography?.roofType || "Pop-up Roof",

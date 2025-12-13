@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: DestinationPageProps): Promis
     openGraph: {
       title: `${location.name} - Kenya Safari Tours`,
       description: location.description,
-      url: `https://jaetravel.com/destinations/${location.slug}`,
+      url: `https://www.jaetravel.com/destinations/${location.slug}`,
       type: "website",
     },
   }

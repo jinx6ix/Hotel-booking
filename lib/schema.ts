@@ -5,8 +5,8 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Jaetravel Expeditions",
-    url: "https://jaetravel.com",
-    logo: "https://jaetravel.com/logo.png",
+    url: "https://www.jaetravel.com",
+    logo: "https://www.jaetravel.com/logo.png",
     description: "Kenya safari tours and hotel bookings across 9 destinations",
     sameAs: [
       "https://www.facebook.com/jaetravel",
@@ -48,7 +48,7 @@ export function generateHotelSchema(hotel: any) {
     ratingValue: hotel.rating,
     ratingCount: Math.floor(hotel.rating * 50),
     priceRange: `$$${hotel.price > 300 ? "$" : ""}`,
-    url: `https://jaetravel.com/hotels/${hotel.id}`,
+    url: `https://www.jaetravel.com/hotels/${hotel.id}`,
     amenityFeature: hotel.amenities.map((amenity: string) => ({
       "@type": "LocationFeatureSpecification",
       name: amenity,
@@ -70,7 +70,7 @@ export function generateLocationSchema(location: any) {
     name: location.name,
     description: location.longDescription,
     image: location.image,
-    url: `https://jaetravel.com/destinations/${location.slug}`,
+    url: `https://www.jaetravel.com/destinations/${location.slug}`,
     address: {
       "@type": "PostalAddress",
       addressLocality: location.name,
@@ -106,7 +106,7 @@ export function generateBreadcrumbSchema(items: { label: string; href?: string }
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
-      item: `https://jaetravel.com${item.href || ""}`,
+      item: `https://www.jaetravel.com${item.href || ""}`,
     })),
   }
 }
@@ -147,7 +147,7 @@ export function generateVehicleSchema({
     "@type": "Product",
     name,
     description,
-    image: `https://jaetravel.com${image}`,
+    image: `https://www.jaetravel.com${image}`,
     url,
     brand: {
       "@type": "Brand",

@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: HotelPageProps): Promise<Meta
     openGraph: {
       title: `${hotel.name} - ${hotel.location}`,
       description: hotel.description,
-      url: `https://jaetravel.com/hotels/${hotel.id}`,
+      url: `https://www.jaetravel.com/hotels/${hotel.id}`,
       type: "website",
       images: [{ url: hotel.image, width: 1200, height: 630 }],
     },

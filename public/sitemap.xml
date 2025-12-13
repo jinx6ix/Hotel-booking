@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Homepage -->
   <url>
-    <loc>https://jaetravel.com</loc>
+    <loc>https://www.jaetravel.com</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- Destinations -->
   <url>
-    <loc>https://jaetravel.com/destinations</loc>
+    <loc>https://www.jaetravel.com/destinations</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- FAQ -->
   <url>
-    <loc>https://jaetravel.com/faq</loc>
+    <loc>https://www.jaetravel.com/faq</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://jaetravel.com/contact</loc>
+    <loc>https://www.jaetravel.com/contact</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jaetravel Expeditions - Luxury & Accessible Kenya Safari Tours",
     description: "Hotel-based safari tours across Kenya with luxury stays and accessible accommodations for all travelers",
-    url: "https://jaetravel.com",
+    url: "https://www.jaetravel.com",
     type: "website",
     images: [
       {
-        url: "https://jaetravel.com/kenya-safari-landscape.jpg",
+        url: "https://www.jaetravel.com/kenya-safari-landscape.jpg",
         width: 1200,
         height: 630,
         alt: "Kenya Safari - Great Migration in Maasai Mara National Reserve",
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jaetravel Expeditions - Kenya Safari & Accessible Luxury Travel",
     description: "Inclusive safari tours with luxury and wheelchair-accessible accommodations across Kenya",
-    images: ["https://jaetravel.com/kenya-safari-landscape.jpg"],
+    images: ["https://www.jaetravel.com/kenya-safari-landscape.jpg"],
   },
   alternates: {
-    canonical: "https://jaetravel.com",
+    canonical: "https://www.jaetravel.com",
   },
   robots: "index, follow",
 }

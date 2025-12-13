@@ -4,7 +4,7 @@ import { locations, hotels } from "@/lib/data"
 import { vehicles } from "@/lib/vehicle-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jaetravel.com"
+  const baseUrl = "https://www.jaetravel.com"
 
   // Helper: current date for lastModified
   const now = new Date()
