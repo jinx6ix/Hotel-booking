@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     images: ["https://www.jaetravel.com/kenya-safari-landscape.jpg"],
   },
   alternates: {
-    canonical: "https://jaetravel.com",
+    canonical: "https://www.jaetravel.com",
   },
   robots: "index, follow",
 }
