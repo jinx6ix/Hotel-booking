@@ -30,40 +30,127 @@ export function generateOrganizationSchema() {
   }
 }
 
-export function generateHotelSchema(hotel: any) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "LodgingBusiness",
-    name: hotel.name,
-    description: hotel.description,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: hotel.address,
-      addressLocality: hotel.location,
-      addressCountry: "KE",
-    },
-    image: hotel.image,
-    telephone: hotel.phone,
-    email: hotel.email,
-    ratingValue: hotel.rating,
-    ratingCount: Math.floor(hotel.rating * 50),
-    priceRange: `$$${hotel.price > 300 ? "$" : ""}`,
-    url: `https://www.jaetravel.com/hotels/${hotel.id}`,
-    amenityFeature: hotel.amenities.map((amenity: string) => ({
-      "@type": "LocationFeatureSpecification",
-      name: amenity,
-    })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: hotel.rating,
-      ratingCount: Math.floor(hotel.rating * 50),
-      bestRating: 5,
-      worstRating: 1,
-    },
-  }
+interface Hotel {
+  name: string;
+  description: string;
+  address: string;
+  location: string;
+  phone: string;
+  email: string;
+  price: number;
+  rating: number;
+  amenities: string[];
+  rooms: {
+    type: string;
+    description: string;
+    maxOccupancy: number;
+    amenities: string[];
+    price: number;
+    available: number;
+  }[];
 }
 
-export function generateLocationSchema(location: any) {
+export function generateHotelSchema(hotel: Hotel) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": hotel.name,
+    "description": hotel.description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": hotel.address,
+      "addressLocality": hotel.location,
+      "addressCountry": "KE"
+    },
+    "telephone": hotel.phone,
+    "email": hotel.email,
+    "priceRange": `$${hotel.price} - $${hotel.price * 3}`,
+    "starRating": {
+      "@type": "Rating",
+      "ratingValue": hotel.rating,
+      "bestRating": "5"
+    },
+    "amenities": hotel.amenities,
+    "checkinTime": "14:00",
+    "checkoutTime": "11:00",
+    "petsAllowed": hotel.amenities.includes("Pet Friendly"),
+    "currenciesAccepted": "KES, USD, EUR, GBP",
+    "paymentAccepted": "Credit Card, Cash",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Room Packages",
+      "itemListElement": hotel.rooms.map((room: Hotel['rooms'][number]) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "HotelRoom",
+          "name": room.type,
+          "description": room.description,
+          "occupancy": {
+            "@type": "QuantitativeValue",
+            "value": room.maxOccupancy
+          },
+          "amenityFeature": room.amenities.map((amenity: string) => ({
+            "@type": "LocationFeatureSpecification",
+            "name": amenity
+          }))
+        },
+        "price": room.price,
+        "priceCurrency": "USD",
+        "availability": room.available > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock"
+      }))
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": hotel.rating,
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Verified Guest"
+      }
+    }
+  };
+}
+
+export function generateBreadcrumbSchema(items: Array<{label: string, href?: string}>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.label,
+      "item": item.href ? `https://www.jaetravelexpeditions.com${item.href}` : undefined
+    }))
+  };
+}
+
+export function generateFAQSchema(faqItems: Array<{question: string, answer: string}>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+}
+
+interface Location {
+  name: string;
+  longDescription: string;
+  image: string;
+  slug: string;
+  attractions: string[];
+}
+
+export function generateLocationSchema(location: Location) {
   return {
     "@context": "https://schema.org",
     "@type": "TouristDestination",
@@ -83,33 +170,6 @@ export function generateLocationSchema(location: any) {
   }
 }
 
-export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  }
-}
-
-export function generateBreadcrumbSchema(items: { label: string; href?: string }[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.label,
-      item: `https://www.jaetravel.com${item.href || ""}`,
-    })),
-  }
-}
 
 /**
  * Generate Schema.org Vehicle (as Product) for car hire
