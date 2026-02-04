@@ -106,7 +106,7 @@ export default function DestinationsPage() {
           />
 
           <h1 className="mt-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight leading-tight">
-            Best Kenya Safari Destinations 2025–2026
+            Best Kenya Safari lodges Destinations 2025–2026
           </h1>
 
           <p className="mt-6 text-xl md:text-2xl text-gray-700 max-w-4xl leading-relaxed">
