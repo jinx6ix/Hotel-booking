@@ -1527,6 +1527,8 @@ export const hotels: Hotel[] = [
       ]
     })
   },
+
+  /** 
   {
     id: "nakuru-002",
     name: "Eldoret Kenya Hotel",
@@ -1559,6 +1561,7 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/eldoret-accessible-premium-1.jpg", "/eldoret-accessible-premium-2.jpg", "/eldoret-accessible-bathroom.jpg"]
     })
   },
+  */
   {
     id: "nakuru-003",
     name: "Lake Elementaita Mountain Lounge",
@@ -1855,12 +1858,13 @@ export const hotels: Hotel[] = [
     location: "Samburu",
     rating: 4.8,
     price: 400,
-    image: "/samburu-intrepids.jpg?height=300&width=400",
+    image: "/samburu-intrepids-luxury (5).jpg?height=300&width=400",
     gallery: [
-      "/samburu-intrepids-1.jpg?height=400&width=600",
-      "/samburu-intrepids-2.jpg?height=400&width=600",
-      "/samburu-intrepids-3.jpg?height=400&width=600",
-      "/samburu-intrepids-4.jpg?height=400&width=600",
+      "/photo0jpg (9).jpg?height=400&width=600",
+      "/samburu-intrepids-luxury (6).jpg?height=400&width=600",
+      "/samburu-intrepids-luxury (3).jpg?height=400&width=600",
+      "/samburu-intrepids-luxury (4).jpg?height=400&width=600",
+      "/photo3jpg (3).jpg?height=400&width=600",
     ],
     description:
       "Ultra-luxury lodge on the Ewaso Nyiro River with exceptional safari experiences and personalized service.",
@@ -1878,17 +1882,17 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2200000",
     email: "reservations@samburu-serena.com",
     rooms: createRooms("samburu-001", 400, {
-      standard: ["/samburu-standard-tent.jpg", "/samburu-standard-interior.jpg", "/samburu-standard-bathroom.jpg"],
-      deluxe: ["/samburu-deluxe-tent.jpg", "/samburu-deluxe-interior.jpg", "/samburu-deluxe-bathroom.jpg"],
-      suite: ["/samburu-suite-tent.jpg", "/samburu-suite-interior.jpg", "/samburu-suite-bathroom.jpg"],
-      family: ["/samburu-family-tent.jpg", "/samburu-family-interior.jpg", "/samburu-family-bathroom.jpg"],
-      executive: ["/samburu-executive-tent.jpg", "/samburu-executive-interior.jpg", "/samburu-executive-bathroom.jpg"],
-      presidential: ["/samburu-presidential-tent.jpg", "/samburu-presidential-interior.jpg", "/samburu-presidential-bathroom.jpg"],
-      accessibleStandard: ["/samburu-accessible-standard.jpg", "/samburu-accessible-interior.jpg", "/samburu-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/samburu-accessible-deluxe.jpg", "/samburu-accessible-deluxe-interior.jpg", "/samburu-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/samburu-accessible-suite.jpg", "/samburu-accessible-suite-interior.jpg", "/samburu-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/samburu-accessible-family.jpg", "/samburu-accessible-family-interior.jpg", "/samburu-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/samburu-accessible-premium.jpg", "/samburu-accessible-premium-interior.jpg", "/samburu-accessible-premium-bathroom.jpg"]
+      standard: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      deluxe: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      suite: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      family: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      executive: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      presidential: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      accessibleStandard: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      accessibleDeluxe: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      accessibleSuite: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      accessibleFamily: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
+      accessiblePremium: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"]
     })
   },
   {
@@ -1899,10 +1903,13 @@ export const hotels: Hotel[] = [
     price: 350,
     image: "/saruni-samburu.jpg?height=300&width=400",
     gallery: [
-      "/saruni-samburu-1.jpg?height=400&width=600",
-      "/saruni-samburu-2.jpg?height=400&width=600",
-      "/saruni-samburu-3.jpg?height=400&width=600",
-      "/saruni-samburu-4.jpg?height=400&width=600",
+      "/caption (42).jpg?height=400&width=600",
+      "/saruni-samburu (1).jpg?height=400&width=600",
+      "/saruni-samburu (2).jpg?height=400&width=600",
+      "/hot-summer-days-on-holiday.jpg?height=400&width=600",
+      "/caption (43).jpg?height=400&width=600",
+      "/saruni-samburu (3).jpg?height=400&width=600",
+      "/saruni-scenic-air-flights.jpg?height=400&width=600",
     ],
     description: "Prime lodge within Samburu Reserve featuring exclusive wildlife viewing and cultural experiences.",
     amenities: ["Safari Included", "Restaurant", "Bar", "Cultural Shows", "Parking", "Room Service", "WiFi", "Guides"],
@@ -1910,17 +1917,17 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2210000",
     email: "info@samburu-lodge.com",
     rooms: createRooms("samburu-002", 350, {
-      standard: ["/saruni-standard.jpg", "/saruni-standard-2.jpg", "/saruni-standard-bathroom.jpg"],
-      deluxe: ["/saruni-deluxe.jpg", "/saruni-deluxe-2.jpg", "/saruni-deluxe-bathroom.jpg"],
-      suite: ["/saruni-suite.jpg", "/saruni-suite-2.jpg", "/saruni-suite-bathroom.jpg"],
-      family: ["/saruni-family.jpg", "/saruni-family-2.jpg", "/saruni-family-bathroom.jpg"],
-      executive: ["/saruni-executive.jpg", "/saruni-executive-2.jpg", "/saruni-executive-bathroom.jpg"],
-      presidential: ["/saruni-presidential.jpg", "/saruni-presidential-2.jpg", "/saruni-presidential-bathroom.jpg"],
-      accessibleStandard: ["/saruni-accessible-standard.jpg", "/saruni-accessible-standard-2.jpg", "/saruni-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/saruni-accessible-deluxe.jpg", "/saruni-accessible-deluxe-2.jpg", "/saruni-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/saruni-accessible-suite.jpg", "/saruni-accessible-suite-2.jpg", "/saruni-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/saruni-accessible-family.jpg", "/saruni-accessible-family-2.jpg", "/saruni-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/saruni-accessible-premium.jpg", "/saruni-accessible-premium-2.jpg", "/saruni-accessible-premium-bathroom.jpg"]
+      standard: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      deluxe: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      suite: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      family: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      executive: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      presidential: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      accessibleStandard: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      accessibleDeluxe: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      accessibleSuite: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      accessibleFamily: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
+      accessiblePremium: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"]
     })
   },
   {
@@ -1929,12 +1936,12 @@ export const hotels: Hotel[] = [
     location: "Samburu",
     rating: 4.5,
     price: 320,
-    image: "/soroi-larsens.jpg?height=300&width=400",
+    image: "/caption (44).jpg?height=300&width=400",
     gallery: [
-      "/soroi-larsens-1.jpg?height=400&width=600",
-      "/soroi-larsens-2.jpg?height=400&width=600",
-      "/soroi-larsens-3.jpg?height=400&width=600",
-      "/soroi-larsens-4.jpg?height=400&width=600",
+      "/caption (46).jpg?height=400&width=600",
+      "/soroi-larsens-camp (1).jpg?height=400&width=600",
+      "/caption (48).jpg?height=400&width=600",
+      "/soroi-larsens-camp (2).jpg?height=400&width=600",
     ],
     description:
       "Intimate bush camp offering authentic wilderness experience with excellent game viewing opportunities.",
@@ -1943,17 +1950,17 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2220000",
     email: "info@samburu-bushcamp.com",
     rooms: createRooms("samburu-003", 320, {
-      standard: ["/soroi-standard-tent.jpg", "/soroi-standard-interior.jpg", "/soroi-standard-bathroom.jpg"],
-      deluxe: ["/soroi-deluxe-tent.jpg", "/soroi-deluxe-interior.jpg", "/soroi-deluxe-bathroom.jpg"],
-      suite: ["/soroi-suite-tent.jpg", "/soroi-suite-interior.jpg", "/soroi-suite-bathroom.jpg"],
-      family: ["/soroi-family-tent.jpg", "/soroi-family-interior.jpg", "/soroi-family-bathroom.jpg"],
-      executive: ["/soroi-executive-tent.jpg", "/soroi-executive-interior.jpg", "/soroi-executive-bathroom.jpg"],
-      presidential: ["/soroi-presidential-tent.jpg", "/soroi-presidential-interior.jpg", "/soroi-presidential-bathroom.jpg"],
-      accessibleStandard: ["/soroi-accessible-standard.jpg", "/soroi-accessible-interior.jpg", "/soroi-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/soroi-accessible-deluxe.jpg", "/soroi-accessible-deluxe-interior.jpg", "/soroi-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/soroi-accessible-suite.jpg", "/soroi-accessible-suite-interior.jpg", "/soroi-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/soroi-accessible-family.jpg", "/soroi-accessible-family-interior.jpg", "/soroi-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/soroi-accessible-premium.jpg", "/soroi-accessible-premium-interior.jpg", "/soroi-accessible-premium-bathroom.jpg"]
+      standard: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      deluxe: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      suite: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      family: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      executive: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      presidential: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      accessibleStandard: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      accessibleDeluxe: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      accessibleSuite: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      accessibleFamily: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
+      accessiblePremium: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"]
     })
   },
   {
@@ -1964,10 +1971,13 @@ export const hotels: Hotel[] = [
     price: 300,
     image: "/elephant-bedroom-camp.jpg?height=300&width=400",
     gallery: [
-      "/elephant-bedroom-1.jpg?height=400&width=600",
-      "/elephant-bedroom-2.jpg?height=400&width=600",
-      "/elephant-bedroom-3.jpg?height=400&width=600",
-      "/elephant-bedroom-4.jpg?height=400&width=600",
+      "/elephant-bedroom-camp (2).jpg?height=400&width=600",
+      "/elephant-bedroom-camp (6).jpg?height=400&width=600",
+      "/elephant-bedroom-camp (5).jpg?height=400&width=600",
+      "/aerial-view-of-the-facility.jpg?height=400&width=600",
+      "/elephant-bedroom-camp (3).jpg?height=400&width=600",
+      "/elephant-bedroom-camp (7).jpg?height=400&width=600",
+      "/elephant-bedroom-camp (8).jpg?height=400&width=600",
     ],
     description: "Safari lodge in Shaba National Park with stunning river setting and wildlife abundance.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "River View", "Parking", "Room Service", "WiFi", "Guides"],
@@ -1975,17 +1985,17 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2230000",
     email: "info@sarova-shaba.com",
     rooms: createRooms("samburu-004", 300, {
-      standard: ["/elephant-standard-tent.jpg", "/elephant-standard-interior.jpg", "/elephant-standard-bathroom.jpg"],
-      deluxe: ["/elephant-deluxe-tent.jpg", "/elephant-deluxe-interior.jpg", "/elephant-deluxe-bathroom.jpg"],
-      suite: ["/elephant-suite-tent.jpg", "/elephant-suite-interior.jpg", "/elephant-suite-bathroom.jpg"],
-      family: ["/elephant-family-tent.jpg", "/elephant-family-interior.jpg", "/elephant-family-bathroom.jpg"],
-      executive: ["/elephant-executive-tent.jpg", "/elephant-executive-interior.jpg", "/elephant-executive-bathroom.jpg"],
-      presidential: ["/elephant-presidential-tent.jpg", "/elephant-presidential-interior.jpg", "/elephant-presidential-bathroom.jpg"],
-      accessibleStandard: ["/elephant-accessible-standard.jpg", "/elephant-accessible-interior.jpg", "/elephant-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/elephant-accessible-deluxe.jpg", "/elephant-accessible-deluxe-interior.jpg", "/elephant-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/elephant-accessible-suite.jpg", "/elephant-accessible-suite-interior.jpg", "/elephant-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/elephant-accessible-family.jpg", "/elephant-accessible-family-interior.jpg", "/elephant-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/elephant-accessible-premium.jpg", "/elephant-accessible-premium-interior.jpg", "/elephant-accessible-premium-bathroom.jpg"]
+      standard: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      deluxe: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      suite: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      family: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      executive: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      presidential: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      accessibleStandard: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      accessibleDeluxe: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      accessibleSuite: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      accessibleFamily: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
+      accessiblePremium: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"]
     })
   },
   {
@@ -1994,12 +2004,15 @@ export const hotels: Hotel[] = [
     location: "Samburu",
     rating: 4.3,
     price: 280,
-    image: "/ashnil-samburu.jpg?height=300&width=400",
+    image: "/ashnil-samburu-camp.jpg?height=300&width=400",
     gallery: [
-      "/ashnil-samburu-1.jpg?height=400&width=600",
-      "/ashnil-samburu-2.jpg?height=400&width=600",
-      "/ashnil-samburu-3.jpg?height=400&width=600",
-      "/ashnil-samburu-4.jpg?height=400&width=600",
+      "/ashnil-samburu-camp (1).jpg?height=400&width=600",
+      "/ashnil-samburu-camp (5).jpg?height=400&width=600",
+      "/ashnil-samburu-camp (6).jpg?height=400&width=600",
+      "/ashnil-samburu-camp (8).jpg?height=400&width=600",
+      "/ashnil-samburu-camp (7).jpg?height=400&width=600",
+      "/ashnil-samburu-camp (9).jpg?height=400&width=600",
+      "/ashnil-samburu-camp (10).jpg?height=400&width=600",
     ],
     description: "Well-positioned lodge with excellent game viewing near Buffalo Springs.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Parking", "Room Service", "WiFi", "Photography", "Guides"],
@@ -2007,17 +2020,17 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2240000",
     email: "info@buffalo-springs-lodge.com",
     rooms: createRooms("samburu-005", 280, {
-      standard: ["/ashnil-standard-tent.jpg", "/ashnil-standard-interior.jpg", "/ashnil-standard-bathroom.jpg"],
-      deluxe: ["/ashnil-deluxe-tent.jpg", "/ashnil-deluxe-interior.jpg", "/ashnil-deluxe-bathroom.jpg"],
-      suite: ["/ashnil-suite-tent.jpg", "/ashnil-suite-interior.jpg", "/ashnil-suite-bathroom.jpg"],
-      family: ["/ashnil-family-tent.jpg", "/ashnil-family-interior.jpg", "/ashnil-family-bathroom.jpg"],
-      executive: ["/ashnil-executive-tent.jpg", "/ashnil-executive-interior.jpg", "/ashnil-executive-bathroom.jpg"],
-      presidential: ["/ashnil-presidential-tent.jpg", "/ashnil-presidential-interior.jpg", "/ashnil-presidential-bathroom.jpg"],
-      accessibleStandard: ["/ashnil-accessible-standard.jpg", "/ashnil-accessible-interior.jpg", "/ashnil-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/ashnil-accessible-deluxe.jpg", "/ashnil-accessible-deluxe-interior.jpg", "/ashnil-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/ashnil-accessible-suite.jpg", "/ashnil-accessible-suite-interior.jpg", "/ashnil-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/ashnil-accessible-family.jpg", "/ashnil-accessible-family-interior.jpg", "/ashnil-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/ashnil-accessible-premium.jpg", "/ashnil-accessible-premium-interior.jpg", "/ashnil-accessible-premium-bathroom.jpg"]
+      standard: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      deluxe: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      suite: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      family: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      executive: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      presidential: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      accessibleStandard: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      accessibleDeluxe: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      accessibleSuite: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      accessibleFamily: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
+      accessiblePremium: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"]
     })
   },
   {
@@ -2026,12 +2039,17 @@ export const hotels: Hotel[] = [
     location: "Samburu",
     rating: 4.6,
     price: 360,
-    image: "/samburu-simba.jpg?height=300&width=400",
+    image: "/photo8jpg (1).jpg?height=300&width=400",
     gallery: [
-      "/samburu-simba-1.jpg?height=400&width=600",
-      "/samburu-simba-2.jpg?height=400&width=600",
-      "/samburu-simba-3.jpg?height=400&width=600",
-      "/samburu-simba-4.jpg?height=400&width=600",
+      "/samburu-simba-lodge (5).jpg?height=400&width=600",
+      "/entrance-to-room.jpg?height=400&width=600",
+      "/samburu-simba-lodge (2).jpg?height=400&width=600",
+      "/the-pool.jpg?height=400&width=600",
+      "/samburu-simba-lodge (3).jpg?height=400&width=600",
+      "/samburu-simba-lodge (6).jpg?height=400&width=600",
+      "/view-from-the-2nd-floor.jpg?height=400&width=600",
+      "/samburu-simba-lodge.jpg?height=400&width=600",
+      "/photo6jpg (2).jpg?height=400&width=600",
     ],
     description: "Exclusive luxury club with bespoke safari experiences and premium accommodations.",
     amenities: ["Luxury Tents", "Safari Drives", "Restaurant", "Pool", "Bar", "Spa", "WiFi", "Guides"],
@@ -2039,17 +2057,17 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2250000",
     email: "info@samburu-intrepids.com",
     rooms: createRooms("samburu-006", 360, {
-      standard: ["/simba-standard-tent.jpg", "/simba-standard-interior.jpg", "/simba-standard-bathroom.jpg"],
-      deluxe: ["/simba-deluxe-tent.jpg", "/simba-deluxe-interior.jpg", "/simba-deluxe-bathroom.jpg"],
-      suite: ["/simba-suite-tent.jpg", "/simba-suite-interior.jpg", "/simba-suite-bathroom.jpg"],
-      family: ["/simba-family-tent.jpg", "/simba-family-interior.jpg", "/simba-family-bathroom.jpg"],
-      executive: ["/simba-executive-tent.jpg", "/simba-executive-interior.jpg", "/simba-executive-bathroom.jpg"],
-      presidential: ["/simba-presidential-tent.jpg", "/simba-presidential-interior.jpg", "/simba-presidential-bathroom.jpg"],
-      accessibleStandard: ["/simba-accessible-standard.jpg", "/simba-accessible-interior.jpg", "/simba-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/simba-accessible-deluxe.jpg", "/simba-accessible-deluxe-interior.jpg", "/simba-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/simba-accessible-suite.jpg", "/simba-accessible-suite-interior.jpg", "/simba-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/simba-accessible-family.jpg", "/simba-accessible-family-interior.jpg", "/simba-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/simba-accessible-premium.jpg", "/simba-accessible-premium-interior.jpg", "/simba-accessible-premium-bathroom.jpg"]
+      standard: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      deluxe: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      suite: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      family: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      executive: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      presidential: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      accessibleStandard: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      accessibleDeluxe: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      accessibleSuite: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      accessibleFamily: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
+      accessiblePremium: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"]
     })
   },
   {
@@ -2058,12 +2076,13 @@ export const hotels: Hotel[] = [
     location: "Samburu",
     rating: 4.4,
     price: 310,
-    image: "/elephant-watch-camp.jpg?height=300&width=400",
+    image: "/elephant-watch-camp-safaris.jpg?height=300&width=400",
     gallery: [
-      "/elephant-watch-1.jpg?height=400&width=600",
-      "/elephant-watch-2.jpg?height=400&width=600",
-      "/elephant-watch-3.jpg?height=400&width=600",
-      "/elephant-watch-4.jpg?height=400&width=600",
+      "/elephant-watch-camp-safaris (1).jpg?height=400&width=600",
+      "/the-elephant-herd-photo.jpg?height=400&width=600",
+      "/elephant-watch-camp-safaris (2).jpg?height=400&width=600",
+      "/evenings-at-elephant.jpg?height=400&width=600",
+      "/aerial-view-of-samburu.jpg?height=400&width=600",
     ],
     description: "Charming tented camp with personalized service and excellent wildlife viewing.",
     amenities: ["Tented Rooms", "Safari Drives", "Restaurant", "Bar", "Campfire", "WiFi", "Room Service", "Guides"],
@@ -2071,19 +2090,20 @@ export const hotels: Hotel[] = [
     phone: "+254 64 2260000",
     email: "info@larsens-camp.com",
     rooms: createRooms("samburu-007", 310, {
-      standard: ["/elephant-watch-standard.jpg", "/elephant-watch-standard-2.jpg", "/elephant-watch-standard-bathroom.jpg"],
-      deluxe: ["/elephant-watch-deluxe.jpg", "/elephant-watch-deluxe-2.jpg", "/elephant-watch-deluxe-bathroom.jpg"],
-      suite: ["/elephant-watch-suite.jpg", "/elephant-watch-suite-2.jpg", "/elephant-watch-suite-bathroom.jpg"],
-      family: ["/elephant-watch-family.jpg", "/elephant-watch-family-2.jpg", "/elephant-watch-family-bathroom.jpg"],
-      executive: ["/elephant-watch-executive.jpg", "/elephant-watch-executive-2.jpg", "/elephant-watch-executive-bathroom.jpg"],
-      presidential: ["/elephant-watch-presidential.jpg", "/elephant-watch-presidential-2.jpg", "/elephant-watch-presidential-bathroom.jpg"],
-      accessibleStandard: ["/elephant-watch-accessible-standard.jpg", "/elephant-watch-accessible-2.jpg", "/elephant-watch-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/elephant-watch-accessible-deluxe.jpg", "/elephant-watch-accessible-deluxe-2.jpg", "/elephant-watch-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/elephant-watch-accessible-suite.jpg", "/elephant-watch-accessible-suite-2.jpg", "/elephant-watch-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/elephant-watch-accessible-family.jpg", "/elephant-watch-accessible-family-2.jpg", "/elephant-watch-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/elephant-watch-accessible-premium.jpg", "/elephant-watch-accessible-premium-2.jpg", "/elephant-watch-accessible-premium-bathroom.jpg"]
+      standard: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      deluxe: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      suite: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      family: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      executive: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      presidential: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      accessibleStandard: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      accessibleDeluxe: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      accessibleSuite: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      accessibleFamily: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
+      accessiblePremium: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"]
     })
   },
+  /** 
   {
     id: "samburu-008",
     name: "Samburu Riverside Camp",
@@ -2116,6 +2136,7 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/riverside-accessible-premium.jpg", "/riverside-accessible-premium-2.jpg", "/riverside-accessible-premium-bathroom.jpg"]
     })
   },
+  
   {
     id: "samburu-009",
     name: "Shaba National Reserve",
@@ -2221,6 +2242,8 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/riverside-resort-accessible-premium.jpg", "/riverside-resort-accessible-premium-2.jpg", "/riverside-resort-accessible-premium-bathroom.jpg"]
     })
   },
+
+  */
 
   // Nanyuki Hotels
   {
@@ -2846,6 +2869,7 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/offbeat-accessible-premium-1.jpg", "/offbeat-accessible-premium-2.jpg", "/offbeat-accessible-premium-bathroom.jpg"]
     })
   },
+  /** 
   {
     id: "maasai-mara-009",
     name: "Fig Tree Camp",
@@ -2942,6 +2966,7 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/wilderness-accessible-premium-1.jpg", "/wilderness-accessible-premium-2.jpg", "/wilderness-accessible-premium-bathroom.jpg"]
     })
   },
+    */
 
   // Amboseli Hotels
   {
@@ -2950,12 +2975,15 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.8,
     price: 420,
-    image: "/ol-tukai-lodge.jpg?height=300&width=400",
+    image: "/pool-area.jpg?height=300&width=400",
     gallery: [
-      "/ol-tukai-1.jpg?height=400&width=600",
-      "/ol-tukai-2.jpg?height=400&width=600",
-      "/ol-tukai-3.jpg?height=400&width=600",
-      "/ol-tukai-4.jpg?height=400&width=600",
+      "/ariel-view-of-the-lodge.jpg?height=400&width=600",
+      "/kilimanjaro-view-side.jpg?height=400&width=600",
+      "/swimming-pool.jpg?height=400&width=600",
+      "/ol-tukai-lodge.jpg?height=400&width=600",
+      "/ol-tukai-lodge (1).jpg?height=400&width=600",
+      "/ol-tukai-lodge (2).jpg?height=400&width=600",
+      "/20181122-062715-largejpg.jpg?height=400&width=600",
     ],
     description: "Luxury lodge with stunning Mount Kilimanjaro views and exceptional wildlife experiences.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Pool", "Photography", "WiFi", "Spa", "Guides"],
@@ -2963,17 +2991,17 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409000",
     email: "reservations@amboseli-serena.com",
     rooms: createRooms("amboseli-001", 420, {
-      standard: ["/ol-tukai-standard-1.jpg", "/ol-tukai-standard-2.jpg", "/ol-tukai-standard-bathroom.jpg"],
-      deluxe: ["/ol-tukai-deluxe-1.jpg", "/ol-tukai-deluxe-2.jpg", "/ol-tukai-deluxe-bathroom.jpg"],
-      suite: ["/ol-tukai-suite-1.jpg", "/ol-tukai-suite-2.jpg", "/ol-tukai-suite-bathroom.jpg"],
-      family: ["/ol-tukai-family-1.jpg", "/ol-tukai-family-2.jpg", "/ol-tukai-family-bathroom.jpg"],
-      executive: ["/ol-tukai-executive-1.jpg", "/ol-tukai-executive-2.jpg", "/ol-tukai-executive-bathroom.jpg"],
-      presidential: ["/ol-tukai-presidential-1.jpg", "/ol-tukai-presidential-2.jpg", "/ol-tukai-presidential-bathroom.jpg"],
-      accessibleStandard: ["/ol-tukai-accessible-standard-1.jpg", "/ol-tukai-accessible-standard-2.jpg", "/ol-tukai-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/ol-tukai-accessible-deluxe-1.jpg", "/ol-tukai-accessible-deluxe-2.jpg", "/ol-tukai-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/ol-tukai-accessible-suite-1.jpg", "/ol-tukai-accessible-suite-2.jpg", "/ol-tukai-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/ol-tukai-accessible-family-1.jpg", "/ol-tukai-accessible-family-2.jpg", "/ol-tukai-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/ol-tukai-accessible-premium-1.jpg", "/ol-tukai-accessible-premium-2.jpg", "/ol-tukai-accessible-premium-bathroom.jpg"]
+      standard: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      deluxe: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      suite: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      family: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      executive: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      presidential: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      accessibleStandard: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      accessibleDeluxe: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      accessibleSuite: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      accessibleFamily: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
+      accessiblePremium: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"]
     })
   },
   {
@@ -2982,12 +3010,16 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.6,
     price: 380,
-    image: "/sentrim-amboseli.jpg?height=300&width=400",
+    image: "/swimming-pool (1).jpg?height=300&width=400",
     gallery: [
-      "/sentrim-amboseli-1.jpg?height=400&width=600",
+      "/caption (57).jpg?height=400&width=600",
+      "/caption (50).jpg?height=400&width=600",
       "/sentrim-amboseli-2.jpg?height=400&width=600",
-      "/sentrim-amboseli-3.jpg?height=400&width=600",
-      "/sentrim-amboseli-4.jpg?height=400&width=600",
+      "/caption (56).jpg?height=400&width=600",
+      "/caption (55).jpg?height=400&width=600",
+      "/caption (53).jpg?height=400&width=600",
+      "/caption (52).jpg?height=400&width=600",
+      "/caption (51).jpg?height=400&width=600",
     ],
     description: "All-inclusive lodge with Kilimanjaro views and excellent safari amenities.",
     amenities: ["All-Inclusive", "Safari Drives", "Restaurant", "Pool", "Bar", "Photography", "WiFi", "Guides"],
@@ -2995,17 +3027,17 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409100",
     email: "reservations@amboseli-sopa.com",
     rooms: createRooms("amboseli-002", 380, {
-      standard: ["/sentrim-standard-1.jpg", "/sentrim-standard-2.jpg", "/sentrim-standard-bathroom.jpg"],
-      deluxe: ["/sentrim-deluxe-1.jpg", "/sentrim-deluxe-2.jpg", "/sentrim-deluxe-bathroom.jpg"],
-      suite: ["/sentrim-suite-1.jpg", "/sentrim-suite-2.jpg", "/sentrim-suite-bathroom.jpg"],
-      family: ["/sentrim-family-1.jpg", "/sentrim-family-2.jpg", "/sentrim-family-bathroom.jpg"],
-      executive: ["/sentrim-executive-1.jpg", "/sentrim-executive-2.jpg", "/sentrim-executive-bathroom.jpg"],
-      presidential: ["/sentrim-presidential-1.jpg", "/sentrim-presidential-2.jpg", "/sentrim-presidential-bathroom.jpg"],
-      accessibleStandard: ["/sentrim-accessible-standard-1.jpg", "/sentrim-accessible-standard-2.jpg", "/sentrim-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/sentrim-accessible-deluxe-1.jpg", "/sentrim-accessible-deluxe-2.jpg", "/sentrim-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/sentrim-accessible-suite-1.jpg", "/sentrim-accessible-suite-2.jpg", "/sentrim-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/sentrim-accessible-family-1.jpg", "/sentrim-accessible-family-2.jpg", "/sentrim-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/sentrim-accessible-premium-1.jpg", "/sentrim-accessible-premium-2.jpg", "/sentrim-accessible-premium-bathroom.jpg"]
+      standard: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      deluxe: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      suite: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      family: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      executive: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      presidential: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      accessibleStandard: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      accessibleDeluxe: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      accessibleSuite: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      accessibleFamily: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
+      accessiblePremium: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"]
     })
   },
   {
@@ -3014,12 +3046,16 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.5,
     price: 350,
-    image: "/amboseli-serena-lodge.jpg?height=300&width=400",
+    image: "/aerial-view.jpg?height=300&width=400",
     gallery: [
-      "/amboseli-serena-1.jpg?height=400&width=600",
-      "/amboseli-serena-2.jpg?height=400&width=600",
-      "/amboseli-serena-3.jpg?height=400&width=600",
-      "/amboseli-serena-4.jpg?height=400&width=600",
+      "/view-from-the-outdoor.jpg?height=400&width=600",
+      "/exteriors-of-the-rooms.jpg?height=400&width=600",
+      "/the-pool (1).jpg?height=400&width=600",
+      "/restaurant (1).jpg?height=400&width=600",
+      "/views-of-amboseli-national.jpg?height=400&width=600",
+      "/amboseli-national-park.jpg?height=400&width=600",
+      "/zebras-in-the-park.jpg?height=400&width=600",
+      "/elephant-with-kilimanjaro.jpg?height=400&width=600",
     ],
     description: "Historic lodge in Amboseli with excellent wildlife viewing and cultural experiences.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Photography", "WiFi", "Room Service", "Guides", "Parking"],
@@ -3027,17 +3063,17 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409200",
     email: "info@ol-tukai-lodge.com",
     rooms: createRooms("amboseli-003", 350, {
-      standard: ["/amboseli-serena-standard-1.jpg", "/amboseli-serena-standard-2.jpg", "/amboseli-serena-standard-bathroom.jpg"],
-      deluxe: ["/amboseli-serena-deluxe-1.jpg", "/amboseli-serena-deluxe-2.jpg", "/amboseli-serena-deluxe-bathroom.jpg"],
-      suite: ["/amboseli-serena-suite-1.jpg", "/amboseli-serena-suite-2.jpg", "/amboseli-serena-suite-bathroom.jpg"],
-      family: ["/amboseli-serena-family-1.jpg", "/amboseli-serena-family-2.jpg", "/amboseli-serena-family-bathroom.jpg"],
-      executive: ["/amboseli-serena-executive-1.jpg", "/amboseli-serena-executive-2.jpg", "/amboseli-serena-executive-bathroom.jpg"],
-      presidential: ["/amboseli-serena-presidential-1.jpg", "/amboseli-serena-presidential-2.jpg", "/amboseli-serena-presidential-bathroom.jpg"],
-      accessibleStandard: ["/amboseli-serena-accessible-standard-1.jpg", "/amboseli-serena-accessible-standard-2.jpg", "/amboseli-serena-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/amboseli-serena-accessible-deluxe-1.jpg", "/amboseli-serena-accessible-deluxe-2.jpg", "/amboseli-serena-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/amboseli-serena-accessible-suite-1.jpg", "/amboseli-serena-accessible-suite-2.jpg", "/amboseli-serena-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/amboseli-serena-accessible-family-1.jpg", "/amboseli-serena-accessible-family-2.jpg", "/amboseli-serena-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/amboseli-serena-accessible-premium-1.jpg", "/amboseli-serena-accessible-premium-2.jpg", "/amboseli-serena-accessible-premium-bathroom.jpg"]
+      standard: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      deluxe: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      suite: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      family: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      executive: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      presidential: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      accessibleStandard: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      accessibleDeluxe: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      accessibleSuite: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      accessibleFamily: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
+      accessiblePremium: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"]
     })
   },
   {
@@ -3046,12 +3082,15 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.4,
     price: 320,
-    image: "/tulia-amboseli.jpg?height=300&width=400",
+    image: "/tulia-amboseli-safari.jpg?height=300&width=400",
     gallery: [
-      "/tulia-amboseli-1.jpg?height=400&width=600",
-      "/tulia-amboseli-2.jpg?height=400&width=600",
-      "/tulia-amboseli-3.jpg?height=400&width=600",
-      "/tulia-amboseli-4.jpg?height=400&width=600",
+      "/firepit-with-view-of.jpg?height=400&width=600",
+      "/superb-safari-tent.jpg?height=400&width=600",
+      "/deluxe-tents-overlooking.jpg?height=400&width=600",
+      "/active-watering-hole.jpg?height=400&width=600",
+      "/caption (59).jpg?height=400&width=600",
+      "/caption (60).jpg?height=400&width=600",
+      "/caption (61).jpg?height=400&width=600",
     ],
     description: "Eco-friendly camp with sustainable practices and authentic safari experiences.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Photography", "WiFi", "Guides", "Room Service", "Parking"],
@@ -3059,17 +3098,17 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409300",
     email: "info@amboseli-eco-camp.com",
     rooms: createRooms("amboseli-004", 320, {
-      standard: ["/tulia-standard-1.jpg", "/tulia-standard-2.jpg", "/tulia-standard-bathroom.jpg"],
-      deluxe: ["/tulia-deluxe-1.jpg", "/tulia-deluxe-2.jpg", "/tulia-deluxe-bathroom.jpg"],
-      suite: ["/tulia-suite-1.jpg", "/tulia-suite-2.jpg", "/tulia-suite-bathroom.jpg"],
-      family: ["/tulia-family-1.jpg", "/tulia-family-2.jpg", "/tulia-family-bathroom.jpg"],
-      executive: ["/tulia-executive-1.jpg", "/tulia-executive-2.jpg", "/tulia-executive-bathroom.jpg"],
-      presidential: ["/tulia-presidential-1.jpg", "/tulia-presidential-2.jpg", "/tulia-presidential-bathroom.jpg"],
-      accessibleStandard: ["/tulia-accessible-standard-1.jpg", "/tulia-accessible-standard-2.jpg", "/tulia-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/tulia-accessible-deluxe-1.jpg", "/tulia-accessible-deluxe-2.jpg", "/tulia-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/tulia-accessible-suite-1.jpg", "/tulia-accessible-suite-2.jpg", "/tulia-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/tulia-accessible-family-1.jpg", "/tulia-accessible-family-2.jpg", "/tulia-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/tulia-accessible-premium-1.jpg", "/tulia-accessible-premium-2.jpg", "/tulia-accessible-premium-bathroom.jpg"]
+      standard: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      deluxe: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      suite: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      family: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      executive: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      presidential: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      accessibleStandard: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      accessibleDeluxe: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      accessibleSuite: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      accessibleFamily: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
+      accessiblePremium: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"]
     })
   },
   {
@@ -3078,12 +3117,15 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.3,
     price: 290,
-    image: "/kibo-safari-camp.jpg?height=300&width=400",
+    image: "/pool (1).jpg?height=300&width=400",
     gallery: [
-      "/kibo-safari-1.jpg?height=400&width=600",
-      "/kibo-safari-2.jpg?height=400&width=600",
-      "/kibo-safari-3.jpg?height=400&width=600",
-      "/kibo-safari-4.jpg?height=400&width=600",
+      "/getlstd-property-photo.jpg?height=400&width=600",
+      "/caption (63).jpg?height=400&width=600",
+      "/kibo-safari-camp (1).jpg?height=400&width=600",
+      "/kibo-safari-camp.jpg?height=400&width=600",
+      "/a-fun-bonfire-after-dinner.jpg?height=400&width=600",
+      "/kibo-safari-camp (2).jpg?height=400&width=600",
+      "/kibo-safari-camp (3).jpg?height=400&width=600",
     ],
     description: "Budget-friendly bush camp with good facilities and elephant viewing opportunities.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Photography", "WiFi", "Guides", "Room Service", "Campfire"],
@@ -3091,17 +3133,17 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409400",
     email: "info@amboseli-bush-camp.com",
     rooms: createRooms("amboseli-005", 290, {
-      standard: ["/kibo-standard-1.jpg", "/kibo-standard-2.jpg", "/kibo-standard-bathroom.jpg"],
-      deluxe: ["/kibo-deluxe-1.jpg", "/kibo-deluxe-2.jpg", "/kibo-deluxe-bathroom.jpg"],
-      suite: ["/kibo-suite-1.jpg", "/kibo-suite-2.jpg", "/kibo-suite-bathroom.jpg"],
-      family: ["/kibo-family-1.jpg", "/kibo-family-2.jpg", "/kibo-family-bathroom.jpg"],
-      executive: ["/kibo-executive-1.jpg", "/kibo-executive-2.jpg", "/kibo-executive-bathroom.jpg"],
-      presidential: ["/kibo-presidential-1.jpg", "/kibo-presidential-2.jpg", "/kibo-presidential-bathroom.jpg"],
-      accessibleStandard: ["/kibo-accessible-standard-1.jpg", "/kibo-accessible-standard-2.jpg", "/kibo-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/kibo-accessible-deluxe-1.jpg", "/kibo-accessible-deluxe-2.jpg", "/kibo-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/kibo-accessible-suite-1.jpg", "/kibo-accessible-suite-2.jpg", "/kibo-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/kibo-accessible-family-1.jpg", "/kibo-accessible-family-2.jpg", "/kibo-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/kibo-accessible-premium-1.jpg", "/kibo-accessible-premium-2.jpg", "/kibo-accessible-premium-bathroom.jpg"]
+      standard: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      deluxe: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      suite: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      family: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      executive: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      presidential: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      accessibleStandard: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      accessibleDeluxe: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      accessibleSuite: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      accessibleFamily: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
+      accessiblePremium: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"]
     })
   },
   {
@@ -3110,12 +3152,16 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.2,
     price: 270,
-    image: "/maasai-simba-camp.jpg?height=300&width=400",
+    image: "/2023-05-01.webp?height=300&width=400",
     gallery: [
-      "/maasai-simba-1.jpg?height=400&width=600",
-      "/maasai-simba-2.jpg?height=400&width=600",
-      "/maasai-simba-3.jpg?height=400&width=600",
-      "/maasai-simba-4.jpg?height=400&width=600",
+      "/simba.camp.gate.webp?height=400&width=600",
+      "/maasai-simba-camp (4).jpg?height=400&width=600",
+      "/maasai-simba-camp (3).jpg?height=400&width=600",
+      "/Elephants.Amboseli.webp?height=400&width=600",
+      "/2023-05-01 (1).webp?height=400&width=600",
+      "/maasai-simba-camp.jpg?height=400&width=600",
+      "/maasai-simba-camp (1).jpg?height=400&width=600",
+      "/maasai-simba-camp (2).jpg?height=400&width=600",
     ],
     description: "Park-operated lodge offering authentic safari experience and cultural programs.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Photography", "WiFi", "Guides", "Parking", "TV"],
@@ -3123,19 +3169,20 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409500",
     email: "info@amboseli-park-lodge.com",
     rooms: createRooms("amboseli-006", 270, {
-      standard: ["/maasai-simba-standard-1.jpg", "/maasai-simba-standard-2.jpg", "/maasai-simba-standard-bathroom.jpg"],
-      deluxe: ["/maasai-simba-deluxe-1.jpg", "/maasai-simba-deluxe-2.jpg", "/maasai-simba-deluxe-bathroom.jpg"],
-      suite: ["/maasai-simba-suite-1.jpg", "/maasai-simba-suite-2.jpg", "/maasai-simba-suite-bathroom.jpg"],
-      family: ["/maasai-simba-family-1.jpg", "/maasai-simba-family-2.jpg", "/maasai-simba-family-bathroom.jpg"],
-      executive: ["/maasai-simba-executive-1.jpg", "/maasai-simba-executive-2.jpg", "/maasai-simba-executive-bathroom.jpg"],
-      presidential: ["/maasai-simba-presidential-1.jpg", "/maasai-simba-presidential-2.jpg", "/maasai-simba-presidential-bathroom.jpg"],
-      accessibleStandard: ["/maasai-simba-accessible-standard-1.jpg", "/maasai-simba-accessible-standard-2.jpg", "/maasai-simba-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/maasai-simba-accessible-deluxe-1.jpg", "/maasai-simba-accessible-deluxe-2.jpg", "/maasai-simba-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/maasai-simba-accessible-suite-1.jpg", "/maasai-simba-accessible-suite-2.jpg", "/maasai-simba-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/maasai-simba-accessible-family-1.jpg", "/maasai-simba-accessible-family-2.jpg", "/maasai-simba-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/maasai-simba-accessible-premium-1.jpg", "/maasai-simba-accessible-premium-2.jpg", "/maasai-simba-accessible-premium-bathroom.jpg"]
+      standard: ["/maasai-simba-standard-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      deluxe: ["/maasai-simba-deluxe-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      suite: ["/maasai-simba-suite-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      family: ["/maasai-simba-family-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      executive: ["/maasai-simba-executive-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      presidential: ["/maasai-simba-presidential-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      accessibleStandard: ["/maasai-simba-accessible-standard-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      accessibleDeluxe: ["/maasai-simba-accessible-deluxe-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      accessibleSuite: ["/maasai-simba-accessible-suite-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      accessibleFamily: ["/maasai-simba-accessible-family-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
+      accessiblePremium: ["/maasai-simba-accessible-premium-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"]
     })
   },
+  /** 
   {
     id: "amboseli-007",
     name: "Observation Hill Camp",
@@ -3168,18 +3215,25 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/observation-hill-accessible-premium-1.jpg", "/observation-hill-accessible-premium-2.jpg", "/observation-hill-accessible-premium-bathroom.jpg"]
     })
   },
+
+  */
   {
     id: "amboseli-008",
     name: "Zebra Plain Safari Camp",
     location: "Amboseli",
     rating: 4.1,
     price: 250,
-    image: "/zebra-plain-camp.jpg?height=300&width=400",
+    image: "/getlstd-property-photo (1).jpg?height=300&width=400",
     gallery: [
-      "/zebra-plain-1.jpg?height=400&width=600",
-      "/zebra-plain-2.jpg?height=400&width=600",
-      "/zebra-plain-3.jpg?height=400&width=600",
-      "/zebra-plain-4.jpg?height=400&width=600",
+      "/zebra-plains-amboseli (2).jpg?height=400&width=600",
+      "/caption (64).jpg?height=400&width=600",
+      "/zebra-plains-amboseli (3).jpg?height=400&width=600",
+      "/zebra-plains-amboseli (7).jpg?height=400&width=600",
+      "/zebra-plains-amboseli (4).jpg?height=400&width=600",
+      "/zebra-plains-amboseli (1).jpg?height=400&width=600",
+      "/zebra-plains-amboseli (5).jpg?height=400&width=600",
+      "/caption (65).jpg?height=400&width=600",
+      "/zebra-plains-amboseli.jpg?height=400&width=600",
     ],
     description: "Comfortable safari camp with authentic wilderness experience.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "WiFi", "Guides", "Parking", "Photography", "Room Service"],
@@ -3187,17 +3241,17 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409700",
     email: "info@amboseli-safari-camp.com",
     rooms: createRooms("amboseli-008", 250, {
-      standard: ["/zebra-plain-standard-1.jpg", "/zebra-plain-standard-2.jpg", "/zebra-plain-standard-bathroom.jpg"],
-      deluxe: ["/zebra-plain-deluxe-1.jpg", "/zebra-plain-deluxe-2.jpg", "/zebra-plain-deluxe-bathroom.jpg"],
-      suite: ["/zebra-plain-suite-1.jpg", "/zebra-plain-suite-2.jpg", "/zebra-plain-suite-bathroom.jpg"],
-      family: ["/zebra-plain-family-1.jpg", "/zebra-plain-family-2.jpg", "/zebra-plain-family-bathroom.jpg"],
-      executive: ["/zebra-plain-executive-1.jpg", "/zebra-plain-executive-2.jpg", "/zebra-plain-executive-bathroom.jpg"],
-      presidential: ["/zebra-plain-presidential-1.jpg", "/zebra-plain-presidential-2.jpg", "/zebra-plain-presidential-bathroom.jpg"],
-      accessibleStandard: ["/zebra-plain-accessible-standard-1.jpg", "/zebra-plain-accessible-standard-2.jpg", "/zebra-plain-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/zebra-plain-accessible-deluxe-1.jpg", "/zebra-plain-accessible-deluxe-2.jpg", "/zebra-plain-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/zebra-plain-accessible-suite-1.jpg", "/zebra-plain-accessible-suite-2.jpg", "/zebra-plain-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/zebra-plain-accessible-family-1.jpg", "/zebra-plain-accessible-family-2.jpg", "/zebra-plain-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/zebra-plain-accessible-premium-1.jpg", "/zebra-plain-accessible-premium-2.jpg", "/zebra-plain-accessible-premium-bathroom.jpg"]
+      standard: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      deluxe: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      suite: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      family: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      executive: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      presidential: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      accessibleStandard: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      accessibleDeluxe: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      accessibleSuite: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      accessibleFamily: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
+      accessiblePremium: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"]
     })
   },
   {
@@ -3206,12 +3260,15 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.3,
     price: 300,
-    image: "/we4kenya-guest-house.jpg?height=300&width=400",
+    image: "/lazienki-i-toalety.jpg?height=300&width=400",
     gallery: [
-      "/we4kenya-1.jpg?height=400&width=600",
-      "/we4kenya-2.jpg?height=400&width=600",
-      "/we4kenya-3.jpg?height=400&width=600",
-      "/we4kenya-4.jpg?height=400&width=600",
+      "/we-also-have-ready-tents.jpg?height=400&width=600",
+      "/we4kenya-guesthouses (1).jpg?height=400&width=600",
+      "/breakfast-is-ready.jpg?height=400&width=600",
+      "/photo2jpg (5).jpg?height=400&width=600",
+      "/jadalnia.jpg?height=400&width=600",
+      "/washrooms-with-hot-showers.jpg?height=400&width=600",
+      "/we4kenya-guesthouses (2).jpg?height=400&width=600",
     ],
     description: "Wilderness camp offering authentic experiences and excellent guides.",
     amenities: ["Safari Drives", "Restaurant", "Bar", "Photography", "WiFi", "Guides", "Room Service", "Campfire"],
@@ -3219,19 +3276,20 @@ export const hotels: Hotel[] = [
     phone: "+254 27 2409800",
     email: "info@amboseli-wilderness.com",
     rooms: createRooms("amboseli-009", 300, {
-      standard: ["/we4kenya-standard-1.jpg", "/we4kenya-standard-2.jpg", "/we4kenya-standard-bathroom.jpg"],
-      deluxe: ["/we4kenya-deluxe-1.jpg", "/we4kenya-deluxe-2.jpg", "/we4kenya-deluxe-bathroom.jpg"],
-      suite: ["/we4kenya-suite-1.jpg", "/we4kenya-suite-2.jpg", "/we4kenya-suite-bathroom.jpg"],
-      family: ["/we4kenya-family-1.jpg", "/we4kenya-family-2.jpg", "/we4kenya-family-bathroom.jpg"],
-      executive: ["/we4kenya-executive-1.jpg", "/we4kenya-executive-2.jpg", "/we4kenya-executive-bathroom.jpg"],
-      presidential: ["/we4kenya-presidential-1.jpg", "/we4kenya-presidential-2.jpg", "/we4kenya-presidential-bathroom.jpg"],
-      accessibleStandard: ["/we4kenya-accessible-standard-1.jpg", "/we4kenya-accessible-standard-2.jpg", "/we4kenya-accessible-bathroom.jpg"],
-      accessibleDeluxe: ["/we4kenya-accessible-deluxe-1.jpg", "/we4kenya-accessible-deluxe-2.jpg", "/we4kenya-accessible-deluxe-bathroom.jpg"],
-      accessibleSuite: ["/we4kenya-accessible-suite-1.jpg", "/we4kenya-accessible-suite-2.jpg", "/we4kenya-accessible-suite-bathroom.jpg"],
-      accessibleFamily: ["/we4kenya-accessible-family-1.jpg", "/we4kenya-accessible-family-2.jpg", "/we4kenya-accessible-family-bathroom.jpg"],
-      accessiblePremium: ["/we4kenya-accessible-premium-1.jpg", "/we4kenya-accessible-premium-2.jpg", "/we4kenya-accessible-premium-bathroom.jpg"]
+      standard: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-standard-bathroom.jpg"],
+      deluxe: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-deluxe-bathroom.jpg"],
+      suite: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-suite-bathroom.jpg"],
+      family: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-family-bathroom.jpg"],
+      executive: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-executive-bathroom.jpg"],
+      presidential: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-presidential-bathroom.jpg"],
+      accessibleStandard: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-accessible-bathroom.jpg"],
+      accessibleDeluxe: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-accessible-deluxe-bathroom.jpg"],
+      accessibleSuite: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-accessible-suite-bathroom.jpg"],
+      accessibleFamily: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-accessible-family-bathroom.jpg"],
+      accessiblePremium: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-accessible-premium-bathroom.jpg"]
     })
   },
+  /** 
   {
     id: "amboseli-010",
     name: "Elephant Wallow Camp",
@@ -3305,6 +3363,8 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/amboseli-comfort-accessible-premium-1.jpg", "/amboseli-comfort-accessible-premium-2.jpg", "/amboseli-comfort-accessible-premium-bathroom.jpg"]
     })
   },
+
+  */
 
   // Tsavo East Hotels
   {
@@ -3570,6 +3630,8 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/epiya-accessible-premium-1.jpg", "/epiya-accessible-premium-2.jpg", "/epiya-accessible-premium-bathroom.jpg"]
     })
   },
+
+  /** 
   {
     id: "tsavo-east-009",
     name: "Elephant Camp Tsavo East",
@@ -3675,6 +3737,8 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/east-gate-accessible-premium-1.jpg", "/east-gate-accessible-premium-2.jpg", "/east-gate-accessible-premium-bathroom.jpg"]
     })
   },
+
+  */
 
   // Tsavo West Hotels
   {
@@ -3869,6 +3933,7 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/kilaguni-accessible-premium-1.jpg", "/kilaguni-accessible-premium-2.jpg", "/kilaguni-accessible-premium-bathroom.jpg"]
     })
   },
+  /** 
   {
     id: "tsavo-west-007",
     name: "Tsavo West Comfort Camp",
@@ -4047,6 +4112,8 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/tsavo-west-budget-accessible-premium-1.jpg", "/tsavo-west-budget-accessible-premium-2.jpg", "/tsavo-west-budget-accessible-premium-bathroom.jpg"]
     })
   },
+
+  */
 ]
 
 export const faqs = [
