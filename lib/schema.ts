@@ -170,7 +170,6 @@ export function generateLocationSchema(location: Location) {
   }
 }
 
-
 /**
  * Generate Schema.org Vehicle (as Product) for car hire
  * @see https://schema.org/Vehicle
@@ -187,6 +186,7 @@ export function generateVehicleSchema({
   vehicleConfiguration = "4x4 Pop-up Roof",
   brand = "Toyota",
   model = "Land Cruiser",
+  currency = "USD",
 }: {
   name: string
   description: string
@@ -198,13 +198,14 @@ export function generateVehicleSchema({
   vehicleConfiguration?: string
   brand?: string
   model?: string
+  currency?: string
 }) {
   const priceMatch = price.match(/\$(\d+)/)
   const priceValue = priceMatch ? parseInt(priceMatch[1], 10) : 0
 
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": ["Product", "Vehicle"],
     name,
     description,
     image: `https://www.jaetravel.com${image}`,
@@ -213,49 +214,212 @@ export function generateVehicleSchema({
       "@type": "Brand",
       name: brand,
     },
+    offers: [
+      {
+        "@type": "Offer",
+        priceCurrency: currency,
+        price: priceValue,
+        priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split("T")[0],
+        availability: "https://schema.org/InStock",
+        url,
+        seller: {
+          "@type": "Organization",
+          name: "Jaetravel Expeditions",
+        },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          applicableCountry: "KE",
+          returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+          merchantReturnDays: 7,
+          returnMethod: "https://schema.org/ReturnByMail",
+          returnFees: "https://schema.org/FreeReturn"
+        }
+      }
+    ],
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Passenger Capacity",
+        value: passengers?.toString() || "6",
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Fuel Type",
+        value: fuelType,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Vehicle Configuration",
+        value: vehicleConfiguration,
+      },
+    ],
+    vehicleConfiguration,
+    fuelType,
+    model,
+    manufacturer: brand,
+    numberOfDoors: 5,
+    vehicleSeatingCapacity: passengers || 6,
+    "@id": `${url}#vehicle`,
+    // Additional rental-specific properties
+    additionalType: ["https://schema.org/RentalVehicle"],
+    rentalVehicleUsage: "Safari tours and game drives",
+    rentalVehicleSpecialUsage: "Wildlife photography and conservation tours",
+    isAccessoryOrSparePartFor: [],
+    inProductGroupWithID: "safari-vehicles",
+    category: "Vehicle Rental",
+    slogan: "Premium Safari Vehicles for Unforgettable Kenyan Adventures",
+    releaseDate: "2015-01-01",
+    productID: name.toLowerCase().replace(/\s+/g, '-'),
+    sku: `VEH-${model.toUpperCase().replace(/\s+/g, '')}`,
+    gtin: "",
+    productionDate: "2020-01-01",
+    purchaseDate: "2021-06-15",
+    award: "Kenya Tourism Board Certified Safari Operator",
+    audience: {
+      "@type": "Audience",
+      audienceType: "Tourists, Photographers, Adventure Travelers"
+    },
+    countryOfAssembly: "JP",
+    countryOfLastProcessing: "KE",
+    countryOfOrigin: "JP",
+    hasVariant: [],
+    isSimilarTo: [],
+    isRelatedTo: [],
+    logo: "https://www.jaetravel.com/logo.png",
+    material: "Steel, Aluminum, Fiberglass",
+    modelDate: "2020",
+    mpn: `LC200-${new Date().getFullYear()}`,
+    pattern: "Safari Edition",
+    size: "Large",
+    style: "4x4 Off-road Safari Vehicle",
+    vehicleModelDate: "2020",
+    vehicleSpecialUsage: "Commercial, Tourism",
+    weight: {
+      "@type": "QuantitativeValue",
+      value: "2800",
+      unitCode: "KGM"
+    },
+    width: {
+      "@type": "QuantitativeValue",
+      value: "1.97",
+      unitCode: "MTR"
+    },
+    height: {
+      "@type": "QuantitativeValue",
+      value: "1.95",
+      unitCode: "MTR"
+    },
+    depth: {
+      "@type": "QuantitativeValue",
+      value: "4.95",
+      unitCode: "MTR"
+    }
+  }
+}
+
+// Alternative: Generate as RentalCar specifically
+export function generateRentalCarSchema({
+  name,
+  description,
+  price,
+  image,
+  url,
+  passengers = 6,
+  fuelType = "Diesel",
+  vehicleConfiguration = "4x4 Pop-up Roof",
+  brand = "Toyota",
+  model = "Land Cruiser",
+  currency = "USD",
+  pickupLocation,
+  dropoffLocation,
+  rentalPeriod = "P1D"
+}: {
+  name: string
+  description: string
+  price: string
+  image: string
+  url: string
+  passengers?: number
+  fuelType?: string
+  vehicleConfiguration?: string
+  brand?: string
+  model?: string
+  currency?: string
+  pickupLocation?: string
+  dropoffLocation?: string
+  rentalPeriod?: string
+}) {
+  const priceMatch = price.match(/\$(\d+)/)
+  const priceValue = priceMatch ? parseInt(priceMatch[1], 10) : 0
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "RentalCar",
+    name,
+    description,
+    image: `https://www.jaetravel.com${image}`,
+    url,
+    brand: {
+      "@type": "Brand",
+      name: brand,
+    },
+    model,
+    fuelType,
+    vehicleConfiguration,
+    numberOfDoors: 5,
+    vehicleSeatingCapacity: passengers,
     offers: {
       "@type": "Offer",
-      priceCurrency: "USD",
+      priceCurrency: currency,
       price: priceValue,
       priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split("T")[0],
       availability: "https://schema.org/InStock",
       url,
+      businessFunction: "https://schema.org/Rent",
+      eligibleRegion: {
+        "@type": "Country",
+        name: "Kenya"
+      },
+      eligibleCustomerType: "Tourist",
+      validFrom: new Date().toISOString(),
+      validThrough: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString(),
       seller: {
         "@type": "Organization",
         name: "Jaetravel Expeditions",
-      },
-      offeredBy: {
-        "@type": "Organization",
-        name: "Jaetravel Expeditions",
-      },
+        url: "https://www.jaetravel.com"
+      }
     },
-    // Vehicle-specific properties
-    ...(passengers && {
-      additionalProperty: [
-        {
-          "@type": "PropertyValue",
-          name: "Passenger Capacity",
-          value: passengers,
-        },
-      ],
+    // Rental-specific properties
+    ...(pickupLocation && {
+      pickupLocation: {
+        "@type": "Place",
+        name: pickupLocation,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: pickupLocation,
+          addressCountry: "KE"
+        }
+      }
     }),
-    vehicleConfiguration,
-    fuelType,
-    model,
-    // Optional: Enhance with RentalCar if applicable
-    "@id": `${url}#vehicle`,
-    subjectOf: {
-      "@type": "Car",
-      name,
-      brand: {
-        "@type": "Brand",
-        name: brand,
-      },
-      model,
-      fuelType,
-      vehicleConfiguration,
-      numberOfDoors: 5,
-      vehicleSeatingCapacity: passengers || 6,
+    ...(dropoffLocation && {
+      dropoffLocation: {
+        "@type": "Place",
+        name: dropoffLocation,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: dropoffLocation,
+          addressCountry: "KE"
+        }
+      }
+    }),
+    rentalPeriod,
+    additionalType: "https://schema.org/Vehicle",
+    audience: {
+      "@type": "Audience",
+      audienceType: "Tourists, Safari Enthusiasts, Photographers"
     },
+    category: "Car Rental",
+    isAccessoryOrSparePartFor: [],
+    slogan: "Premium Safari Vehicle Rentals in Kenya"
   }
 }

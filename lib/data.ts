@@ -47,6 +47,15 @@ export interface Location {
   longDescription: string;
   attractions: string[];
   bestTime: string;
+  highlights?: string[];
+  accessible?: boolean;
+  familyFriendly?: boolean;
+  similar?: string[];
+  reviews?: {
+    rating: number;
+    comment: string;
+    user: string;
+  }[];
 }
 
 export const locations: Location[] = [
