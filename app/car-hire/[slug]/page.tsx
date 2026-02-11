@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { SchemaRenderer } from "@/components/schema-renderer";
 import { generateBreadcrumbSchema, generateVehicleSchema, generateFAQSchema } from "@/lib/schema";
 import { vehicles } from "@/lib/vehicle-data";
-import { Shield, Star, Camera, Accessibility, Users, MapPin, Calendar, DollarSign } from "lucide-react";
+import { Shield, Star, Camera, Accessibility, Users } from "lucide-react";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -213,7 +213,7 @@ export default async function VehiclePage({ params }: Props) {
               Why Choose the {vehicle.name} for Your Kenya Safari?
             </h3>
             <p>
-              Whether you're planning a classic <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">Maasai Mara safari</Link>, seeking elephants under Kilimanjaro in Amboseli, or exploring the vast wilderness of Tsavo, the {vehicle.name} delivers comfort, visibility, and reliability. With our professional drivers who know every game trail, you'll experience Kenya's wildlife at its best — safely and comfortably.
+              Whether you&apos;re planning a classic <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">Maasai Mara safari</Link>, seeking elephants under Kilimanjaro in Amboseli, or exploring the vast wilderness of Tsavo, the {vehicle.name} delivers comfort, visibility, and reliability. With our professional drivers who know every game trail, you&apos;ll experience Kenya&apos;s wildlife at its best — safely and comfortably.
             </p>
 
             {vehicle.accessibility && (
@@ -222,7 +222,7 @@ export default async function VehiclePage({ params }: Props) {
                   Wheelchair Accessible Safari – Travel Without Limits
                 </h3>
                 <p>
-                  Designed specifically for travelers with mobility challenges, this <strong>wheelchair accessible Landcruiser</strong> (or variant) removes barriers to experiencing Africa's wildlife. Hydraulic lifts, wide doors, lowered floors, and secure tie-down systems ensure safe and dignified access. Pair it with our <Link href="/hotels" className="text-orange-600 hover:underline font-medium">accessible luxury lodges</Link> for a truly inclusive safari experience in Kenya.
+                  Designed specifically for travelers with mobility challenges, this <strong>wheelchair accessible Landcruiser</strong> (or variant) removes barriers to experiencing Africa&apos;s wildlife. Hydraulic lifts, wide doors, lowered floors, and secure tie-down systems ensure safe and dignified access. Pair it with our <Link href="/hotels" className="text-orange-600 hover:underline font-medium">accessible luxury lodges</Link> for a truly inclusive safari experience in Kenya.
                 </p>
               </>
             )}
@@ -303,7 +303,7 @@ export default async function VehiclePage({ params }: Props) {
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
                 <Shield className="text-green-600" size={32} />
-                What's Included
+                What&apos;s Included
               </h2>
               <ul className="space-y-4 text-lg">
                 {vehicle.includes.map((inc, i) => (

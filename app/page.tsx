@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { locations } from "@/lib/data";
-import { MapPin, Star, Users, Award, Accessibility, Calendar, Globe, Heart, Car } from "lucide-react";
+import { Star, Accessibility, Car } from "lucide-react";
 import { SchemaRenderer } from "@/components/schema-renderer";
 import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 import { QuickBooking } from "@/components/quick-booking";
@@ -669,7 +669,7 @@ export default function Home() {
                 <Star className="text-yellow-400" size={24} />
                 <Star className="text-yellow-400" size={24} />
               </div>
-              <p className="text-gray-700 mb-4">"The wheelchair accessible safari tours were fantastic! We hired a safari vehicle and explored Maasai Mara with ease. Luxury lodges and expert guides made it unforgettable."</p>
+              <p className="text-gray-700 mb-4">&quot;The wheelchair accessible safari tours were fantastic! We hired a safari vehicle and explored Maasai Mara with ease. Luxury lodges and expert guides made it unforgettable.&quot;</p>
               <p className="font-bold text-gray-900">- Sarah Johnson</p>
             </div>
             <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200">
@@ -680,7 +680,7 @@ export default function Home() {
                 <Star className="text-yellow-400" size={24} />
                 <Star className="text-yellow-400" size={24} />
               </div>
-              <p className="text-gray-700 mb-4">"Booked online for Great Migration tours in Maasai Mara. The luxury hotel Kenya options and safari vehicle hire were top-notch. Highly recommend for family safari Kenya."</p>
+              <p className="text-gray-700 mb-4">&quot;Booked online for Great Migration tours in Maasai Mara. The luxury hotel Kenya options and safari vehicle hire were top-notch. Highly recommend for family safari Kenya.&quot;</p>
               <p className="font-bold text-gray-900">- Michael Lee</p>
             </div>
             {/* Add more if needed */}

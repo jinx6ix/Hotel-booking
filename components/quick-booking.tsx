@@ -5,7 +5,13 @@ import type React from "react"
 import { useState } from "react"
 import { hotels, locations } from "@/lib/data"
 
-export function QuickBooking() {
+interface QuickBookingProps {
+
+  accessible?: boolean;
+
+}
+
+export function QuickBooking({ accessible }: QuickBookingProps) {
   const [destination, setDestination] = useState("")
   const [hotel, setHotel] = useState("")
   const [checkIn, setCheckIn] = useState("")
@@ -52,6 +58,7 @@ export function QuickBooking() {
                 {loc.name}
               </option>
             ))}
+            {accessible && <p>Accessible booking enabled</p>}
           </select>
         </div>
 
