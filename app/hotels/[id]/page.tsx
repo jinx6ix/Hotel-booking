@@ -31,12 +31,7 @@ export async function generateMetadata({ params }: HotelPageProps): Promise<Meta
     };
   }
 
-  const location = locations.find((l) => l.name === hotel.location) || {
-    name: hotel.location,
-    slug: hotel.location.toLowerCase().replace(/\s+/g, "-"),
-    longDescription: `${hotel.location} – premier destination for safari and luxury travel in Kenya`,
-    image: hotel.image || "/fallback.jpg",
-  };
+  // Removed unused 'location' variable assignment
 
   const title = `${hotel.name} – Luxury Safari Lodge & 5-Star Hotel in ${hotel.location}, Kenya – Book Direct`;
   const description = `Stay at ${hotel.name} in ${hotel.location}, Kenya – one of the finest luxury safari lodges and 5-star hotels. Enjoy private plunge pools, game drives, gourmet dining, world-class service and best rates when booking direct.`;

@@ -10,7 +10,7 @@ import { HotelCard } from "@/components/hotel-card";
 import { SchemaRenderer } from "@/components/schema-renderer";
 import { generateLocationSchema, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
-import { Calendar, MapPin, Sun, Clock, Info, ChevronRight, Accessibility, Star, Shield, Camera, Users } from "lucide-react";
+import { Calendar, MapPin, Sun, Clock, Info, ChevronRight, Accessibility, Star, Users } from "lucide-react";
 
 interface DestinationPageProps {
   params: Promise<{ slug: string }>;
@@ -237,7 +237,7 @@ export default async function DestinationPage({ params }: DestinationPageProps) 
                 </p>
 
                 <p className="mt-6 text-gray-700 leading-relaxed">
-                  Whether you're planning a <strong>luxury safari in {location.name}</strong>, a <strong>family safari Kenya</strong> experience, a <strong>photography safari</strong>, or looking for <strong>wheelchair accessible options</strong>, this destination offers unforgettable wildlife, stunning landscapes and authentic cultural moments.
+                  Whether you&apos;re planning a <strong>luxury safari in {location.name}</strong>, a <strong>family safari Kenya</strong> experience, a <strong>photography safari</strong>, or looking for <strong>wheelchair accessible options</strong>, this destination offers unforgettable wildlife, stunning landscapes and authentic cultural moments.
                 </p>
               </div>
 
@@ -479,7 +479,7 @@ export default async function DestinationPage({ params }: DestinationPageProps) 
                     />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
+                <p className="text-gray-700 mb-4 italic">&quot;{review.text}&quot;</p>
                 <p className="font-medium text-gray-900">{review.author}</p>
               </div>
             ))}
