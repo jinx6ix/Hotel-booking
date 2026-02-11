@@ -92,7 +92,7 @@ export default function RootLayout({
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="kwFIGPeAktZ683/wY5zKWA" async></script>
         <link rel="canonical" href="https://www.jaetravel.com" />
         <meta name="google-site-verification" content="IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U" />
-        <link rel="alternate" hrefLang="en" href="jaetravel.com" />
+        <link rel="alternate" hrefLang="en" href="https://www.jaetravel.com" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
