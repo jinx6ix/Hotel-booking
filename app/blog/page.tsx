@@ -1,16 +1,53 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Breadcrumb } from "@/components/breadcrumb"
-import { Calendar, User } from "lucide-react"
+import type { Metadata } from "next";
+import BlogPageClient from "./BlogPageClient";
+import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Safari Travel Blog | Kenya Tours Tips & Guides | Jaetravel",
-  description:
-    "Expert guides, travel tips, and insider knowledge about Kenya safari tours, wildlife, destinations, and adventure travel. Read our latest blog posts.",
-  keywords: "safari blog, Kenya travel guide, wildlife tips, safari photography, travel advice",
-}
+// ────────────────────────────────────────────────
+// Data (can be moved to separate files)
+// ────────────────────────────────────────────────
+const faqItems = [
+  {
+    question: "When is the best time to go on safari in Kenya?",
+    answer: "The dry season (June–October) is ideal for the Great Migration and best wildlife viewing...",
+  },
+  {
+    question: "What should I pack for a Kenya safari?",
+    answer: "Essentials include neutral-colored clothing, binoculars, camera gear, sunscreen, and a hat...",
+  },
+  {
+    question: "Are Kenya safaris safe for families with children?",
+    answer: "Yes, Kenya offers many family-friendly safaris with accommodations and activities suitable for all ages...",
+  },
+  {
+    question: "Do I need vaccinations for Kenya?",
+    answer: "Yellow fever vaccination is required. Malaria prophylaxis is highly recommended...",
+  },
+  {
+    question: "What's the best way to see the Big Five?",
+    answer: "Maasai Mara, Amboseli, and Tsavo offer excellent opportunities with experienced guides...",
+  },
+];
+
+const authors = {
+  "John Safari": {
+    name: "John Safari",
+    role: "Wildlife Guide & Safari Expert",
+    bio: "15+ years leading safaris in Kenya. Specialist in big cats and migration patterns.",
+    avatar: "/avatars/john-safari.jpg",
+  },
+  "Sarah Lens": {
+    name: "Sarah Lens",
+    role: "Professional Wildlife Photographer",
+    bio: "Award-winning photographer specializing in African wildlife and safari photography.",
+    avatar: "/avatars/sarah-lens.jpg",
+  },
+  "Mike Explorer": {
+    name: "Mike Explorer",
+    role: "Travel Writer & Itinerary Planner",
+    bio: "Helped plan 500+ Kenya safaris. Expert on seasons, routes and hidden gems.",
+    avatar: "/avatars/mike-explorer.jpg",
+  },
+};
 
 const blogPosts = [
   {
@@ -20,6 +57,8 @@ const blogPosts = [
     date: "2024-11-15",
     author: "John Safari",
     category: "Wildlife",
+    readTime: "8 min",
+    featured: true,
   },
   {
     id: 2,
@@ -28,6 +67,8 @@ const blogPosts = [
     date: "2024-11-10",
     author: "Sarah Lens",
     category: "Photography",
+    readTime: "12 min",
+    featured: true,
   },
   {
     id: 3,
@@ -36,99 +77,154 @@ const blogPosts = [
     date: "2024-11-05",
     author: "Mike Explorer",
     category: "Travel Guide",
+    readTime: "10 min",
   },
   {
     id: 4,
-    title: "Luxury Safari Lodges: Experience Comfort in the African Bush",
-    excerpt: "Explore the finest safari accommodations offering world-class amenities amid pristine wilderness.",
-    date: "2024-10-30",
-    author: "Emma Luxury",
+    title: "Top 10 Luxury Safari Lodges in Kenya for 2025",
+    excerpt: "Experience ultimate comfort in the wild with our curated list of Kenya's finest safari accommodations.",
+    date: "2024-10-28",
+    author: "Mike Explorer",
     category: "Accommodation",
+    readTime: "7 min",
   },
   {
     id: 5,
-    title: "Maasai Culture & Traditions: Immerse Yourself in Kenya's Heritage",
-    excerpt: "Learn about the rich culture, traditions, and customs of the Maasai people during your safari adventure.",
-    date: "2024-10-25",
-    author: "Peter Culture",
+    title: "Maasai Culture: Understanding Kenya's Iconic Tribal Heritage",
+    excerpt: "Learn about Maasai traditions, ceremonies, and how to respectfully engage with local communities.",
+    date: "2024-10-20",
+    author: "John Safari",
     category: "Culture",
+    readTime: "9 min",
   },
   {
     id: 6,
-    title: "Solo Safari Travel: Safety Tips & Best Destinations for Solo Travelers",
-    excerpt: "Everything you need to know about planning and enjoying a solo safari adventure in Kenya.",
-    date: "2024-10-20",
-    author: "Rachel Solo",
+    title: "Safari Packing List: Essential Items for Your Kenya Adventure",
+    excerpt: "Don't forget anything with our comprehensive packing checklist for different seasons and activities.",
+    date: "2024-10-15",
+    author: "Mike Explorer",
     category: "Travel Tips",
+    readTime: "6 min",
   },
-]
+  {
+    id: 7,
+    title: "Birdwatching in Kenya: Top Destinations for Avian Enthusiasts",
+    excerpt: "With over 1,100 bird species, Kenya is a paradise for birders. Discover the best spots and seasons.",
+    date: "2024-10-10",
+    author: "Sarah Lens",
+    category: "Wildlife",
+    readTime: "11 min",
+  },
+  {
+    id: 8,
+    title: "Family Safari Guide: Making Kenya Magical for All Ages",
+    excerpt: "Tips and itineraries for creating unforgettable safari experiences for families with children.",
+    date: "2024-10-05",
+    author: "Mike Explorer",
+    category: "Travel Guide",
+    readTime: "8 min",
+  },
+  {
+    id: 9,
+    title: "Conservation Safari: How Tourism Helps Protect Kenya's Wildlife",
+    excerpt: "Learn how responsible tourism contributes to conservation efforts across Kenya's national parks.",
+    date: "2024-09-28",
+    author: "John Safari",
+    category: "Wildlife",
+    readTime: "10 min",
+  },
+];
 
+// ────────────────────────────────────────────────
+// Metadata
+// ────────────────────────────────────────────────
+export const metadata: Metadata = {
+  title: "Kenya Safari Blog & Travel Guides 2025–2026 | Tips, Wildlife, Photography & Planning",
+  description: "Expert Kenya safari blog with travel tips, wildlife guides, photography advice, best time to visit, packing lists, lodge reviews and insider knowledge for your 2025–2026 adventure.",
+  keywords: [
+    "Kenya safari blog",
+    "safari travel guides",
+    "wildlife photography tips",
+    "Maasai Mara migration",
+    "Kenya travel advice",
+    "safari packing list",
+    "best time to visit Kenya",
+    "African safari blog",
+    "travel planning Kenya",
+    "safari accommodation reviews",
+  ],
+  openGraph: {
+    title: "Kenya Safari Blog & Travel Guides 2025–2026",
+    description: "Expert advice, insider tips, photography guides, seasonal calendars, packing lists and real safari stories.",
+    type: "website",
+    locale: "en_US",
+    url: "https://www.jaetravel.com/blog",
+    siteName: "Jaetravel Expeditions",
+    images: [
+      {
+        url: "/blog/safari-blog-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kenya Safari Blog - Expert Travel Guides",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kenya Safari Blog & Travel Guides 2025–2026",
+    description: "Expert Kenya safari blog with travel tips and photography guides",
+    images: ["/blog/safari-blog-twitter.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.jaetravel.com/blog",
+  },
+};
+
+// ────────────────────────────────────────────────
+// Main Server Component
+// ────────────────────────────────────────────────
 export default function BlogPage() {
+  // Generate structured data
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { label: "Home", href: "/" },
+    { label: "Safari Blog & Travel Guides" },
+  ]);
+
+  const faqSchema = generateFAQSchema(faqItems);
+
   return (
     <>
-      <Header />
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
 
-      <main>
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Breadcrumb
-              items={[
-                { label: "Home", href: "/" },
-                { label: "Blog", href: "/blog" },
-              ]}
-            />
-            <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-4">Safari Travel Blog</h1>
-            <p className="text-xl text-orange-50 max-w-2xl">
-              Expert guides, travel tips, and insider knowledge about Kenya safari tours and wildlife adventures.
-            </p>
-          </div>
-        </div>
-
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {blogPosts.map((post) => (
-                <article
-                  key={post.id}
-                  className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white"
-                >
-                  <img
-                    src={`/.jpg?height=200&width=400&query=${post.title}`}
-                    alt={post.title}
-                    className="w-full h-48 object-cover"
-                    loading="lazy"
-                  />
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-semibold text-orange-600 uppercase bg-orange-50 px-3 py-1 rounded">
-                        {post.category}
-                      </span>
-                      <span className="text-xs text-gray-500">
-                        <Calendar size={14} className="inline mr-1" />
-                        {new Date(post.date).toLocaleDateString()}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-orange-600 transition">
-                      {post.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-500 flex items-center gap-1">
-                        <User size={14} /> {post.author}
-                      </span>
-                      <Link href={`/blog/${post.id}`} className="text-orange-600 font-semibold hover:text-orange-700">
-                        Read More →
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <Footer />
+      {/* Client Component with all interactive elements */}
+      <BlogPageClient
+        blogPosts={blogPosts}
+        authors={authors}
+        faqItems={faqItems}
+      />
     </>
-  )
+  );
 }

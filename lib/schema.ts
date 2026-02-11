@@ -423,3 +423,92 @@ export function generateRentalCarSchema({
     slogan: "Premium Safari Vehicle Rentals in Kenya"
   }
 }
+
+// lib/schema.ts
+// ... other existing schema functions (breadcrumb, faq, etc.)
+
+/**
+ * Generates a complete Schema.org Article / BlogPosting schema
+ * for a blog post or article page.
+ *
+ * @param post - The blog post object with required fields
+ * @returns Schema.org compatible JSON-LD object
+ */
+export function generateArticleSchema(post: {
+  title: string;
+  description?: string;
+  excerpt?: string;
+  datePublished: string;        // ISO date string (e.g. "2024-11-15")
+  dateModified?: string;        // optional, defaults to datePublished
+  author: {
+    name: string;
+    role?: string;
+    image?: string;
+    url?: string;
+  };
+  publisherName?: string;       // defaults to "Jaetravel Expeditions"
+  publisherLogo?: string;       // defaults to your site logo
+  image?: string;               // main image URL
+  url: string;                  // canonical URL of the article
+  keywords?: string[];          // optional array of tags/keywords
+  articleBody?: string;         // plain text version of the full content (for SEO)
+  wordCount?: number;           // optional
+}) {
+  const {
+    title,
+    description = "",
+    excerpt = "",
+    datePublished,
+    dateModified = datePublished,
+    author,
+    publisherName = "Jaetravel Expeditions",
+    publisherLogo = "https://www.jaetravel.com/logo.png",
+    image,
+    url,
+    keywords = [],
+    articleBody = "",
+    wordCount,
+  } = post;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description: description || excerpt || "Article about Kenya safari travel",
+    datePublished,
+    dateModified,
+    author: {
+      "@type": "Person",
+      name: author.name,
+      ...(author.role && { jobTitle: author.role }),
+      ...(author.image && { image: author.image }),
+      ...(author.url && { url: author.url }),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: publisherName,
+      logo: {
+        "@type": "ImageObject",
+        url: publisherLogo,
+      },
+    },
+    ...(image && {
+      image: {
+        "@type": "ImageObject",
+        url: image,
+        width: 1200,
+        height: 630,
+      },
+    }),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    url,
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    ...(articleBody && { articleBody }),
+    ...(wordCount && { wordCount }),
+    // Optional: add more fields if you have them
+    // publisher.url, inLanguage: "en", license, etc.
+  };
+}
