@@ -76,10 +76,7 @@ export default async function VehiclePage({ params }: Props) {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Review",
-    itemReviewed: {
-      "@type": "Product",
-      name: `${vehicle.name} Rental`,
-    },
+
     reviewRating: {
       "@type": "Rating",
       ratingValue: vehicle.accessibility ? "4.9" : "4.8",

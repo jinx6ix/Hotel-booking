@@ -156,10 +156,6 @@ export default function CarHirePage() {
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Review",
-    itemReviewed: {
-      "@type": "Service",
-      name: "Safari Car Hire Kenya",
-    },
     reviewRating: {
       "@type": "Rating",
       ratingValue: "5",
@@ -556,7 +552,7 @@ export default function CarHirePage() {
                 <Star className="text-yellow-400" size={24} />
                 <Star className="text-yellow-400" size={24} />
               </div>
-              <p className="text-gray-700 mb-4">"The wheelchair accessible Landcruiser was perfect for our safari. Smooth ride, great driver, and easy access. Highly recommend for accessible safari vehicle Kenya."</p>
+              <p className="text-gray-700 mb-4">&quot;The wheelchair accessible Landcruiser was perfect for our safari. Smooth ride, great driver, and easy access. Highly recommend for accessible safari vehicle Kenya.&quot;</p>
               <p className="font-bold text-gray-900">- Emily Davis</p>
             </div>
             <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200">
@@ -567,7 +563,7 @@ export default function CarHirePage() {
                 <Star className="text-yellow-400" size={24} />
                 <Star className="text-yellow-400" size={24} />
               </div>
-              <p className="text-gray-700 mb-4">"Rented the photography convertible for Amboseli - camera mounts and open roof made shooting elephants a breeze. Best photography safari car in Kenya."</p>
+              <p className="text-gray-700 mb-4">&quot;Rented the photography convertible for Amboseli - camera mounts and open roof made shooting elephants a breeze. Best photography safari car in Kenya.&quot;</p>
               <p className="font-bold text-gray-900">- David Kim</p>
             </div>
             {/* Add more if needed */}
