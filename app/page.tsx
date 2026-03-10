@@ -391,7 +391,7 @@ const homepageSchema = {
       founders: [
         {
           "@type": "Person",
-          name: "John Doe"
+          name: "Antony Waitito"
         }
       ],
       awards: [
