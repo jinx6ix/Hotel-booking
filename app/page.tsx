@@ -330,7 +330,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
-    title: 'Jaetravel',
+    title: 'Jaetravel Expeditions',
     statusBarStyle: 'black-translucent',
   },
 };
