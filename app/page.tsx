@@ -1,741 +1,624 @@
+// app/page.tsx
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { locations } from "@/lib/data";
-import { Star, Accessibility, Car } from "lucide-react";
-import { SchemaRenderer } from "@/components/schema-renderer";
-import { generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
-import { QuickBooking } from "@/components/quick-booking";
-import Image from "next/image";
+import { SearchBar } from "@/components/search-bar";
+import { 
+  Star, 
+  Users, 
+  Shield, 
+  Sparkles,
+  ChevronRight,
+  Clock,
+  BadgeCheck,
+  CheckCircle2
+} from "lucide-react";
+import { hotels } from "@/lib/data";
 
+// ============================================
+// METADATA - SERVER COMPONENT ONLY
+// ============================================
 export const metadata: Metadata = {
-  title:
-    "Jaetravel Expeditions – Best Kenya Safari Tours 2025/2026 | Luxury Lodges, Accessible Safaris & Safari Vehicle Hire",
-  description:
-    "Book unforgettable Kenya safari tours with luxury hotels, 5-star lodges, wheelchair accessible accommodations, and safari vehicle hire. Experience the Great Migration in Maasai Mara, Kilimanjaro views in Amboseli, flamingos in Lake Nakuru, unique wildlife in Samburu and Tsavo. Inclusive safari travel for families, couples and travelers with disabilities – expert guides, 4.8★ rated. Hire safari vehicles for self-drive or guided tours.",
-  keywords:
-    "Kenya safari tours, luxury safari Kenya, accessible safari Kenya, Maasai Mara safari, Great Migration tours, Amboseli National Park, Samburu special five, Lake Nakuru flamingos, Tsavo East Tsavo West, Nairobi safari, wheelchair accessible Kenya safari, inclusive travel Kenya, luxury lodges Kenya, safari for disabled, family safari Kenya, best time to visit Kenya, Kenya wildlife safaris, book safari online, luxury hotel Kenya, accessible rooms Kenya, safari vehicle hire Kenya, car hire for safari, accessible safari tours Kenya, wheelchair friendly safaris, disabled access Kenya tours, Maasai Mara luxury lodges, Amboseli accessible hotels, Samburu wheelchair safaris, Lake Nakuru inclusive tours, Tsavo safari vehicle rental, Nairobi car hire safari",
+  title: "Jaetravel Expeditions | Book Kenya Safari Hotels & Lodges 2025 | Best Rates",
+  description: "Compare and book the best safari hotels in Kenya. Maasai Mara luxury lodges, Amboseli hotels with Kilimanjaro views, Tsavo accommodation. 4.8★ rated. Best price guarantee. Instant confirmation.",
+  keywords: "kenya safari hotels, book safari lodges online, maasai mara accommodation, amboseli hotels, tsavo lodges, samburu safari camps, lake nakuru hotels, nairobi safari hotels, best kenya lodges, safari accommodation booking",
   openGraph: {
-    title: "Jaetravel Expeditions – Luxury, Accessible & Inclusive Kenya Safari Tours 2025/2026 with Vehicle Hire",
-    description:
-      "Premium hotel-based safari tours in Kenya with 5-star lodges, wheelchair accessible options, safari vehicle hire, expert guides and unforgettable wildlife experiences.",
+    title: "Jaetravel Expeditions | Kenya Safari Hotel Booking Platform",
+    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, instant confirmation, 24/7 support.",
     url: "https://www.jaetravel.com",
+    siteName: "Jaetravel Expeditions",
+    images: [{
+      url: "https://www.jaetravel.com/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Jaetravel - Kenya Safari Hotel Booking"
+    }],
+    locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "https://www.jaetravel.com/kenya-safari-landscape.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kenya Safari – Great Migration in Maasai Mara National Reserve – luxury lodge view with accessible safari options and vehicle hire",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jaetravel Expeditions – Luxury, Inclusive & Accessible Kenya Safaris with Car Hire",
-    description:
-      "Book luxury and accessible safari tours in Maasai Mara, Amboseli, Tsavo, Samburu, Nakuru and more – 4.8★ rated. Hire safari vehicles for your adventure.",
-    images: ["https://www.jaetravel.com/kenya-safari-landscape.jpg"],
+    title: "Jaetravel Expeditions | Kenya Safari Hotel Booking",
+    description: "Book safari hotels & lodges in Kenya. Best rates, instant confirmation.",
+    images: ["https://www.jaetravel.com/images/twitter-home.jpg"],
   },
   alternates: {
     canonical: "https://www.jaetravel.com",
   },
-  robots: "index, follow",
+  robots: "index, follow, max-image-preview:large, max-snippet:-1",
 };
 
-export default function Home() {
-  const breadcrumbSchema = generateBreadcrumbSchema([{ label: "Home", href: "/" }]);
-
-  // Expanded FAQ Schema with more items related to keywords
-  const faqItems = [
+// ============================================
+// SCHEMA MARKUP - SERVER COMPONENT ONLY
+// ============================================
+const homepageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      question: "What is the best time to visit Kenya for safari?",
-      answer:
-        "The best time for most Kenya safari destinations is the dry season from June to October, especially for the Great Migration in Maasai Mara. January to March also offers excellent dry weather and fewer crowds in many parks like Amboseli, Samburu, Lake Nakuru, and Tsavo.",
-    },
-    {
-      question: "Is Kenya safari suitable for travelers with disabilities?",
-      answer:
-        "Yes – we offer wheelchair accessible safaris with modified 4×4 vehicles, accessible hotel rooms, trained guides and inclusive experiences across multiple destinations including Maasai Mara, Amboseli and Nairobi. Our accessible safari tours ensure everyone can enjoy Kenya wildlife safaris.",
-    },
-    {
-      question: "Which destination is best for the Great Migration?",
-      answer:
-        "The Maasai Mara National Reserve is the best place to witness the Great Migration river crossings, typically between July and October. It offers exceptional wildlife viewing, luxury lodge options, and accessible safari tours.",
-    },
-    {
-      question: "Are your safari tours family-friendly?",
-      answer:
-        "Yes – many of our luxury lodges and safari packages are perfect for families with children. We offer family rooms, child-friendly activities, safe game viewing experiences, and options for safari vehicle hire in destinations like Maasai Mara and Lake Nakuru.",
-    },
-    {
-      question: "What types of accommodations do you offer in Kenya?",
-      answer:
-        "We provide luxury tented camps, 5-star lodges, boutique hotels and wheelchair accessible rooms across 9 iconic destinations including Maasai Mara, Amboseli, Tsavo, Samburu, Lake Nakuru and Nairobi. All with luxury hotel Kenya standards.",
-    },
-    {
-      question: "How can I hire a safari vehicle in Kenya?",
-      answer:
-        "Our car hire services allow you to rent fully equipped safari vehicles, including 4x4 jeeps with pop-up roofs for optimal wildlife viewing. Available for self-drive or with professional drivers in Maasai Mara, Amboseli, and other parks. Perfect for flexible Kenya safari tours.",
-    },
-    {
-      question: "What are accessible safari tours like?",
-      answer:
-        "Accessible safari tours in Kenya include wheelchair-friendly vehicles, ramps, adapted lodges with accessible rooms, and trained staff for travelers with disabilities. Experience inclusive travel in Maasai Mara, Amboseli, and more without compromising on luxury or adventure.",
-    },
-    {
-      question: "Can I book safari online with vehicle hire?",
-      answer:
-        "Yes, book safari online through our platform, including luxury packages, accessible options, and safari vehicle hire. Customize your itinerary for the best time to visit Kenya and top destinations like Samburu special five or Lake Nakuru flamingos.",
-    },
-  ];
-
-  const faqSchema = generateFAQSchema(faqItems);
-
-  // Organization Schema with aggregate rating
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Jaetravel Expeditions",
-    url: "https://www.jaetravel.com",
-    logo: "https://www.jaetravel.com/logo.png",
-    description:
-      "Premium Kenya safari tour operator offering luxury hotel-based safaris, accessible travel experiences, and safari vehicle hire.",
-    sameAs: [
-      "https://www.facebook.com/jaetravelexpeditions",
-      "https://www.instagram.com/jaetravelexpeditions",
-      "https://twitter.com/jaetravel",
-    ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    },
-  };
-
-  // Add individual Review Schema for rich snippets
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: {
       "@type": "Organization",
+      "@id": "https://www.jaetravel.com/#organization",
       name: "Jaetravel Expeditions",
+      url: "https://www.jaetravel.com",
+      logo: "https://www.jaetravel.com/logo.png",
+      description: "Kenya's premier safari hotel booking platform. Book luxury lodges, camps, and hotels across all major safari destinations.",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Karen Roundabout",
+        addressLocality: "Nairobi",
+        addressRegion: "Nairobi",
+        postalCode: "00100",
+        addressCountry: "KE"
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+254-726-485228",
+        contactType: "customer service",
+        availableLanguage: ["English", "Swahili"]
+      },
+      sameAs: [
+        "https://www.facebook.com/jaetravelexpeditions",
+        "https://www.instagram.com/jaetravelexpeditions",
+        "https://twitter.com/jaetravel"
+      ]
     },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "5",
-      bestRating: "5",
-    },
-    name: "Amazing Accessible Safari in Maasai Mara",
-    author: {
-      "@type": "Person",
-      name: "Sarah Johnson",
-    },
-    reviewBody: "The wheelchair accessible safari tours were fantastic! We hired a safari vehicle and explored Maasai Mara with ease. Luxury lodges and expert guides made it unforgettable.",
-    publisher: {
-      "@type": "Organization",
-      name: "TripAdvisor",
-    },
-  };
-
-  // Add more reviews for snippets
-  const reviewSchema2 = {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    itemReviewed: {
-      "@type": "Organization",
+    {
+      "@type": "WebSite",
+      "@id": "https://www.jaetravel.com/#website",
+      url: "https://www.jaetravel.com",
       name: "Jaetravel Expeditions",
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "4.9",
-      bestRating: "5",
-    },
-    name: "Best Luxury Safari Kenya with Car Hire",
-    author: {
-      "@type": "Person",
-      name: "Michael Lee",
-    },
-    reviewBody: "Booked online for Great Migration tours in Maasai Mara. The luxury hotel Kenya options and safari vehicle hire were top-notch. Highly recommend for family safari Kenya.",
-    publisher: {
-      "@type": "Organization",
-      name: "Google Reviews",
-    },
-  };
-
-  // Product Schema for safari tours (product snippets)
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: "Luxury Maasai Mara Safari Tour",
-    image: "https://www.jaetravel.com/maasai-mara-safari.jpg",
-    description: "5-day luxury safari in Maasai Mara with Great Migration viewing, luxury lodges, and optional safari vehicle hire.",
-    brand: {
-      "@type": "Brand",
-      name: "Jaetravel Expeditions",
-    },
-    offers: {
-      "@type": "Offer",
-      url: "https://www.jaetravel.com/destinations/maasai-mara",
-      priceCurrency: "USD",
-      price: "2500",
-      availability: "https://schema.org/InStock",
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: "0",
-          currency: "USD",
+      description: "Book Kenya Safari Hotels & Lodges",
+      publisher: {
+        "@id": "https://www.jaetravel.com/#organization"
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://www.jaetravel.com/search?q={search_term_string}"
         },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Product",
+      name: "Kenya Safari Hotel Booking Platform",
+      description: "Access to 200+ safari lodges and camps across Kenya with best rate guarantee",
+      brand: {
+        "@type": "Brand",
+        name: "Jaetravel Expeditions"
       },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "500",
-    },
-  };
-
-  // Add another product for accessible tour
-  const accessibleProductSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: "Accessible Safari Tour Kenya",
-    image: "https://www.jaetravel.com/accessible-safari.jpg",
-    description: "Wheelchair accessible Kenya safari with adapted vehicles, accessible rooms, and inclusive experiences in Maasai Mara and Amboseli.",
-    brand: {
-      "@type": "Brand",
-      name: "Jaetravel Expeditions",
-    },
-    offers: {
-      "@type": "Offer",
-      url: "https://www.jaetravel.com/accessible-safaris",
-      priceCurrency: "USD",
-      price: "3000",
-      availability: "https://schema.org/InStock",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "300",
-    },
-  };
-
-  // Merchant listings enhancements (return policy, etc.)
-  const merchantReturnPolicy = {
-    "@context": "https://schema.org",
-    "@type": "MerchantReturnPolicy",
-    name: "Jaetravel Return Policy",
-    applicableCountry: "KE",
-    returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-    merchantReturnDays: 30,
-    returnMethod: "https://schema.org/ReturnByMail",
-    returnFees: "https://schema.org/FreeReturn",
-  };
-
-  // Shipping policy for merchant opportunities
-  const shippingPolicy = {
-    "@context": "https://schema.org",
-    "@type": "OfferShippingDetails",
-    shippingRate: {
-      "@type": "MonetaryAmount",
-      value: "0",
-      currency: "USD",
-    },
-    shippingDestination: {
-      "@type": "DefinedRegion",
-      addressCountry: "KE",
-    },
-    deliveryTime: {
-      "@type": "ShippingDeliveryTime",
-      handlingTime: {
-        "@type": "QuantitativeValue",
-        minValue: 1,
-        maxValue: 2,
-        unitCode: "DAY",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "1247",
+        bestRating: "5",
+        worstRating: "1"
       },
-      transitTime: {
-        "@type": "QuantitativeValue",
-        minValue: 1,
-        maxValue: 5,
-        unitCode: "DAY",
-      },
-    },
-  };
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: "150",
+        highPrice: "2500",
+        offerCount: "200+"
+      }
+    }
+  ]
+};
 
+// ============================================
+// DESTINATIONS DATA - CAN BE MOVED TO SEPARATE FILE
+// ============================================
+const destinations = [
+  {
+    id: "maasai-mara",
+    name: "Maasai Mara",
+    description: "Great Migration, Big Cats, Hot Air Balloons",
+    count: 45,
+    image: "/maasai-mara.jpeg",
+    slug: "maasai-mara",
+    color: "from-amber-600 to-amber-800",
+    lightColor: "bg-amber-50",
+    borderColor: "border-amber-200",
+    textColor: "text-amber-700",
+    badgeColor: "bg-amber-100 text-amber-800",
+    properties: [
+      { name: "Angama Mara", rating: 4.9, price: 1200, type: "Luxury Lodge" },
+      { name: "Keekorok Lodge", rating: 4.5, price: 380, type: "Mid-Range" },
+      { name: "Mara Serena", rating: 4.6, price: 450, type: "Lodge" }
+    ]
+  },
+  {
+    id: "amboseli",
+    name: "Amboseli",
+    description: "Kilimanjaro Views, Elephant Herds",
+    count: 28,
+    image: "/amboseli.avif",
+    slug: "amboseli",
+    color: "from-blue-600 to-blue-800",
+    lightColor: "bg-blue-50",
+    borderColor: "border-blue-200",
+    textColor: "text-blue-700",
+    badgeColor: "bg-blue-100 text-blue-800",
+    properties: [
+      { name: "Ol Tukai Lodge", rating: 4.7, price: 420, type: "Lodge" },
+      { name: "Amboseli Serena", rating: 4.5, price: 350, type: "Lodge" },
+      { name: "Tortilis Camp", rating: 4.8, price: 650, type: "Luxury Camp" }
+    ]
+  },
+  {
+    id: "tsavo",
+    name: "Tsavo East & West",
+    description: "Red Elephants, Lava Fields, Man-Eaters",
+    count: 34,
+    image: "/tsavo-east.jpeg",
+    slug: "tsavo-east",
+    color: "from-orange-600 to-orange-800",
+    lightColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    textColor: "text-orange-700",
+    badgeColor: "bg-orange-100 text-orange-800",
+    properties: [
+      { name: "Finch Hattons", rating: 4.9, price: 850, type: "Luxury Lodge" },
+      { name: "Ashnil Aruba", rating: 4.4, price: 280, type: "Lodge" },
+      { name: "Voi Safari Lodge", rating: 4.2, price: 190, type: "Lodge" }
+    ]
+  },
+  {
+    id: "samburu",
+    name: "Samburu",
+    description: "Special Five, Grevy's Zebra, Culture",
+    count: 22,
+    image: "/samburu.webp",
+    slug: "samburu",
+    color: "from-emerald-600 to-emerald-800",
+    lightColor: "bg-emerald-50",
+    borderColor: "border-emerald-200",
+    textColor: "text-emerald-700",
+    badgeColor: "bg-emerald-100 text-emerald-800",
+    properties: [
+      { name: "Saruni Samburu", rating: 4.9, price: 950, type: "Luxury Lodge" },
+      { name: "Ashnil Samburu", rating: 4.5, price: 320, type: "Lodge" },
+      { name: "Elephant Bedroom", rating: 4.7, price: 580, type: "Luxury Camp" }
+    ]
+  },
+  {
+    id: "nakuru",
+    name: "Lake Nakuru",
+    description: "Flamingos, Rhinos, Waterfalls",
+    count: 16,
+    image: "/lake-nakuru-lodge.jpg",
+    slug: "nakuru",
+    color: "from-rose-600 to-rose-800",
+    lightColor: "bg-rose-50",
+    borderColor: "border-rose-200",
+    textColor: "text-rose-700",
+    badgeColor: "bg-rose-100 text-rose-800",
+    properties: [
+      { name: "Sarova Lion Hill", rating: 4.4, price: 280, type: "Lodge" },
+      { name: "Lake Nakuru Lodge", rating: 4.3, price: 220, type: "Lodge" },
+      { name: "Mbweha Camp", rating: 4.6, price: 310, type: "Camp" }
+    ]
+  },
+  {
+    id: "nairobi",
+    name: "Nairobi",
+    description: "City Safaris, Giraffe Centre, Karen Blixen",
+    count: 38,
+    image: "/nairobi.avif",
+    slug: "nairobi",
+    color: "from-purple-600 to-purple-800",
+    lightColor: "bg-purple-50",
+    borderColor: "border-purple-200",
+    textColor: "text-purple-700",
+    badgeColor: "bg-purple-100 text-purple-800",
+    properties: [
+      { name: "Giraffe Manor", rating: 4.9, price: 750, type: "Boutique Hotel" },
+      { name: "Emakoko", rating: 4.8, price: 650, type: "Lodge" },
+      { name: "Ole Sereni", rating: 4.5, price: 280, type: "Hotel" }
+    ]
+  }
+];
+
+// ============================================
+// FEATURED HOTELS - CAN BE MOVED TO SEPARATE FILE
+// ============================================
+const featuredHotels = [
+  {
+    id: "maasai-mara-009",
+    name: "Angama Mara",
+    location: "Maasai Mara",
+    rating: 4.9,
+    reviews: 342,
+    price: 1250,
+    image: "/angama-mara.webp",
+    badge: "Luxury Collection",
+    badgeColor: "bg-amber-600",
+    amenities: ["Pool", "Spa", "Free WiFi", "Restaurant", "Bar"],
+    description: "Perched on the Oloololo Escarpment, overlooking the Mara Triangle. Every suite has a view.",
+    rooms: Array(30).fill({ type: "Standard Room", price: 1250 }),
+    gallery: ["/angama-room1.webp", "/angama-room2.webp"],
+    address: "Oloololo Escarpment, Maasai Mara",
+    phone: "+254-700-123456",
+    email: "info@angamamara.com"
+  },
+  {
+    id: "amboseli-007",
+    name: "Ol Donyo Lodge",
+    location: "Amboseli",
+    rating: 4.9,
+    reviews: 287,
+    price: 980,
+    image: "/ol-donyo.webp",
+    badge: "Top Pick",
+    badgeColor: "bg-blue-600",
+    amenities: ["Private Plunge Pools", "Horseback Safaris", "Star Beds", "Gym"],
+    description: "Spectacular Kilimanjaro views from your private plunge pool. Exclusive conservancy.",
+    rooms: Array(20).fill({ type: "Deluxe Room", price: 980 }),
+    gallery: ["/ol-donyo-room1.webp", "/ol-donyo-room2.webp"],
+    address: "Amboseli National Park, Kenya",
+    phone: "+254-700-654321",
+    email: "info@oldonyolodge.com"
+  },
+  {
+    id: "tsavo-west-007",
+    name: "Finch Hattons",
+    location: "Tsavo West",
+    rating: 4.8,
+    reviews: 412,
+    price: 850,
+    image: "/finch-hattons.webp",
+    badge: "Best Value",
+    badgeColor: "bg-green-600",
+    amenities: ["Pool", "Spa", "Tennis Court", "Wine Cellar", "Butler Service"],
+    description: "Luxury oasis in the heart of Tsavo. Spring-fed pools and exceptional service.",
+    rooms: Array(25).fill({ type: "Luxury Suite", price: 850 }),
+    gallery: ["/finch-room1.webp", "/finch-room2.webp"],
+    address: "Tsavo West National Park, Kenya",
+    phone: "+254-700-987654",
+    email: "info@finchhattons.com"
+  },
+  {
+    id: "nairobi-012",
+    name: "Giraffe Manor",
+    location: "Nairobi",
+    rating: 4.9,
+    reviews: 523,
+    price: 750,
+    image: "/giraffe-manor.webp",
+    badge: "Iconic",
+    badgeColor: "bg-purple-600",
+    amenities: ["Giraffe Feeding", "Gardens", "Fine Dining", "Heritage Property"],
+    description: "Breakfast with giraffes. One of Africa's most iconic hotels.",
+    rooms: Array(12).fill({ type: "Boutique Room", price: 750 }),
+    gallery: ["/giraffe-room1.webp", "/giraffe-room2.webp"],
+    address: "Karen, Nairobi, Kenya",
+    phone: "+254-700-112233",
+    email: "info@giraffemanor.com"
+  }
+];
+
+// ============================================
+// HOTEL CARD COMPONENT - CLIENT COMPONENT
+// ============================================
+import { HotelCard } from "@/components/hotel-card";
+
+// ============================================
+// AMENITIES SECTION - CLIENT COMPONENT
+// ============================================
+import { AmenitiesFilter } from "@/components/amenities-filter";
+import { PopularSearchesEnhanced } from "@/components/popular-searches";
+
+// ============================================
+// MAIN PAGE - SERVER COMPONENT
+// ============================================
+export default function Home() {
   return (
     <>
-      <SchemaRenderer schema={breadcrumbSchema} />
-      <SchemaRenderer schema={faqSchema} />
-      <SchemaRenderer schema={organizationSchema} />
-      <SchemaRenderer schema={reviewSchema} />
-      <SchemaRenderer schema={reviewSchema2} />
-      <SchemaRenderer schema={productSchema} />
-      <SchemaRenderer schema={accessibleProductSchema} />
-      <SchemaRenderer schema={merchantReturnPolicy} />
-      <SchemaRenderer schema={shippingPolicy} />
+      {/* Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+      />
 
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-r from-orange-600 to-orange-700 text-white overflow-hidden pt-20">
-        <div className="absolute inset-0">
-          <Image
-            src="/kenya-safari-landscape.webp"
-            alt="Great Migration Kenya safari – wildebeest river crossing Maasai Mara luxury lodge view with accessible safari tours and safari vehicle hire options"
-            className="w-full h-full object-cover opacity-45"
-            loading="eager"
-            fill
-            priority
-            quality={82}
-          />
+      {/* ========== HERO SECTION - STATIC CONTENT ========== */}
+      <section className="relative bg-gradient-to-br from-amber-800 via-amber-700 to-amber-800 text-white overflow-hidden">
+        {/* Pattern overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 30L30 55L5 30L30 5Z' fill='white' fill-opacity='0.1' stroke='white' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E\")",
+            backgroundSize: "60px 60px"
+          }}></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-20">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight">
-              Luxury & Accessible Kenya Safari Tours 2025–2026 with Safari Vehicle Hire
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
+              Book Kenya&apos;s Best Safari Hotels & Lodges
             </h1>
-
-            <p className="text-xl md:text-2xl mb-10 max-w-4xl mx-auto text-orange-50/95 leading-relaxed">
-              Experience the world-famous <strong>Great Migration</strong> in <Link href="/destinations/maasai-mara" className="text-white underline">Maasai Mara</Link>,
-              elephants with <strong>Mount Kilimanjaro</strong> views in <strong>Amboseli</strong>, pink flamingo lakes in{" "}
-              <strong>Lake Nakuru</strong>, unique northern wildlife in <strong>Samburu</strong> and vast wilderness in{" "}
-              <strong>Tsavo</strong> — all with premium 5-star lodges, full accessibility options, and <Link href="/car-hire" className="text-white underline">safari vehicle hire</Link> for flexible adventures. Perfect for wheelchair accessible Kenya safari, inclusive travel Kenya, and family safari Kenya.
+            <p className="text-xl md:text-2xl text-amber-100 mb-8 drop-shadow">
+              200+ hand-picked properties • Best rate guarantee • Instant confirmation • 24/7 support
             </p>
-          </div>
-
-          {/* Booking boxes */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12 max-w-5xl mx-auto">
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-orange-100">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5 flex items-center gap-3">
-                <Star className="text-orange-500" size={32} />
-                Luxury Safari Experience
-              </h3>
-              <p className="text-gray-700 mb-6 text-lg">
-                Private game drives • 5-star lodges • Gourmet dining • Hot-air balloon rides • Expert naturalist guides for luxury safari Kenya
-              </p>
-              <QuickBooking />
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl p-8 shadow-2xl text-white border border-blue-400/30">
-              <h3 className="text-2xl md:text-3xl font-bold mb-5 flex items-center gap-3">
-                <Accessibility className="text-yellow-300" size={32} />
-                Accessible & Inclusive Safari
-              </h3>
-              <p className="text-blue-50 mb-6 text-lg">
-                Wheelchair accessible rooms • Adapted safari vehicles • Trained accessibility guides • Inclusive wildlife experiences for all abilities in accessible safari Kenya
-              </p>
-              <QuickBooking accessible={true} />
-            </div>
-
-            <div className="bg-gradient-to-br from-green-700 to-green-900 rounded-2xl p-8 shadow-2xl text-white border border-green-400/30">
-              <h3 className="text-2xl md:text-3xl font-bold mb-5 flex items-center gap-3">
-                <Car className="text-yellow-300" size={32} />
-                Safari Vehicle Hire
-              </h3>
-              <p className="text-green-50 mb-6 text-lg">
-                Rent 4x4 safari jeeps • Pop-up roofs for viewing • Self-drive or guided • Available in Maasai Mara, Amboseli, and more for car hire for safari
-              </p>
-              <Link href="/car-hire" className="bg-white text-green-700 px-6 py-3 rounded-lg font-bold hover:bg-green-50 transition">
-                Hire Now
-              </Link>
+            
+            {/* Trust badges - static */}
+            <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-12">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <BadgeCheck className="text-amber-300" size={24} />
+                <span className="font-medium text-white">Best Price Guarantee</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <BadgeCheck className="text-amber-300" size={24} />
+                <span className="font-medium text-white">No Booking Fees</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <BadgeCheck className="text-amber-300" size={24} />
+                <span className="font-medium text-white">Free Cancellation</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+                <BadgeCheck className="text-amber-300" size={24} />
+                <span className="font-medium text-white">Secure Payments</span>
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-5 justify-center">
-            <Link
-              href="/destinations"
-              className="bg-white text-orange-700 px-9 py-4 rounded-xl font-bold text-lg hover:bg-orange-50 transition shadow-lg"
-            >
-              Explore All 9 Safari Destinations
-            </Link>
-            <Link
-              href="/hotels"
-              className="bg-transparent border-2 border-white text-white px-9 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition backdrop-blur-sm"
-            >
-              View Luxury Lodges & Hotels
-            </Link>
-            <Link
-              href="/car-hire"
-              className="bg-transparent border-2 border-white text-white px-9 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition backdrop-blur-sm"
-            >
-              Safari Car Hire Options
-            </Link>
-          </div>
+          {/* Search Bar - Client Component */}
+          <SearchBar />
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-gradient-to-b from-gray-50 to-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-orange-600 mb-2">9</div>
-              <p className="text-lg font-medium text-gray-700">Iconic Safari Destinations</p>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-orange-600 mb-2">120+</div>
-              <p className="text-lg font-medium text-gray-700">Luxury & Accessible Lodges</p>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-orange-600 mb-2">4.8★</div>
-              <p className="text-lg font-medium text-gray-700">Traveler Rating</p>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-orange-600 mb-2">10,000+</div>
-              <p className="text-lg font-medium text-gray-700">Happy Safari Guests</p>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold text-orange-600 mb-2">50+</div>
-              <p className="text-lg font-medium text-gray-700">Safari Vehicles for Hire</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Rich content section - Expanded with more headers, texts, keywords */}
-      <section className="py-20 md:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
-            Discover the Best Kenya Safari Experiences & Tours
-          </h2>
-
-          <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed space-y-8">
-            <p>
-              Kenya offers some of the world’s most spectacular wildlife adventures. Witness the dramatic{" "}
-              <strong>Great Migration tours</strong> in the <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">Maasai Mara safari</Link>, where millions of wildebeest and zebras cross crocodile-infested rivers. Photograph massive elephant herds against the majestic{" "}
-              <strong>Mount Kilimanjaro</strong> backdrop in <strong>Amboseli National Park</strong>. Marvel at thousands of pink <strong>Lake Nakuru flamingos</strong> and discover the rare{" "}
-              <strong>Samburu special five</strong> animals in the remote northern reserves. Explore vast wilderness in <strong>Tsavo East Tsavo West</strong> and start with a <strong>Nairobi safari</strong>.
-            </p>
-
-            <p>
-              Our <strong>luxury hotel-based safari tours</strong> combine comfort and adventure — return each evening to 5-star lodges, tented camps or boutique hotels with swimming pools, gourmet restaurants, private plunge pools and breathtaking views. No camping required. Ideal for <strong>family safari Kenya</strong>, couples, and those seeking <strong>luxury lodges Kenya</strong>.
-            </p>
-
-            <h3 className="text-3xl font-bold mt-12 mb-7 text-gray-900">
-              Luxury Safari Holidays in Kenya with Premium Accommodations
-            </h3>
-            <p>
-              Enjoy private game drives, hot-air balloon safaris at sunrise, bush dinners under the stars, and stays in the most exclusive{" "}
-              <Link href="/hotels" className="text-orange-600 hover:underline font-medium">
-                luxury lodges Kenya
-              </Link>{" "}
-              has to offer — from <strong>Maasai Mara luxury lodges</strong> to elegant resorts near Nairobi. Book safari online for the <strong>best time to visit Kenya</strong> and experience unparalleled <strong>Kenya wildlife safaris</strong>.
-            </p>
-
-            <h3 className="text-3xl font-bold mt-12 mb-7 text-gray-900">
-              Safari Vehicle Hire: Flexible Car Hire for Safari Adventures
-            </h3>
-            <p>
-              Enhance your Kenya safari tours with our <Link href="/car-hire" className="text-orange-600 hover:underline font-medium">safari vehicle hire</Link> services. Rent reliable 4x4 vehicles equipped for rugged terrain, complete with pop-up roofs for optimal wildlife viewing. Whether for self-drive exploration or guided tours, our car hire for safari options are available in key destinations like <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">Maasai Mara</Link>, Amboseli, Samburu, Lake Nakuru, Tsavo, and Nairobi. Perfect for customizing your <strong>luxury safari Kenya</strong> itinerary.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-10 my-14">
-              <div>
-                <h4 className="text-2xl font-bold mb-5 text-gray-900">
-                  Why Choose Our Safari Vehicle Hire?
-                </h4>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Fully equipped 4x4 jeeps for Kenya wildlife safaris</li>
-                  <li>Options for wheelchair accessible vehicles</li>
-                  <li>Competitive rates for car hire in Kenya</li>
-                  <li>Available for Great Migration tours and more</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-2xl font-bold mb-5 text-gray-900">
-                  Book Safari Online with Vehicle Rental
-                </h4>
-                <p>
-                  Easily book safari online including vehicle hire. Combine with luxury hotel Kenya stays for a complete package.
-                </p>
-              </div>
-            </div>
-
-            <h3 className="text-3xl font-bold mt-12 mb-7 text-gray-900">
-              Accessible Safari Tours: Inclusive Travel for All
-            </h3>
-            <p>
-              We make Africa’s wildlife accessible to everyone with our specialized <strong>accessible safari tours Kenya</strong>. Our <strong>wheelchair accessible Kenya safari</strong> packages include adapted safari vehicles with lifts, <strong>accessible rooms Kenya</strong> in luxury lodges, trained accessibility guides, and inclusive experiences. Enjoy <strong>safari for disabled</strong> travelers without barriers in destinations like <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">Maasai Mara</Link>, Amboseli, Samburu, Lake Nakuru, Tsavo, and Nairobi.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-10 my-14">
-              <div>
-                <h4 className="text-2xl font-bold mb-5 text-gray-900">
-                  Features of Our Accessible Safari Kenya
-                </h4>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>Wheelchair friendly safaris with ramps and lifts</li>
-                  <li>Disabled access Kenya tours in all major parks</li>
-                  <li>Inclusive travel Kenya for families and groups</li>
-                  <li>Trained staff for safari for disabled guests</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-2xl font-bold mb-5 text-gray-900">
-                  Top Accessible Destinations
-                </h4>
-                <p>
-                  Experience <strong>Maasai Mara accessible safaris</strong>, <strong>Amboseli wheelchair tours</strong>, and more with full support.
-                </p>
-                <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">
-                  Learn More about Maasai Mara Accessible Options
-                </Link>
-              </div>
-            </div>
-
-            <p>
-              Our <strong>inclusive travel Kenya</strong> ensures every traveler, regardless of ability, can witness the Great Migration, Samburu special five, Lake Nakuru flamingos, and more in comfort and style.
-            </p>
-
-            <h3 className="text-3xl font-bold mt-12 mb-7 text-gray-900">
-              Top Kenya Safari Destinations You Can Explore
-            </h3>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
-              {[
-                { name: "Maasai Mara – Great Migration", slug: "maasai-mara" },
-                { name: "Amboseli – Kilimanjaro Views", slug: "amboseli" },
-                { name: "Samburu – Special Five Animals", slug: "samburu" },
-                { name: "Lake Nakuru – Flamingos & Rhinos", slug: "nakuru" },
-                { name: "Tsavo East & West – Wilderness", slug: "tsavo-east" },
-                { name: "Nairobi – City Safari", slug: "nairobi" },
-              ].map((d) => (
-                <Link
-                  key={d.slug}
-                  href={`/destinations/${d.slug}`}
-                  className="bg-gray-50 hover:bg-orange-50 p-6 rounded-xl border border-gray-200 hover:border-orange-300 transition-colors group"
-                >
-                  <h4 className="text-xl font-bold text-gray-900 group-hover:text-orange-700 transition-colors">
-                    {d.name}
-                  </h4>
-                  <p className="mt-2 text-gray-600">Discover luxury lodges, accessible options & best time to visit with safari vehicle hire</p>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <Link
-                href="/destinations"
-                className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white px-10 py-5 rounded-xl font-bold text-xl transition-colors shadow-lg"
-              >
-                View All 9 Safari Destinations
-                <span className="text-2xl">→</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ==================== NEW ACCESSIBLE SAFARIS SECTION ==================== */}
-<section className="py-20 md:py-24 bg-gradient-to-b from-blue-50 to-white">
-  <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div className="text-center mb-12">
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-        Accessible Safaris in Kenya – Travel Without Barriers
-      </h2>
-      <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-        We believe everyone deserves to experience the magic of Kenya’s wildlife. Our <strong>accessible safari tours</strong> are specially designed for travelers with disabilities, including wheelchair users, people with mobility challenges, and those requiring additional support.
-      </p>
-    </div>
-
-    <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed space-y-8">
-      <p>
-        Our <strong>wheelchair accessible Kenya safaris</strong> feature purpose-adapted 4×4 safari vehicles with hydraulic lifts or ramps, wide doors, lowered floors, and secure wheelchair tie-downs. Many of our <Link href="/hotels" className="text-orange-600 hover:underline font-medium">luxury lodges</Link> and tented camps offer fully <strong>accessible rooms Kenya</strong> — with roll-in showers, grab bars, lowered sinks, and step-free access to main areas, dining, and viewing decks.
-      </p>
-
-      <p>
-        Every journey is supported by <strong>trained accessibility guides</strong> who understand inclusive travel needs and can assist with transfers, game viewing explanations, photography, and cultural interactions. We work closely with you to create a comfortable, safe, and unforgettable experience — whether you’re watching the <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline font-medium">Great Migration</Link> in Maasai Mara, photographing elephants under Kilimanjaro in Amboseli, or enjoying flamingos at Lake Nakuru.
-      </p>
-
-      <h3 className="text-3xl font-bold mt-12 mb-7 text-gray-900">
-        What Makes Our Accessible Safari Tours Different?
-      </h3>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 my-10">
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-          <h4 className="text-xl font-bold mb-4 text-gray-900">Adapted Safari Vehicles</h4>
-          <p>Wheelchair-accessible 4×4 jeeps with lifts, removable seats, and excellent game-viewing height — available for private use or small groups.</p>
-          <Link href="/car-hire" className="text-orange-600 hover:underline font-medium text-sm mt-2 inline-block">
-            See accessible vehicle hire options →
-          </Link>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-          <h4 className="text-xl font-bold mb-4 text-gray-900">Accessible Luxury Lodges</h4>
-          <p>Step-free pathways, roll-in showers, hearing loops in some properties, visual alerts, and staff trained in disability awareness.</p>
-          <Link href="/hotels" className="text-orange-600 hover:underline font-medium text-sm mt-2 inline-block">
-            Browse accessible accommodations →
-          </Link>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-          <h4 className="text-xl font-bold mb-4 text-gray-900">Personalized Planning</h4>
-          <p>We discuss your specific needs in detail — mobility, vision, hearing, dietary, medication storage — and tailor every aspect of your safari.</p>
-        </div>
-      </div>
-
-      <h3 className="text-3xl font-bold mt-12 mb-7 text-gray-900">
-        Popular Accessible Safari Destinations
-      </h3>
-
-      <p>
-        <strong>Maasai Mara</strong> – Excellent wheelchair-friendly game drives and several accessible luxury camps with raised viewing platforms.<br />
-        <strong>Amboseli</strong> – Flat terrain ideal for mobility challenges + stunning Kilimanjaro views from accessible vehicles.<br />
-        <strong>Lake Nakuru</strong> & <strong>Nairobi National Park</strong> – Shorter transfers, good road access, and many accessible facilities.<br />
-        <strong>Samburu</strong> & <strong>Tsavo</strong> – Select lodges with accessibility upgrades and quieter, less bumpy routes.
-      </p>
-
-      <div className="text-center mt-12">
-        <Link
-          href="/accessible-safaris" // ← create this page or redirect to contact form
-          className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-xl transition-colors shadow-lg"
-        >
-          Plan Your Accessible Safari Today
-          <span className="text-2xl">→</span>
-        </Link>
-      </div>
-
-      <p className="text-center mt-8 text-gray-600 italic">
-        “Travel should be for everyone. We’re proud to make Kenya’s wildlife accessible and joyful for all abilities.”
-      </p>
-    </div>
-  </div>
-</section>
-
-      {/* Destinations Preview - Updated image alts */}
-      <section className="py-16 bg-gray-50">
+      {/* ========== DESTINATION GRID - STATIC ========== */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Our 9 Kenya Safari Destinations</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Safari Destinations</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From the world-famous <Link href="/destinations/maasai-mara" className="text-orange-600 hover:underline"><strong>Maasai Mara safari</strong></Link> to the remote wilderness of <strong>Samburu</strong>, each destination offers unique wildlife, landscapes, cultural experiences, accessible safari tours, and safari vehicle hire options.
+              Find the perfect lodge or camp in Kenya&apos;s most iconic wildlife destinations
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {locations.map((location) => (
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {destinations.map((dest) => (
               <Link
-                key={location.id}
-                href={`/destinations/${location.slug}`}
-                className="group relative h-64 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                key={dest.id}
+                href={`/destinations/${dest.slug}`}
+                className="group relative h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 <Image
-                  src={location.image || "/placeholder.svg"}
-                  alt={`${location.name} Kenya Safari - ${location.description} | Luxury & Accessible Tours with Safari Vehicle Hire`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                  width={400}
-                  height={300}
+                  src={dest.image}
+                  alt={`${dest.name} safari hotels and lodges`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{location.name}</h3>
-                    <p className="text-orange-200 text-sm">{location.description}</p>
+                <div className={`absolute inset-0 bg-gradient-to-t ${dest.color} via-black/30 to-transparent opacity-90 group-hover:opacity-95 transition`} />
+                
+                <div className="absolute bottom-0 left-0 p-6 text-white w-full">
+                  <h3 className="text-3xl font-bold mb-2 drop-shadow-lg">{dest.name}</h3>
+                  <p className="text-white/90 mb-3 drop-shadow font-medium">{dest.description}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-medium border border-white/30">
+                      {dest.count} properties
+                    </span>
+                    <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-medium border border-white/30">
+                      From ${Math.min(...dest.properties.map(p => p.price))}/night
+                    </span>
+                  </div>
+                  
+                  {/* Preview hotels */}
+                  <div className="mt-4 flex gap-2">
+                    {dest.properties.slice(0, 3).map((p, i) => (
+                      <div key={i} className="bg-white/20 backdrop-blur-md rounded-full px-3 py-1 text-xs font-medium border border-white/30">
+                        {p.name.split(' ')[0]}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-12">
-            <Link
-              href="/destinations"
-              className="inline-block bg-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:bg-orange-600 transition"
-            >
-              View All Destinations
+        </div>
+      </section>
+
+      {/* ========== FEATURED HOTELS ========== */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Safari Hotels</h2>
+              <p className="text-xl text-gray-600">Hand-picked luxury lodges and camps</p>
+            </div>
+            <Link href="/hotels" className="text-amber-600 hover:text-amber-700 font-bold flex items-center gap-1 bg-amber-50 px-4 py-2 rounded-lg transition hover:bg-amber-100">
+              View all hotels
+              <ChevronRight size={20} />
             </Link>
           </div>
-        </div>
-      </section>
 
-      {/* New Reviews Section with Snippets */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 text-gray-900">
-            What Our Guests Say About Our Kenya Safari Tours
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-10">
-            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200">
-              <div className="flex items-center mb-4">
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-              </div>
-              <p className="text-gray-700 mb-4">&quot;The wheelchair accessible safari tours were fantastic! We hired a safari vehicle and explored Maasai Mara with ease. Luxury lodges and expert guides made it unforgettable.&quot;</p>
-              <p className="font-bold text-gray-900">- Sarah Johnson</p>
-            </div>
-            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200">
-              <div className="flex items-center mb-4">
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-                <Star className="text-yellow-400" size={24} />
-              </div>
-              <p className="text-gray-700 mb-4">&quot;Booked online for Great Migration tours in Maasai Mara. The luxury hotel Kenya options and safari vehicle hire were top-notch. Highly recommend for family safari Kenya.&quot;</p>
-              <p className="font-bold text-gray-900">- Michael Lee</p>
-            </div>
-            {/* Add more if needed */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredHotels.map((hotel) => (
+              <HotelCard key={hotel.id} hotel={hotel} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section – visible + schema, expanded */}
+      {/* ========== WHY BOOK WITH US - STATIC ========== */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-14 text-gray-900">
-            Frequently Asked Questions about Kenya Safaris, Accessible Tours & Vehicle Hire
-          </h2>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Why Book Your Safari Hotel With Jaetravel</h2>
+          <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">We make booking your dream safari accommodation simple, secure, and affordable</p>
 
-          <div className="grid md:grid-cols-2 gap-10">
-            {faqItems.map((item, index) => (
-              <div key={index} className="bg-white p-7 rounded-2xl shadow-sm border border-gray-200">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.question}</h3>
-                <p className="text-gray-700">{item.answer}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Shield className="text-amber-600" size={32} />,
+                title: "Best Price Guarantee",
+                description: "Find a lower rate elsewhere? We'll match it and give you 10% off your next booking.",
+                color: "bg-amber-100",
+                textColor: "text-amber-800"
+              },
+              {
+                icon: <Sparkles className="text-blue-600" size={32} />,
+                title: "Curated Selection",
+                description: "Only properties that meet our quality standards make it onto our platform.",
+                color: "bg-blue-100",
+                textColor: "text-blue-800"
+              },
+              {
+                icon: <Clock className="text-green-600" size={32} />,
+                title: "Instant Confirmation",
+                description: "Book and receive confirmation in under 5 minutes. No waiting for approvals.",
+                color: "bg-green-100",
+                textColor: "text-green-800"
+              },
+              {
+                icon: <Users className="text-purple-600" size={32} />,
+                title: "Local Experts",
+                description: "24/7 support from our Nairobi-based team who know every property personally.",
+                color: "bg-purple-100",
+                textColor: "text-purple-800"
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100">
+                <div className={`inline-flex items-center justify-center w-16 h-16 ${item.color} rounded-2xl mb-6`}>
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="bg-gradient-to-br from-orange-600 to-amber-700 text-white py-20 md:py-28">
-        <div className="max-w-5xl mx-auto px-5 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Ready to Book Your Kenya Safari Adventure?
-          </h2>
+      {/* ========== POPULAR AMENITIES - CLIENT COMPONENT ========== */}
+      <AmenitiesFilter hotels={hotels} />
 
-          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-95">
-            Luxury lodges • Wheelchair accessible options • Safari vehicle hire • Expert guides • Great Migration • Big Five • Family safaris – we create the perfect itinerary for every traveler.
+      {/* ========== REVIEWS - STATIC ========== */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Loved by Travelers</h2>
+          <p className="text-xl text-center text-gray-600 mb-16">4.8★ average rating from 1,247+ verified reviews</p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sarah Thompson",
+                location: "London, UK",
+                hotel: "Angama Mara",
+                rating: 5,
+                comment: "The booking process was seamless. Got instant confirmation and a rate 15% lower than anywhere else. Will definitely use again."
+              },
+              {
+                name: "Michael Chen",
+                location: "Singapore",
+                hotel: "Ol Donyo Lodge",
+                rating: 5,
+                comment: "Their local knowledge is unmatched. The agent recommended the perfect room with Kilimanjaro views. Exceptional service."
+              },
+              {
+                name: "Emma Watson",
+                location: "Sydney, AUS",
+                hotel: "Giraffe Manor",
+                rating: 5,
+                comment: "Found a hotel that was sold out everywhere else through Jaetravel. Their inventory is amazing."
+              }
+            ].map((review, i) => (
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="text-amber-400 fill-current" size={20} />
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-6 leading-relaxed text-lg italic">&quot;{review.comment}&quot;</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-xl">
+                    {review.name[0]}
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900 text-lg">{review.name}</p>
+                    <p className="text-sm text-gray-600">{review.location} • Stayed at {review.hotel}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== POPULAR SEARCHES - STATIC ========== */}
+      <PopularSearchesEnhanced />
+
+      {/* ========== CTA - STATIC ========== */}
+      <section className="relative py-24 bg-gradient-to-br from-amber-800 to-amber-900">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/cta-bg.jpg"
+            alt=""
+            fill
+            className="object-cover opacity-10"
+          />
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 text-center text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Ready to Book Your Safari Stay?</h2>
+          <p className="text-xl mb-10 text-amber-100 drop-shadow max-w-2xl mx-auto">
+            Join thousands of travelers who booked their perfect safari hotel with us
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/search"
+              className="bg-white text-amber-800 hover:bg-amber-50 px-10 py-5 rounded-xl font-bold text-lg transition shadow-xl hover:shadow-2xl"
+            >
+              Search All Hotels
+            </Link>
             <Link
               href="/contact"
-              className="bg-white text-orange-700 px-12 py-6 rounded-xl font-bold text-xl hover:bg-orange-50 transition shadow-lg"
+              className="border-2 border-white text-white hover:bg-white/10 px-10 py-5 rounded-xl font-bold text-lg transition backdrop-blur-sm"
             >
-              Get Your Personalized Safari Quote
+              Talk to a Safari Expert
             </Link>
-            <Link
-              href="/hotels"
-              className="border-2 border-white text-white px-12 py-6 rounded-xl font-bold text-xl hover:bg-white/20 transition backdrop-blur-sm"
-            >
-              Browse Luxury & Accessible Lodges
-            </Link>
-            <Link
-              href="/car-hire"
-              className="border-2 border-white text-white px-12 py-6 rounded-xl font-bold text-xl hover:bg-white/20 transition backdrop-blur-sm"
-            >
-              Explore Safari Vehicle Hire
-            </Link>
+          </div>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-amber-200">
+            <span className="flex items-center gap-2">
+              <CheckCircle2 size={18} className="text-amber-300" />
+              Best price guarantee
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle2 size={18} className="text-amber-300" />
+              No booking fees
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle2 size={18} className="text-amber-300" />
+              Free cancellation
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle2 size={18} className="text-amber-300" />
+              Secure payment
+            </span>
           </div>
         </div>
       </section>

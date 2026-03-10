@@ -1228,6 +1228,122 @@ export const hotels: Hotel[] = [
       ]
     })
   },
+  {
+    id: "nairobi-012",
+    name: "Giraffe Manor",
+    location: "Nairobi",
+    rating: 4.9,
+    price: 750,
+    image: "/giraffe-manor.webp?height=400&width=600",
+    gallery: [
+      "/hotels/giraffe-manor/giraffe-manor-gallery-1.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-2.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-3.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-4.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-5.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-6.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-7.jpg?height=400&width=600",
+      "/hotels/giraffe-manor/giraffe-manor-gallery-8.jpg?height=400&width=600"
+    ],
+    description: "Breakfast with giraffes. One of Africa's most iconic hotels. Giraffe Manor is a boutique hotel in Nairobi where endangered Rothschild giraffes visit daily, poking their long necks through windows looking for treats.",
+    amenities: [
+      "Giraffe Feeding",
+      "Gardens",
+      "Fine Dining",
+      "Heritage Property",
+      "Library",
+      "Courtyards",
+      "Free WiFi",
+      "Restaurant",
+      "Bar",
+      "Boutique",
+      "Gift Shop",
+      "Event Space",
+      "Wedding Venue"
+    ],
+    address: "Langata Road, Nairobi, Kenya",
+    phone: "+254 20 456 7890",
+    email: "reservations@giraffemanor.com",
+    rooms: createRooms("giraffe-manor-004", 750, {
+      standard: [
+        "/hotels/giraffe-manor/rooms/standard/standard-room-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/standard/standard-room-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/standard/standard-bathroom.jpg?height=400&width=600"
+      ],
+      deluxe: [
+        "/hotels/giraffe-manor/rooms/deluxe/deluxe-room-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/deluxe/deluxe-room-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/deluxe/deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/deluxe/deluxe-view.jpg?height=400&width=600"
+      ],
+      suite: [
+        "/hotels/giraffe-manor/rooms/suite/suite-bedroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/suite/suite-living.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/suite/suite-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/suite/suite-terrace.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/suite/suite-garden-view.jpg?height=400&width=600"
+      ],
+      family: [
+        "/hotels/giraffe-manor/rooms/family/family-suite-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/family/family-suite-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/family/family-bedroom-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/family/family-bedroom-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/family/family-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/family/family-garden.jpg?height=400&width=600"
+      ],
+      executive: [
+        "/hotels/giraffe-manor/rooms/executive/executive-suite-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/executive/executive-suite-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/executive/executive-bedroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/executive/executive-living.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/executive/executive-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/executive/executive-terrace.jpg?height=400&width=600"
+      ],
+      presidential: [
+        "/hotels/giraffe-manor/rooms/presidential/presidential-suite-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-suite-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-bedroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-living.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-dining.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-garden.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/presidential/presidential-terrace.jpg?height=400&width=600"
+      ],
+      accessibleStandard: [
+        "/hotels/giraffe-manor/rooms/accessible/standard/accessible-standard-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/standard/accessible-standard-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/standard/accessible-bathroom.jpg?height=400&width=600"
+      ],
+      accessibleDeluxe: [
+        "/hotels/giraffe-manor/rooms/accessible/deluxe/accessible-deluxe-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/deluxe/accessible-deluxe-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/deluxe/accessible-deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/deluxe/accessible-deluxe-garden.jpg?height=400&width=600"
+      ],
+      accessibleSuite: [
+        "/hotels/giraffe-manor/rooms/accessible/suite/accessible-suite-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/suite/accessible-suite-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/suite/accessible-suite-living.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/suite/accessible-suite-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/suite/accessible-suite-terrace.jpg?height=400&width=600"
+      ],
+      accessibleFamily: [
+        "/hotels/giraffe-manor/rooms/accessible/family/accessible-family-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/family/accessible-family-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/family/accessible-family-bedroom-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/family/accessible-family-bedroom-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/family/accessible-family-bathroom.jpg?height=400&width=600"
+      ],
+      accessiblePremium: [
+        "/hotels/giraffe-manor/rooms/accessible/premium/accessible-premium-1.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/premium/accessible-premium-2.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/premium/accessible-premium-bedroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/premium/accessible-premium-living.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/premium/accessible-premium-bathroom.jpg?height=400&width=600",
+        "/hotels/giraffe-manor/rooms/accessible/premium/accessible-premium-garden.jpg?height=400&width=600"
+      ]
+    })
+  },
 
   // Naivasha Hotels
   {
@@ -2878,6 +2994,113 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/offbeat-accessible-premium-1.jpg", "/offbeat-accessible-premium-2.jpg", "/offbeat-accessible-premium-bathroom.jpg"]
     })
   },
+  {
+    id: "maasai-mara-009",
+    name: "Angama Mara",
+    location: "Maasai Mara",
+    rating: 4.9,
+    price: 1250,
+    image: "/angama-mara.webp?height=400&width=600",
+    gallery: [
+      "/hotels/angama-mara/angama-mara-gallery-1.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-2.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-3.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-4.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-5.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-6.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-7.jpg?height=400&width=600",
+      "/hotels/angama-mara/angama-mara-gallery-8.jpg?height=400&width=600"
+    ],
+    description: "Perched on the Oloololo Escarpment, overlooking the Mara Triangle. Every suite has a view. Angama Mara offers the ultimate luxury safari experience with unparalleled views of the Maasai Mara. Each suite is designed to maximize the dramatic scenery, with floor-to-ceiling windows and private decks. The property features two separate camps connected by a wooden walkway, each with its own swimming pool, dining area, and lounge.",
+    amenities: [
+      "Infinity Pool",
+      "Spa", 
+      "Free WiFi", 
+      "Restaurant", 
+      "Bar",
+      "Photography Studio",
+      "Gym",
+      "Boutique",
+      "Complimentary Laundry",
+      "Maasai Village Visits",
+      "Hot Air Balloons",
+      "Private Game Drives"
+    ],
+    address: "Oloololo Escarpment, Maasai Mara National Reserve, Kenya",
+    phone: "+254 20 123 4567",
+    email: "reservations@angamamara.com",
+    rooms: createRooms("angama-mara-001", 1250, {
+      standard: [
+        "/hotels/angama-mara/rooms/standard/standard-room-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/standard/standard-room-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/standard/standard-bathroom.jpg?height=400&width=600"
+      ],
+      deluxe: [
+        "/hotels/angama-mara/rooms/deluxe/deluxe-room-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/deluxe/deluxe-room-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/deluxe/deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/deluxe/deluxe-terrace.jpg?height=400&width=600"
+      ],
+      suite: [
+        "/hotels/angama-mara/rooms/suite/suite-living.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/suite/suite-bedroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/suite/suite-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/suite/suite-deck.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/suite/suite-view.jpg?height=400&width=600"
+      ],
+      family: [
+        "/hotels/angama-mara/rooms/family/family-suite-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/family/family-suite-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/family/family-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/family/family-living.jpg?height=400&width=600"
+      ],
+      executive: [
+        "/hotels/angama-mara/rooms/executive/executive-suite-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/executive/executive-suite-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/executive/executive-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/executive/executive-terrace.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/executive/executive-view.jpg?height=400&width=600"
+      ],
+      presidential: [
+        "/hotels/angama-mara/rooms/presidential/presidential-suite-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/presidential/presidential-suite-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/presidential/presidential-bedroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/presidential/presidential-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/presidential/presidential-living.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/presidential/presidential-pool.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/presidential/presidential-deck.jpg?height=400&width=600"
+      ],
+      accessibleStandard: [
+        "/hotels/angama-mara/rooms/accessible/standard/accessible-standard-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/standard/accessible-standard-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/standard/accessible-bathroom-1.jpg?height=400&width=600"
+      ],
+      accessibleDeluxe: [
+        "/hotels/angama-mara/rooms/accessible/deluxe/accessible-deluxe-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/deluxe/accessible-deluxe-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/deluxe/accessible-deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/deluxe/accessible-deluxe-terrace.jpg?height=400&width=600"
+      ],
+      accessibleSuite: [
+        "/hotels/angama-mara/rooms/accessible/suite/accessible-suite-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/suite/accessible-suite-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/suite/accessible-suite-living.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/suite/accessible-suite-bathroom.jpg?height=400&width=600"
+      ],
+      accessibleFamily: [
+        "/hotels/angama-mara/rooms/accessible/family/accessible-family-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/family/accessible-family-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/family/accessible-family-bathroom.jpg?height=400&width=600"
+      ],
+      accessiblePremium: [
+        "/hotels/angama-mara/rooms/accessible/premium/accessible-premium-1.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/premium/accessible-premium-2.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/premium/accessible-premium-living.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/premium/accessible-premium-bathroom.jpg?height=400&width=600",
+        "/hotels/angama-mara/rooms/accessible/premium/accessible-premium-terrace.jpg?height=400&width=600"
+      ]
+    })
+  },
   /** 
   {
     id: "maasai-mara-009",
@@ -3191,6 +3414,122 @@ export const hotels: Hotel[] = [
       accessiblePremium: ["/maasai-simba-accessible-premium-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"]
     })
   },
+  {
+    id: "amboseli-007",
+    name: "Ol Donyo Lodge",
+    location: "Amboseli",
+    rating: 4.9,
+    price: 980,
+    image: "/ol-donyo.webp?height=400&width=600",
+    gallery: [
+      "/hotels/ol-donyo/ol-donyo-gallery-1.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-2.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-3.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-4.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-5.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-6.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-7.jpg?height=400&width=600",
+      "/hotels/ol-donyo/ol-donyo-gallery-8.jpg?height=400&width=600"
+    ],
+    description: "Spectacular Kilimanjaro views from your private plunge pool. Exclusive conservancy. Ol Donyo Lodge sits in a private concession on the slopes of the Chyulu Hills, offering breathtaking views of Mount Kilimanjaro. Each suite features a private plunge pool and star bed for sleeping under the African sky.",
+    amenities: [
+      "Private Plunge Pools",
+      "Horseback Safaris",
+      "Star Beds",
+      "Gym",
+      "Spa",
+      "Free WiFi",
+      "Restaurant",
+      "Bar",
+      "Boutique",
+      "Library",
+      "Bird Hide",
+      "Mountain Biking",
+      "Maasai Guided Walks"
+    ],
+    address: "Chyulu Hills, Amboseli Region, Kenya",
+    phone: "+254 20 234 5678",
+    email: "reservations@oldonyolodge.com",
+    rooms: createRooms("ol-donyo-002", 980, {
+      standard: [
+        "/hotels/ol-donyo/rooms/standard/standard-suite-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/standard/standard-suite-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/standard/standard-bathroom.jpg?height=400&width=600"
+      ],
+      deluxe: [
+        "/hotels/ol-donyo/rooms/deluxe/deluxe-suite-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/deluxe/deluxe-suite-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/deluxe/deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/deluxe/deluxe-pool.jpg?height=400&width=600"
+      ],
+      suite: [
+        "/hotels/ol-donyo/rooms/suite/suite-living.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/suite/suite-bedroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/suite/suite-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/suite/suite-pool.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/suite/suite-star-bed.jpg?height=400&width=600"
+      ],
+      family: [
+        "/hotels/ol-donyo/rooms/family/family-suite-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/family/family-suite-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/family/family-bedroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/family/family-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/family/family-pool.jpg?height=400&width=600"
+      ],
+      executive: [
+        "/hotels/ol-donyo/rooms/executive/executive-suite-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/executive/executive-suite-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/executive/executive-living.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/executive/executive-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/executive/executive-pool.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/executive/executive-star-bed.jpg?height=400&width=600"
+      ],
+      presidential: [
+        "/hotels/ol-donyo/rooms/presidential/presidential-villa-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-villa-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-living.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-bedroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-pool.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-star-bed.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/presidential/presidential-view.jpg?height=400&width=600"
+      ],
+      accessibleStandard: [
+        "/hotels/ol-donyo/rooms/accessible/standard/accessible-standard-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/standard/accessible-standard-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/standard/accessible-bathroom.jpg?height=400&width=600"
+      ],
+      accessibleDeluxe: [
+        "/hotels/ol-donyo/rooms/accessible/deluxe/accessible-deluxe-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/deluxe/accessible-deluxe-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/deluxe/accessible-deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/deluxe/accessible-deluxe-pool.jpg?height=400&width=600"
+      ],
+      accessibleSuite: [
+        "/hotels/ol-donyo/rooms/accessible/suite/accessible-suite-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/suite/accessible-suite-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/suite/accessible-suite-living.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/suite/accessible-suite-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/suite/accessible-suite-pool.jpg?height=400&width=600"
+      ],
+      accessibleFamily: [
+        "/hotels/ol-donyo/rooms/accessible/family/accessible-family-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/family/accessible-family-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/family/accessible-family-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/family/accessible-family-pool.jpg?height=400&width=600"
+      ],
+      accessiblePremium: [
+        "/hotels/ol-donyo/rooms/accessible/premium/accessible-premium-1.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/premium/accessible-premium-2.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/premium/accessible-premium-living.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/premium/accessible-premium-bathroom.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/premium/accessible-premium-pool.jpg?height=400&width=600",
+        "/hotels/ol-donyo/rooms/accessible/premium/accessible-premium-star-bed.jpg?height=400&width=600"
+      ]
+    })
+  },
+
+  
   /** 
   {
     id: "amboseli-007",
@@ -3940,6 +4279,123 @@ export const hotels: Hotel[] = [
       accessibleSuite: ["/kilaguni-accessible-suite-1.jpg", "/kilaguni-accessible-suite-2.jpg", "/kilaguni-accessible-suite-bathroom.jpg"],
       accessibleFamily: ["/kilaguni-accessible-family-1.jpg", "/kilaguni-accessible-family-2.jpg", "/kilaguni-accessible-family-bathroom.jpg"],
       accessiblePremium: ["/kilaguni-accessible-premium-1.jpg", "/kilaguni-accessible-premium-2.jpg", "/kilaguni-accessible-premium-bathroom.jpg"]
+    })
+  },
+  {
+    id: "tsavo-west-007",
+    name: "Finch Hattons",
+    location: "Tsavo West",
+    rating: 4.8,
+    price: 850,
+    image: "/finch-hattons.webp?height=400&width=600",
+    gallery: [
+      "/hotels/finch-hattons/finch-hattons-gallery-1.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-2.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-3.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-4.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-5.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-6.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-7.jpg?height=400&width=600",
+      "/hotels/finch-hattons/finch-hattons-gallery-8.jpg?height=400&width=600"
+    ],
+    description: "Luxury oasis in the heart of Tsavo. Spring-fed pools and exceptional service. Finch Hattons offers a unique luxury experience in Tsavo West, with private spring-fed pools for each suite and access to some of Kenya's most dramatic wilderness.",
+    amenities: [
+      "Private Spring-Fed Pools",
+      "Spa",
+      "Tennis Court",
+      "Wine Cellar",
+      "Butler Service",
+      "Gym",
+      "Free WiFi",
+      "Restaurant",
+      "Bar",
+      "Library",
+      "Boutique",
+      "Game Drives",
+      "Night Drives",
+      "Walking Safaris"
+    ],
+    address: "Tsavo West National Park, Kenya",
+    phone: "+254 20 345 6789",
+    email: "reservations@finchhattons.com",
+    rooms: createRooms("finch-hattons-003", 850, {
+      standard: [
+        "/hotels/finch-hattons/rooms/standard/standard-tent-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/standard/standard-tent-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/standard/standard-bathroom.jpg?height=400&width=600"
+      ],
+      deluxe: [
+        "/hotels/finch-hattons/rooms/deluxe/deluxe-tent-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/deluxe/deluxe-tent-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/deluxe/deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/deluxe/deluxe-pool.jpg?height=400&width=600"
+      ],
+      suite: [
+        "/hotels/finch-hattons/rooms/suite/suite-tent-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/suite/suite-tent-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/suite/suite-living.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/suite/suite-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/suite/suite-pool.jpg?height=400&width=600"
+      ],
+      family: [
+        "/hotels/finch-hattons/rooms/family/family-tent-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/family/family-tent-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/family/family-bedroom-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/family/family-bedroom-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/family/family-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/family/family-pool.jpg?height=400&width=600"
+      ],
+      executive: [
+        "/hotels/finch-hattons/rooms/executive/executive-tent-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/executive/executive-tent-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/executive/executive-living.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/executive/executive-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/executive/executive-pool.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/executive/executive-view.jpg?height=400&width=600"
+      ],
+      presidential: [
+        "/hotels/finch-hattons/rooms/presidential/presidential-villa-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-villa-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-bedroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-living.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-dining.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-pool.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/presidential/presidential-terrace.jpg?height=400&width=600"
+      ],
+      accessibleStandard: [
+        "/hotels/finch-hattons/rooms/accessible/standard/accessible-standard-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/standard/accessible-standard-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/standard/accessible-bathroom.jpg?height=400&width=600"
+      ],
+      accessibleDeluxe: [
+        "/hotels/finch-hattons/rooms/accessible/deluxe/accessible-deluxe-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/deluxe/accessible-deluxe-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/deluxe/accessible-deluxe-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/deluxe/accessible-deluxe-pool.jpg?height=400&width=600"
+      ],
+      accessibleSuite: [
+        "/hotels/finch-hattons/rooms/accessible/suite/accessible-suite-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/suite/accessible-suite-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/suite/accessible-suite-living.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/suite/accessible-suite-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/suite/accessible-suite-pool.jpg?height=400&width=600"
+      ],
+      accessibleFamily: [
+        "/hotels/finch-hattons/rooms/accessible/family/accessible-family-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/family/accessible-family-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/family/accessible-family-bedroom-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/family/accessible-family-bedroom-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/family/accessible-family-bathroom.jpg?height=400&width=600"
+      ],
+      accessiblePremium: [
+        "/hotels/finch-hattons/rooms/accessible/premium/accessible-premium-1.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/premium/accessible-premium-2.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/premium/accessible-premium-living.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/premium/accessible-premium-bathroom.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/premium/accessible-premium-pool.jpg?height=400&width=600",
+        "/hotels/finch-hattons/rooms/accessible/premium/accessible-premium-terrace.jpg?height=400&width=600"
+      ]
     })
   },
   /** 
