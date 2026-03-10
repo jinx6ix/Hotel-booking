@@ -275,15 +275,14 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
-    yandex: "b585127e41b6a92f",
-    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
   },
   category: "travel",
 };
 
 // ============================================
-// COMPREHENSIVE SCHEMA MARKUP - ALL 5 TYPES
+// COMPREHENSIVE SCHEMA MARKUP - ALL 5 TYPES FIXED
 // ============================================
 const homepageSchema = {
   "@context": "https://schema.org",
@@ -360,7 +359,15 @@ const homepageSchema = {
             name: "Luxury Lodges",
             itemListElement: destinations.map(d => ({
               "@type": "Product",
-              name: `${d.name} Luxury Lodges`
+              name: `${d.name} Luxury Lodges`,
+              description: `Luxury safari lodges and camps in ${d.name}`,
+              offers: {
+                "@type": "AggregateOffer",
+                priceCurrency: "USD",
+                lowPrice: Math.min(...d.properties.map(p => p.price)),
+                highPrice: Math.max(...d.properties.map(p => p.price)),
+                offerCount: d.count
+              }
             }))
           }
         ]
@@ -651,13 +658,13 @@ const homepageSchema = {
       ]
     },
 
-    // 8. REVIEW SNIPPETS - 5+ REVIEWS
+    // 8. REVIEW SNIPPETS - 5+ REVIEWS (FIXED - ALL REFERENCING ORGANIZATION)
     {
       "@type": "Review",
       "@id": "https://www.jaetravel.com/#review-1",
       itemReviewed: {
         "@type": "Organization",
-        name: "Jaetravel Expeditions"
+        "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
         "@type": "Rating",
@@ -681,7 +688,7 @@ const homepageSchema = {
       "@id": "https://www.jaetravel.com/#review-2",
       itemReviewed: {
         "@type": "Organization",
-        name: "Jaetravel Expeditions"
+        "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
         "@type": "Rating",
@@ -705,7 +712,7 @@ const homepageSchema = {
       "@id": "https://www.jaetravel.com/#review-3",
       itemReviewed: {
         "@type": "Organization",
-        name: "Jaetravel Expeditions"
+        "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
         "@type": "Rating",
@@ -729,7 +736,7 @@ const homepageSchema = {
       "@id": "https://www.jaetravel.com/#review-4",
       itemReviewed: {
         "@type": "Organization",
-        name: "Jaetravel Expeditions"
+        "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
         "@type": "Rating",
@@ -753,7 +760,7 @@ const homepageSchema = {
       "@id": "https://www.jaetravel.com/#review-5",
       itemReviewed: {
         "@type": "Organization",
-        name: "Jaetravel Expeditions"
+        "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
         "@type": "Rating",
@@ -1016,8 +1023,8 @@ export default function Home() {
       {/* ========== POPULAR AMENITIES ========== */}
       <AmenitiesFilter hotels={hotels} />
 
-      {/* ========== REVIEWS SECTION WITH SCHEMA ========== */}
-      <section className="py-20 bg-gray-50" itemScope itemType="https://schema.org/Review">
+      {/* ========== REVIEWS SECTION - FIXED: REMOVED itemScope FROM SECTION ========== */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Loved by Travelers</h2>
@@ -1059,29 +1066,20 @@ export default function Home() {
                 date: "2024-11-03"
               }
             ].map((review, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100" itemProp="review" itemScope itemType="https://schema.org/Review">
-                <div className="flex items-center gap-1 mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+              <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100">
+                <div className="flex items-center gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} className="text-amber-400 fill-current" size={20} />
                   ))}
-                  <meta itemProp="ratingValue" content={review.rating.toString()} />
-                  <meta itemProp="bestRating" content="5" />
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed text-lg italic" itemProp="reviewBody">&quot;{review.comment}&quot;</p>
+                <p className="text-gray-700 mb-6 leading-relaxed text-lg italic">&quot;{review.comment}&quot;</p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-xl">
                     {review.name[0]}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900 text-lg" itemProp="author" itemScope itemType="https://schema.org/Person">
-                      <span itemProp="name">{review.name}</span>
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Organization">
-                        <span itemProp="name">{review.hotel}</span>
-                      </span> • {review.location}
-                    </p>
-                    <meta itemProp="datePublished" content={review.date} />
+                    <p className="font-bold text-gray-900 text-lg">{review.name}</p>
+                    <p className="text-sm text-gray-600">{review.location} • Stayed at {review.hotel}</p>
                   </div>
                 </div>
               </div>
