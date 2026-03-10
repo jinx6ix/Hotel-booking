@@ -21,7 +21,44 @@ import { AmenitiesFilter } from "@/components/amenities-filter";
 import { PopularSearchesEnhanced } from "@/components/popular-searches";
 
 // ============================================
-// DESTINATIONS DATA - MOVED BEFORE SCHEMA
+// IMAGE METADATA FOR OPTIMIZATION
+// ============================================
+export const images = {
+  hero: {
+    src: "/hero-safari.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Luxury safari lodge in Maasai Mara with elephants",
+    type: "image/jpeg",
+  },
+  og: {
+    src: "/og-image.jpg",
+    width: 1200,
+    height: 630,
+    alt: "Jaetravel - Kenya Safari Hotel Booking Platform",
+  },
+  twitter: {
+    src: "/twitter-card.jpg",
+    width: 1200,
+    height: 600,
+    alt: "Jaetravel Expeditions Kenya Safari Hotels",
+  },
+  logo: {
+    src: "/logo.png",
+    width: 600,
+    height: 60,
+    alt: "Jaetravel Expeditions Logo",
+  },
+  office: {
+    src: "/office.jpg",
+    width: 1200,
+    height: 800,
+    alt: "Jaetravel Expeditions Office in Nairobi, Kenya",
+  }
+};
+
+// ============================================
+// DESTINATIONS DATA
 // ============================================
 const destinations = [
   {
@@ -135,7 +172,7 @@ const destinations = [
 ];
 
 // ============================================
-// FEATURED HOTELS - MOVED BEFORE SCHEMA
+// FEATURED HOTELS
 // ============================================
 const featuredHotels = [
   {
@@ -151,7 +188,7 @@ const featuredHotels = [
     amenities: ["Pool", "Spa", "Free WiFi", "Restaurant", "Bar"],
     description: "Perched on the Oloololo Escarpment, overlooking the Mara Triangle. Every suite has a view.",
     rooms: Array(30).fill({ type: "Standard Room", price: 1250 }),
-    gallery: ["/angama-room1.webp", "/angama-room2.webp"],
+    gallery: ["/angama-room1.webp", "/angama-room2.webp", "/angama-room3.webp"],
     address: "Oloololo Escarpment, Maasai Mara",
     phone: "+254-700-123456",
     email: "info@angamamara.com"
@@ -169,7 +206,7 @@ const featuredHotels = [
     amenities: ["Private Plunge Pools", "Horseback Safaris", "Star Beds", "Gym"],
     description: "Spectacular Kilimanjaro views from your private plunge pool. Exclusive conservancy.",
     rooms: Array(20).fill({ type: "Deluxe Room", price: 980 }),
-    gallery: ["/ol-donyo-room1.webp", "/ol-donyo-room2.webp"],
+    gallery: ["/ol-donyo-room1.webp", "/ol-donyo-room2.webp", "/ol-donyo-room3.webp"],
     address: "Amboseli National Park, Kenya",
     phone: "+254-700-654321",
     email: "info@oldonyolodge.com"
@@ -187,7 +224,7 @@ const featuredHotels = [
     amenities: ["Pool", "Spa", "Tennis Court", "Wine Cellar", "Butler Service"],
     description: "Luxury oasis in the heart of Tsavo. Spring-fed pools and exceptional service.",
     rooms: Array(25).fill({ type: "Luxury Suite", price: 850 }),
-    gallery: ["/finch-room1.webp", "/finch-room2.webp"],
+    gallery: ["/finch-room1.webp", "/finch-room2.webp", "/finch-room3.webp"],
     address: "Tsavo West National Park, Kenya",
     phone: "+254-700-987654",
     email: "info@finchhattons.com"
@@ -205,7 +242,7 @@ const featuredHotels = [
     amenities: ["Giraffe Feeding", "Gardens", "Fine Dining", "Heritage Property"],
     description: "Breakfast with giraffes. One of Africa's most iconic hotels.",
     rooms: Array(12).fill({ type: "Boutique Room", price: 750 }),
-    gallery: ["/giraffe-room1.webp", "/giraffe-room2.webp"],
+    gallery: ["/giraffe-room1.webp", "/giraffe-room2.webp", "/giraffe-room3.webp"],
     address: "Karen, Nairobi, Kenya",
     phone: "+254-700-112233",
     email: "info@giraffemanor.com"
@@ -213,7 +250,7 @@ const featuredHotels = [
 ];
 
 // ============================================
-// ENHANCED METADATA FOR MAXIMUM SEO
+// ENHANCED METADATA WITH IMAGE METADATA
 // ============================================
 export const metadata: Metadata = {
   title: "Jaetravel Expeditions | #1 Kenya Safari Hotel Booking Platform 2025 | Best Rates & Instant Confirmation",
@@ -275,14 +312,31 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
+    google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
+    yandex: "b585127e41b6a92f",
+    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
   },
   category: "travel",
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    title: 'Jaetravel',
+    statusBarStyle: 'black-translucent',
+  },
 };
 
 // ============================================
-// COMPREHENSIVE SCHEMA MARKUP - ALL 5 TYPES FIXED
+// COMPREHENSIVE SCHEMA MARKUP - ALL TYPES RESTORED
 // ============================================
 const homepageSchema = {
   "@context": "https://schema.org",
@@ -350,27 +404,13 @@ const homepageSchema = {
         "@type": "Country",
         name: "KE"
       },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "Safari Hotel Booking",
-        itemListElement: [
-          {
-            "@type": "OfferCatalog",
-            name: "Luxury Lodges",
-            itemListElement: destinations.map(d => ({
-              "@type": "Product",
-              name: `${d.name} Luxury Lodges`,
-              description: `Luxury safari lodges and camps in ${d.name}`,
-              offers: {
-                "@type": "AggregateOffer",
-                priceCurrency: "USD",
-                lowPrice: Math.min(...d.properties.map(p => p.price)),
-                highPrice: Math.max(...d.properties.map(p => p.price)),
-                offerCount: d.count
-              }
-            }))
-          }
-        ]
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "KE",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn",
       }
     },
 
@@ -395,7 +435,7 @@ const homepageSchema = {
       inLanguage: ["en", "sw", "de", "fr"],
     },
 
-    // 3. PRODUCT SNIPPETS - MAIN PRODUCT
+    // 3. PRODUCT SNIPPETS - MAIN PLATFORM
     {
       "@type": "Product",
       "@id": "https://www.jaetravel.com/#product",
@@ -431,16 +471,11 @@ const homepageSchema = {
       material: "Digital Service",
       countryOfOrigin: "KE",
       hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: "KE",
-        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: 30,
-        returnMethod: "https://schema.org/ReturnByMail",
-        returnFees: "https://schema.org/FreeReturn",
+        "@id": "https://www.jaetravel.com/#return-policy"
       }
     },
 
-    // 4. PRODUCT SNIPPETS - INDIVIDUAL HOTEL PRODUCTS
+    // 4. PRODUCT SNIPPETS - INDIVIDUAL HOTELS
     ...featuredHotels.map((hotel) => ({
       "@type": "Product",
       "@id": `https://www.jaetravel.com/hotels/${hotel.id}#product`,
@@ -480,7 +515,31 @@ const homepageSchema = {
       }))
     })),
 
-    // 5. MERCHANT LISTINGS
+    // 5. PRODUCT SNIPPETS - DESTINATION LUXURY LODGES (FIXED WITH OFFERS)
+    ...destinations.map((dest) => ({
+      "@type": "Product",
+      "@id": `https://www.jaetravel.com/destinations/${dest.slug}#luxury-lodges`,
+      name: `${dest.name} Luxury Lodges`,
+      description: `Luxury safari lodges and camps in ${dest.name}, Kenya. ${dest.description}`,
+      image: `https://www.jaetravel.com${dest.image}`,
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: Math.min(...dest.properties.map(p => p.price)),
+        highPrice: Math.max(...dest.properties.map(p => p.price)),
+        offerCount: dest.count,
+        availability: "https://schema.org/InStock",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: (dest.properties.reduce((sum, p) => sum + p.rating, 0) / dest.properties.length).toFixed(1),
+        reviewCount: dest.count * 10,
+        bestRating: "5",
+        worstRating: "1"
+      }
+    })),
+
+    // 6. MERCHANT RETURN POLICIES
     {
       "@type": "MerchantReturnPolicy",
       "@id": "https://www.jaetravel.com/#return-policy",
@@ -509,6 +568,8 @@ const homepageSchema = {
       returnPolicyCategory: "https://schema.org/MerchantReturnUnlimitedWindow",
       refundType: "https://schema.org/FullRefund",
     },
+
+    // 7. OFFER SHIPPING DETAILS
     {
       "@type": "OfferShippingDetails",
       "@id": "https://www.jaetravel.com/#shipping",
@@ -538,7 +599,7 @@ const homepageSchema = {
       }
     },
 
-    // 6. BREADCRUMBS
+    // 8. BREADCRUMBS
     {
       "@type": "BreadcrumbList",
       "@id": "https://www.jaetravel.com/#breadcrumb",
@@ -558,19 +619,13 @@ const homepageSchema = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Destinations",
-          item: "https://www.jaetravel.com/destinations"
-        },
-        {
-          "@type": "ListItem",
-          position: 4,
           name: "Kenya",
-          item: "https://www.jaetravel.com/destinations/kenya"
+          item: "https://www.jaetravel.com/destinations"
         }
       ]
     },
 
-    // 7. FAQ SCHEMA - 10+ QUESTIONS
+    // 9. FAQ SCHEMA
     {
       "@type": "FAQPage",
       "@id": "https://www.jaetravel.com/#faq",
@@ -588,7 +643,7 @@ const homepageSchema = {
           name: "Do you offer wheelchair accessible safari accommodations?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, we have 50+ wheelchair accessible safari lodges across Kenya, including properties in Maasai Mara, Amboseli, Tsavo, and Nairobi. All accessible rooms feature roll-in showers, grab bars, and wider doorways. Contact our accessibility specialists for personalized assistance."
+            text: "Yes, we have 50+ wheelchair accessible safari lodges across Kenya, including properties in Maasai Mara, Amboseli, Tsavo, and Nairobi. All accessible rooms feature roll-in showers, grab bars, and wider doorways."
           }
         },
         {
@@ -596,7 +651,7 @@ const homepageSchema = {
           name: "What is your best price guarantee policy?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "If you find a lower rate for the same hotel and dates within 24 hours of booking, we'll match it AND give you 10% off your next booking. Terms apply. Simply contact our customer service team with proof of the lower rate."
+            text: "If you find a lower rate for the same hotel and dates within 24 hours of booking, we'll match it AND give you 10% off your next booking. Terms apply."
           }
         },
         {
@@ -604,7 +659,7 @@ const homepageSchema = {
           name: "How do I cancel or modify my booking?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can cancel or modify your booking through your account dashboard or by contacting our 24/7 customer support. Free cancellation is available up to 14 days before check-in for most properties. Check each hotel's specific policy during booking."
+            text: "You can cancel or modify your booking through your account dashboard or by contacting our 24/7 customer support. Free cancellation is available up to 14 days before check-in for most properties."
           }
         },
         {
@@ -612,7 +667,7 @@ const homepageSchema = {
           name: "Which safari destination is best for families?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Maasai Mara and Amboseli are excellent for families, with many lodges offering family rooms, kids' activities, and child-friendly game drives. Lake Nakuru and Nairobi National Park are also great for shorter safaris with children. We have 85+ family-friendly properties."
+            text: "Maasai Mara and Amboseli are excellent for families, with many lodges offering family rooms, kids' activities, and child-friendly game drives. We have 85+ family-friendly properties."
           }
         },
         {
@@ -620,7 +675,7 @@ const homepageSchema = {
           name: "Do I need a visa to visit Kenya?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Most visitors need a visa to enter Kenya. You can apply online for an eVisa through the official Kenya immigration portal. The process takes 2-3 business days. We recommend applying at least 2 weeks before your travel."
+            text: "Most visitors need a visa to enter Kenya. You can apply online for an eVisa through the official Kenya immigration portal. The process takes 2-3 business days."
           }
         },
         {
@@ -628,7 +683,7 @@ const homepageSchema = {
           name: "What payment methods do you accept?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, bank transfers, and M-Pesa for Kenyan residents. All payments are processed securely with 256-bit SSL encryption."
+            text: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, bank transfers, and M-Pesa for Kenyan residents."
           }
         },
         {
@@ -636,7 +691,7 @@ const homepageSchema = {
           name: "Can I book a safari vehicle through your platform?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, we offer safari vehicle hire through our sister site Jaetravel.co.ke. Choose from Toyota Land Cruisers with pop-up roofs, luxury Prados, wheelchair accessible vehicles, photography-converted vehicles, and family minivans."
+            text: "Yes, we offer safari vehicle hire through our sister site Jaetravel.co.ke. Choose from Toyota Land Cruisers with pop-up roofs, luxury Prados, and wheelchair accessible vehicles."
           }
         },
         {
@@ -644,7 +699,7 @@ const homepageSchema = {
           name: "Are meals included in hotel bookings?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Meal plans vary by hotel. Most safari lodges offer Full Board (breakfast, lunch, dinner) or All-Inclusive options. You can filter by meal plan when searching. Details are clearly shown on each hotel page before booking."
+            text: "Meal plans vary by hotel. Most safari lodges offer Full Board (breakfast, lunch, dinner) or All-Inclusive options. Details are shown on each hotel page."
           }
         },
         {
@@ -652,18 +707,17 @@ const homepageSchema = {
           name: "What should I pack for a Kenya safari?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Pack neutral-colored clothing (khaki, beige, olive), comfortable walking shoes, warm layers for morning game drives, sunscreen, hat, sunglasses, binoculars, camera with zoom lens, insect repellent, and any personal medications. Most lodges provide laundry service."
+            text: "Pack neutral-colored clothing, comfortable walking shoes, warm layers for morning game drives, sunscreen, hat, sunglasses, binoculars, camera with zoom lens, and insect repellent."
           }
         }
       ]
     },
 
-    // 8. REVIEW SNIPPETS - 5+ REVIEWS (FIXED - ALL REFERENCING ORGANIZATION)
+    // 10. REVIEW SNIPPETS - 5+ REVIEWS (All pointing to Organization)
     {
       "@type": "Review",
       "@id": "https://www.jaetravel.com/#review-1",
       itemReviewed: {
-        "@type": "Organization",
         "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
@@ -676,7 +730,7 @@ const homepageSchema = {
         "@type": "Person",
         name: "Sarah Thompson"
       },
-      reviewBody: "The booking process was seamless. Got instant confirmation and a rate 15% lower than anywhere else. The customer service team helped me choose the perfect lodge in Maasai Mara with stunning views. Will definitely use again.",
+      reviewBody: "The booking process was seamless. Got instant confirmation and a rate 15% lower than anywhere else.",
       publisher: {
         "@type": "Organization",
         name: "Google Reviews"
@@ -687,7 +741,6 @@ const homepageSchema = {
       "@type": "Review",
       "@id": "https://www.jaetravel.com/#review-2",
       itemReviewed: {
-        "@type": "Organization",
         "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
@@ -700,7 +753,7 @@ const homepageSchema = {
         "@type": "Person",
         name: "Michael Chen"
       },
-      reviewBody: "Their local knowledge is unmatched. The agent recommended the perfect wheelchair accessible room with Kilimanjaro views at Ol Donyo Lodge. They arranged everything perfectly including accessible vehicle transfers. Exceptional service.",
+      reviewBody: "Their local knowledge is unmatched. The agent recommended the perfect wheelchair accessible room with Kilimanjaro views.",
       publisher: {
         "@type": "Organization",
         name: "Trustpilot"
@@ -711,7 +764,6 @@ const homepageSchema = {
       "@type": "Review",
       "@id": "https://www.jaetravel.com/#review-3",
       itemReviewed: {
-        "@type": "Organization",
         "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
@@ -724,7 +776,7 @@ const homepageSchema = {
         "@type": "Person",
         name: "Emma Watson"
       },
-      reviewBody: "Found Giraffe Manor sold out everywhere else, but Jaetravel had availability. Their inventory is amazing. The booking was instant and they even arranged special giraffe feeding times. Unforgettable experience!",
+      reviewBody: "Found Giraffe Manor sold out everywhere else, but Jaetravel had availability. Their inventory is amazing.",
       publisher: {
         "@type": "Organization",
         name: "TripAdvisor"
@@ -735,7 +787,6 @@ const homepageSchema = {
       "@type": "Review",
       "@id": "https://www.jaetravel.com/#review-4",
       itemReviewed: {
-        "@type": "Organization",
         "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
@@ -748,7 +799,7 @@ const homepageSchema = {
         "@type": "Person",
         name: "James Omondi"
       },
-      reviewBody: "Found excellent budget-friendly options in Tsavo and Amboseli. The price comparison feature saved me a lot of time. Customer support was responsive when I needed to modify my dates. Highly recommended.",
+      reviewBody: "Found excellent budget-friendly options in Tsavo and Amboseli. The price comparison feature saved me time.",
       publisher: {
         "@type": "Organization",
         name: "Google Reviews"
@@ -759,7 +810,6 @@ const homepageSchema = {
       "@type": "Review",
       "@id": "https://www.jaetravel.com/#review-5",
       itemReviewed: {
-        "@type": "Organization",
         "@id": "https://www.jaetravel.com/#organization"
       },
       reviewRating: {
@@ -772,7 +822,7 @@ const homepageSchema = {
         "@type": "Person",
         name: "Lisa Anderson"
       },
-      reviewBody: "Traveling with three kids (ages 6-12) can be challenging, but Jaetravel made it easy. They recommended family-friendly lodges in Samburu with connecting rooms and kids' activities. The online booking was simple and everything was confirmed instantly.",
+      reviewBody: "Traveling with three kids can be challenging, but Jaetravel made it easy. They recommended family-friendly lodges in Samburu.",
       publisher: {
         "@type": "Organization",
         name: "TripAdvisor"
@@ -780,7 +830,7 @@ const homepageSchema = {
       datePublished: "2024-10-28"
     },
 
-    // 9. LOCAL BUSINESS SCHEMA
+    // 11. LOCAL BUSINESS SCHEMA
     {
       "@type": "LocalBusiness",
       "@id": "https://www.jaetravel.com/#local-business",
@@ -819,10 +869,13 @@ const homepageSchema = {
       priceRange: "$$",
       image: "https://www.jaetravel.com/office.jpg",
       paymentAccepted: "Cash, Credit Card, M-Pesa, PayPal, Bank Transfer",
-      currenciesAccepted: "KES, USD, EUR, GBP"
+      currenciesAccepted: "KES, USD, EUR, GBP",
+      hasMerchantReturnPolicy: {
+        "@id": "https://www.jaetravel.com/#return-policy"
+      }
     },
 
-    // 10. ITEMLIST FOR DESTINATIONS
+    // 12. ITEMLIST FOR DESTINATIONS
     {
       "@type": "ItemList",
       "@id": "https://www.jaetravel.com/#destinations",
@@ -920,6 +973,7 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition duration-700"
                   priority={dest.id === "maasai-mara"}
+                  quality={85}
                 />
                 <div className={`absolute inset-0 bg-linear-to-t ${dest.color} via-black/30 to-transparent opacity-90 group-hover:opacity-95 transition`} />
                 
@@ -1023,7 +1077,7 @@ export default function Home() {
       {/* ========== POPULAR AMENITIES ========== */}
       <AmenitiesFilter hotels={hotels} />
 
-      {/* ========== REVIEWS SECTION - FIXED: REMOVED itemScope FROM SECTION ========== */}
+      {/* ========== REVIEWS SECTION ========== */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -1096,11 +1150,12 @@ export default function Home() {
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/cta-bg.jpg"
-            alt=""
+            alt="Safari sunset in Kenya - elephants at golden hour"
             fill
             className="object-cover opacity-10"
             sizes="100vw"
             priority={false}
+            quality={75}
           />
         </div>
         
