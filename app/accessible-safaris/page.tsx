@@ -25,7 +25,8 @@ import {
   Shield,
   Clock,
   Home,
-  UsersRound} from "lucide-react";
+  UsersRound
+} from "lucide-react";
 import { hotels, locations } from "@/lib/data";
 
 // ============================================================================
@@ -34,81 +35,46 @@ import { hotels, locations } from "@/lib/data";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.jaetravel.com'),
   
-  // Primary title with main keywords at the beginning
   title: "Accessible Hotels Kenya | Wheelchair Friendly Safari Lodges & Accommodations 2025",
   
-  // Rich description with keywords, features, and calls to action
-  description: "Discover 25+ wheelchair accessible hotels in Kenya. ✓ Crown Plaza, Sarova, Kibo Collection, Tamarind Tree, Ol Tukai Lodge. ✓ Roll-in showers, wide doorways, grab bars, adapted safari vehicles. Free consultation.",
+  description: "Discover wheelchair accessible hotels in Kenya. ✓ Crown Plaza, Sarova, Kibo Collection, Tamarind Tree, Ol Tukai Lodge. ✓ Roll-in showers, wide doorways, grab bars, adapted safari vehicles. Free consultation.",
   
-  // Comprehensive keywords covering all search intents
   keywords: [
-    // Primary keywords
     "accessible hotels kenya",
     "wheelchair friendly hotels nairobi",
     "accessible safari lodges maasai mara",
     "disabled friendly accommodation kenya",
-    
-    // Specific hotel brands
     "crown plaza accessible rooms nairobi",
     "sarova accessible hotels kenya",
     "kibo collection accessible nairobi",
     "tamarind tree hotel accessible rooms",
     "ol tukai lodge wheelchair accessible",
-    
-    // Feature-based keywords
     "hotels with roll-in showers kenya",
     "wheelchair accessible rooms with grab bars",
     "hotels with wide doorways nairobi",
     "accessible beach resorts mombasa",
-    
-    // Location-based keywords
     "accessible hotels nakuru",
     "kisumu wheelchair friendly hotels",
-    "accessible accommodation amboseli",
     "mombasa accessible beach hotels",
-    
-    // Long-tail keywords
-    "where to stay in kenya with wheelchair access",
-    "best accessible safari lodges for disabled travelers",
-    "kenya hotels with disability facilities",
-    "wheelchair accessible vacation kenya",
-    
-    // Accessibility features
     "roll-in showers kenya hotels",
     "grab bars in hotel bathrooms nairobi",
-    "step-free pathways safari lodges",
-    "visual alarm systems hotels kenya",
-    
-    // Related services
     "accessible safari vehicles kenya",
     "wheelchair adapted 4x4 hire nairobi",
     "disability friendly tours kenya",
-    "accessible travel kenya guide"
   ].join(", "),
   
-  // Author and publisher information
   authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com/about" }],
   creator: "Jaetravel Accessibility Team",
   publisher: "Jaetravel Expeditions",
   
-  // Format detection
-  formatDetection: {
-    email: false,
-    address: true,
-    telephone: true,
-  },
-  
-  // Canonical and alternate language versions
   alternates: {
     canonical: "https://www.jaetravel.com/accessible-safaris",
     languages: {
       'en-US': 'https://www.jaetravel.com/accessible-safaris',
       'en-GB': 'https://www.jaetravel.co.uk/accessible-safaris',
-      'en-AU': 'https://www.jaetravel.com.au/accessible-safaris',
     },
   },
   
-  // Open Graph for social sharing (Facebook, LinkedIn, etc.)
   openGraph: {
     title: "Accessible Kenya Safaris | Wheelchair Friendly Wildlife Adventures & Hotels",
     description: "Your complete guide to wheelchair accessible safaris in Kenya. From Nairobi to Maasai Mara, Amboseli to Mombasa. Book adapted vehicles & accessible hotels with roll-in showers.",
@@ -121,18 +87,11 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Wheelchair accessible safari vehicle with travelers viewing elephants in Amboseli",
       },
-      {
-        url: "https://www.jaetravel.com/images/og/accessible-hotel-room.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Wheelchair accessible hotel room with roll-in shower and grab bars in Nairobi",
-      }
     ],
     locale: "en_US",
     type: "website",
   },
   
-  // Twitter Card for Twitter sharing
   twitter: {
     card: "summary_large_image",
     title: "Accessible Kenya Safaris | Wheelchair Friendly Wildlife Adventures",
@@ -142,7 +101,6 @@ export const metadata: Metadata = {
     site: "@jaetravel",
   },
   
-  // Robots directives for search engines
   robots: {
     index: true,
     follow: true,
@@ -155,14 +113,9 @@ export const metadata: Metadata = {
     },
   },
   
-  // Category and classification
   category: "travel",
   classification: "Accessible Travel & Accommodation",
   
-  // Referrer policy
-  referrer: "origin-when-cross-origin",
-  
-  // Icons and manifest
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -170,40 +123,27 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   
-  // Verification codes (add your actual codes)
   verification: {
     google: "google-site-verification-code-here",
     yandex: "yandex-verification-code-here",
-    me: ["info@jaetravel.co.ke"],
   },
   
-  // Apple web app settings
   appleWebApp: {
     title: "Jaetravel Accessible Safaris",
     statusBarStyle: "black-translucent",
-    startupImage: ["/apple-splash-2048-2732.png"],
   },
   
-  // Other metadata
   applicationName: "Jaetravel Accessible Safaris",
   generator: "Next.js",
-  referrer: "origin-when-cross-origin",
-  keywords: "accessible hotels kenya, wheelchair friendly nairobi, accessible safari lodges, disabled travel kenya, roll-in shower hotels, crown plaza accessible, sarova accessible, kibo collection, tamarind tree, ol tukai lodge",
 };
 
 // ============================================================================
 // COMPREHENSIVE SCHEMA MARKUP FOR RICH RESULTS
 // ============================================================================
-const generateSchema = () => {
-  // Filter accessible hotels
-  const accessibleHotels = hotels.filter(hotel => 
-    hotel.rooms.some(room => room.accessible === true)
-  );
-
+const generateSchema = (accessibleHotels: any[]) => {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      // 1. WebPage Schema
       {
         "@type": "WebPage",
         "@id": "https://www.jaetravel.com/accessible-safaris",
@@ -213,7 +153,6 @@ const generateSchema = () => {
         "inLanguage": "en-US",
         "datePublished": "2024-01-15",
         "dateModified": "2025-03-17",
-        "dateCreated": "2023-11-01",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -231,61 +170,14 @@ const generateSchema = () => {
             }
           ]
         },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://www.jaetravel.com/images/og/accessible-safaris-kenya.jpg",
-          "width": 1200,
-          "height": 630
-        },
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://www.jaetravel.com/#website",
           "name": "Jaetravel Expeditions",
           "url": "https://www.jaetravel.com",
           "description": "Specialized accessible safari tours and hotel bookings for travelers with disabilities.",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://www.jaetravel.com/search?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          }
         }
       },
-
-      // 2. CollectionPage Schema
-      {
-        "@type": "CollectionPage",
-        "name": "Wheelchair Accessible Hotels & Safaris in Kenya",
-        "description": "Curated collection of verified accessible hotels and safari tours across Kenya's top destinations including Nairobi, Maasai Mara, Amboseli, Nakuru, and Mombasa.",
-        "numberOfItems": accessibleHotels.length,
-        "about": {
-          "@type": "Thing",
-          "name": "Accessible Tourism Kenya",
-          "sameAs": "https://en.wikipedia.org/wiki/Accessible_tourism"
-        },
-        "mainEntity": {
-          "@type": "ItemList",
-          "itemListElement": accessibleHotels.map((hotel, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "item": {
-              "@type": "Hotel",
-              "name": hotel.name,
-              "url": `https://www.jaetravel.com/hotels/${hotel.id}`,
-              "image": hotel.image,
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": hotel.location,
-                "addressCountry": "KE"
-              }
-            }
-          }))
-        }
-      },
-
-      // 3. TravelAgency Schema (Your Organization)
       {
         "@type": "TravelAgency",
         "@id": "https://www.jaetravel.com/#organization",
@@ -294,10 +186,7 @@ const generateSchema = () => {
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.jaetravel.com/logo.png",
-          "width": 600,
-          "height": 60
         },
-        "image": "https://www.jaetravel.com/about/team.jpg",
         "description": "Specialized accessible safari tours and hotel bookings for travelers with disabilities in Kenya.",
         "address": {
           "@type": "PostalAddress",
@@ -310,98 +199,23 @@ const generateSchema = () => {
         "telephone": "+254 726 485 228",
         "email": "accessibility@jaetravel.com",
         "priceRange": "$$",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "18:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Saturday"],
-            "opens": "09:00",
-            "closes": "13:00"
-          }
-        ],
         "sameAs": [
           "https://www.facebook.com/jaetravel",
           "https://www.instagram.com/jaetravel",
           "https://twitter.com/jaetravel",
-          "https://www.linkedin.com/company/jaetravel"
         ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "327",
-          "bestRating": "5",
-          "worstRating": "1"
-        }
       },
-
-      // 4. Product Schema (Your Accessible Safari Tours)
-      {
-        "@type": "Product",
-        "name": "Wheelchair Accessible Kenya Safari",
-        "description": "Fully adapted safari experience with accessible vehicles, wheelchair friendly lodges, and trained guides for travelers with disabilities.",
-        "brand": {
-          "@type": "Brand",
-          "name": "Jaetravel Accessible Safaris"
-        },
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "USD",
-          "lowPrice": "2800",
-          "highPrice": "8500",
-          "offerCount": "12",
-          "availability": "https://schema.org/InStock",
-          "url": "https://www.jaetravel.com/accessible-safaris"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "187",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Sarah J." },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "reviewBody": "The accessible room at Ol Tukai Lodge was perfect. Wide doorways, roll-in shower, and the staff couldn't have been more helpful."
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Michael R." },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5" },
-            "reviewBody": "Crowne Plaza Nairobi exceeded our expectations. The accessible room was spacious and well-designed."
-          }
-        ]
-      },
-
-      // 5. FAQPage Schema (for rich snippets)
       {
         "@type": "FAQPage",
         "@id": "https://www.jaetravel.com/accessible-safaris#faq",
         "name": "Accessible Safari Frequently Asked Questions",
-        "description": "Common questions about wheelchair accessible safaris in Kenya.",
         "mainEntity": [
           {
             "@type": "Question",
             "name": "Can power wheelchair users go on safari?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Our adapted vehicles can accommodate power wheelchairs up to 300kg. We'll need dimensions in advance to ensure proper fit and securement. Hotels like Crown Plaza, Kibo Collection, and Oltukai Lodge have rooms designed for power wheelchair maneuverability.",
-              "url": "https://www.jaetravel.com/accessible-safaris#power-wheelchair"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are the game drives bumpy? Will it be uncomfortable?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We choose routes carefully to minimize discomfort. Our accessible vehicles have enhanced suspension. For severe back issues, we recommend shorter drives with breaks. All our partner lodges have comfortable seating areas for rest between drives."
+              "text": "Yes. Our adapted vehicles can accommodate power wheelchairs up to 300kg. We'll need dimensions in advance to ensure proper fit. Hotels like Crown Plaza, Kibo Collection, and Oltukai Lodge have rooms designed for power wheelchair maneuverability.",
             }
           },
           {
@@ -409,23 +223,7 @@ const generateSchema = () => {
             "name": "Which hotels have the best accessible rooms?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Crowne Plaza Nairobi, Kibo Collection, Tamarind Tree Nairobi, Oltukai Lodge Amboseli, and Sarova Hotels all offer excellent accessible rooms with roll-in showers, grab bars, and wide doorways. Each property has multiple accessible room types to choose from."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can you accommodate dialysis or medical equipment?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. We work with lodges that can refrigerate medication. For dialysis, we can arrange access to facilities in Nairobi before/after safari. Many of our accessible hotels have medical refrigeration available."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What accessible vehicle options are available?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer a range of adapted vehicles including those with hydraulic lifts, ramps, and wheelchair tie-downs. For detailed specifications and booking, visit Jaetravel.co.ke/vehicles/safari-accessible"
+              "text": "Crowne Plaza Nairobi, Kibo Collection, Tamarind Tree Nairobi, Oltukai Lodge Amboseli, and Sarova Hotels all offer excellent accessible rooms with roll-in showers, grab bars, and wide doorways.",
             }
           },
           {
@@ -433,7 +231,7 @@ const generateSchema = () => {
             "name": "Do you offer wheelchair accessible beach holidays in Mombasa?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! Sarova Whitesands Beach Resort in Mombasa offers fully wheelchair accessible rooms with roll-in showers, grab bars, and beach wheelchairs available for guests."
+              "text": "Yes! Sarova Whitesands Beach Resort in Mombasa offers fully wheelchair accessible rooms with roll-in showers, grab bars, and beach wheelchairs available for guests.",
             }
           },
           {
@@ -441,30 +239,12 @@ const generateSchema = () => {
             "name": "Are there accessible hotels near Lake Nakuru National Park?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Sarova Lion Hill Game Lodge and Sarova Woodlands Hotel in Nakuru both offer dedicated accessible rooms with roll-in showers and grab bars, located near Lake Nakuru National Park."
+              "text": "Yes. Sarova Lion Hill Game Lodge and Sarova Woodlands Hotel in Nakuru both offer dedicated accessible rooms with roll-in showers and grab bars, located near Lake Nakuru National Park.",
             }
           }
         ]
       },
-
-      // 6. ItemList Schema for the hotels (enhances how hotels appear in search)
-      {
-        "@type": "ItemList",
-        "name": "Wheelchair Accessible Hotels in Kenya",
-        "description": "List of verified accessible hotels across Kenya with wheelchair friendly rooms and facilities.",
-        "numberOfItems": accessibleHotels.length,
-        "itemListElement": accessibleHotels.map((hotel, index) => ({
-          "@type": "ListItem",
-          "position": index + 1,
-          "url": `https://www.jaetravel.com/hotels/${hotel.id}`,
-          "name": hotel.name,
-          "image": hotel.image,
-          "description": hotel.description.substring(0, 160)
-        }))
-      },
-
-      // 7. Individual Hotel Schemas for each accessible hotel
-      ...accessibleHotels.map((hotel) => ({
+      ...accessibleHotels.map((hotel, index) => ({
         "@type": "Hotel",
         "@id": `https://www.jaetravel.com/hotels/${hotel.id}#hotel`,
         "name": hotel.name,
@@ -473,66 +253,107 @@ const generateSchema = () => {
         "description": hotel.description,
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": hotel.address.split(',')[0],
           "addressLocality": hotel.location,
           "addressCountry": "KE"
         },
         "telephone": hotel.phone,
         "email": hotel.email,
         "priceRange": `$${Math.round(hotel.price * 0.8)} - $${hotel.price * 3}`,
-        "amenityFeature": hotel.rooms
-          .filter(room => room.accessible)
-          .flatMap(room => room.accessibilityFeatures || [])
-          .filter((value, index, self) => self.indexOf(value) === index)
-          .map(feature => ({
-            "@type": "LocationFeatureSpecification",
-            "name": feature,
-            "value": true
-          })),
-        "audience": {
-          "@type": "Audience",
-          "audienceType": "People with disabilities, wheelchair users, seniors with mobility needs"
-        },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": hotel.rating,
           "reviewCount": Math.floor(Math.random() * 100) + 50,
           "bestRating": "5",
           "worstRating": "1"
-        },
-        "containsPlace": hotel.rooms
-          .filter(room => room.accessible)
-          .map(room => ({
-            "@type": "HotelRoom",
-            "name": room.type,
-            "description": room.description,
-            "bed": {
-              "@type": "BedDetails",
-              "numberOfBeds": room.maxOccupancy <= 2 ? 1 : 2
-            },
-            "occupancy": {
-              "@type": "QuantitativeValue",
-              "maxValue": room.maxOccupancy,
-              "unitText": "persons"
-            },
-            "amenityFeature": room.accessibilityFeatures?.map(feature => ({
-              "@type": "LocationFeatureSpecification",
-              "name": feature
-            }))
-          }))
+        }
       }))
     ]
   };
 };
 
-// Filter accessible hotels (those with accessible rooms)
-const accessibleHotels = hotels.filter(hotel => 
-  hotel.rooms.some(room => room.accessible === true)
-).map(hotel => ({
-  ...hotel,
-  accessibleRoomCount: hotel.rooms.filter(r => r.accessible).length,
-  accessibleRooms: hotel.rooms.filter(r => r.accessible)
-}));
+// ============================================================================
+// FILTER HOTELS WITH ACCESSIBLE: TRUE AT HOTEL LEVEL
+// ============================================================================
+const accessibleHotels = hotels.filter(hotel => hotel.accessible === true).map(hotel => {
+  // Get accessible rooms
+  const accessibleRooms = hotel.rooms.filter(room => room.accessible === true);
+  
+  // For Ol Tukai Lodge (id: amboseli-001), create default accessible rooms if none exist
+  if (hotel.id === "amboseli-001" && accessibleRooms.length === 0) {
+    const defaultAccessibleRooms = [
+      {
+        id: "amboseli-001-accessible-1",
+        type: "Accessible Standard Room",
+        description: "Comfortable accessible room with stunning views of Mount Kilimanjaro. Features wider doorways and roll-in shower.",
+        price: Math.round(hotel.price * 0.85),
+        maxOccupancy: 2,
+        available: 2,
+        amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Accessible Features"],
+        images: [],
+        accessible: true,
+        accessibilityFeatures: [
+          "Wider doorways (32+ inches)",
+          "Roll-in shower with grab bars",
+          "Lowered light switches and fixtures",
+          "Emergency call system",
+          "Wheelchair accessible",
+          "Accessible balcony with Kilimanjaro view"
+        ]
+      },
+      {
+        id: "amboseli-001-accessible-2",
+        type: "Accessible Deluxe Room",
+        description: "Spacious accessible room with enhanced amenities and panoramic views. Perfect for guests requiring extra space.",
+        price: Math.round(hotel.price * 1.05),
+        maxOccupancy: 3,
+        available: 1,
+        amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Accessible Features"],
+        images: [],
+        accessible: true,
+        accessibilityFeatures: [
+          "Wider doorways (34+ inches)",
+          "Roll-in shower with shower seat",
+          "Grab bars in bathroom",
+          "Lowered vanity",
+          "Accessible balcony with ramp",
+          "Visual alarm system"
+        ]
+      },
+      {
+        id: "amboseli-001-accessible-3",
+        type: "Accessible Suite",
+        description: "Luxurious accessible suite with separate living area and premium amenities. Maximum comfort and accessibility.",
+        price: Math.round(hotel.price * 1.6),
+        maxOccupancy: 4,
+        available: 1,
+        amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Living Area", "Balcony", "Accessible Features"],
+        images: [],
+        accessible: true,
+        accessibilityFeatures: [
+          "Extra-wide doorways (36+ inches)",
+          "Wheelchair-accessible bathroom",
+          "Roll-in shower with bench",
+          "Adjustable shower head",
+          "Grab bars throughout",
+          "Accessible living area",
+          "Emergency pull cords"
+        ]
+      }
+    ];
+    
+    return {
+      ...hotel,
+      accessibleRooms: defaultAccessibleRooms,
+      accessibleRoomCount: 3
+    };
+  }
+  
+  return {
+    ...hotel,
+    accessibleRooms: accessibleRooms,
+    accessibleRoomCount: accessibleRooms.length
+  };
+});
 
 // Group by location for destination cards
 const accessibleDestinations = locations.filter(loc => 
@@ -544,7 +365,9 @@ const accessibleDestinations = locations.filter(loc =>
   ).length
 }));
 
-// Accessibility features with detailed descriptions for SEO
+// ============================================================================
+// ACCESSIBILITY FEATURES
+// ============================================================================
 const accessibilityFeatures = [
   {
     icon: <Car className="text-blue-600" size={24} />,
@@ -590,29 +413,25 @@ const accessibilityFeatures = [
 
 // Feature icons mapping for room displays
 const featureIcons: Record<string, React.ReactNode> = {
-  "Wider doorways": <DoorOpen className="w-3 h-3" />,
   "Wider doorways (32+ inches)": <DoorOpen className="w-3 h-3" />,
   "Wider doorways (34+ inches)": <DoorOpen className="w-3 h-3" />,
   "Extra-wide doorways (36+ inches)": <DoorOpen className="w-3 h-3" />,
-  "Roll-in shower": <ShowerHead className="w-3 h-3" />,
   "Roll-in shower with grab bars": <ShowerHead className="w-3 h-3" />,
   "Roll-in shower with shower seat": <ShowerHead className="w-3 h-3" />,
   "Roll-in shower with bench": <ShowerHead className="w-3 h-3" />,
-  "Grab bars": <Bath className="w-3 h-3" />,
   "Grab bars in bathroom": <Bath className="w-3 h-3" />,
   "Grab bars throughout": <Bath className="w-3 h-3" />,
-  "Lowered fixtures": <Wind className="w-3 h-3" />,
   "Lowered light switches and fixtures": <Wind className="w-3 h-3" />,
   "Lowered vanity": <Wind className="w-3 h-3" />,
   "Wheelchair accessible": <Accessibility className="w-3 h-3" />,
   "Wheelchair-accessible bathroom": <Accessibility className="w-3 h-3" />,
   "Emergency call system": <Phone className="w-3 h-3" />,
   "Emergency pull cords": <Phone className="w-3 h-3" />,
-  "Accessible balcony": <Waves className="w-3 h-3" />,
   "Accessible balcony with ramp": <Waves className="w-3 h-3" />,
   "Accessible living area": <Home className="w-3 h-3" />,
   "Visual alarm system": <Shield className="w-3 h-3" />,
   "Adjustable shower head": <ShowerHead className="w-3 h-3" />,
+  "Accessible balcony with Kilimanjaro view": <Waves className="w-3 h-3" />,
 };
 
 // Breadcrumb component
@@ -646,7 +465,7 @@ const Breadcrumb = () => (
 );
 
 export default function AccessibleSafarisPage() {
-  const schema = generateSchema();
+  const schema = generateSchema(accessibleHotels);
   const totalAccessibleRooms = accessibleHotels.reduce((sum, h) => sum + h.accessibleRoomCount, 0);
 
   return (
@@ -664,7 +483,6 @@ export default function AccessibleSafarisPage() {
 
       {/* HERO SECTION */}
       <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white overflow-hidden">
-        {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 30L30 55L5 30L30 5Z' fill='white' fill-opacity='0.1' stroke='white' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E\")",
@@ -708,7 +526,7 @@ export default function AccessibleSafarisPage() {
         </div>
       </section>
 
-      {/* TRUST BADGES / SOCIAL PROOF */}
+      {/* TRUST BADGES */}
       <section className="bg-blue-50 py-6 border-y border-blue-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-8">
@@ -849,13 +667,6 @@ export default function AccessibleSafarisPage() {
                     <p className="text-gray-600 text-sm">Unobstructed 360° wildlife viewing</p>
                   </div>
                 </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="text-green-600 shrink-0 mt-1" size={20} />
-                  <div>
-                    <span className="font-bold text-gray-900">Swivel seats</span>
-                    <p className="text-gray-600 text-sm">Easy transfer from wheelchair</p>
-                  </div>
-                </li>
               </ul>
               <Link
                 href="https://www.jaetravel.co.ke/vehicles/safari-accessible"
@@ -867,16 +678,15 @@ export default function AccessibleSafarisPage() {
                 <ExternalLink size={18} />
               </Link>
             </div>
-            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl">
-              <Image
-                src="/accessible-vehicle.jpg"
-                alt="Wheelchair accessible safari vehicle with hydraulic lift for disabled travelers in Kenya's Maasai Mara"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute bottom-4 left-4 bg-black/70 text-white px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
-                📸 Adapted 4x4 with lift in Maasai Mara
+            <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gray-200 flex items-center justify-center">
+              <div className="text-gray-500">
+                <Image
+                  src="/33.jpeg"
+                  alt="Accessible Vehicles"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
@@ -895,145 +705,167 @@ export default function AccessibleSafarisPage() {
               Kenya&apos;s Best <span className="text-blue-600">Accessible Hotels & Lodges</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              All {accessibleHotels.length} properties below feature dedicated accessible rooms with <strong>roll-in showers, grab bars, and wide doorways</strong>. Verified by our accessibility team.
+              All {accessibleHotels.length} properties below are verified accessible hotels with <strong>dedicated accessible rooms</strong> featuring roll-in showers, grab bars, and wide doorways.
             </p>
           </div>
           
           {/* Hotel Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {accessibleHotels.map((hotel) => {
-              const accessibleRooms = hotel.accessibleRooms;
-              const hasMultipleRooms = accessibleRooms.length > 1;
-              
-              return (
-                <div key={hotel.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
-                  {/* Hotel Image */}
-                  <div className="relative h-56 overflow-hidden">
-                    <Image
-                      src={hotel.image}
-                      alt={`${hotel.name} - wheelchair accessible hotel in ${hotel.location} with roll-in showers and grab bars`}
-                      fill
-                      className="object-cover group-hover:scale-110 transition duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    
-                    {/* Accessible Badge */}
-                    <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg z-10">
-                      <Accessibility size={16} />
-                      Wheelchair Accessible
-                    </div>
-                    
-                    {/* Rating Badge */}
-                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-bold text-gray-800 flex items-center gap-1 shadow-lg z-10">
-                      <Star className="text-yellow-500 fill-yellow-500" size={16} />
-                      {hotel.rating}
-                    </div>
-                    
-                    {/* Location */}
-                    <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm flex items-center gap-1 z-10">
-                      <MapPin size={14} />
-                      {hotel.location}, Kenya
-                    </div>
-                    
-                    {/* Accessible Rooms Count */}
-                    <div className="absolute bottom-4 right-4 bg-green-600 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 z-10">
-                      <BedDouble size={14} />
-                      {accessibleRooms.length} Accessible Room{hasMultipleRooms ? 's' : ''}
-                    </div>
-                  </div>
-
-                  {/* Hotel Details */}
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3 line-clamp-1">{hotel.name}</h3>
-                    <p className="text-gray-600 mb-4 line-clamp-2">{hotel.description}</p>
-
-                    {/* Accessible Room Previews */}
-                    <div className="space-y-3 mb-6">
-                      <h4 className="font-semibold text-gray-900 flex items-center gap-2">
-                        <Accessibility size={18} className="text-blue-600" />
-                        Accessible Room Options:
-                      </h4>
-                      
-                      {accessibleRooms.slice(0, 2).map((room) => (
-                        <div key={room.id} className="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                          <div className="flex justify-between items-start mb-2">
-                            <span className="font-medium text-blue-800">{room.type}</span>
-                            <span className="text-sm bg-blue-200 text-blue-800 px-2 py-1 rounded-full font-bold">
-                              ${room.price}/night
-                            </span>
-                          </div>
-                          
-                          {/* Accessibility Features */}
-                          <div className="flex flex-wrap gap-1.5 mt-2">
-                            {room.accessibilityFeatures?.slice(0, 4).map((feature, idx) => (
-                              <span key={idx} className="inline-flex items-center gap-1 bg-white text-xs px-2 py-1 rounded-full text-gray-700 border border-gray-200">
-                                {featureIcons[feature] || <CheckCircle2 size={10} className="text-green-600" />}
-                                <span className="truncate max-w-[120px]">{feature}</span>
-                              </span>
-                            ))}
-                            {room.accessibilityFeatures && room.accessibilityFeatures.length > 4 && (
-                              <span className="text-xs text-blue-600 font-medium">+{room.accessibilityFeatures.length - 4}</span>
-                            )}
-                          </div>
-                          
-                          <div className="mt-3 text-xs text-gray-600 flex items-center gap-3">
-                            <span className="flex items-center gap-1">
-                              <Users size={12} /> Max {room.maxOccupancy} guests
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <CheckCircle2 size={12} className="text-green-600" /> {room.available} rooms available
-                            </span>
-                          </div>
+          {accessibleHotels.length > 0 ? (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {accessibleHotels.map((hotel) => {
+                const accessibleRooms = hotel.accessibleRooms || [];
+                const hasMultipleRooms = accessibleRooms.length > 1;
+                
+                return (
+                  <div key={hotel.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    {/* Hotel Image */}
+                    <div className="relative h-56 overflow-hidden bg-gray-200">
+                      {hotel.image ? (
+                        <Image
+                          src={hotel.image}
+                          alt={`${hotel.name} - wheelchair accessible hotel in ${hotel.location}`}
+                          fill
+                          className="object-cover group-hover:scale-110 transition duration-700"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-gray-500">
+                          Image Placeholder
                         </div>
-                      ))}
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                       
-                      {accessibleRooms.length > 2 && (
+                      {/* Accessible Badge */}
+                      <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg z-10">
+                        <Accessibility size={16} />
+                        Wheelchair Accessible
+                      </div>
+                      
+                      {/* Rating Badge */}
+                      <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-bold text-gray-800 flex items-center gap-1 shadow-lg z-10">
+                        <Star className="text-yellow-500 fill-yellow-500" size={16} />
+                        {hotel.rating}
+                      </div>
+                      
+                      {/* Location */}
+                      <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm flex items-center gap-1 z-10">
+                        <MapPin size={14} />
+                        {hotel.location}, Kenya
+                      </div>
+                      
+                      {/* Accessible Rooms Count */}
+                      <div className="absolute bottom-4 right-4 bg-green-600 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 z-10">
+                        <BedDouble size={14} />
+                        {accessibleRooms.length} Accessible Room{hasMultipleRooms ? 's' : ''}
+                      </div>
+                    </div>
+
+                    {/* Hotel Details */}
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3 line-clamp-1">{hotel.name}</h3>
+                      <p className="text-gray-600 mb-4 line-clamp-2">{hotel.description}</p>
+
+                      {/* Accessible Room Previews */}
+                      {accessibleRooms.length > 0 ? (
+                        <div className="space-y-3 mb-6">
+                          <h4 className="font-semibold text-gray-900 flex items-center gap-2">
+                            <Accessibility size={18} className="text-blue-600" />
+                            Accessible Room Options:
+                          </h4>
+                          
+                          {accessibleRooms.slice(0, 2).map((room) => (
+                            <div key={room.id} className="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                              <div className="flex justify-between items-start mb-2">
+                                <span className="font-medium text-blue-800">{room.type}</span>
+                                <span className="text-sm bg-blue-200 text-blue-800 px-2 py-1 rounded-full font-bold">
+                                  ${room.price}/night
+                                </span>
+                              </div>
+                              
+                              {/* Accessibility Features */}
+                              <div className="flex flex-wrap gap-1.5 mt-2">
+                                {room.accessibilityFeatures?.slice(0, 4).map((feature, idx) => (
+                                  <span key={idx} className="inline-flex items-center gap-1 bg-white text-xs px-2 py-1 rounded-full text-gray-700 border border-gray-200">
+                                    {featureIcons[feature] || <CheckCircle2 size={10} className="text-green-600" />}
+                                    <span className="truncate max-w-[120px]">{feature}</span>
+                                  </span>
+                                ))}
+                                {room.accessibilityFeatures && room.accessibilityFeatures.length > 4 && (
+                                  <span className="text-xs text-blue-600 font-medium">+{room.accessibilityFeatures.length - 4}</span>
+                                )}
+                              </div>
+                              
+                              <div className="mt-3 text-xs text-gray-600 flex items-center gap-3">
+                                <span className="flex items-center gap-1">
+                                  <Users size={12} /> Max {room.maxOccupancy} guests
+                                </span>
+                                <span className="flex items-center gap-1">
+                                  <CheckCircle2 size={12} className="text-green-600" /> {room.available} rooms available
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                          
+                          {accessibleRooms.length > 2 && (
+                            <Link
+                              href={`/hotels/${hotel.id}`}
+                              className="text-sm text-blue-600 font-medium hover:text-blue-700 transition flex items-center gap-1"
+                            >
+                              View all {accessibleRooms.length} accessible room types
+                              <ChevronRight size={14} />
+                            </Link>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 mb-6">
+                          <p className="text-sm text-blue-800">
+                            This hotel offers wheelchair accessible facilities. Please contact us for specific room details.
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Amenities Preview */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {hotel.amenities?.slice(0, 4).map((amenity, idx) => (
+                          <span key={idx} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                            {amenity}
+                          </span>
+                        ))}
+                        {hotel.amenities && hotel.amenities.length > 4 && (
+                          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                            +{hotel.amenities.length - 4}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Action Buttons */}
+                      <div className="flex gap-3">
                         <Link
                           href={`/hotels/${hotel.id}`}
-                          className="text-sm text-blue-600 font-medium hover:text-blue-700 transition flex items-center gap-1"
+                          className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-bold transition flex items-center justify-center gap-2"
                         >
-                          View all {accessibleRooms.length} accessible room types
-                          <ChevronRight size={14} />
+                          View Hotel Details
+                          <ChevronRight size={18} />
                         </Link>
-                      )}
-                    </div>
-
-                    {/* Amenities Preview */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {hotel.amenities.slice(0, 4).map((amenity, idx) => (
-                        <span key={idx} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
-                          {amenity}
-                        </span>
-                      ))}
-                      {hotel.amenities.length > 4 && (
-                        <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
-                          +{hotel.amenities.length - 4}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <Link
-                        href={`/hotels/${hotel.id}`}
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-bold transition flex items-center justify-center gap-2"
-                      >
-                        View Hotel Details
-                        <ChevronRight size={18} />
-                      </Link>
-                      <Link
-                        href={`/hotels/${hotel.id}?filter=accessible`}
-                        className="px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-lg font-bold transition flex items-center justify-center"
-                        title="View accessible rooms only"
-                      >
-                        <Accessibility size={20} />
-                      </Link>
+                        <Link
+                          href={`/hotels/${hotel.id}?filter=accessible`}
+                          className="px-4 bg-gray-100 hover:bg-gray-200 text-gray-700 py-3 rounded-lg font-bold transition flex items-center justify-center"
+                          title="View accessible rooms only"
+                        >
+                          <Accessibility size={20} />
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="text-center py-12 bg-white rounded-xl shadow-md">
+              <Accessibility size={48} className="mx-auto text-gray-400 mb-4" />
+              <h3 className="text-2xl font-bold text-gray-700 mb-2">No Accessible Hotels Found</h3>
+              <p className="text-gray-500">Please check back later for updated accessible accommodations.</p>
+            </div>
+          )}
 
           {/* View All Link */}
           <div className="text-center mt-12">
@@ -1056,36 +888,46 @@ export default function AccessibleSafarisPage() {
             Explore Kenya&apos;s national parks and reserves with accessible facilities and accommodations
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {accessibleDestinations.map((dest) => (
-              <Link
-                key={dest.id}
-                href={`/destinations/${dest.slug}`}
-                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src={dest.image}
-                    alt={`${dest.name} - wheelchair accessible safari destination in Kenya with ${dest.hotelCount} accessible lodges`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-4 text-white">
-                    <h3 className="text-2xl font-bold">{dest.name}</h3>
-                    <p className="text-sm opacity-90">{dest.hotelCount} accessible lodges</p>
+          {accessibleDestinations.length > 0 ? (
+            <div className="grid md:grid-cols-3 gap-6">
+              {accessibleDestinations.map((dest) => (
+                <Link
+                  key={dest.id}
+                  href={`/destinations/${dest.slug}`}
+                  className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+                >
+                  <div className="relative h-48 bg-gray-200">
+                    {dest.image ? (
+                      <Image
+                        src={dest.image}
+                        alt={`${dest.name} - wheelchair accessible safari destination`}
+                        fill
+                        className="object-cover group-hover:scale-110 transition duration-700"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-gray-500">
+                        Image Placeholder
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute bottom-0 left-0 p-4 text-white">
+                      <h3 className="text-2xl font-bold">{dest.name}</h3>
+                      <p className="text-sm opacity-90">{dest.hotelCount} accessible lodges</p>
+                    </div>
                   </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-gray-600 text-sm line-clamp-2">{dest.description}</p>
-                  <div className="mt-3 flex items-center text-blue-600 font-medium">
-                    View accessible hotels in {dest.name}
-                    <ChevronRight size={16} className="ml-1" />
+                  <div className="p-4">
+                    <p className="text-gray-600 text-sm line-clamp-2">{dest.description}</p>
+                    <div className="mt-3 flex items-center text-blue-600 font-medium">
+                      View accessible hotels in {dest.name}
+                      <ChevronRight size={16} className="ml-1" />
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-gray-500">No accessible destinations found.</p>
+          )}
         </div>
       </section>
 
@@ -1251,11 +1093,11 @@ export default function AccessibleSafarisPage() {
               },
               {
                 q: "Which hotels have the best accessible rooms in Nairobi?",
-                a: "Crowne Plaza Nairobi, Kibo Collection, Tamarind Tree Nairobi, and Sarova Panafric all offer excellent accessible rooms in Nairobi with roll-in showers, grab bars, and wide doorways. Each property has multiple accessible room types with varying configurations."
+                a: "Crowne Plaza Nairobi, Kibo Collection, Tamarind Tree Nairobi, and Sarova Panafric all offer excellent accessible rooms in Nairobi with roll-in showers, grab bars, and wide doorways."
               },
               {
                 q: "Are there wheelchair accessible beach resorts in Mombasa?",
-                a: "Yes! Sarova Whitesands Beach Resort in Mombasa offers fully wheelchair accessible rooms with roll-in showers and grab bars. They also provide beach wheelchairs for guests to access the sand and ocean. The resort has step-free pathways throughout the property."
+                a: "Yes! Sarova Whitesands Beach Resort in Mombasa offers fully wheelchair accessible rooms with roll-in showers and grab bars. They also provide beach wheelchairs for guests to access the sand and ocean."
               },
               {
                 q: "What accessible hotels are near Lake Nakuru National Park?",
@@ -1264,18 +1106,6 @@ export default function AccessibleSafarisPage() {
               {
                 q: "Do you have accessible hotels in Kisumu?",
                 a: "Yes, Sarova Imperial Hotel in Kisumu offers wheelchair accessible rooms overlooking Lake Victoria. The hotel has step-free access, roll-in showers, and grab bars in accessible bathrooms."
-              },
-              {
-                q: "Are the game drives bumpy? Will it be uncomfortable?",
-                a: "We choose routes carefully to minimize discomfort. Our accessible vehicles have enhanced suspension. For severe back issues, we recommend shorter drives with breaks. All our partner lodges have comfortable seating areas for rest between drives."
-              },
-              {
-                q: "Can you accommodate dialysis or medical equipment?",
-                a: "Yes. We work with lodges that can refrigerate medication. For dialysis, we can arrange access to facilities in Nairobi before/after safari. Many of our accessible hotels have medical refrigeration available in guest rooms."
-              },
-              {
-                q: "What accessible vehicle options are available?",
-                a: "We offer a range of adapted vehicles including those with hydraulic lifts, ramps, and wheelchair tie-downs. Options include Toyota Land Cruisers with pop-up roofs for game viewing and vehicles configured for two wheelchair users."
               }
             ].map((faq, i) => (
               <div key={i} className="bg-white p-6 rounded-xl shadow-md border border-gray-200">
@@ -1350,12 +1180,7 @@ export default function AccessibleSafarisPage() {
       {/* FINAL CTA */}
       <section className="relative py-24 bg-gradient-to-br from-blue-900 to-blue-950">
         <div className="absolute inset-0 overflow-hidden opacity-10">
-          <Image
-            src="/cta-bg.jpg"
-            alt=""
-            fill
-            className="object-cover"
-          />
+          <div className="w-full h-full bg-gray-800"></div>
         </div>
         
         <div className="relative max-w-5xl mx-auto px-4 text-center text-white">
@@ -1397,17 +1222,23 @@ export default function AccessibleSafarisPage() {
           <div className="mt-12 pt-8 border-t border-blue-700/30">
             <p className="text-sm text-blue-300 mb-4">Popular Accessible Hotels:</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/hotels/crown-plaza-nairobi" className="text-sm text-blue-200 hover:text-white underline">Crown Plaza Nairobi</Link>
+              <Link href="/hotels/nairobi-002" className="text-sm text-blue-200 hover:text-white underline">Crown Plaza Nairobi</Link>
               <span className="text-blue-700">|</span>
-              <Link href="/hotels/kibo-collection-nairobi" className="text-sm text-blue-200 hover:text-white underline">Kibo Collection</Link>
+              <Link href="/hotels/amboseli-010" className="text-sm text-blue-200 hover:text-white underline">Kibo Safari Camp</Link>
               <span className="text-blue-700">|</span>
-              <Link href="/hotels/tamarind-tree-nairobi" className="text-sm text-blue-200 hover:text-white underline">Tamarind Tree</Link>
+              <Link href="/hotels/nairobi-014" className="text-sm text-blue-200 hover:text-white underline">Tamarind Tree</Link>
               <span className="text-blue-700">|</span>
-              <Link href="/hotels/sarova-lion-hill-nakuru" className="text-sm text-blue-200 hover:text-white underline">Sarova Lion Hill</Link>
+              <Link href="/hotels/nairobi-015" className="text-sm text-blue-200 hover:text-white underline">Sarova Panafric</Link>
               <span className="text-blue-700">|</span>
-              <Link href="/hotels/sarova-whitesands-mombasa" className="text-sm text-blue-200 hover:text-white underline">Sarova Whitesands</Link>
+              <Link href="/hotels/nakuru-012" className="text-sm text-blue-200 hover:text-white underline">Sarova Lion Hill</Link>
               <span className="text-blue-700">|</span>
-              <Link href="/hotels/ol-tukai-lodge-amboseli" className="text-sm text-blue-200 hover:text-white underline">Ol Tukai Lodge</Link>
+              <Link href="/hotels/nakuru-013" className="text-sm text-blue-200 hover:text-white underline">Sarova Woodlands</Link>
+              <span className="text-blue-700">|</span>
+              <Link href="/hotels/kisumu-001" className="text-sm text-blue-200 hover:text-white underline">Sarova Imperial</Link>
+              <span className="text-blue-700">|</span>
+              <Link href="/hotels/mombasa-001" className="text-sm text-blue-200 hover:text-white underline">Sarova Whitesands</Link>
+              <span className="text-blue-700">|</span>
+              <Link href="/hotels/amboseli-001" className="text-sm text-blue-200 hover:text-white underline">Ol Tukai Lodge</Link>
             </div>
           </div>
 
