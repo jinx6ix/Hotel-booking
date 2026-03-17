@@ -468,9 +468,9 @@ export const hotels: Hotel[] = [
       family: ["/crowneroom1.jpg", "/crowneroom2.jpg", "/crowneroom3.jpg"],
       executive: ["/crowneroom1.jpg", "/crowneroom2.jpg", "/crowneroom3.jpg"],
       presidential: ["/crowneroom1.jpg", "/crowneroom2.jpg", "/crowneroom3.jpg"],
-      accessibleStandard: ["/crowne-accessible-1.jpg", "/crowne-accessible-2.jpg"],
-      accessibleDeluxe: ["/crowne-accessible-deluxe-1.jpg"],
-      accessibleSuite: ["/crowne-accessible-suite-1.jpg"]
+      accessibleStandard: ["/WhatsApp Image 2026-03-11 at 3.11.03 PM (1).jpeg", "/WhatsApp Image 2026-03-11 at 3.11.03 PM (2).jpeg"],
+      accessibleDeluxe: ["/WhatsApp Image 2026-03-11 at 3.11.03 PM (1).jpeg"],
+      accessibleSuite: ["/WhatsApp Image 2026-03-11 at 3.11.03 PM (1).jpeg"]
     })
   },
   
