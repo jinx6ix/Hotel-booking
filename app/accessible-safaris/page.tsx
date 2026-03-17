@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   
   title: "Accessible Hotels Kenya | Wheelchair Friendly Safari Lodges & Accommodations 2025",
   
-  description: "Discover wheelchair accessible hotels in Kenya. ✓ Crown Plaza, Sarova, Kibo Collection, Tamarind Tree, Ol Tukai Lodge. ✓ Roll-in showers, wide doorways, grab bars, adapted safari vehicles. Free consultation.",
+  description: "Discover wheelchair accessible hotels in Kenya. ✓ Crown Plaza Nairobi Airport, Sarova Hotels, Kibo Collection, Tamarind Tree, Ol Tukai Lodge. ✓ Roll-in showers, wide doorways, grab bars, adapted safari vehicles. Free consultation.",
   
   keywords: [
     "accessible hotels kenya",
     "wheelchair friendly hotels nairobi",
     "accessible safari lodges maasai mara",
     "disabled friendly accommodation kenya",
-    "crown plaza accessible rooms nairobi",
+    "crown plaza nairobi airport accessible rooms",
     "sarova accessible hotels kenya",
     "kibo collection accessible nairobi",
     "tamarind tree hotel accessible rooms",
@@ -124,8 +124,9 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   
   verification: {
-    google: "google-site-verification-code-here",
-    yandex: "yandex-verification-code-here",
+    google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
+    yandex: "b585127e41b6a92f",
+    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
   },
   
   appleWebApp: {
@@ -197,7 +198,7 @@ const generateSchema = (accessibleHotels: any[]) => {
           "addressCountry": "KE"
         },
         "telephone": "+254 726 485 228",
-        "email": "accessibility@jaetravel.com",
+        "email": "info@jaetravel.co.ke",
         "priceRange": "$$",
         "sameAs": [
           "https://www.facebook.com/jaetravel",
@@ -215,7 +216,7 @@ const generateSchema = (accessibleHotels: any[]) => {
             "name": "Can power wheelchair users go on safari?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Our adapted vehicles can accommodate power wheelchairs up to 300kg. We'll need dimensions in advance to ensure proper fit. Hotels like Crown Plaza, Kibo Collection, and Oltukai Lodge have rooms designed for power wheelchair maneuverability.",
+              "text": "Yes. Our adapted vehicles can accommodate power wheelchairs up to 300kg. We'll need dimensions in advance to ensure proper fit. Hotels like Crowne Plaza Nairobi Airport, Kibo Collection, and Oltukai Lodge have rooms designed for power wheelchair maneuverability.",
             }
           },
           {
@@ -223,7 +224,7 @@ const generateSchema = (accessibleHotels: any[]) => {
             "name": "Which hotels have the best accessible rooms?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Crowne Plaza Nairobi, Kibo Collection, Tamarind Tree Nairobi, Oltukai Lodge Amboseli, and Sarova Hotels all offer excellent accessible rooms with roll-in showers, grab bars, and wide doorways.",
+              "text": "Crowne Plaza Nairobi Airport, Kibo Collection, Tamarind Tree Nairobi, Oltukai Lodge Amboseli, and Sarova Hotels all offer excellent accessible rooms with roll-in showers, grab bars, and wide doorways.",
             }
           },
           {
@@ -272,80 +273,114 @@ const generateSchema = (accessibleHotels: any[]) => {
 };
 
 // ============================================================================
+// DEFAULT ACCESSIBLE ROOM TEMPLATES FOR HOTELS MISSING THEM
+// ============================================================================
+const getDefaultAccessibleRooms = (hotel: any) => {
+  const hotelName = hotel.name.toLowerCase();
+  const isBeachResort = hotelName.includes("whitesands") || hotelName.includes("beach");
+  const isSafariLodge = hotelName.includes("safari") || hotelName.includes("lion") || hotelName.includes("mara");
+  const isAirport = hotelName.includes("airport");
+  const hasKilimanjaro = hotelName.includes("kilimanjaro") || hotel.location === "Amboseli";
+  
+  // Base features that apply to all
+  const baseFeatures = [
+    "Wider doorways (32+ inches)",
+    "Roll-in shower with grab bars",
+    "Lowered light switches and fixtures",
+    "Emergency call system",
+    "Wheelchair accessible"
+  ];
+  
+  const deluxeFeatures = [
+    "Wider doorways (34+ inches)",
+    "Roll-in shower with shower seat",
+    "Grab bars in bathroom",
+    "Lowered vanity",
+    "Visual alarm system"
+  ];
+  
+  const suiteFeatures = [
+    "Extra-wide doorways (36+ inches)",
+    "Wheelchair-accessible bathroom",
+    "Roll-in shower with bench",
+    "Adjustable shower head",
+    "Grab bars throughout",
+    "Accessible living area",
+    "Emergency pull cords"
+  ];
+  
+  // Add location-specific features
+  if (hasKilimanjaro) {
+    deluxeFeatures.push("Accessible balcony with Kilimanjaro view");
+    suiteFeatures.push("Accessible balcony with Kilimanjaro view");
+  }
+  
+  if (isBeachResort) {
+    deluxeFeatures.push("Accessible balcony with ocean view");
+    suiteFeatures.push("Accessible balcony with ocean view");
+    baseFeatures.push("Beach wheelchair available");
+  }
+  
+  if (isAirport) {
+    baseFeatures.push("Airport shuttle accessible");
+    deluxeFeatures.push("Soundproofed accessible room");
+  }
+  
+  if (isSafariLodge) {
+    deluxeFeatures.push("Accessible game drive vehicle available");
+    suiteFeatures.push("Private accessible safari vehicle option");
+  }
+  
+  return [
+    {
+      id: `${hotel.id}-accessible-1`,
+      type: "Accessible Standard Room",
+      description: `Comfortable accessible room${hasKilimanjaro ? " with stunning views" : ""}${isBeachResort ? " close to the beach" : ""}${isAirport ? " perfect for transit travelers" : ""}. Features wider doorways and roll-in shower.`,
+      price: Math.round(hotel.price * 0.85),
+      maxOccupancy: 2,
+      available: 2,
+      amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Accessible Features"],
+      images: [],
+      accessible: true,
+      accessibilityFeatures: baseFeatures
+    },
+    {
+      id: `${hotel.id}-accessible-2`,
+      type: "Accessible Deluxe Room",
+      description: `Spacious accessible room with enhanced amenities${hasKilimanjaro ? " and panoramic views" : ""}${isBeachResort ? " overlooking the ocean" : ""}. Perfect for guests requiring extra space.`,
+      price: Math.round(hotel.price * 1.05),
+      maxOccupancy: 3,
+      available: 1,
+      amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Accessible Features"],
+      images: [],
+      accessible: true,
+      accessibilityFeatures: deluxeFeatures
+    },
+    {
+      id: `${hotel.id}-accessible-3`,
+      type: "Accessible Suite",
+      description: `Luxurious accessible suite with separate living area and premium amenities. Maximum comfort and accessibility${hasKilimanjaro ? " with the best views in the lodge" : ""}.`,
+      price: Math.round(hotel.price * 1.6),
+      maxOccupancy: 4,
+      available: 1,
+      amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Living Area", "Balcony", "Accessible Features"],
+      images: [],
+      accessible: true,
+      accessibilityFeatures: suiteFeatures
+    }
+  ];
+};
+
+// ============================================================================
 // FILTER HOTELS WITH ACCESSIBLE: TRUE AT HOTEL LEVEL
 // ============================================================================
 const accessibleHotels = hotels.filter(hotel => hotel.accessible === true).map(hotel => {
   // Get accessible rooms
-  const accessibleRooms = hotel.rooms.filter(room => room.accessible === true);
+  let accessibleRooms = hotel.rooms.filter(room => room.accessible === true);
   
-  // For Ol Tukai Lodge (id: amboseli-001), create default accessible rooms if none exist
-  if (hotel.id === "amboseli-001" && accessibleRooms.length === 0) {
-    const defaultAccessibleRooms = [
-      {
-        id: "amboseli-001-accessible-1",
-        type: "Accessible Standard Room",
-        description: "Comfortable accessible room with stunning views of Mount Kilimanjaro. Features wider doorways and roll-in shower.",
-        price: Math.round(hotel.price * 0.85),
-        maxOccupancy: 2,
-        available: 2,
-        amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Accessible Features"],
-        images: [],
-        accessible: true,
-        accessibilityFeatures: [
-          "Wider doorways (32+ inches)",
-          "Roll-in shower with grab bars",
-          "Lowered light switches and fixtures",
-          "Emergency call system",
-          "Wheelchair accessible",
-          "Accessible balcony with Kilimanjaro view"
-        ]
-      },
-      {
-        id: "amboseli-001-accessible-2",
-        type: "Accessible Deluxe Room",
-        description: "Spacious accessible room with enhanced amenities and panoramic views. Perfect for guests requiring extra space.",
-        price: Math.round(hotel.price * 1.05),
-        maxOccupancy: 3,
-        available: 1,
-        amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Accessible Features"],
-        images: [],
-        accessible: true,
-        accessibilityFeatures: [
-          "Wider doorways (34+ inches)",
-          "Roll-in shower with shower seat",
-          "Grab bars in bathroom",
-          "Lowered vanity",
-          "Accessible balcony with ramp",
-          "Visual alarm system"
-        ]
-      },
-      {
-        id: "amboseli-001-accessible-3",
-        type: "Accessible Suite",
-        description: "Luxurious accessible suite with separate living area and premium amenities. Maximum comfort and accessibility.",
-        price: Math.round(hotel.price * 1.6),
-        maxOccupancy: 4,
-        available: 1,
-        amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Living Area", "Balcony", "Accessible Features"],
-        images: [],
-        accessible: true,
-        accessibilityFeatures: [
-          "Extra-wide doorways (36+ inches)",
-          "Wheelchair-accessible bathroom",
-          "Roll-in shower with bench",
-          "Adjustable shower head",
-          "Grab bars throughout",
-          "Accessible living area",
-          "Emergency pull cords"
-        ]
-      }
-    ];
-    
-    return {
-      ...hotel,
-      accessibleRooms: defaultAccessibleRooms,
-      accessibleRoomCount: 3
-    };
+  // If no accessible rooms found, create default ones
+  if (accessibleRooms.length === 0) {
+    accessibleRooms = getDefaultAccessibleRooms(hotel);
   }
   
   return {
@@ -432,6 +467,12 @@ const featureIcons: Record<string, React.ReactNode> = {
   "Visual alarm system": <Shield className="w-3 h-3" />,
   "Adjustable shower head": <ShowerHead className="w-3 h-3" />,
   "Accessible balcony with Kilimanjaro view": <Waves className="w-3 h-3" />,
+  "Accessible balcony with ocean view": <Waves className="w-3 h-3" />,
+  "Beach wheelchair available": <Waves className="w-3 h-3" />,
+  "Airport shuttle accessible": <Car className="w-3 h-3" />,
+  "Soundproofed accessible room": <Home className="w-3 h-3" />,
+  "Accessible game drive vehicle available": <Car className="w-3 h-3" />,
+  "Private accessible safari vehicle option": <Car className="w-3 h-3" />,
 };
 
 // Breadcrumb component
@@ -610,7 +651,7 @@ export default function AccessibleSafarisPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Wheelchair Accessible Hotels & Safaris in Kenya</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
-            Kenya offers incredible wildlife experiences for travelers with disabilities. Our <strong>wheelchair accessible hotels</strong> feature <strong>roll-in showers, grab bars, and wide doorways</strong> to ensure comfort and independence. Combined with our <strong>adapted 4x4 safari vehicles</strong> equipped with hydraulic lifts, you can explore <strong>Maasai Mara, Amboseli, Tsavo, and beyond</strong> without barriers. From luxury lodges like <strong>Crowne Plaza Nairobi and Sarova Hotels</strong> to beach resorts in Mombasa, we&apos;ve curated the best <strong>accessible accommodation in Kenya</strong> for your needs.
+            Kenya offers incredible wildlife experiences for travelers with disabilities. Our <strong>wheelchair accessible hotels</strong> feature <strong>roll-in showers, grab bars, and wide doorways</strong> to ensure comfort and independence. Combined with our <strong>adapted 4x4 safari vehicles</strong> equipped with hydraulic lifts, you can explore <strong>Maasai Mara, Amboseli, Tsavo, and beyond</strong> without barriers. From luxury lodges like <strong>Crowne Plaza Nairobi Airport and Sarova Hotels</strong> to beach resorts in Mombasa, we&apos;ve curated the best <strong>accessible accommodation in Kenya</strong> for your needs.
           </p>
         </div>
       </section>
@@ -680,7 +721,7 @@ export default function AccessibleSafarisPage() {
             </div>
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-xl bg-gray-200 flex items-center justify-center">
               <div className="text-gray-500">
-                <Image
+              <Image
                   src="/33.jpeg"
                   alt="Accessible Vehicles"
                   width={800}
@@ -1042,8 +1083,8 @@ export default function AccessibleSafarisPage() {
               {
                 name: "Michael R.",
                 location: "USA",
-                comment: "Crowne Plaza Nairobi exceeded our expectations. The accessible room was spacious and well-designed. The adapted safari vehicle with hydraulic lift made game viewing comfortable and accessible.",
-                hotel: "Crowne Plaza Nairobi",
+                comment: "Crowne Plaza Nairobi Airport exceeded our expectations. The accessible room was spacious and well-designed. The adapted safari vehicle with hydraulic lift made game viewing comfortable and accessible.",
+                hotel: "Crowne Plaza Nairobi Airport",
                 rating: 5,
                 date: "January 2025"
               },
@@ -1089,11 +1130,11 @@ export default function AccessibleSafarisPage() {
             {[
               {
                 q: "Can power wheelchair users go on safari?",
-                a: "Yes. Our adapted vehicles can accommodate power wheelchairs up to 300kg. We'll need dimensions in advance to ensure proper fit and securement. Hotels like Crown Plaza, Kibo Collection, and Oltukai Lodge have rooms designed for power wheelchair maneuverability with 36-inch doorways and 60-inch turning radius."
+                a: "Yes. Our adapted vehicles can accommodate power wheelchairs up to 300kg. We'll need dimensions in advance to ensure proper fit and securement. Hotels like Crowne Plaza Nairobi Airport, Kibo Collection, and Oltukai Lodge have rooms designed for power wheelchair maneuverability with 36-inch doorways and 60-inch turning radius."
               },
               {
                 q: "Which hotels have the best accessible rooms in Nairobi?",
-                a: "Crowne Plaza Nairobi, Kibo Collection, Tamarind Tree Nairobi, and Sarova Panafric all offer excellent accessible rooms in Nairobi with roll-in showers, grab bars, and wide doorways."
+                a: "Crowne Plaza Nairobi Airport, Kibo Collection, Tamarind Tree Nairobi, and Sarova Panafric all offer excellent accessible rooms in Nairobi with roll-in showers, grab bars, and wide doorways."
               },
               {
                 q: "Are there wheelchair accessible beach resorts in Mombasa?",
@@ -1164,11 +1205,11 @@ export default function AccessibleSafarisPage() {
               Free Accessibility Consultation
             </Link>
             <Link
-              href="mailto:accessibility@jaetravel.com"
+              href="mailto:info@jaetravel.co.ke"
               className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-bold text-lg transition border border-white/30 flex items-center gap-2"
             >
               <Mail size={20} />
-              accessibility@jaetravel.com
+              info@jaetravel.co.ke
             </Link>
           </div>
           <p className="mt-6 text-blue-200 text-sm">
@@ -1188,7 +1229,7 @@ export default function AccessibleSafarisPage() {
             Plan Your Accessible Kenya Safari
           </h2>
           <p className="text-xl mb-10 text-blue-100 drop-shadow max-w-2xl mx-auto">
-            Let our accessibility specialists create the perfect itinerary for your needs, whether you choose Crown Plaza, Kibo Collection, Tamarind Tree, Ol Tukai Lodge, or any of our Sarova Hotels.
+            Let our accessibility specialists create the perfect itinerary for your needs, whether you choose Crowne Plaza Nairobi Airport, Kibo Collection, Tamarind Tree, Ol Tukai Lodge, or any of our Sarova Hotels.
           </p>
           
           <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
@@ -1222,7 +1263,7 @@ export default function AccessibleSafarisPage() {
           <div className="mt-12 pt-8 border-t border-blue-700/30">
             <p className="text-sm text-blue-300 mb-4">Popular Accessible Hotels:</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/hotels/nairobi-002" className="text-sm text-blue-200 hover:text-white underline">Crown Plaza Nairobi</Link>
+              <Link href="/hotels/nairobi-002" className="text-sm text-blue-200 hover:text-white underline">Crowne Plaza Nairobi Airport</Link>
               <span className="text-blue-700">|</span>
               <Link href="/hotels/amboseli-010" className="text-sm text-blue-200 hover:text-white underline">Kibo Safari Camp</Link>
               <span className="text-blue-700">|</span>
