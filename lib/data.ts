@@ -3321,12 +3321,12 @@ export const hotels: Hotel[] = [
   location: "Naivasha",
   rating: 4.4,
   price: 260,
-  image: "/naivasha-resort-hero.jpg",
+  image: "/unnamed (71).webp",
   gallery: [
-    "/naivasha-resort-pool.jpg",
-    "/naivasha-resort-room.jpg",
-    "/naivasha-resort-dining.jpg",
-    "/naivasha-resort-lake.jpg"
+    "/unnamed (74).webp",
+    "/2025-10-29.webp",
+    "/2025-10-29 (1).webp",
+    "/unnamed (75).webp"
   ],
   description: "Modern resort-style property on Lake Naivasha with multiple dining options, swimming pool and easy access to boat rides and bird watching.",
   amenities: ["WiFi", "Pool", "Multiple Restaurants", "Bar", "Boat Safaris", "Conference Rooms"],
@@ -3336,15 +3336,15 @@ export const hotels: Hotel[] = [
   accessible: true,
   accessibleRoomCount: 3,
   rooms: createRooms("naivasha-resort", 260, {
-    standard: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg", "/paraplegic rooms (4).jpg"],
-      deluxe: ["/paraplegic rooms (1).jpg", "/tamarind-deluxe-2.jpg", "/paraplegic rooms (4).jpg"],
-      suite: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg", "/paraplegic rooms (4).jpg"],
-      family: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
-      executive: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
-      presidential: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
-      accessibleStandard: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
-      accessibleDeluxe: ["/paraplegic rooms (1).jpg"],
-      accessibleSuite: ["/paraplegic rooms (1).jpg"]
+    standard: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
+      deluxe: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
+      suite: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
+      family: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+      executive: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+      presidential: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+      accessibleStandard: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+      accessibleDeluxe: ["/2025-10-29 (2).webp"],
+      accessibleSuite: ["/2025-10-29 (2).webp"]
   })
 },
 {
@@ -3353,13 +3353,14 @@ export const hotels: Hotel[] = [
   location: "Naivasha",
   rating: 4.6,
   price: 320,
-  image: "/enashipai-resort-hero.jpg",
+  image: "/2025-05-21.webp",
   gallery: [
-    "/enashipai-pool.jpg",
-    "/enashipai-room.jpg",
-    "/enashipai-spa.jpg",
-    "/enashipai-garden.jpg",
-    "/enashipai-lake-view.jpg"
+    "/unnamed (76).webp",
+    "/2024-06-10.webp",
+    "/2025-10-08.webp",
+    "/2025-08-07.webp",
+    "/2025-05-21.webp",
+    "/2025-05-15.webp"
   ],
   description: "Luxury resort on the shores of Lake Naivasha offering elegant rooms, a full-service spa, multiple dining options, and excellent facilities for relaxation, conferences, and lake activities. Features wheelchair accessible rooms with roll-in showers and grab bars.",
   amenities: [
@@ -3380,13 +3381,13 @@ export const hotels: Hotel[] = [
   accessible: true,
   accessibleRoomCount: 3,
   rooms: createRooms("enashipai", 320, {
-    standard: ["/enashipai-standard-room.jpg"],
-    deluxe: ["/enashipai-deluxe-room.jpg"],
-    suite: ["/enashipai-suite.jpg"],
-    family: ["/enashipai-family-room.jpg"],
-    accessibleStandard: ["/enashipai-accessible-room-1.jpg", "/enashipai-accessible-bath.jpg"],
-    accessibleDeluxe: ["/enashipai-accessible-deluxe.jpg"],
-    accessibleSuite: ["/enashipai-accessible-suite.jpg"]
+    standard: ["/2024-06-04.webp"],
+    deluxe: ["/2024-06-04 (1).webp"],
+    suite: ["/2025-05-15 (1).webp"],
+    family: ["/2025-05-15 (2).webp", "/unnamed (78).webp"],
+    accessibleStandard: ["/2025-08-07 (1).webp", "/unnamed (78).webp"],
+    accessibleDeluxe: ["/unnamed (77).webp"],
+    accessibleSuite: ["/unnamed (77).webp"]
   })
 },
 ];
