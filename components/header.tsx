@@ -51,6 +51,9 @@ export function Header() {
                 ))}
               </div>
             </div>
+            <Link href="/accessible-safaris" className="text-black hover:text-orange-300 font-medium transition">
+              Accessible Hotels
+            </Link>
             <Link href="/car-hire" className="text-black hover:text-orange-300 font-medium transition">
               Car Hire
             </Link>
