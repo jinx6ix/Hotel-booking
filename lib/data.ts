@@ -2984,7 +2984,411 @@ export const hotels: Hotel[] = [
       executive: ["/finch-executive-1.jpg", "/finch-executive-2.jpg"],
       presidential: ["/finch-presidential-1.jpg", "/finch-presidential-2.jpg"]
     })
-  }
+  },
+  // Add these to your hotels array in lib/data.ts
+
+// ========== MAASAI MARA ADDITIONS ==========
+{
+  id: "maasai-mara-010",
+  name: "Ashnil Mara Camp",
+  location: "Maasai Mara",
+  rating: 4.6,
+  price: 420,
+  image: "/unnamed (18).webp",
+  gallery: [
+    "/unnamed (19).webp",
+    "/unnamed (20).webp",
+    "/DSC_0095.webp",
+    "/unnamed (21).webp",
+    "/unnamed (22).webp",
+  ],
+  description: "Luxury tented camp located along the Talek River in the Maasai Mara Conservancy. Excellent for game viewing, river access and frequent wildlife sightings directly from camp.",
+  amenities: ["WiFi", "Game Drives", "All Meals", "River Views", "Bar", "Bush Walks", "Photography", "Guides"],
+  address: "Talek River, Maasai Mara Conservancy, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("ashnil-mara", 420, {
+    standard: ["/unnamed (23).webp"],
+    deluxe: ["/unnamed (24).webp"],
+    suite: ["/unnamed (23).webp"],
+    accessibleStandard: ["/unnamed (26).webp", "/unnamed (25).webp"],
+    accessibleDeluxe: ["/unnamed (24).webp"],
+    accessibleSuite: ["/unnamed (26).webp"]
+  })
+},
+
+{
+  id: "maasai-mara-011",
+  name: "Soroi Mara Bush Camp",
+  location: "Maasai Mara",
+  rating: 4.7,
+  price: 480,
+  image: "/mbc_main-30 (1).webp",
+  gallery: [
+    "/Mara Bush Camp Exterior.webp",
+    "/2024-08-07.webp",
+    "/2024-08-07 (1).webp",
+    "/2024-08-07 (2).webp"
+  ],
+  description: "Intimate eco-conscious bush camp in a private concession area of the Maasai Mara offering authentic experiences, excellent guiding and a low-impact design.",
+  amenities: ["All-Inclusive", "Game Drives", "Walking Safaris", "Bush Meals", "Bar", "Eco-friendly", "Guides"],
+  address: "Maasai Mara Conservancy, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("soroi-mara-bush", 480, {
+    standard: ["/soroi-mara-standard.jpg"],
+    deluxe: ["/soroi-mara-deluxe.jpg"],
+    suite: ["/soroi-mara-suite.jpg"],
+    accessibleStandard: ["/unnamed (27).webp"],
+    accessibleDeluxe: ["/2024-08-07 (3).webp"],
+    accessibleSuite: ["/unnamed (28).webp"]
+  })
+},
+
+{
+  id: "maasai-mara-012",
+  name: "Soroi Larsens Camp",
+  location: "Maasai Mara",
+  rating: 4.8,
+  price: 520,
+  image: "/2024-07-12.webp",
+  gallery: [
+    "/2024-07-12 (1).webp",
+    "/unnamed (29).webp",
+    "/2024-07-12 (2).webp",
+    "/unnamed (30).webp"
+  ],
+  description: "Classic luxury tented camp with timeless elegance, superb service and a prime location ideal for witnessing the Great Migration river crossings.",
+  amenities: ["All-Inclusive", "Game Drives", "Hot Air Balloon", "Fine Dining", "Spa", "Bar", "Guides"],
+  address: "Maasai Mara National Reserve, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("soroi-larsens", 520, {
+    standard: ["/2024-07-12 (3).webp"],
+    deluxe: ["/unnamed (31).webp"],
+    suite: ["/unnamed (32).webp"],
+    accessibleStandard: ["/unnamed (34).webp"],
+    accessibleDeluxe: ["/unnamed (34).webp"],
+    accessibleSuite: ["/unnamed (33).webp"]
+  })
+},
+
+{
+  id: "maasai-mara-013",
+  name: "Soroi Private Wing",
+  location: "Maasai Mara",
+  rating: 4.9,
+  price: 680,
+  image: "/unnamed (35).webp",
+  gallery: [
+    "/2024-07-15.webp",
+    "/unnamed (36).webp",
+    "/unnamed (37).webp",
+    "/unnamed (38).webp"
+  ],
+  description: "Exclusive private wing within Mara Serena Safari Lodge offering ultimate privacy, personalized service and panoramic views of the Mara plains.",
+  amenities: ["Private Butler", "All-Inclusive", "Game Drives", "Private Dining", "Spa Treatments", "Infinity Pool", "WiFi"],
+  address: "Mara Serena Safari Lodge, Maasai Mara National Reserve",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 2,
+  rooms: createRooms("mara-serena-private", 680, {
+    standard: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
+      deluxe: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
+      suite: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
+      family: ["/2024-07-15 (2).webp", "/2025-01-13 (2).webp"],
+      executive: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
+      presidential: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
+      accessibleStandard: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
+      accessibleDeluxe: ["/2025-01-13 (3).webp"],
+      accessibleSuite: ["/2025-01-13 (3).webp"]
+  })
+},
+
+{
+  id: "maasai-mara-014",
+  name: "Mara Maisha",
+  location: "Maasai Mara",
+  rating: 4.6,
+  price: 450,
+  image: "/2025-12-10.webp",
+  gallery: [
+    "/unnamed (39).webp",
+    "/2025-12-10 (1).webp",
+    "/2025-12-10 (2).webp",
+    "/2025-12-10 (3).webp"
+  ],
+  description: "Contemporary eco-lodge featuring stylish tents, an infinity pool with Mara views, and excellent game viewing in a private conservancy setting.",
+  amenities: ["WiFi", "Infinity Pool", "Game Drives", "Walking Safaris", "Restaurant", "Bar", "Spa"],
+  address: "Maasai Mara Conservancy, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("mara-maisha", 450, {
+    standard: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
+      deluxe: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
+      suite: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
+      family: ["/unnamed (43).webp", "/unnamed (41).webp"],
+      executive: ["/2025-12-10 (4).webp", "/unnamed (41).webp"],
+      presidential: ["/2025-12-10 (4).webp", "/unnamed (42).webp"],
+      accessibleStandard: ["/2025-12-10 (4).webp", "/unnamed (42).webp"],
+      accessibleDeluxe: ["/2025-12-10 (4).webp"],
+      accessibleSuite: ["/2025-12-10 (4).webp"]
+  })
+},
+
+{
+  id: "maasai-mara-015",
+  name: "Keekorok Lodge",
+  location: "Maasai Mara",
+  rating: 4.4,
+  price: 340,
+  image: "/BOB04192_HDR.webp",
+  gallery: [
+    "/BOB03070_HDR.webp",
+    "/BOB05118_HDR.webp",
+    "/2023-11-03.webp",
+    "/Standard-Room-Exterior.webp"
+  ],
+  description: "Classic full-service lodge located inside the Maasai Mara National Reserve with direct waterhole views, swimming pool and reliable game drives.",
+  amenities: ["WiFi", "Pool", "Game Drives", "Restaurant", "Bar", "Bush Breakfast", "Guides"],
+  address: "Keekorok, Maasai Mara National Reserve, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("keekorok", 340, {
+    standard: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
+      deluxe: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
+      suite: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
+      family: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
+      executive: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
+      presidential: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
+      accessibleStandard: ["/KKL-Chalet-Interior.webp", "/KKL-Premium-5.webp"],
+      accessibleDeluxe: ["/KKL-Chalet-Interior.webp"],
+      accessibleSuite: ["/KKL-Chalet-Interior.webp"]
+  })
+},
+
+// ========== LAKE NAIVASHA ADDITIONS ==========
+{
+  id: "naivasha-004",
+  name: "Lake Naivasha Sopa Resort",
+  location: "Naivasha",
+  rating: 4.5,
+  price: 280,
+  image: "/2025-12-22.webp",
+  gallery: [
+    "/2025-12-22 (1).webp",
+    "/unnamed (46).webp",
+    "/2025-12-22 (2).webp",
+    "/unnamed (47).webp",
+    "/unnamed (48).webp",
+    "/unnamed (49).webp"
+  ],
+  description: "Family-friendly resort on the shores of Lake Naivasha with beautiful gardens, swimming pool and easy access to boat rides, bird watching and Hell's Gate National Park.",
+  amenities: ["WiFi", "Pool", "Restaurant", "Bar", "Boat Rides", "Conference Facilities", "Gardens"],
+  address: "Lake Naivasha, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("naivasha-sopa", 280, {
+    standard: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
+      deluxe: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
+      suite: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
+      family: ["/unnamed (52).webp", "/unnamed (56).webp"],
+      executive: ["/unnamed (52).webp", "/unnamed (56).webp"],
+      presidential: ["/unnamed (53).webp", "/unnamed (56).webp"],
+    accessibleStandard: ["/unnamed (54).webp", "/unnamed (56).webp"],
+      accessibleDeluxe: ["/unnamed (55).webp"],
+      accessibleSuite: ["/unnamed (55).webp"]
+  })
+},
+
+// ========== LAKE NAKURU ADDITIONS ==========
+{
+  id: "nakuru-014",
+  name: "Lake Nakuru Sopa Lodge",
+  location: "Nakuru",
+  rating: 4.4,
+  price: 290,
+  image: "/lake-nakuru-sopa-lodge (5).jpg",
+  gallery: [
+    "/lake-nakuru-sopa-lodge (6).jpg",
+    "/lobby-giftshop (1).jpg",
+    "/walking-to-room-5-upper.jpg",
+    "/room-5-view.jpg"
+  ],
+  description: "Well-positioned lodge near Lake Nakuru National Park offering flamingo views, comfortable rooms and good facilities for bird watching and game drives.",
+  amenities: ["WiFi", "Pool", "Restaurant", "Bar", "Game Drives", "Bird Watching"],
+  address: "Lake Nakuru vicinity, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("nakuru-sopa", 290, {
+    standard: ["/lake-nakuru-sopa-lodge (7).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      deluxe: ["/lake-nakuru-sopa-lodge (7).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      suite: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      family: ["/lake-nakuru-sopa-lodge (10).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      executive: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      presidential: ["/lake-nakuru-sopa-lodge (10).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      accessibleStandard: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+      accessibleDeluxe: ["/caption (66).jpg"],
+      accessibleSuite: ["/caption (66).jpg"]
+  })
+},
+
+{
+  id: "nakuru-015",
+  name: "Lake Nakuru Lodge",
+  location: "Nakuru",
+  rating: 4.3,
+  price: 240,
+  image: "/Lake Nakuru Lodge (35).webp",
+  gallery: [
+    "/2024-08-06.webp",
+    "/Lake Nakuru Lodge (30).webp",
+    "/unnamed (59).webp",
+    "/unnamed (60).webp"
+  ],
+  description: "Classic lodge with direct access to Lake Nakuru National Park, featuring waterhole views and good opportunities for game viewing and photography.",
+  amenities: ["WiFi", "Restaurant", "Bar", "Game Drives", "Parking", "Room Service"],
+  address: "Lake Nakuru National Park, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 2,
+  rooms: createRooms("nakuru-lodge", 240, {
+    standard: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
+      deluxe: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
+      suite: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
+      family: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+      executive: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+      presidential: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+      accessibleStandard: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+      accessibleDeluxe: ["/Lake Nakuru Lodge (27).webp"],
+      accessibleSuite: ["/Lake Nakuru Lodge (27).webp"]
+  })
+},
+
+// ========== LAKE NAIVASHA MORE ==========
+{
+  id: "naivasha-005",
+  name: "Lake Naivasha Simba Lodge",
+  location: "Naivasha",
+  rating: 4.3,
+  price: 220,
+  image: "/unnamed (61).webp",
+  gallery: [
+    "/unnamed (63).webp",
+    "/unnamed (64).webp",
+    "/2021-01-08.webp",
+    "/unnamed (62).webp"
+  ],
+  description: "Comfortable mid-range lodge with lake proximity, good facilities and convenient base for Hell’s Gate, Crescent Island and boat safaris.",
+  amenities: ["WiFi", "Restaurant", "Bar", "Pool", "Lake Activities", "Parking"],
+  address: "Lake Naivasha, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 2,
+  rooms: createRooms("naivasha-simba", 220, {
+    standard: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
+      deluxe: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
+      suite: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
+      family: ["/unnamed (66).webp", "/unnamed (70).webp"],
+      executive: ["/unnamed (66).webp", "/unnamed (70).webp"],
+      presidential: ["/unnamed (68).webp", "/unnamed (70).webp"],
+      accessibleStandard: ["/unnamed (68).webp", "/unnamed (70).webp"],
+      accessibleDeluxe: ["/unnamed (68).webp"],
+      accessibleSuite: ["/unnamed (68).webp"]
+  })
+},
+
+{
+  id: "naivasha-006",
+  name: "Lake Naivasha Resort",
+  location: "Naivasha",
+  rating: 4.4,
+  price: 260,
+  image: "/naivasha-resort-hero.jpg",
+  gallery: [
+    "/naivasha-resort-pool.jpg",
+    "/naivasha-resort-room.jpg",
+    "/naivasha-resort-dining.jpg",
+    "/naivasha-resort-lake.jpg"
+  ],
+  description: "Modern resort-style property on Lake Naivasha with multiple dining options, swimming pool and easy access to boat rides and bird watching.",
+  amenities: ["WiFi", "Pool", "Multiple Restaurants", "Bar", "Boat Safaris", "Conference Rooms"],
+  address: "Lake Naivasha, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("naivasha-resort", 260, {
+    standard: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg", "/paraplegic rooms (4).jpg"],
+      deluxe: ["/paraplegic rooms (1).jpg", "/tamarind-deluxe-2.jpg", "/paraplegic rooms (4).jpg"],
+      suite: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg", "/paraplegic rooms (4).jpg"],
+      family: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
+      executive: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
+      presidential: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
+      accessibleStandard: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
+      accessibleDeluxe: ["/paraplegic rooms (1).jpg"],
+      accessibleSuite: ["/paraplegic rooms (1).jpg"]
+  })
+},
+{
+  id: "naivasha-007",
+  name: "Enashipai Resort & Spa",
+  location: "Naivasha",
+  rating: 4.6,
+  price: 320,
+  image: "/enashipai-resort-hero.jpg",
+  gallery: [
+    "/enashipai-pool.jpg",
+    "/enashipai-room.jpg",
+    "/enashipai-spa.jpg",
+    "/enashipai-garden.jpg",
+    "/enashipai-lake-view.jpg"
+  ],
+  description: "Luxury resort on the shores of Lake Naivasha offering elegant rooms, a full-service spa, multiple dining options, and excellent facilities for relaxation, conferences, and lake activities. Features wheelchair accessible rooms with roll-in showers and grab bars.",
+  amenities: [
+    "WiFi",
+    "Multiple Pools",
+    "Full-Service Spa",
+    "Several Restaurants",
+    "Bar & Lounge",
+    "Lake Activities & Boat Rides",
+    "Conference & Event Facilities",
+    "Fitness Center",
+    "Gardens",
+    "Accessible Facilities"
+  ],
+  address: "Lake Naivasha, Naivasha, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  rooms: createRooms("enashipai", 320, {
+    standard: ["/enashipai-standard-room.jpg"],
+    deluxe: ["/enashipai-deluxe-room.jpg"],
+    suite: ["/enashipai-suite.jpg"],
+    family: ["/enashipai-family-room.jpg"],
+    accessibleStandard: ["/enashipai-accessible-room-1.jpg", "/enashipai-accessible-bath.jpg"],
+    accessibleDeluxe: ["/enashipai-accessible-deluxe.jpg"],
+    accessibleSuite: ["/enashipai-accessible-suite.jpg"]
+  })
+},
 ];
 
 export const faqs = [
