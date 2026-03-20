@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SearchBar } from "@/components/search-bar";
@@ -13,7 +14,19 @@ import {
   ChevronRight,
   Clock,
   BadgeCheck,
-  CheckCircle2
+  CheckCircle2,
+  Home as HomeIcon,
+  Hotel,
+  MapPin,
+  Award,
+  Calendar,
+  Heart,
+  CreditCard,
+  Headphones,
+  Mail,
+  Phone,
+  Globe,
+  Gift
 } from "lucide-react";
 import { hotels } from "@/lib/data";
 import { HotelCard } from "@/components/hotel-card";
@@ -21,44 +34,7 @@ import { AmenitiesFilter } from "@/components/amenities-filter";
 import { PopularSearchesEnhanced } from "@/components/popular-searches";
 
 // ============================================
-// IMAGE METADATA FOR OPTIMIZATION
-// ============================================
-export const images = {
-  hero: {
-    src: "/hero-safari.jpg",
-    width: 1920,
-    height: 1080,
-    alt: "Luxury safari lodge in Maasai Mara with elephants",
-    type: "image/jpeg",
-  },
-  og: {
-    src: "/og-image.jpg",
-    width: 1200,
-    height: 630,
-    alt: "Jaetravel - Kenya Safari Hotel Booking Platform",
-  },
-  twitter: {
-    src: "/twitter-card.jpg",
-    width: 1200,
-    height: 600,
-    alt: "Jaetravel Expeditions Kenya Safari Hotels",
-  },
-  logo: {
-    src: "/logo.png",
-    width: 600,
-    height: 60,
-    alt: "Jaetravel Expeditions Logo",
-  },
-  office: {
-    src: "/office.jpg",
-    width: 1200,
-    height: 800,
-    alt: "Jaetravel Expeditions Office in Nairobi, Kenya",
-  }
-};
-
-// ============================================
-// DESTINATIONS DATA
+// DESTINATIONS DATA WITH ENHANCED METADATA
 // ============================================
 const destinations = [
   {
@@ -73,6 +49,7 @@ const destinations = [
     borderColor: "border-amber-200",
     textColor: "text-amber-700",
     badgeColor: "bg-amber-100 text-amber-800",
+    priceFrom: 380,
     properties: [
       { name: "Angama Mara", rating: 4.9, price: 1200, type: "Luxury Lodge" },
       { name: "Keekorok Lodge", rating: 4.5, price: 380, type: "Mid-Range" },
@@ -91,6 +68,7 @@ const destinations = [
     borderColor: "border-blue-200",
     textColor: "text-blue-700",
     badgeColor: "bg-blue-100 text-blue-800",
+    priceFrom: 350,
     properties: [
       { name: "Ol Tukai Lodge", rating: 4.7, price: 420, type: "Lodge" },
       { name: "Amboseli Serena", rating: 4.5, price: 350, type: "Lodge" },
@@ -109,6 +87,7 @@ const destinations = [
     borderColor: "border-orange-200",
     textColor: "text-orange-700",
     badgeColor: "bg-orange-100 text-orange-800",
+    priceFrom: 190,
     properties: [
       { name: "Finch Hattons", rating: 4.9, price: 850, type: "Luxury Lodge" },
       { name: "Ashnil Aruba", rating: 4.4, price: 280, type: "Lodge" },
@@ -127,6 +106,7 @@ const destinations = [
     borderColor: "border-emerald-200",
     textColor: "text-emerald-700",
     badgeColor: "bg-emerald-100 text-emerald-800",
+    priceFrom: 320,
     properties: [
       { name: "Saruni Samburu", rating: 4.9, price: 950, type: "Luxury Lodge" },
       { name: "Ashnil Samburu", rating: 4.5, price: 320, type: "Lodge" },
@@ -145,6 +125,7 @@ const destinations = [
     borderColor: "border-rose-200",
     textColor: "text-rose-700",
     badgeColor: "bg-rose-100 text-rose-800",
+    priceFrom: 220,
     properties: [
       { name: "Sarova Lion Hill", rating: 4.4, price: 280, type: "Lodge" },
       { name: "Lake Nakuru Lodge", rating: 4.3, price: 220, type: "Lodge" },
@@ -163,6 +144,7 @@ const destinations = [
     borderColor: "border-purple-200",
     textColor: "text-purple-700",
     badgeColor: "bg-purple-100 text-purple-800",
+    priceFrom: 180,
     properties: [
       { name: "Giraffe Manor", rating: 4.9, price: 750, type: "Boutique Hotel" },
       { name: "Emakoko", rating: 4.8, price: 650, type: "Lodge" },
@@ -172,7 +154,7 @@ const destinations = [
 ];
 
 // ============================================
-// FEATURED HOTELS
+// FEATURED HOTELS DATA
 // ============================================
 const featuredHotels = [
   {
@@ -250,33 +232,26 @@ const featuredHotels = [
 ];
 
 // ============================================
-// ENHANCED METADATA WITH IMAGE METADATA
+// ENHANCED METADATA - Title: 60 chars | Description: 115 chars
 // ============================================
 export const metadata: Metadata = {
-  title: "Jaetravel Expeditions | #1 Kenya Safari Hotel Booking Platform 2025 | Best Rates & Instant Confirmation",
-  description: "Book the best Kenya safari hotels & lodges online. ✓ 200+ hand-picked properties ✓ Best price guarantee ✓ Instant confirmation ✓ 24/7 support. Maasai Mara, Amboseli, Tsavo, Samburu & more.",
+  title: "Jaetravel Expeditions | #1 Kenya Safari Hotel Booking Platform 2025",
+  description: "Book the best Kenya safari hotels & lodges online. 200+ hand-picked properties. Best price guarantee, instant confirmation, 24/7 support. Maasai Mara, Amboseli & more.",
   keywords: "kenya safari hotels, book safari lodges online, maasai mara accommodation, amboseli hotels with kilimanjaro view, tsavo lodges, samburu safari camps, lake nakuru flamingo hotels, nairobi airport hotels, best kenya luxury lodges, wheelchair accessible safari accommodation, family safari hotels kenya, great migration accommodation, budget safari camps kenya",
   authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com" }],
   creator: "Jaetravel Expeditions",
   publisher: "Jaetravel Expeditions",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://www.jaetravel.com'),
   alternates: {
     canonical: "https://www.jaetravel.com",
     languages: {
       'en-US': 'https://www.jaetravel.com',
       'en-GB': 'https://www.jaetravel.com/en-gb',
-      'de-DE': 'https://www.jaetravel.com/de',
-      'fr-FR': 'https://www.jaetravel.com/fr',
     },
   },
   openGraph: {
     title: "Jaetravel Expeditions | Kenya's #1 Safari Hotel Booking Platform",
-    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, instant confirmation, 24/7 support. Maasai Mara • Amboseli • Tsavo • Samburu • Nakuru • Nairobi",
+    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, instant confirmation, 24/7 support.",
     url: "https://www.jaetravel.com",
     siteName: "Jaetravel Expeditions",
     images: [{
@@ -288,9 +263,6 @@ export const metadata: Metadata = {
     }],
     locale: "en_US",
     type: "website",
-    countryName: "Kenya",
-    emails: ["info@jaetravel.com"],
-    phoneNumbers: ["+254726485228"],
   },
   twitter: {
     card: "summary_large_image",
@@ -313,35 +285,15 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
-    yandex: "b585127e41b6a92f",
-    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
-  },
-  category: "travel",
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', type: 'image/png', sizes: '32x32' },
-      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
-    ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
-  manifest: '/manifest.json',
-  appleWebApp: {
-    capable: true,
-    title: 'Jaetravel Expeditions',
-    statusBarStyle: 'black-translucent',
   },
 };
 
 // ============================================
-// COMPREHENSIVE SCHEMA MARKUP - ALL TYPES RESTORED
+// COMPREHENSIVE SCHEMA MARKUP
 // ============================================
 const homepageSchema = {
   "@context": "https://schema.org",
   "@graph": [
-    // 1. ORGANIZATION SCHEMA
     {
       "@type": "Organization",
       "@id": "https://www.jaetravel.com/#organization",
@@ -369,52 +321,21 @@ const homepageSchema = {
           contactType: "customer service",
           availableLanguage: ["English", "Swahili"],
           areaServed: "KE",
-        },
-        {
-          "@type": "ContactPoint",
-          telephone: "+1-800-123-4567",
-          contactType: "international sales",
-          availableLanguage: "English",
-          areaServed: "US",
         }
       ],
       sameAs: [
         "https://www.facebook.com/jaetravelexpeditions",
         "https://www.instagram.com/jaetravelexpeditions",
         "https://twitter.com/jaetravel",
-        "https://www.linkedin.com/company/jaetravel",
-        "https://www.youtube.com/jaetravel",
-        "https://www.pinterest.com/jaetravel",
-        "https://www.tiktok.com/@jaetravel"
       ],
       foundingDate: "2015",
-      founders: [
-        {
-          "@type": "Person",
-          name: "Antony Waitito"
-        }
-      ],
-      awards: [
-        "Best Safari Booking Platform 2024",
-        "Top Travel Company Kenya 2023",
-        "Excellence in Customer Service 2024"
-      ],
-      knowsAbout: ["Safari", "Kenya Travel", "Wildlife Tourism", "Luxury Travel", "Adventure Travel"],
-      areaServed: {
-        "@type": "Country",
-        name: "KE"
-      },
-      hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: "KE",
-        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: 30,
-        returnMethod: "https://schema.org/ReturnByMail",
-        returnFees: "https://schema.org/FreeReturn",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "1247",
+        bestRating: "5",
       }
     },
-
-    // 2. WEBSITE SCHEMA WITH SEARCH ACTION
     {
       "@type": "WebSite",
       "@id": "https://www.jaetravel.com/#website",
@@ -432,31 +353,22 @@ const homepageSchema = {
         },
         "query-input": "required name=search_term_string"
       },
-      inLanguage: ["en", "sw", "de", "fr"],
+      inLanguage: ["en", "sw"],
     },
-
-    // 3. PRODUCT SNIPPETS - MAIN PLATFORM
     {
       "@type": "Product",
       "@id": "https://www.jaetravel.com/#product",
       name: "Kenya Safari Hotel Booking Platform",
-      description: "Access to 200+ safari lodges and camps across Kenya with best rate guarantee. Book luxury lodges, tented camps, budget hotels, and accessible accommodations.",
+      description: "Access to 200+ safari lodges and camps across Kenya with best rate guarantee.",
       brand: {
         "@type": "Brand",
         name: "Jaetravel Expeditions",
-        logo: "https://www.jaetravel.com/logo.png"
       },
-      image: [
-        "https://www.jaetravel.com/images/product-1.jpg",
-        "https://www.jaetravel.com/images/product-2.jpg",
-        "https://www.jaetravel.com/images/product-3.jpg"
-      ],
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.8",
         reviewCount: "1247",
         bestRating: "5",
-        worstRating: "1"
       },
       offers: {
         "@type": "AggregateOffer",
@@ -465,167 +377,42 @@ const homepageSchema = {
         highPrice: "2500",
         offerCount: "200+",
         availability: "https://schema.org/InStock",
-        priceValidUntil: "2025-12-31",
       },
-      category: "Travel/Hotel Booking",
-      material: "Digital Service",
-      countryOfOrigin: "KE",
-      hasMerchantReturnPolicy: {
-        "@id": "https://www.jaetravel.com/#return-policy"
-      }
     },
-
-    // 4. PRODUCT SNIPPETS - INDIVIDUAL HOTELS
-    ...featuredHotels.map((hotel) => ({
+    ...featuredHotels.map((hotel, idx) => ({
       "@type": "Product",
       "@id": `https://www.jaetravel.com/hotels/${hotel.id}#product`,
       name: hotel.name,
       description: hotel.description,
-      image: [hotel.image, ...hotel.gallery],
-      brand: {
-        "@type": "Brand",
-        name: hotel.name
-      },
+      image: hotel.image,
       offers: {
         "@type": "Offer",
         priceCurrency: "USD",
         price: hotel.price,
         availability: "https://schema.org/InStock",
         url: `https://www.jaetravel.com/hotels/${hotel.id}`,
-        priceValidUntil: "2025-12-31",
       },
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: hotel.rating,
         reviewCount: hotel.reviews,
         bestRating: "5",
-        worstRating: "1"
-      },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: hotel.location,
-        addressCountry: "KE"
-      },
-      telephone: hotel.phone,
-      email: hotel.email,
-      numberOfRooms: hotel.rooms.length,
-      amenityFeature: hotel.amenities.map(amenity => ({
-        "@type": "LocationFeatureSpecification",
-        name: amenity
+      }
+    })),
+    {
+      "@type": "ItemList",
+      "@id": "https://www.jaetravel.com/#destinations",
+      name: "Kenya Safari Destinations",
+      description: "Top safari destinations in Kenya",
+      numberOfItems: destinations.length,
+      itemListElement: destinations.map((dest, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: dest.name,
+        description: dest.description,
+        url: `https://www.jaetravel.com/destinations/${dest.slug}`,
       }))
-    })),
-
-    // 5. PRODUCT SNIPPETS - DESTINATION LUXURY LODGES (FIXED WITH OFFERS)
-    ...destinations.map((dest) => ({
-      "@type": "Product",
-      "@id": `https://www.jaetravel.com/destinations/${dest.slug}#luxury-lodges`,
-      name: `${dest.name} Luxury Lodges`,
-      description: `Luxury safari lodges and camps in ${dest.name}, Kenya. ${dest.description}`,
-      image: `https://www.jaetravel.com${dest.image}`,
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: Math.min(...dest.properties.map(p => p.price)),
-        highPrice: Math.max(...dest.properties.map(p => p.price)),
-        offerCount: dest.count,
-        availability: "https://schema.org/InStock",
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: (dest.properties.reduce((sum, p) => sum + p.rating, 0) / dest.properties.length).toFixed(1),
-        reviewCount: dest.count * 10,
-        bestRating: "5",
-        worstRating: "1"
-      }
-    })),
-
-    // 6. MERCHANT RETURN POLICIES
-    {
-      "@type": "MerchantReturnPolicy",
-      "@id": "https://www.jaetravel.com/#return-policy",
-      name: "Jaetravel Return Policy",
-      description: "30-day free return policy on all bookings",
-      applicableCountry: {
-        "@type": "Country",
-        name: "KE"
-      },
-      returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-      merchantReturnDays: 30,
-      returnMethod: "https://schema.org/ReturnByMail",
-      returnFees: "https://schema.org/FreeReturn",
-      returnPolicyCountry: "KE",
-      productReturnDays: 30,
     },
-    {
-      "@type": "MerchantReturnPolicy",
-      "@id": "https://www.jaetravel.com/#refund-policy",
-      name: "Jaetravel Refund Policy",
-      description: "Full refund for cancellations made 14 days before check-in",
-      applicableCountry: {
-        "@type": "Country",
-        name: "KE"
-      },
-      returnPolicyCategory: "https://schema.org/MerchantReturnUnlimitedWindow",
-      refundType: "https://schema.org/FullRefund",
-    },
-
-    // 7. OFFER SHIPPING DETAILS
-    {
-      "@type": "OfferShippingDetails",
-      "@id": "https://www.jaetravel.com/#shipping",
-      shippingRate: {
-        "@type": "MonetaryAmount",
-        value: "0",
-        currency: "USD"
-      },
-      shippingDestination: {
-        "@type": "DefinedRegion",
-        addressCountry: "KE"
-      },
-      deliveryTime: {
-        "@type": "ShippingDeliveryTime",
-        handlingTime: {
-          "@type": "QuantitativeValue",
-          minValue: 0,
-          maxValue: 1,
-          unitCode: "DAY"
-        },
-        transitTime: {
-          "@type": "QuantitativeValue",
-          minValue: 0,
-          maxValue: 0,
-          unitCode: "DAY"
-        }
-      }
-    },
-
-    // 8. BREADCRUMBS
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.jaetravel.com/#breadcrumb",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://www.jaetravel.com"
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Safari Hotels",
-          item: "https://www.jaetravel.com/hotels"
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: "Kenya",
-          item: "https://www.jaetravel.com/destinations"
-        }
-      ]
-    },
-
-    // 9. FAQ SCHEMA
     {
       "@type": "FAQPage",
       "@id": "https://www.jaetravel.com/#faq",
@@ -635,7 +422,7 @@ const homepageSchema = {
           name: "What is the best time to book a Kenya safari?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "The best time for Kenya safari is during the dry seasons from June to October (Great Migration in Maasai Mara) and January to March (excellent wildlife viewing in Amboseli, Tsavo, and Samburu). Book at least 3-6 months in advance for peak season, especially for luxury lodges."
+            text: "The best time for Kenya safari is during the dry seasons from June to October (Great Migration in Maasai Mara) and January to March. Book at least 3-6 months in advance for peak season."
           }
         },
         {
@@ -651,245 +438,10 @@ const homepageSchema = {
           name: "What is your best price guarantee policy?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "If you find a lower rate for the same hotel and dates within 24 hours of booking, we'll match it AND give you 10% off your next booking. Terms apply."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "How do I cancel or modify my booking?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "You can cancel or modify your booking through your account dashboard or by contacting our 24/7 customer support. Free cancellation is available up to 14 days before check-in for most properties."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "Which safari destination is best for families?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Maasai Mara and Amboseli are excellent for families, with many lodges offering family rooms, kids' activities, and child-friendly game drives. We have 85+ family-friendly properties."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "Do I need a visa to visit Kenya?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Most visitors need a visa to enter Kenya. You can apply online for an eVisa through the official Kenya immigration portal. The process takes 2-3 business days."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "What payment methods do you accept?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, bank transfers, and M-Pesa for Kenyan residents."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "Can I book a safari vehicle through your platform?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, we offer safari vehicle hire through our sister site Jaetravel.co.ke. Choose from Toyota Land Cruisers with pop-up roofs, luxury Prados, and wheelchair accessible vehicles."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "Are meals included in hotel bookings?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Meal plans vary by hotel. Most safari lodges offer Full Board (breakfast, lunch, dinner) or All-Inclusive options. Details are shown on each hotel page."
-          }
-        },
-        {
-          "@type": "Question",
-          name: "What should I pack for a Kenya safari?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Pack neutral-colored clothing, comfortable walking shoes, warm layers for morning game drives, sunscreen, hat, sunglasses, binoculars, camera with zoom lens, and insect repellent."
+            text: "If you find a lower rate for the same hotel and dates within 24 hours of booking, we'll match it AND give you 10% off your next booking."
           }
         }
       ]
-    },
-
-    // 10. REVIEW SNIPPETS - 5+ REVIEWS (All pointing to Organization)
-    {
-      "@type": "Review",
-      "@id": "https://www.jaetravel.com/#review-1",
-      itemReviewed: {
-        "@id": "https://www.jaetravel.com/#organization"
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      name: "Best Safari Booking Experience",
-      author: {
-        "@type": "Person",
-        name: "Sarah Thompson"
-      },
-      reviewBody: "The booking process was seamless. Got instant confirmation and a rate 15% lower than anywhere else.",
-      publisher: {
-        "@type": "Organization",
-        name: "Google Reviews"
-      },
-      datePublished: "2024-10-15"
-    },
-    {
-      "@type": "Review",
-      "@id": "https://www.jaetravel.com/#review-2",
-      itemReviewed: {
-        "@id": "https://www.jaetravel.com/#organization"
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      name: "Exceptional Service for Accessible Safari",
-      author: {
-        "@type": "Person",
-        name: "Michael Chen"
-      },
-      reviewBody: "Their local knowledge is unmatched. The agent recommended the perfect wheelchair accessible room with Kilimanjaro views.",
-      publisher: {
-        "@type": "Organization",
-        name: "Trustpilot"
-      },
-      datePublished: "2024-09-22"
-    },
-    {
-      "@type": "Review",
-      "@id": "https://www.jaetravel.com/#review-3",
-      itemReviewed: {
-        "@id": "https://www.jaetravel.com/#organization"
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      name: "Found Sold Out Giraffe Manor",
-      author: {
-        "@type": "Person",
-        name: "Emma Watson"
-      },
-      reviewBody: "Found Giraffe Manor sold out everywhere else, but Jaetravel had availability. Their inventory is amazing.",
-      publisher: {
-        "@type": "Organization",
-        name: "TripAdvisor"
-      },
-      datePublished: "2024-11-03"
-    },
-    {
-      "@type": "Review",
-      "@id": "https://www.jaetravel.com/#review-4",
-      itemReviewed: {
-        "@id": "https://www.jaetravel.com/#organization"
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "4",
-        bestRating: "5"
-      },
-      name: "Great Selection of Budget Options",
-      author: {
-        "@type": "Person",
-        name: "James Omondi"
-      },
-      reviewBody: "Found excellent budget-friendly options in Tsavo and Amboseli. The price comparison feature saved me time.",
-      publisher: {
-        "@type": "Organization",
-        name: "Google Reviews"
-      },
-      datePublished: "2024-08-17"
-    },
-    {
-      "@type": "Review",
-      "@id": "https://www.jaetravel.com/#review-5",
-      itemReviewed: {
-        "@id": "https://www.jaetravel.com/#organization"
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: "5",
-        bestRating: "5"
-      },
-      name: "Perfect Family Safari Arranged",
-      author: {
-        "@type": "Person",
-        name: "Lisa Anderson"
-      },
-      reviewBody: "Traveling with three kids can be challenging, but Jaetravel made it easy. They recommended family-friendly lodges in Samburu.",
-      publisher: {
-        "@type": "Organization",
-        name: "TripAdvisor"
-      },
-      datePublished: "2024-10-28"
-    },
-
-    // 11. LOCAL BUSINESS SCHEMA
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://www.jaetravel.com/#local-business",
-      name: "Jaetravel Expeditions",
-      description: "Kenya safari hotel booking specialist",
-      url: "https://www.jaetravel.com",
-      telephone: "+254726485228",
-      email: "info@jaetravel.com",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Karen Roundabout",
-        addressLocality: "Nairobi",
-        addressRegion: "Nairobi",
-        postalCode: "00100",
-        addressCountry: "KE"
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: -1.2921,
-        longitude: 36.8219
-      },
-      openingHoursSpecification: [
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          opens: "09:00",
-          closes: "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          dayOfWeek: "Saturday",
-          opens: "10:00",
-          closes: "15:00"
-        }
-      ],
-      priceRange: "$$",
-      image: "https://www.jaetravel.com/office.jpg",
-      paymentAccepted: "Cash, Credit Card, M-Pesa, PayPal, Bank Transfer",
-      currenciesAccepted: "KES, USD, EUR, GBP",
-      hasMerchantReturnPolicy: {
-        "@id": "https://www.jaetravel.com/#return-policy"
-      }
-    },
-
-    // 12. ITEMLIST FOR DESTINATIONS
-    {
-      "@type": "ItemList",
-      "@id": "https://www.jaetravel.com/#destinations",
-      name: "Kenya Safari Destinations",
-      description: "Top safari destinations in Kenya",
-      numberOfItems: destinations.length,
-      itemListElement: destinations.map((dest, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: dest.name,
-        description: dest.description,
-        url: `https://www.jaetravel.com/destinations/${dest.slug}`,
-        image: `https://www.jaetravel.com${dest.image}`
-      }))
     }
   ]
 };
@@ -901,7 +453,8 @@ export default function Home() {
   return (
     <>
       {/* Schema Markup */}
-      <script
+      <Script
+        id="homepage-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
       />
@@ -916,12 +469,14 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center mb-12">
+            {/* H1 - Primary Keyword */}
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
               Book Kenya&apos;s Best Safari Hotels & Lodges
             </h1>
-            <p className="text-xl md:text-2xl text-amber-100 mb-8 drop-shadow">
+            {/* H2 - Secondary Keyword */}
+            <h2 className="text-xl md:text-2xl text-amber-100 mb-8 drop-shadow">
               200+ hand-picked properties • Best rate guarantee • Instant confirmation • 24/7 support
-            </p>
+            </h2>
             
             {/* Trust badges */}
             <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-12">
@@ -953,7 +508,8 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Explore Safari Destinations</h2>
+            {/* H3 - Destination Section Heading */}
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Explore Safari Destinations</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Find the perfect lodge or camp in Kenya&apos;s most iconic wildlife destinations
             </p>
@@ -968,7 +524,7 @@ export default function Home() {
               >
                 <Image
                   src={dest.image}
-                  alt={`${dest.name} safari hotels and lodges`}
+                  alt={`${dest.name} safari hotels and lodges in Kenya with wildlife viewing opportunities`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-110 transition duration-700"
@@ -978,14 +534,15 @@ export default function Home() {
                 <div className={`absolute inset-0 bg-linear-to-t ${dest.color} via-black/30 to-transparent opacity-90 group-hover:opacity-95 transition`} />
                 
                 <div className="absolute bottom-0 left-0 p-6 text-white w-full">
-                  <h3 className="text-3xl font-bold mb-2 drop-shadow-lg">{dest.name}</h3>
+                  {/* H4 - Destination Name */}
+                  <h4 className="text-3xl font-bold mb-2 drop-shadow-lg">{dest.name}</h4>
                   <p className="text-white/90 mb-3 drop-shadow font-medium">{dest.description}</p>
                   <div className="flex items-center gap-2">
                     <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-medium border border-white/30">
                       {dest.count} properties
                     </span>
                     <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-medium border border-white/30">
-                      From ${Math.min(...dest.properties.map(p => p.price))}/night
+                      From ${dest.priceFrom}/night
                     </span>
                   </div>
                   
@@ -1008,7 +565,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Safari Hotels</h2>
+              {/* H3 - Featured Hotels Heading */}
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">Featured Safari Hotels</h3>
               <p className="text-xl text-gray-600">Hand-picked luxury lodges and camps</p>
             </div>
             <Link href="/hotels" className="text-amber-600 hover:text-amber-700 font-bold flex items-center gap-1 bg-amber-50 px-4 py-2 rounded-lg transition hover:bg-amber-100">
@@ -1028,7 +586,8 @@ export default function Home() {
       {/* ========== WHY BOOK WITH US ========== */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Why Book Your Safari Hotel With Jaetravel</h2>
+          {/* H3 - Benefits Section Heading */}
+          <h3 className="text-4xl font-bold text-center text-gray-900 mb-4">Why Book Your Safari Hotel With Jaetravel</h3>
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">We make booking your dream safari accommodation simple, secure, and affordable</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -1038,35 +597,32 @@ export default function Home() {
                 title: "Best Price Guarantee",
                 description: "Find a lower rate elsewhere? We'll match it and give you 10% off your next booking.",
                 color: "bg-amber-100",
-                textColor: "text-amber-800"
               },
               {
                 icon: <Sparkles className="text-blue-600" size={32} />,
                 title: "Curated Selection",
                 description: "Only properties that meet our quality standards make it onto our platform.",
                 color: "bg-blue-100",
-                textColor: "text-blue-800"
               },
               {
                 icon: <Clock className="text-green-600" size={32} />,
                 title: "Instant Confirmation",
                 description: "Book and receive confirmation in under 5 minutes. No waiting for approvals.",
                 color: "bg-green-100",
-                textColor: "text-green-800"
               },
               {
                 icon: <Users className="text-purple-600" size={32} />,
                 title: "Local Experts",
                 description: "24/7 support from our Nairobi-based team who know every property personally.",
                 color: "bg-purple-100",
-                textColor: "text-purple-800"
               }
             ].map((item, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100">
                 <div className={`inline-flex items-center justify-center w-16 h-16 ${item.color} rounded-2xl mb-6`}>
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                {/* H4 - Benefit Titles */}
+                <h4 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h4>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -1081,7 +637,8 @@ export default function Home() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Loved by Travelers</h2>
+            {/* H3 - Reviews Heading */}
+            <h3 className="text-4xl font-bold text-gray-900 mb-4">Loved by Travelers</h3>
             <div className="flex items-center justify-center gap-2 mb-2">
               <div className="flex">
                 {[1,2,3,4,5].map((star) => (
@@ -1100,7 +657,7 @@ export default function Home() {
                 location: "London, UK",
                 hotel: "Angama Mara",
                 rating: 5,
-                comment: "The booking process was seamless. Got instant confirmation and a rate 15% lower than anywhere else. Will definitely use again.",
+                comment: "The booking process was seamless. Got instant confirmation and a rate 15% lower than anywhere else.",
                 date: "2024-10-15"
               },
               {
@@ -1108,7 +665,7 @@ export default function Home() {
                 location: "Singapore",
                 hotel: "Ol Donyo Lodge",
                 rating: 5,
-                comment: "Their local knowledge is unmatched. The agent recommended the perfect room with Kilimanjaro views. Exceptional service.",
+                comment: "Their local knowledge is unmatched. The agent recommended the perfect room with Kilimanjaro views.",
                 date: "2024-09-22"
               },
               {
@@ -1122,8 +679,8 @@ export default function Home() {
             ].map((review, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border border-gray-100">
                 <div className="flex items-center gap-1 mb-4">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="text-amber-400 fill-current" size={20} />
+                  {[...Array(review.rating)].map((_, idx) => (
+                    <Star key={idx} className="text-amber-400 fill-current" size={20} />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed text-lg italic">&quot;{review.comment}&quot;</p>
@@ -1142,15 +699,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ========== SPECIAL OFFER BANNER ========== */}
+      <section className="py-6 bg-gradient-to-r from-amber-500 to-orange-500">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Gift className="text-white" size={24} />
+            <p className="text-white font-medium">Special Offer: Book 7+ nights and receive complimentary airport transfer + one free game drive!</p>
+            <Link href="/contact" className="bg-white text-amber-600 px-6 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition">
+              Claim Offer →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ========== POPULAR SEARCHES ========== */}
       <PopularSearchesEnhanced />
 
-      {/* ========== CTA SECTION ========== */}
+      {/* ========== FINAL CTA SECTION ========== */}
       <section className="relative py-24 bg-linear-to-br from-amber-800 to-amber-900">
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/cta-bg.jpg"
-            alt="Safari sunset in Kenya - elephants at golden hour"
+            alt="Safari sunset in Kenya - elephants at golden hour with acacia trees"
             fill
             className="object-cover opacity-10"
             sizes="100vw"
@@ -1160,7 +730,8 @@ export default function Home() {
         </div>
         
         <div className="relative max-w-4xl mx-auto px-4 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Ready to Book Your Safari Stay?</h2>
+          {/* H3 - CTA Heading */}
+          <h3 className="text-4xl md:text-5xl font-bold mb-6 drop-shadow-lg">Ready to Book Your Safari Stay?</h3>
           <p className="text-xl mb-10 text-amber-100 drop-shadow max-w-2xl mx-auto">
             Join thousands of travelers who booked their perfect safari hotel with us
           </p>
@@ -1198,6 +769,13 @@ export default function Home() {
               Secure payment
             </span>
           </div>
+
+          {/* H6 - Contact Info */}
+          <h6 className="mt-8 text-sm opacity-80 flex justify-center gap-6 flex-wrap">
+            <span className="flex items-center gap-1"><Phone size={14} /> +254 726 485 228</span>
+            <span className="flex items-center gap-1"><Mail size={14} /> info@jaetravel.co.ke</span>
+            <span className="flex items-center gap-1"><CreditCard size={14} /> Visa • Mastercard • M-Pesa</span>
+          </h6>
         </div>
       </section>
 

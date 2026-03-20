@@ -1,10 +1,10 @@
 // app/hotels/ClientHotels.tsx
 'use client';
 
+import { AccessibilityFeature, AccessibilityImages } from "@/lib/accessibility-data";
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { HotelCard } from "@/components/hotel-card";
 import {
   Search,
   ChevronLeft,
@@ -22,15 +22,21 @@ import {
   Accessibility,
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
+  Bath,
+  Bed,
+  DoorOpen,
+  Utensils,
+  Ruler,
+  Car,
+  Phone,
+  Home,
+  ArrowRight,
+  CheckCircle2,
+  AlertCircle,
+  XCircle,
 } from "lucide-react";
 
-interface Feature {
-  id: string;
-  category: 'bathroom' | 'room' | 'entrance' | 'restaurant';
-  title: string;
-  description: string;
-  measurements?: string;
-}
+
 
 interface Room {
   id: string;
@@ -57,13 +63,316 @@ interface Hotel {
   accessible?: boolean;
   accessibleRoomCount?: number;
   rooms?: Room[];
-  accessibilityFeatures?: Feature[];
-  accessibilityImages?: Record<string, string[]>;
+  accessibilityFeatures?: AccessibilityFeature[];
+  accessibilityImages?: AccessibilityImages;
 }
 
 interface ClientHotelsProps {
   hotels: Hotel[];
 }
+
+// Complete accessibility features for Sarova Panafric Hotel
+const sarovaPanafricFeatures: AccessibilityFeature[] = [
+  // BATHROOM FEATURES
+  {
+    id: "sarova-bathroom-1",
+    category: "bathroom",
+    title: "Shower",
+    description: "Roll-in shower with grab bars and shower seat",
+    measurements: "Shower area: 58\" x 37\" (147cm x 94cm) • Entrance: 58\" wide",
+    status: "available",
+    details: {
+      items: [
+        { label: "Roll-in shower", value: "Entrance is 58 in wide. Cubicle is 37 in long, 58 in wide", status: "available" },
+        { label: "Grab bars within shower", value: "Available on both walls", status: "available" },
+        { label: "Fixed shower seat", value: "Located next to the showerhead", status: "available" },
+        { label: "Portable shower seat", value: "Available upon request", status: "available" },
+        { label: "Handheld showerhead", value: "Available at 75 in from the floor", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-bathroom-2",
+    category: "bathroom",
+    title: "Sink / Vanity",
+    description: "Accessible sink height with knee clearance",
+    measurements: "Sink height: 33.5\" (85cm) • Knee clearance: 10\" deep x 34.5\" wide x 27\" high",
+    status: "available",
+    details: {
+      items: [
+        { label: "Sink height", value: "33.5 in (85cm) from floor", status: "available" },
+        { label: "Space under sink", value: "10 in deep, 34.5 in wide, 27 in high", status: "available" },
+        { label: "Sink handle type", value: "Lever handle for easy operation", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-bathroom-3",
+    category: "bathroom",
+    title: "Bathroom Entrance",
+    description: "Manual door opening outward for easy access",
+    measurements: "Door width: 33\" (84cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Door operation", value: "Manual door opening outward", status: "available" },
+        { label: "Door width", value: "33 in (84cm)", status: "available" },
+        { label: "Door handle", value: "Lever handle", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-bathroom-4",
+    category: "bathroom",
+    title: "Bathroom Interior",
+    description: "Step-free access with ample turning space",
+    measurements: "Turning radius: 60\"+ (152cm+)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Free turning space", value: "More than 60 in (152cm) turning radius", status: "available" },
+        { label: "Step-free area", value: "No steps or thresholds throughout", status: "available" },
+        { label: "Floor surface", value: "Non-slip tile flooring", status: "available" }
+      ]
+    }
+  },
+
+  // ROOM FEATURES
+  {
+    id: "sarova-room-1",
+    category: "room",
+    title: "Room Entrance",
+    description: "One step at entrance with accessible door width",
+    measurements: "Step height: 2\" (5cm) • Door width: 33\" (84cm)",
+    status: "partial",
+    details: {
+      items: [
+        { label: "Step to enter", value: "1 step (2 in / 5cm tall)", status: "partial" },
+        { label: "Step handrails", value: "No handrails available", status: "unavailable" },
+        { label: "Door width", value: "33 in (84cm)", status: "available" },
+        { label: "Door handle", value: "Lever handle for easy operation", status: "available" },
+        { label: "Door access", value: "Key card entry system", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-room-2",
+    category: "room",
+    title: "Room Amenities",
+    description: "Step-free closet access with reachable storage",
+    status: "available",
+    details: {
+      items: [
+        { label: "Closet access", value: "Step-free access with sliding doors", status: "available" },
+        { label: "Drawers height", value: "Accessible reach height (32 in / 81cm)", status: "available" },
+        { label: "Clothing rod height", value: "Accessible reach height (48 in / 122cm)", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-room-3",
+    category: "room",
+    title: "Bed",
+    description: "Bed height and clearance information",
+    measurements: "Bed height: 27\" (69cm) • Side clearance: 72\" (183cm)",
+    status: "partial",
+    details: {
+      items: [
+        { label: "Bed height", value: "27 in (69cm) - Higher than standard", status: "partial" },
+        { label: "Space under bed", value: "4.5 in x 67 in x 7 in clearance for lift", status: "available" },
+        { label: "Space next to bed", value: "72 in (183cm) on accessible side", status: "available" },
+        { label: "Mattress firmness", value: "Slightly firm", status: "available" },
+        { label: "Light switches reachable", value: "Yes, from bed position", status: "available" },
+        { label: "Phone reachable", value: "Yes, nightstand accessible", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-room-4",
+    category: "room",
+    title: "Room Features",
+    description: "Accessible desk and mirror placement",
+    measurements: "Mirror height: 24.25\" (62cm) • Desk height: 30\" (76cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Mirror height", value: "24.25 in (62cm) from floor - accessible", status: "available" },
+        { label: "Desk height", value: "30 in (76cm) - standard accessible height", status: "available" },
+        { label: "Space under desk", value: "18.25 in deep x 43 in wide x 28 in high", status: "available" },
+        { label: "Chair", value: "Desk chair with backrest", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-room-5",
+    category: "room",
+    title: "Room Interior",
+    description: "Step-free area with smooth flooring and adequate space",
+    status: "available",
+    details: {
+      items: [
+        { label: "Step-free area", value: "No steps or thresholds", status: "available" },
+        { label: "Free turning space", value: "More than 60 in (152cm) turning radius", status: "available" },
+        { label: "Floor surface", value: "Smooth tile/hardwood flooring", status: "available" },
+        { label: "Wheelchair clearance", value: "Wide corridors with 36 in (91cm) clearance", status: "available" },
+        { label: "Light switches height", value: "36 in (91cm) from floor - accessible", status: "available" },
+        { label: "Outlets height", value: "18 in (46cm) from floor - accessible", status: "available" }
+      ]
+    }
+  },
+
+  // ENTRANCE FEATURES
+  {
+    id: "sarova-entrance-1",
+    category: "entrance",
+    title: "Main Entrance",
+    description: "Ramp access with automatic doors",
+    measurements: "Ramp slope: 1:12 ratio • Door width: 36\" (91cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Ramp access", value: "Permanent ramp with non-slip surface", status: "available" },
+        { label: "Ramp slope", value: "1:12 ratio (gentle slope)", status: "available" },
+        { label: "Automatic doors", value: "Power-assisted sliding doors", status: "available" },
+        { label: "Door width", value: "36 in (91cm) clearance", status: "available" },
+        { label: "Level entry", value: "No steps at entrance", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-entrance-2",
+    category: "entrance",
+    title: "Reception Area",
+    description: "Accessible check-in counter",
+    measurements: "Counter height: 34\" (86cm) • Knee clearance: 27\" (69cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Reception desk height", value: "34 in (86cm) with lowered section", status: "available" },
+        { label: "Knee clearance", value: "27 in (69cm) clearance under counter", status: "available" },
+        { label: "Waiting area", value: "Ample space for wheelchair maneuverability", status: "available" }
+      ]
+    }
+  },
+
+  // RESTAURANT FEATURES
+  {
+    id: "sarova-restaurant-1",
+    category: "restaurant",
+    title: "Dining Area",
+    description: "Accessible tables and seating arrangements",
+    measurements: "Table height: 30\" (76cm) • Aisle width: 36\"+ (91cm+)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Accessible tables", value: "Tables with knee clearance (27 in / 69cm)", status: "available" },
+        { label: "Table height", value: "30 in (76cm) - standard accessible height", status: "available" },
+        { label: "Aisle width", value: "36 in (91cm) minimum between tables", status: "available" },
+        { label: "Buffet access", value: "Staff assistance available for buffet", status: "available" },
+        { label: "Menu options", value: "Large print menus available", status: "available" }
+      ]
+    }
+  },
+
+  // PARKING FEATURES
+  {
+    id: "sarova-parking-1",
+    category: "parking",
+    title: "Accessible Parking",
+    description: "Designated accessible parking spaces",
+    measurements: "Space width: 12ft (366cm) including access aisle",
+    status: "available",
+    details: {
+      items: [
+        { label: "Accessible spaces", value: "3 designated spaces near entrance", status: "available" },
+        { label: "Van accessible spaces", value: "2 spaces with 98 in (249cm) height clearance", status: "available" },
+        { label: "Access aisle", value: "60 in (152cm) wide access aisle", status: "available" },
+        { label: "Surface", value: "Level, firm, slip-resistant surface", status: "available" },
+        { label: "Signage", value: "Clearly marked with international symbol", status: "available" }
+      ]
+    }
+  },
+
+  // COMMON AREAS FEATURES
+  {
+    id: "sarova-common-1",
+    category: "common-areas",
+    title: "Elevator Access",
+    description: "Accessible elevators to all floors",
+    measurements: "Door width: 36\" (91cm) • Cabin size: 60\" x 60\" (152cm x 152cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Door width", value: "36 in (91cm) clearance", status: "available" },
+        { label: "Cabin size", value: "60 in x 60 in (152cm x 152cm)", status: "available" },
+        { label: "Controls height", value: "36-48 in (91-122cm) from floor", status: "available" },
+        { label: "Audio/visual indicators", value: "Floor announcements and visual displays", status: "available" },
+        { label: "Braille buttons", value: "Available on all control panels", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-common-2",
+    category: "common-areas",
+    title: "Pool Access",
+    description: "Accessible pool entry",
+    status: "available",
+    details: {
+      items: [
+        { label: "Pool lift", value: "Hydraulic pool lift available", status: "available" },
+        { label: "Pool deck", value: "Level, slip-resistant surface", status: "available" },
+        { label: "Accessible pathway", value: "Wide path to pool area", status: "available" },
+        { label: "Pool depth signage", value: "Clear depth markers visible", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-common-3",
+    category: "common-areas",
+    title: "Common Areas",
+    description: "Accessible pathways throughout property",
+    measurements: "Pathway width: 48\" (122cm) minimum",
+    status: "available",
+    details: {
+      items: [
+        { label: "Pathway width", value: "48 in (122cm) minimum throughout", status: "available" },
+        { label: "Surface type", value: "Smooth, level, slip-resistant surfaces", status: "available" },
+        { label: "Seating areas", value: "Accessible seating with armrests", status: "available" },
+        { label: "Signage", value: "High-contrast, easy-to-read signage", status: "available" }
+      ]
+    }
+  }
+];
+
+// Accessibility images for Sarova Panafric
+const sarovaPanafricImages: AccessibilityImages = {
+  bathroom: [
+    "/Sarova Panafric - Accessible Bathroom 1.jpg",
+    "/Sarova Panafric - Accessible Bathroom 2.jpg",
+    "/Sarova Panafric - Accessible Bathroom 3.jpg",
+    "/Sarova Panafric - Accessible Bathroom 4.jpg"
+  ],
+  room: [
+    "/Sarova Panafric - Accessible Room 1.jpg",
+    "/Sarova Panafric - Accessible Room 2.jpg",
+    "/Sarova Panafric - Accessible Room 3.jpg"
+  ],
+  entrance: [
+    "/Sarova Panafric - Accessible Entrance 1.jpg",
+    "/Sarova Panafric - Accessible Entrance 2.jpg"
+  ],
+  restaurant: [
+    "/Sarova Panafric - Accessible Restaurant 1.jpg",
+    "/Sarova Panafric - Accessible Restaurant 2.jpg"
+  ],
+  parking: [
+    "/Sarova Panafric - Accessible Parking 1.jpg"
+  ],
+  'common-areas': [
+    "/Sarova Panafric - Common Area 1.jpg",
+    "/Sarova Panafric - Common Area 2.jpg"
+  ]
+};
 
 // ──────────────────────────────────────────────────────────────────────────────
 // FULL-SCREEN IMAGE VIEWER
@@ -136,10 +445,26 @@ function ImageViewer({
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
-// ACCESSIBILITY MODAL – FIXED TABS + CLICK OUTSIDE TO CLOSE
+// STATUS ICON COMPONENT
+// ──────────────────────────────────────────────────────────────────────────────
+function StatusIcon({ status }: { status: 'available' | 'partial' | 'unavailable' }) {
+  switch (status) {
+    case 'available':
+      return <CheckCircle2 className="w-5 h-5 text-green-600" />;
+    case 'partial':
+      return <AlertCircle className="w-5 h-5 text-amber-600" />;
+    case 'unavailable':
+      return <XCircle className="w-5 h-5 text-red-600" />;
+    default:
+      return null;
+  }
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// ACCESSIBILITY MODAL – COMPLETE WITH ALL DETAILS
 // ──────────────────────────────────────────────────────────────────────────────
 function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => void }) {
-  const [activeTab, setActiveTab] = useState<'bathroom' | 'room' | 'lobby' | 'restaurant'>('bathroom');
+  const [activeTab, setActiveTab] = useState<'bathroom' | 'room' | 'entrance' | 'restaurant' | 'parking' | 'common-areas'>('bathroom');
   const [showImageViewer, setShowImageViewer] = useState(false);
   const [viewerInitialIndex, setViewerInitialIndex] = useState(0);
 
@@ -157,14 +482,15 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
   }, [onClose]);
 
   const tabs = [
-    { key: 'bathroom' as const, label: 'Bathroom' },
-    { key: 'room' as const, label: 'Room' },
-    { key: 'lobby' as const, label: 'Lobby' },
-    { key: 'restaurant' as const, label: 'Restaurant' },
+    { key: 'bathroom' as const, label: 'Bathroom', icon: Bath },
+    { key: 'room' as const, label: 'Room', icon: Bed },
+    { key: 'entrance' as const, label: 'Entrance', icon: DoorOpen },
+    { key: 'restaurant' as const, label: 'Restaurant', icon: Utensils },
+    { key: 'parking' as const, label: 'Parking', icon: Car },
+    { key: 'common-areas' as const, label: 'Common Areas', icon: Home },
   ];
 
-  const getCategory = (tab: typeof tabs[number]['key']) =>
-    tab === 'lobby' ? 'entrance' : tab;
+  const getCategory = (tab: typeof tabs[number]['key']) => tab;
 
   const currentFeatures = hotel.accessibilityFeatures?.filter(
     (f) => f.category === getCategory(activeTab)
@@ -177,6 +503,23 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
     setShowImageViewer(true);
   };
 
+  // Get status display for feature
+  const getStatusDisplay = (status?: 'available' | 'partial' | 'unavailable') => {
+    switch (status) {
+      case 'available':
+        return { bg: 'bg-green-100', text: 'text-green-700', icon: '✓', label: 'Available' };
+      case 'partial':
+        return { bg: 'bg-amber-100', text: 'text-amber-700', icon: '!', label: 'Partial' };
+      case 'unavailable':
+        return { bg: 'bg-red-100', text: 'text-red-700', icon: '✕', label: 'Not Available' };
+      default:
+        return { bg: 'bg-gray-100', text: 'text-gray-700', icon: '•', label: 'Info' };
+    }
+  };
+
+  // Count accessible rooms
+  const accessibleRooms = hotel.rooms?.filter(r => r.accessible) || [];
+
   return (
     <div
       className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4 md:p-6"
@@ -184,16 +527,25 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
     >
       <div
         ref={modalRef}
-        className="bg-white w-full max-w-5xl max-h-[92vh] md:max-h-[90vh] rounded-2xl overflow-hidden flex flex-col shadow-2xl"
+        className="bg-white w-full max-w-6xl max-h-[92vh] md:max-h-[90vh] rounded-2xl overflow-hidden flex flex-col shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header - fixed height */}
-        <div className="px-5 py-4 md:px-6 md:py-4 border-b flex items-center justify-between bg-gray-50 shrink-0">
+        {/* Header */}
+        <div className="px-5 py-4 md:px-6 md:py-5 border-b flex items-center justify-between bg-gradient-to-r from-blue-50 to-gray-50 shrink-0">
           <div className="flex items-center gap-3">
-            <Accessibility className="text-blue-600" size={28} />
+            <div className="bg-blue-600 p-2 rounded-full">
+              <Accessibility className="text-white" size={24} />
+            </div>
             <div>
               <h2 className="text-xl md:text-2xl font-bold text-gray-900">{hotel.name}</h2>
-              <p className="text-xs md:text-sm text-gray-600">Physical disability accessibility details</p>
+              <div className="flex items-center gap-2 mt-1">
+                <p className="text-xs md:text-sm text-gray-600">Physical Disability Accessibility Details</p>
+                {hotel.accessibleRoomCount && (
+                  <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
+                    {hotel.accessibleRoomCount} Accessible Room{hotel.accessibleRoomCount !== 1 ? 's' : ''}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
           <button
@@ -209,32 +561,67 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
         <div className="sticky top-0 z-10 bg-white border-b shadow-sm">
           <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
             <div className="flex min-w-max px-4 md:px-6">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.key}
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`flex-shrink-0 px-5 py-3.5 md:px-6 md:py-4 text-sm md:text-base font-medium border-b-4 transition-all whitespace-nowrap ${
-                    activeTab === tab.key
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-gray-600 hover:text-gray-800 hover:border-gray-300'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
+              {tabs.map((tab) => {
+                const Icon = tab.icon;
+                const hasFeatures = hotel.accessibilityFeatures?.some(f => f.category === tab.key) || false;
+                const hasImages = (hotel.accessibilityImages?.[tab.key]?.length || 0) > 0;
+                const hasContent = hasFeatures || hasImages;
+                
+                return (
+                  <button
+                    key={tab.key}
+                    onClick={() => setActiveTab(tab.key)}
+                    className={`flex-shrink-0 flex items-center gap-2 px-5 py-3.5 md:px-6 md:py-4 text-sm md:text-base font-medium border-b-4 transition-all whitespace-nowrap ${
+                      activeTab === tab.key
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-600 hover:text-gray-800 hover:border-gray-300'
+                    }`}
+                  >
+                    <Icon size={18} />
+                    {tab.label}
+                    {hasContent && activeTab !== tab.key && (
+                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto p-5 md:p-6 bg-gray-50">
-          {/* Photos */}
+          {/* Summary Section - Accessible Rooms Info */}
+          {activeTab === 'room' && accessibleRooms.length > 0 && (
+            <div className="mb-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
+              <h3 className="font-bold text-blue-800 mb-2 flex items-center gap-2">
+                <Bed size={18} />
+                Accessible Room Types Available
+              </h3>
+              <p className="text-blue-700 text-sm mb-2">
+                This hotel offers {accessibleRooms.length} accessible room type{accessibleRooms.length !== 1 ? 's' : ''}:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {accessibleRooms.map((room, idx) => (
+                  <span key={idx} className="bg-white text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200">
+                    {room.type}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Photos Section - Only display two images with + overlay */}
           {currentImages.length > 0 && (
             <div className="mb-8 md:mb-10">
-              <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
-                {/* Image 1 */}
+              <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                <CameraIcon className="w-5 h-5" />
+                Accessibility Photos
+              </h3>
+              <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto">
+                {/* First Image */}
                 <div
-                  className="aspect-video rounded-xl overflow-hidden border border-gray-200 shadow cursor-pointer relative"
+                  className="aspect-video rounded-xl overflow-hidden border border-gray-200 shadow cursor-pointer relative group"
                   onClick={() => openViewer(0)}
                   role="button"
                   tabIndex={0}
@@ -246,14 +633,17 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
                     title={`Accessibility feature – ${activeTab} – ${hotel.name} – photo 1`}
                     width={800}
                     height={600}
-                    className="object-cover w-full h-full hover:scale-105 transition-transform"
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-white/90 text-gray-900 px-3 py-1 rounded-full text-sm">Click to enlarge</span>
+                  </div>
                 </div>
 
-                {/* Image 2 with +N overlay */}
+                {/* Second Image with +N overlay if more than 2 images */}
                 {currentImages.length >= 2 && (
                   <div
-                    className="aspect-video rounded-xl overflow-hidden border border-gray-200 shadow cursor-pointer relative"
+                    className="aspect-video rounded-xl overflow-hidden border border-gray-200 shadow cursor-pointer relative group"
                     onClick={() => openViewer(1)}
                     role="button"
                     tabIndex={0}
@@ -265,85 +655,133 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
                       title={`Accessibility feature – ${activeTab} – ${hotel.name} – photo 2`}
                       width={800}
                       height={600}
-                      className="object-cover w-full h-full hover:scale-105 transition-transform"
+                      className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                     />
 
                     {currentImages.length > 2 && (
-                      <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                        <div className="bg-white/90 text-gray-900 px-5 py-3 md:px-6 md:py-4 rounded-full text-xl md:text-2xl font-bold shadow-lg">
-                          +{currentImages.length - 2}
+                      <div className="absolute inset-0 bg-black/60 flex items-center justify-center group-hover:bg-black/70 transition">
+                        <div className="bg-white/90 text-gray-900 px-4 py-2 md:px-5 md:py-3 rounded-full text-lg md:text-xl font-bold shadow-lg">
+                          +{currentImages.length - 2} more photos
                         </div>
                       </div>
                     )}
                   </div>
                 )}
-
-                {/* Hidden images for SEO */}
-                {currentImages.slice(2).map((img: string, i: number) => (
-                  <div key={i + 2} className="hidden">
-                    <Image
-                      src={img}
-                      alt={`${activeTab} accessibility photo ${i + 3} of ${currentImages.length} – ${hotel.name}`}
-                      title={`Accessibility feature – ${activeTab} – ${hotel.name} – photo ${i + 3}`}
-                      width={800}
-                      height={600}
-                    />
-                  </div>
-                ))}
               </div>
             </div>
           )}
 
-          {/* Features */}
-          <div className="space-y-5 md:space-y-6">
+          {/* Features Section - This displays all the detailed accessibility features */}
+          <div className="space-y-4 md:space-y-5">
+            <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-green-600" />
+              Detailed Accessibility Features
+            </h3>
+            
             {currentFeatures.length > 0 ? (
-              currentFeatures.map((feature: Feature, index: number) => (
-                <div
-                  key={index}
-                  className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="shrink-0 mt-1">
-                      {feature.title.toLowerCase().includes('too high') ||
-                      feature.title.toLowerCase().includes('no handrails') ||
-                      feature.description?.includes('❌') ? (
-                        <div className="w-8 h-8 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold">
-                          ✕
+              currentFeatures.map((feature: AccessibilityFeature, index: number) => {
+                const statusDisplay = getStatusDisplay(feature.status);
+                const hasDetails = feature.details?.items && feature.details.items.length > 0;
+                
+                return (
+                  <div
+                    key={feature.id || index}
+                    className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    {/* Feature Header */}
+                    <div className="p-5 md:p-6 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
+                      <div className="flex items-start gap-4">
+                        <div className={`shrink-0 mt-1 w-10 h-10 rounded-full ${statusDisplay.bg} flex items-center justify-center text-xl font-bold ${statusDisplay.text}`}>
+                          {statusDisplay.icon}
                         </div>
-                      ) : feature.title.toLowerCase().includes('warning') ||
-                        feature.title.toLowerCase().includes('alert') ? (
-                        <div className="w-8 h-8 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold">
-                          !
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 flex-wrap mb-2">
+                            <h4 className="font-bold text-base md:text-lg text-gray-900">{feature.title}</h4>
+                            <span className={`text-xs px-2 py-0.5 rounded-full ${statusDisplay.bg} ${statusDisplay.text}`}>
+                              {statusDisplay.label}
+                            </span>
+                          </div>
+                          <p className="text-gray-700 leading-relaxed text-sm md:text-base">{feature.description}</p>
+                          {feature.measurements && (
+                            <div className="mt-3 flex items-center gap-2 text-xs md:text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1.5 rounded-lg inline-flex">
+                              <Ruler size={14} />
+                              {feature.measurements}
+                            </div>
+                          )}
                         </div>
-                      ) : (
-                        <div className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl font-bold">
-                          ✓
-                        </div>
-                      )}
+                      </div>
                     </div>
-
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-base md:text-lg text-gray-900 mb-2">{feature.title}</h4>
-                      <p className="text-gray-700 leading-relaxed text-sm md:text-base">{feature.description}</p>
-                      {feature.measurements && (
-                        <p className="mt-2 md:mt-3 text-xs md:text-sm font-medium text-blue-600">{feature.measurements}</p>
-                      )}
-                    </div>
+                    
+                    {/* Feature Details (sub-items) */}
+                    {hasDetails && (
+                      <div className="p-5 md:p-6 bg-white">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {feature.details!.items.map((item, itemIdx) => {
+                            return (
+                              <div key={itemIdx} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                                <div className="shrink-0 mt-0.5">
+                                  {item.status === 'available' && <CheckCircle2 className="w-4 h-4 text-green-600" />}
+                                  {item.status === 'partial' && <AlertCircle className="w-4 h-4 text-amber-600" />}
+                                  {item.status === 'unavailable' && <XCircle className="w-4 h-4 text-red-600" />}
+                                </div>
+                                <div className="flex-1">
+                                  <p className="font-medium text-gray-800 text-sm">{item.label}</p>
+                                  <p className="text-gray-600 text-xs mt-0.5">{item.value}</p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))
+                );
+              })
             ) : (
-              <div className="text-center py-10 md:py-12 text-gray-500 text-sm md:text-base">
-                Detailed information for this section is currently being verified.<br />
-                Please contact us for the most up-to-date accessibility details.
+              <div className="text-center py-12 bg-white rounded-xl border border-gray-200">
+                <Accessibility className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                <p className="text-gray-500 text-sm md:text-base">
+                  Detailed accessibility information is being verified.
+                </p>
+                <p className="text-gray-400 text-xs mt-2">
+                  Please contact us for the most up-to-date details.
+                </p>
               </div>
             )}
+          </div>
+
+          {/* Additional Resources Section */}
+          <div className="mt-8 p-5 bg-white rounded-xl border border-gray-200">
+            <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+              <Phone size={18} className="text-blue-600" />
+              Need More Information?
+            </h3>
+            <p className="text-gray-600 text-sm mb-3">
+              Our team can provide additional details about accessibility features at this property.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href={`/contact?hotel=${encodeURIComponent(hotel.name)}&subject=Accessibility%20Inquiry`}
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition"
+              >
+                Contact Accessibility Team
+                <ArrowRight size={14} />
+              </Link>
+              <Link
+                href={`/hotels/${hotel.id}`}
+                className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition"
+              >
+                View Hotel Details
+                <ChevronRight size={14} />
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Footer note */}
-        <div className="px-5 py-3 md:px-6 md:py-4 border-t bg-gray-50 text-center text-xs md:text-sm text-gray-500 shrink-0">
-          All measurements verified on-site • Last updated March 2026
+        <div className="px-5 py-3 md:px-6 md:py-4 border-t bg-gray-50 text-center text-xs md:text-sm text-gray-500 shrink-0 flex items-center justify-between">
+          <span>All measurements verified on-site</span>
+          <span>Last updated: March 2026</span>
         </div>
       </div>
 
@@ -360,7 +798,9 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
   );
 }
 
-// Custom HotelCard component with accessibility button
+// ──────────────────────────────────────────────────────────────────────────────
+// CUSTOM HOTEL CARD WITH ACCESSIBILITY BUTTON
+// ──────────────────────────────────────────────────────────────────────────────
 function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
   const [showModal, setShowModal] = useState(false);
   
@@ -414,7 +854,7 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
             </p>
           )}
 
-          {/* Accessible Features Button - Only for accessible hotels */}
+          {/* SEE ALL ACCESSIBLE FEATURES BUTTON - Shows for ALL accessible hotels */}
           {hotel.accessible && (
             <button
               onClick={() => setShowModal(true)}
@@ -457,7 +897,38 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
   );
 }
 
+// ──────────────────────────────────────────────────────────────────────────────
+// ICON COMPONENTS
+// ──────────────────────────────────────────────────────────────────────────────
+function CameraIcon(props: any) {
+  return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>;
+}
+
+function MapPinIcon(props: any) {
+  return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>;
+}
+
+function BedDoubleIcon(props: any) {
+  return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13h14a2 2 0 012 2v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4a2 2 0 012-2zM5 13V5a2 2 0 012-2h10a2 2 0 012 2v8" /></svg>;
+}
+
+// ──────────────────────────────────────────────────────────────────────────────
+// MAIN CLIENT HOTELS COMPONENT
+// ──────────────────────────────────────────────────────────────────────────────
 export default function ClientHotels({ hotels }: ClientHotelsProps) {
+  // Enhance the hotels with accessibility features for demonstration
+  const enhancedHotels = hotels.map(hotel => {
+    if (hotel.id === "nairobi-015" || hotel.name === "Sarova Panafric Hotel") {
+      return {
+        ...hotel,
+        accessibilityFeatures: sarovaPanafricFeatures,
+        accessibilityImages: sarovaPanafricImages,
+        accessibleRoomCount: 3,
+      };
+    }
+    return hotel;
+  });
+
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("all");
   const [accessibilityFilter, setAccessibilityFilter] = useState("all");
@@ -467,16 +938,16 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
 
   const HOTELS_PER_PAGE = 12;
-  const locations = Array.from(new Set(hotels.map(h => h.location))).sort();
+  const locations = Array.from(new Set(enhancedHotels.map(h => h.location))).sort();
 
   // Calculate price range for display
-  const prices = hotels.filter(h => h.price).map(h => h.price as number);
+  const prices = enhancedHotels.filter(h => h.price).map(h => h.price as number);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
   const avgPrice = Math.round(prices.reduce((a, b) => a + b, 0) / prices.length);
 
   const filteredHotels = useMemo(() => {
-    let result = [...hotels];
+    let result = [...enhancedHotels];
 
     if (searchTerm.trim()) {
       const term = searchTerm.toLowerCase().trim();
@@ -504,7 +975,7 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
     }
 
     return result;
-  }, [hotels, searchTerm, locationFilter, accessibilityFilter, sortOrder]);
+  }, [enhancedHotels, searchTerm, locationFilter, accessibilityFilter, sortOrder]);
 
   const totalPages = Math.ceil(filteredHotels.length / HOTELS_PER_PAGE);
   const paginatedHotels = filteredHotels.slice(
@@ -538,7 +1009,7 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               All Hotels in Kenya
             </h2>
-            <p className="text-gray-500 mt-1">{hotels.length} properties available</p>
+            <p className="text-gray-500 mt-1">{enhancedHotels.length} properties available</p>
           </div>
           <div className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full">
             <Tag className="w-4 h-4 text-orange-600" />
@@ -548,7 +1019,7 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
         </div>
 
         <h3 className="text-xl text-gray-600 text-center mb-8 max-w-3xl mx-auto">
-          Browse our complete collection of {hotels.length}+ handpicked hotels, safari lodges, and resorts across Kenya
+          Browse our complete collection of {enhancedHotels.length}+ handpicked hotels, safari lodges, and resorts across Kenya
         </h3>
 
         {/* Shopping Promo Banner */}
@@ -617,9 +1088,9 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
               onChange={(e) => { setLocationFilter(e.target.value); setCurrentPage(1); }}
               className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
             >
-              <option value="all">All Locations in Kenya ({hotels.length})</option>
+              <option value="all">All Locations in Kenya ({enhancedHotels.length})</option>
               {locations.map((loc) => {
-                const count = hotels.filter(h => h.location === loc).length;
+                const count = enhancedHotels.filter(h => h.location === loc).length;
                 return <option key={loc} value={loc}>Hotels in {loc} ({count})</option>;
               })}
             </select>
@@ -722,20 +1193,6 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
                         <p className="text-xs text-gray-400">Best rate guaranteed</p>
                       </div>
                     </div>
-                    {/* Accessible Features Button for List View */}
-                    {hotel.accessible && (
-                      <button
-                        onClick={() => {
-                          // This would need state management - for simplicity, we're not adding the modal trigger in list view here
-                          // You can add a modal state for list view items similarly
-                          console.log(`View accessibility features for ${hotel.name}`);
-                        }}
-                        className="mt-3 inline-flex items-center gap-1 text-sm text-green-600 hover:text-green-700 font-medium"
-                      >
-                        <Accessibility size={14} />
-                        See all accessible features →
-                      </button>
-                    )}
                   </div>
                 </div>
               ))}
@@ -784,12 +1241,4 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
       </div>
     </section>
   );
-}
-
-function MapPinIcon(props: any) {
-  return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>;
-}
-
-function BedDoubleIcon(props: any) {
-  return <svg {...props} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13h14a2 2 0 012 2v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4a2 2 0 012-2zM5 13V5a2 2 0 012-2h10a2 2 0 012 2v8" /></svg>;
 }

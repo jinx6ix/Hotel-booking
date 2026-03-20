@@ -1,4 +1,10 @@
 // lib/data.ts
+import { 
+  getAccessibilityData,
+  type AccessibilityFeature,
+  type AccessibilityImages 
+} from './accessibility-data';
+
 export interface Room {
   id: string;
   type: string;
@@ -30,7 +36,11 @@ export interface Hotel {
   email: string;
   accessible?: boolean;
   accessibleRoomCount?: number;
+  accessibilityFeatures?: AccessibilityFeature[];
+  accessibilityImages?: AccessibilityImages;
 }
+
+
 
 export interface Location {
   updatedAt: Date;
@@ -397,6 +407,197 @@ const createRooms = (hotelId: string, basePrice: number, roomImages: Record<stri
     }
   ] : [])
 ];
+
+// Detailed accessibility features for Sarova Panafric Hotel
+const sarovaPanafricAccessibilityFeatures: AccessibilityFeature[] = [
+  // BATHROOM FEATURES
+  {
+    id: "sarova-panafric-bathroom-1",
+    category: "bathroom",
+    title: "Shower",
+    description: "Roll-in shower available. Entrance is 58 in wide. Cubicle is 37 in long, 58 in wide",
+    measurements: "Entrance: 58\" (147cm) wide • Cubicle: 37\" (94cm) x 58\" (147cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Roll-in shower available", value: "Entrance is 58 in wide. Cubicle is 37 in long, 58 in wide", status: "available" },
+        { label: "Grab bars within shower", value: "Available", status: "available" },
+        { label: "Fixed shower seat", value: "Located next to the showerhead", status: "available" },
+        { label: "Portable shower seat", value: "Available upon request", status: "available" },
+        { label: "Handheld showerhead", value: "Available at 75 in from the floor", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-bathroom-2",
+    category: "bathroom",
+    title: "Sink",
+    description: "The sink height is 33.5 in. The space under the sink is 10 in long, 34.5 in wide, 27 in high",
+    measurements: "Sink height: 33.5\" (85cm) • Knee clearance: 10\" (25cm) deep x 34.5\" (88cm) wide x 27\" (69cm) high",
+    status: "available",
+    details: {
+      items: [
+        { label: "Sink height", value: "33.5 in (85cm)", status: "available" },
+        { label: "Space under sink", value: "10 in long, 34.5 in wide, 27 in high", status: "available" },
+        { label: "Sink handle type", value: "Lever handle", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-bathroom-3",
+    category: "bathroom",
+    title: "Bathroom Entrance",
+    description: "The door operation is manual door and opens out from bathroom",
+    measurements: "Door opens outward • Manual operation",
+    status: "available",
+    details: {
+      items: [
+        { label: "Door operation", value: "Manual door opening outward", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-bathroom-4",
+    category: "bathroom",
+    title: "Bathroom Interior",
+    description: "Free turning space of more than 60 in. This is a step-free area",
+    measurements: "Turning radius: 60\"+ (152cm+)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Free turning space", value: "More than 60 in (152cm)", status: "available" },
+        { label: "Step-free area", value: "No steps or thresholds", status: "available" }
+      ]
+    }
+  },
+  
+  // ROOM FEATURES
+  {
+    id: "sarova-panafric-room-1",
+    category: "room",
+    title: "Room Entrance",
+    description: "There is 1 step to enter the room (2 in tall). Steps have no handrails. Door is 33 in wide. Door opens with lever. Door opens with key card",
+    measurements: "Step height: 2\" (5cm) • Door width: 33\" (84cm)",
+    status: "partial",
+    details: {
+      items: [
+        { label: "Step to enter", value: "1 step (2 in / 5cm tall)", status: "partial" },
+        { label: "Step handrails", value: "No handrails", status: "unavailable" },
+        { label: "Door width", value: "33 in (84cm)", status: "available" },
+        { label: "Door handle", value: "Lever handle", status: "available" },
+        { label: "Door access", value: "Key card", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-room-2",
+    category: "room",
+    title: "Room Amenities",
+    description: "Step-free access to the closet. Drawers and clothing rod are at an accessible reach height",
+    status: "available",
+    details: {
+      items: [
+        { label: "Closet access", value: "Step-free access", status: "available" },
+        { label: "Drawers height", value: "Accessible reach height", status: "available" },
+        { label: "Clothing rod height", value: "Accessible reach height", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-room-3",
+    category: "room",
+    title: "Bed",
+    description: "Bed is too high (27 in). There is free space under the bed: 4.5 in long, 67 in wide, 7 in high. There is enough space next to the bed (72 in). The mattress is slightly firm. Light switches and phone are reachable from the bed",
+    measurements: "Bed height: 27\" (69cm) • Side clearance: 72\" (183cm)",
+    status: "partial",
+    details: {
+      items: [
+        { label: "Bed height", value: "27 in (69cm) - Too high", status: "unavailable" },
+        { label: "Space under bed", value: "4.5 in x 67 in x 7 in (11cm x 170cm x 18cm)", status: "partial" },
+        { label: "Space next to bed", value: "72 in (183cm)", status: "available" },
+        { label: "Mattress firmness", value: "Slightly firm", status: "available" },
+        { label: "Light switches reachable", value: "Yes", status: "available" },
+        { label: "Phone reachable", value: "Yes", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-room-4",
+    category: "room",
+    title: "Room Features",
+    description: "The mirror is 24.25 in from the floor. The desk height is 30 in. The space under the desk is 18.25 in long, 43 in wide, 28 in high. The chair has a backrest",
+    measurements: "Mirror height: 24.25\" (62cm) • Desk height: 30\" (76cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Mirror height", value: "24.25 in (62cm) from floor", status: "available" },
+        { label: "Desk height", value: "30 in (76cm)", status: "available" },
+        { label: "Space under desk", value: "18.25 in long, 43 in wide, 28 in high", status: "available" },
+        { label: "Chair backrest", value: "Available", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "sarova-panafric-room-5",
+    category: "room",
+    title: "Room Interior",
+    description: "This is a step-free area. Free turning space of more than 60 in. The floor is smooth (tile, hardwood, etc.). The area is wide enough for a wheelchair user (32 in or more). Light switches and outlets are at an accessible height",
+    status: "available",
+    details: {
+      items: [
+        { label: "Step-free area", value: "Yes", status: "available" },
+        { label: "Free turning space", value: "More than 60 in (152cm)", status: "available" },
+        { label: "Floor surface", value: "Smooth (tile/hardwood)", status: "available" },
+        { label: "Wheelchair clearance", value: "32 in (81cm) or more", status: "available" },
+        { label: "Light switches height", value: "Accessible height", status: "available" },
+        { label: "Outlets height", value: "Accessible height", status: "available" }
+      ]
+    }
+  }
+];
+
+// Accessibility images for Sarova Panafric
+const sarovaPanafricAccessibilityImages: AccessibilityImages = {
+  bathroom: [
+    "/Sarova Panafric - Accessible Bathroom 1.jpg",
+    "/Sarova Panafric - Accessible Bathroom 2.jpg",
+    "/Sarova Panafric - Accessible Bathroom 3.jpg",
+    "/Sarova Panafric - Accessible Bathroom 4.jpg"
+  ],
+  room: [
+    "/Sarova Panafric - Accessible Room 1.jpg",
+    "/Sarova Panafric - Accessible Room 2.jpg",
+    "/Sarova Panafric - Accessible Room 3.jpg"
+  ],
+  entrance: [
+    "/Sarova Panafric - Accessible Entrance 1.jpg",
+    "/Sarova Panafric - Accessible Entrance 2.jpg"
+  ],
+  restaurant: [
+    "/Sarova Panafric - Accessible Restaurant 1.jpg",
+    "/Sarova Panafric - Accessible Restaurant 2.jpg"
+  ],
+  parking: [
+    "/Sarova Panafric - Accessible Parking 1.jpg"
+  ],
+  'common-areas': [
+    "/Sarova Panafric - Common Area 1.jpg",
+    "/Sarova Panafric - Common Area 2.jpg"
+  ]
+};
+
+// Helper function to add accessibility data to hotels
+const addAccessibilityData = (hotel: Hotel): Hotel => {
+  const accessibilityData = getAccessibilityData(hotel.id);
+  if (accessibilityData) {
+    return {
+      ...hotel,
+      accessibilityFeatures: accessibilityData.features,
+      accessibilityImages: accessibilityData.images,
+    };
+  }
+  return hotel;
+};
 
 // ALL HOTELS - with contact info replaced with Jaetravel's details
 export const hotels: Hotel[] = [
@@ -790,7 +991,7 @@ export const hotels: Hotel[] = [
     updatedAt: new Date()
   },
   
-  // SAROVA PANAFRIC NAIROBI (ACCESSIBLE)
+  // SAROVA PANAFRIC NAIROBI (ACCESSIBLE) - WITH DETAILED FEATURES
   {
     id: "nairobi-015",
     name: "Sarova Panafric Hotel",
@@ -823,7 +1024,9 @@ export const hotels: Hotel[] = [
       accessibleSuite: ["/btqCJF5g.jpeg"]
     }),
     slug: "sarova-panafric-hotel",
-    updatedAt: new Date()
+    updatedAt: new Date(),
+    accessibilityFeatures: sarovaPanafricAccessibilityFeatures,
+    accessibilityImages: sarovaPanafricAccessibilityImages
   },
   
   // KIBO COLLECTION (ACCESSIBLE)
@@ -862,8 +1065,8 @@ export const hotels: Hotel[] = [
     updatedAt: new Date()
   },
 
-  // TAMARIND TREE NAIROBI (ACCESSIBLE)
-  {
+   // TAMARIND TREE NAIROBI (ACCESSIBLE)
+   {
     id: "nairobi-014",
     name: "Tamarind Tree Hotel",
     location: "Nairobi",
@@ -3570,7 +3773,7 @@ export const hotels: Hotel[] = [
   slug: "enashipai-resort-spa",
   updatedAt: new Date()
 },
-];
+].map(addAccessibilityData);
 
 export const faqs = [
   {
