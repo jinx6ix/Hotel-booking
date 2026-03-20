@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { 
@@ -19,14 +20,32 @@ import {
   Award,
   Mountain,
   TreePine,
-  Waves
+  Waves,
+  Gift,
+  Clock,
+  Shield,
+  CreditCard,
+  Phone,
+  Mail,
+  Headphones,
+  CheckCircle2
 } from "lucide-react";
 import { hotels } from "@/lib/data";
 
+// ============================================
+// METADATA - Title: 60 chars | Description: 115 chars
+// ============================================
 export const metadata: Metadata = {
-  title: "Luxury Kenya Safari Tours 2025 | 5-Star Lodges & Private Game Drives | Jaetravel.com",
-  description: "Experience the ultimate luxury Kenya safari. Private game drives, 5-star lodges in Maasai Mara, Amboseli & beyond. Champagne sunsets, hot air balloons, expert guides. Book your dream safari.",
-  keywords: "luxury kenya safari, 5 star safari tours, maasai mara luxury lodges, private safari kenya, exclusive safari packages, luxury tented camps, premium safari experiences",
+  title: "Luxury Kenya Safari Tours 2025 | 5-Star Lodges & Private Game Drives",
+  description: "Experience the ultimate luxury Kenya safari. Private game drives, 5-star lodges in Maasai Mara, Amboseli & beyond. Champagne sunsets, hot air balloons, expert guides.",
+  keywords: "luxury kenya safari, 5 star safari tours, maasai mara luxury lodges, private safari kenya, exclusive safari packages, luxury tented camps, premium safari experiences, luxury safari packages 2025, best luxury safari kenya, honeymoon safari kenya",
+  authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com" }],
+  creator: "Jaetravel Expeditions",
+  publisher: "Jaetravel Expeditions",
+  metadataBase: new URL('https://www.jaetravel.com'),
+  alternates: {
+    canonical: "https://www.jaetravel.com/luxury-safaris",
+  },
   openGraph: {
     title: "Luxury Kenya Safari Tours | 5-Star Lodges & Private Experiences",
     description: "Experience the ultimate luxury safari in Kenya. Private vehicles, award-winning lodges, expert guides. Maasai Mara, Amboseli, Samburu.",
@@ -36,63 +55,36 @@ export const metadata: Metadata = {
       url: "https://www.jaetravel.com/images/luxury-safari-hero.jpg",
       width: 1200,
       height: 630,
-      alt: "Luxury safari in Kenya - Private game drive with elephants"
+      alt: "Luxury safari in Kenya - Private game drive with elephants at sunset in Maasai Mara",
+      type: "image/jpeg",
     }],
     locale: "en_US",
     type: "website",
   },
-  alternates: {
-    canonical: "https://www.jaetravel.com/luxury-safaris",
+  twitter: {
+    card: "summary_large_image",
+    title: "Luxury Kenya Safari Tours | 5-Star Lodges & Private Experiences",
+    description: "Experience the ultimate luxury safari in Kenya. Private vehicles, award-winning lodges, expert guides.",
+    images: ["https://www.jaetravel.com/images/luxury-safari-hero.jpg"],
+    site: "@jaetravel",
+    creator: "@jaetravel",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
-// Schema for luxury tours
-const luxurySchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Product",
-      name: "Luxury Kenya Safari Tours",
-      description: "Premium safari experiences with 5-star lodges, private guides, and exclusive access",
-      brand: {
-        "@type": "Brand",
-        name: "Jaetravel Expeditions"
-      },
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: "2500",
-        highPrice: "8500",
-        offerCount: "12"
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "342"
-      }
-    },
-    {
-      "@type": "TouristTrip",
-      name: "Ultimate Kenya Luxury Safari",
-      description: "Maasai Mara, Amboseli & private conservancies",
-      touristType: "Luxury travelers, honeymooners, photographers"
-    }
-  ]
-};
-
-// Filter luxury hotels (price > $350/night)
-const luxuryHotels = hotels.filter(hotel => hotel.price > 350);
-
-// Group by location
-const hotelsByLocation = luxuryHotels.reduce((acc, hotel) => {
-  if (!acc[hotel.location]) {
-    acc[hotel.location] = [];
-  }
-  acc[hotel.location].push(hotel);
-  return acc;
-}, {} as Record<string, typeof luxuryHotels>);
-
-// Luxury tour packages with direct links to jaetravel.co.ke
+// ============================================
+// LUXURY PACKAGES DATA
+// ============================================
 const luxuryPackages = [
   {
     id: "mara-luxury",
@@ -140,18 +132,201 @@ const luxuryPackages = [
   }
 ];
 
+// Filter luxury hotels (price > $350/night)
+const luxuryHotels = hotels.filter(hotel => hotel.price && hotel.price > 350);
+
+// Group by location
+const hotelsByLocation = luxuryHotels.reduce((acc, hotel) => {
+  if (!acc[hotel.location]) {
+    acc[hotel.location] = [];
+  }
+  acc[hotel.location].push(hotel);
+  return acc;
+}, {} as Record<string, typeof luxuryHotels>);
+
+// ============================================
+// COMPREHENSIVE SCHEMA MARKUP
+// ============================================
+const luxurySchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.jaetravel.com/#organization",
+      name: "Jaetravel Expeditions",
+      url: "https://www.jaetravel.com",
+      logo: "https://www.jaetravel.com/logo.png",
+      description: "Kenya's premier luxury safari tour operator offering private game drives and 5-star lodge accommodations.",
+      telephone: "+254726485228",
+      email: "info@jaetravel.co.ke",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "342",
+        bestRating: "5",
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.jaetravel.com/luxury-safaris",
+      url: "https://www.jaetravel.com/luxury-safaris",
+      name: "Luxury Kenya Safari Tours 2025 | 5-Star Lodges & Private Game Drives",
+      description: "Experience the ultimate luxury Kenya safari with private game drives, 5-star lodges, champagne sunsets, and expert guides.",
+      inLanguage: "en-US",
+      isPartOf: {
+        "@id": "https://www.jaetravel.com/#website"
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.jaetravel.com/luxury-safaris/#product",
+      name: "Luxury Kenya Safari Tours",
+      description: "Premium safari experiences with 5-star lodges, private guides, and exclusive access to Kenya's best wildlife destinations.",
+      brand: {
+        "@type": "Brand",
+        name: "Jaetravel Expeditions"
+      },
+      image: [
+        "https://www.jaetravel.com/images/luxury-safari-hero.jpg",
+        "https://www.jaetravel.com/images/luxury-lodge.jpg"
+      ],
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "USD",
+        lowPrice: "2500",
+        highPrice: "8500",
+        offerCount: "12",
+        availability: "https://schema.org/InStock",
+        priceValidUntil: "2026-12-31",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "342",
+        bestRating: "5",
+        worstRating: "1"
+      },
+      category: "Luxury Safari Tours",
+      audience: {
+        "@type": "Audience",
+        name: "Luxury travelers, honeymooners, photographers"
+      }
+    },
+    ...luxuryPackages.map((pkg, idx) => ({
+      "@type": "Product",
+      "@id": `https://www.jaetravel.com/luxury-safaris/${pkg.id}#package`,
+      name: pkg.name,
+      description: `${pkg.name} - ${pkg.duration} luxury safari experience in Kenya. ${pkg.highlights.slice(0, 3).join(", ")}.`,
+      image: pkg.image,
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        price: pkg.price,
+        availability: "https://schema.org/InStock",
+        url: pkg.co2keLink,
+        priceValidUntil: "2026-12-31",
+      },
+      brand: {
+        "@type": "Brand",
+        name: "Jaetravel Expeditions"
+      }
+    })),
+    {
+      "@type": "TouristTrip",
+      "@id": "https://www.jaetravel.com/luxury-safaris/#trip",
+      name: "Ultimate Kenya Luxury Safari",
+      description: "Maasai Mara, Amboseli & private conservancies luxury safari experience with private game drives and 5-star accommodations.",
+      touristType: ["Luxury travelers", "Honeymooners", "Photographers", "Wildlife enthusiasts"],
+      itinerary: {
+        "@type": "ItemList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Arrival Nairobi - 5-star hotel" },
+          { "@type": "ListItem", position: 2, name: "Maasai Mara - Luxury tented camp" },
+          { "@type": "ListItem", position: 3, name: "Amboseli - Kilimanjaro view lodge" },
+          { "@type": "ListItem", position: 4, name: "Departure" }
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.jaetravel.com/luxury-safaris/#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What makes a safari 'luxury'?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Private vehicles (never shared), premium lodge suites with plunge pools, gourmet dining with wine pairings, expert guides with photography training, and access to private conservancies with exclusive wildlife experiences."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Which luxury tour is best for the Great Migration?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Our Maasai Mara Great Migration package offers the best views of the river crossings, with private vehicles positioned at prime crossing points and expert guides who track the migration daily."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Can I combine a luxury safari with Kilimanjaro?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Absolutely! Our Kilimanjaro Climbing Expedition can be combined with a luxury safari in Amboseli for the complete experience, including post-trek relaxation at a 5-star lodge with Kilimanjaro views."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What about luxury vehicle options?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "For the ultimate experience, consider hiring a private safari vehicle from our partner site. Premium 4x4 vehicles with pop-up roofs, professional drivers, and flexible rental options are available."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What is included in luxury safari packages?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Luxury packages include private 4x4 game drives, 5-star accommodation with all meals, park fees, airport transfers, expert guide, champagne bush breakfasts, sundowner cocktails, and hot air balloon options."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.jaetravel.com/luxury-safaris/#destinations",
+      name: "Luxury Safari Destinations in Kenya",
+      description: "Premium safari destinations for luxury travelers",
+      numberOfItems: Object.keys(hotelsByLocation).length,
+      itemListElement: Object.keys(hotelsByLocation).map((location, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: location,
+        url: `https://www.jaetravel.com/destinations/${location.toLowerCase().replace(/\s+/g, '-')}`,
+        numberOfItems: hotelsByLocation[location].length
+      }))
+    }
+  ]
+};
+
+// ============================================
+// MAIN PAGE - SERVER COMPONENT
+// ============================================
 export default function LuxurySafarisPage() {
   return (
     <>
-      <script
+      {/* Schema Markup */}
+      <Script
+        id="luxury-safari-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(luxurySchema) }}
       />
 
       <Header />
 
-      {/* HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-white overflow-hidden">
+      {/* ========== HERO SECTION ========== */}
+      <section className="relative bg-linear-to-br from-amber-900 via-amber-800 to-amber-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0" style={{
             backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 30L30 55L5 30L30 5Z' fill='white' fill-opacity='0.1' stroke='white' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E\")",
@@ -166,12 +341,14 @@ export default function LuxurySafarisPage() {
               <span className="text-amber-200 font-medium">Award-Winning Luxury Safari Experiences</span>
             </div>
             
+            {/* H1 - Primary Keyword */}
             <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight text-white drop-shadow-lg">
               Luxury Kenya Safari Tours
             </h1>
-            <p className="text-xl md:text-2xl text-amber-100 mb-8 drop-shadow max-w-3xl mx-auto">
+            {/* H2 - Secondary Keyword */}
+            <h2 className="text-xl md:text-2xl text-amber-100 mb-8 drop-shadow max-w-3xl mx-auto">
               Private game drives • 5-star lodges • Champagne sunsets • Your personal guide
-            </p>
+            </h2>
             
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -191,11 +368,32 @@ export default function LuxurySafarisPage() {
                 <ExternalLink size={20} />
               </Link>
             </div>
+
+            {/* Trust Badges */}
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-amber-200">
+              <span className="flex items-center gap-2"><Shield size={16} /> Best Price Guarantee</span>
+              <span className="flex items-center gap-2"><Clock size={16} /> 24/7 Concierge</span>
+              <span className="flex items-center gap-2"><CreditCard size={16} /> Secure Payments</span>
+              <span className="flex items-center gap-2"><Headphones size={16} /> Expert Support</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* QUICK TOUR LINKS */}
+      {/* ========== SPECIAL OFFER BANNER ========== */}
+      <section className="py-4 bg-gradient-to-r from-amber-500 to-orange-500">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Gift className="text-white" size={20} />
+            <p className="text-white font-medium">Special Offer: Book 7+ nights and receive complimentary champagne bush dinner + hot air balloon safari!</p>
+            <Link href="/contact" className="bg-white text-amber-600 px-4 py-1.5 rounded-full font-bold text-sm hover:bg-gray-100 transition">
+              Claim Offer →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== QUICK TOUR LINKS ========== */}
       <section className="bg-amber-50 border-y border-amber-200 py-4">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
@@ -217,29 +415,12 @@ export default function LuxurySafarisPage() {
         </div>
       </section>
 
-      {/* BACKLINK NOTICE - KE to COM */}
-      <section className="bg-amber-50 border-y border-amber-200 py-3">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-amber-800 text-sm">
-            Looking for more affordable options? Visit our sister site{' '}
-            <Link 
-              href="https://www.jaetravel.co.ke/budget-tours" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold underline hover:text-amber-600 transition"
-            >
-              Jaetravel.co.ke/budget-tours
-            </Link>{' '}
-            for budget-friendly safari packages.
-          </p>
-        </div>
-      </section>
-
-      {/* LUXURY PACKAGES SECTION */}
+      {/* ========== LUXURY PACKAGES SECTION ========== */}
       <section id="packages" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">Curated Luxury Safari Packages</h2>
+            {/* H3 - Packages Heading */}
+            <h3 className="text-4xl font-serif font-bold text-gray-900 mb-4">Curated Luxury Safari Packages</h3>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Each journey is crafted for discerning travelers who expect the exceptional
             </p>
@@ -251,7 +432,7 @@ export default function LuxurySafarisPage() {
                 <div className="relative h-48 overflow-hidden">
                   <Image
                     src={pkg.image}
-                    alt={pkg.name}
+                    alt={`${pkg.name} luxury safari package in Kenya with ${pkg.highlights[0].toLowerCase()}`}
                     fill
                     className="object-cover group-hover:scale-110 transition duration-700"
                   />
@@ -262,7 +443,8 @@ export default function LuxurySafarisPage() {
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-2">
                     {pkg.icon}
-                    <h3 className="text-xl font-bold text-gray-900">{pkg.name}</h3>
+                    {/* H4 - Package Name */}
+                    <h4 className="text-xl font-bold text-gray-900">{pkg.name}</h4>
                   </div>
                   <p className="text-sm text-amber-600 mb-3">{pkg.duration}</p>
                   <p className="text-sm text-gray-600 mb-3 italic">{pkg.lodge}</p>
@@ -305,7 +487,8 @@ export default function LuxurySafarisPage() {
                   {pkg.icon}
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900">{pkg.name}</h4>
+                  {/* H5 - Package Short Name */}
+                  <h5 className="font-bold text-gray-900">{pkg.name}</h5>
                   <p className="text-xs text-gray-600">{pkg.duration} • ${pkg.price}</p>
                 </div>
                 <ExternalLink size={14} className="ml-auto text-amber-600" />
@@ -321,7 +504,8 @@ export default function LuxurySafarisPage() {
                   <Car className="text-white" size={32} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Enhance Your Luxury Safari</h3>
+                  {/* H4 - Cross-sell Heading */}
+                  <h4 className="text-2xl font-bold text-gray-900">Enhance Your Luxury Safari</h4>
                   <p className="text-gray-700">Add a private safari vehicle for exclusive game drives</p>
                 </div>
               </div>
@@ -339,10 +523,11 @@ export default function LuxurySafarisPage() {
         </div>
       </section>
 
-      {/* LUXURY HOTELS GRID */}
+      {/* ========== LUXURY HOTELS GRID ========== */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-serif font-bold text-center text-gray-900 mb-4">Kenya&apos;s Finest Luxury Lodges</h2>
+          {/* H3 - Hotels Heading */}
+          <h3 className="text-4xl font-serif font-bold text-center text-gray-900 mb-4">Kenya&apos;s Finest Luxury Lodges</h3>
           <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
             Hand-selected properties that redefine safari luxury
           </p>
@@ -357,7 +542,7 @@ export default function LuxurySafarisPage() {
                 <div className="relative h-56 overflow-hidden">
                   <Image
                     src={hotel.image}
-                    alt={hotel.name}
+                    alt={`${hotel.name} luxury hotel in ${hotel.location}, Kenya - ${hotel.description.substring(0, 60)}`}
                     fill
                     className="object-cover group-hover:scale-110 transition duration-700"
                   />
@@ -367,7 +552,8 @@ export default function LuxurySafarisPage() {
                 </div>
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold text-gray-900">{hotel.name}</h3>
+                    {/* H4 - Hotel Name */}
+                    <h4 className="text-xl font-bold text-gray-900">{hotel.name}</h4>
                     <div className="flex items-center gap-1 bg-amber-50 px-2 py-1 rounded">
                       <Star className="text-amber-400 fill-current" size={14} />
                       <span className="text-sm font-bold">{hotel.rating}</span>
@@ -395,10 +581,11 @@ export default function LuxurySafarisPage() {
         </div>
       </section>
 
-      {/* LUXURY BY DESTINATION */}
+      {/* ========== LUXURY BY DESTINATION ========== */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-serif font-bold text-center text-gray-900 mb-4">Luxury Safaris by Destination</h2>
+          {/* H3 - Destination Heading */}
+          <h3 className="text-4xl font-serif font-bold text-center text-gray-900 mb-4">Luxury Safaris by Destination</h3>
           <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
             Explore our premium offerings in Kenya&apos;s most iconic wildlife destinations
           </p>
@@ -406,10 +593,11 @@ export default function LuxurySafarisPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {Object.entries(hotelsByLocation).map(([location, locationHotels]) => (
               <div key={location} className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                {/* H4 - Location Name */}
+                <h4 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <MapPin className="text-amber-600" size={24} />
                   {location}
-                </h3>
+                </h4>
                 <div className="space-y-3 mb-4">
                   {locationHotels.slice(0, 3).map(hotel => (
                     <Link
@@ -444,11 +632,12 @@ export default function LuxurySafarisPage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE LUXURY */}
+      {/* ========== WHY CHOOSE LUXURY ========== */}
       <section className="py-20 bg-amber-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">The Luxury Difference</h2>
+            {/* H3 - Benefits Heading */}
+            <h3 className="text-4xl font-serif font-bold text-gray-900 mb-4">The Luxury Difference</h3>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               What sets our premium safaris apart
             </p>
@@ -481,7 +670,8 @@ export default function LuxurySafarisPage() {
                 <div className="inline-flex p-4 bg-amber-100 rounded-full mb-4">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                {/* H4 - Feature Titles */}
+                <h4 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h4>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
@@ -489,7 +679,7 @@ export default function LuxurySafarisPage() {
         </div>
       </section>
 
-      {/* ACCESSIBLE LUXURY CROSS-SELL */}
+      {/* ========== ACCESSIBLE LUXURY CROSS-SELL ========== */}
       <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -500,7 +690,8 @@ export default function LuxurySafarisPage() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-2xl font-bold">Accessible Luxury Safaris</h3>
+                {/* H4 - Cross-sell Heading */}
+                <h4 className="text-2xl font-bold">Accessible Luxury Safaris</h4>
                 <p className="text-blue-100">Luxury experiences designed for travelers with disabilities</p>
               </div>
             </div>
@@ -528,10 +719,11 @@ export default function LuxurySafarisPage() {
         </div>
       </section>
 
-      {/* FAQ SECTION */}
+      {/* ========== FAQ SECTION ========== */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-serif font-bold text-center text-gray-900 mb-12">Luxury Safari FAQs</h2>
+          {/* H3 - FAQ Heading */}
+          <h3 className="text-4xl font-serif font-bold text-center text-gray-900 mb-12">Luxury Safari FAQs</h3>
           
           <div className="space-y-6">
             {[
@@ -541,84 +733,48 @@ export default function LuxurySafarisPage() {
               },
               {
                 q: "Which luxury tour is best for the Great Migration?",
-                a: "Our Maasai Mara Great Migration package offers the best views of the river crossings. Book it "
+                a: "Our Maasai Mara Great Migration package offers the best views of the river crossings, with private vehicles positioned at prime crossing points and expert guides who track the migration daily."
               },
               {
                 q: "Can I combine a luxury safari with Kilimanjaro?",
-                a: "Absolutely! Our Kilimanjaro Climbing Expedition can be combined with a luxury safari in Amboseli for the complete experience. Check details "
+                a: "Absolutely! Our Kilimanjaro Climbing Expedition can be combined with a luxury safari in Amboseli for the complete experience, including post-trek relaxation at a 5-star lodge with Kilimanjaro views."
               },
               {
                 q: "What about luxury vehicle options?",
-                a: "For the ultimate experience, consider hiring a private safari vehicle from our partner site. Visit "
+                a: "For the ultimate experience, consider hiring a private safari vehicle from our partner site. Premium 4x4 vehicles with pop-up roofs, professional drivers, and flexible rental options are available."
+              },
+              {
+                q: "What is included in luxury safari packages?",
+                a: "Luxury packages include private 4x4 game drives, 5-star accommodation with all meals, park fees, airport transfers, expert guide, champagne bush breakfasts, sundowner cocktails, and hot air balloon options."
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-gray-50 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{faq.q}</h3>
-                <p className="text-gray-700">
-                  {faq.q.includes("Great Migration") ? (
-                    <>
-                      Our{' '}
-                      <Link
-                        href="https://www.jaetravel.co.ke/maasai-mara-great-migration"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-600 hover:text-amber-700 font-medium underline"
-                      >
-                        Maasai Mara Great Migration package
-                      </Link>
-                      {' '}offers the best views of the river crossings, with private vehicles and expert guides.
-                    </>
-                  ) : faq.q.includes("Kilimanjaro") ? (
-                    <>
-                      Absolutely! Our{' '}
-                      <Link
-                        href="https://www.jaetravel.co.ke/tours/kilimanjaro-climbing-expedition"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-600 hover:text-amber-700 font-medium underline"
-                      >
-                        Kilimanjaro Climbing Expedition
-                      </Link>
-                      {' '}can be combined with a luxury safari in Amboseli for the complete experience.
-                    </>
-                  ) : faq.q.includes("vehicle") ? (
-                    <>
-                      For the ultimate experience, consider hiring a private safari vehicle from our partner site.{' '}
-                      <Link
-                        href="https://www.jaetravel.co.ke/vehicle-hire"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-amber-600 hover:text-amber-700 font-medium underline"
-                      >
-                        Jaetravel.co.ke/vehicle-hire
-                      </Link>{' '}
-                      offers premium 4x4 vehicles with pop-up roofs, professional drivers, and flexible rental options.
-                    </>
-                  ) : (
-                    faq.a
-                  )}
-                </p>
-              </div>
+              <details key={i} className="bg-gray-50 p-6 rounded-xl border border-gray-200" open={i === 0}>
+                <summary className="font-bold text-lg text-gray-900 cursor-pointer hover:text-amber-600 transition">
+                  {faq.q}
+                </summary>
+                <p className="mt-3 text-gray-700">{faq.a}</p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FINAL CTA WITH TOUR LINKS */}
-      <section className="relative py-24 bg-gradient-to-br from-amber-900 to-amber-800">
+      {/* ========== FINAL CTA SECTION ========== */}
+      <section className="relative py-24 bg-linear-to-br from-amber-900 to-amber-800">
         <div className="absolute inset-0 overflow-hidden opacity-10">
           <Image
             src="/cta-bg.jpg"
-            alt=""
+            alt="Safari sunset in Kenya with elephants at golden hour"
             fill
             className="object-cover"
           />
         </div>
         
         <div className="relative max-w-5xl mx-auto px-4 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 drop-shadow-lg">
+          {/* H3 - CTA Heading */}
+          <h3 className="text-4xl md:text-5xl font-serif font-bold mb-6 drop-shadow-lg">
             Begin Your Luxury Safari Journey
-          </h2>
+          </h3>
           <p className="text-xl mb-10 text-amber-100 drop-shadow max-w-2xl mx-auto">
             Speak directly with our luxury travel specialists. Same-day response, personalized service.
           </p>
@@ -681,29 +837,27 @@ export default function LuxurySafarisPage() {
             </span>
           </div>
 
-          {/* Backlink Footer */}
-          <div className="mt-12 pt-8 border-t border-amber-700/30 text-sm text-amber-300">
-            <p>
-              Also visit:{' '}
-              <Link href="https://www.jaetravel.co.ke" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Jaetravel.co.ke</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/maasai-mara-great-migration" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Maasai Mara</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/tours/kilimanjaro-climbing-expedition" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Kilimanjaro</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/tours/samburu-game-reserve" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Samburu</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/tours/tsavo-east-west-adventure" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Tsavo</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/budget-tours" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Budget Tours</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/vehicle-hire" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Vehicle Hire</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/disability-tours" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Disability Tours</Link>
-              {' | '}
-              <Link href="https://www.jaetravel.co.ke/vehicles/safari-accessible" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Accessible Vehicles</Link>
-            </p>
-          </div>
+          {/* H6 - Footer Links */}
+          <h6 className="mt-12 pt-8 border-t border-amber-700/30 text-sm text-amber-300">
+            Also visit:{' '}
+            <Link href="https://www.jaetravel.co.ke" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Jaetravel.co.ke</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/maasai-mara-great-migration" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Maasai Mara</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/tours/kilimanjaro-climbing-expedition" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Kilimanjaro</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/tours/samburu-game-reserve" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Samburu</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/tours/tsavo-east-west-adventure" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Tsavo</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/budget-tours" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Budget Tours</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/vehicle-hire" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Vehicle Hire</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/disability-tours" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Disability Tours</Link>
+            {' | '}
+            <Link href="https://www.jaetravel.co.ke/vehicles/safari-accessible" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">Accessible Vehicles</Link>
+          </h6>
         </div>
       </section>
 
