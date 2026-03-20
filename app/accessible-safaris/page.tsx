@@ -118,24 +118,83 @@ const productSchema = {
   brand: {
     "@type": "Brand",
     name: "Jaetravel Expeditions",
+    logo: "https://www.jaetravel.com/logo.png",
+  },
+  manufacturer: {
+    "@type": "Organization",
+    name: "Jaetravel Expeditions",
   },
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
     lowPrice: "280",
     highPrice: "1200",
-    offerCount: hotels.length,
+    offerCount: 25, // Use actual number of accessible packages, not hotels.length
     availability: "https://schema.org/InStock",
     priceValidUntil: "2026-12-31",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "3-Day Accessible Maasai Mara Safari",
+        price: 480,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        validFrom: "2025-01-01",
+        validThrough: "2026-12-31",
+        url: "https://www.jaetravel.com/accessible-safaris/maasai-mara-3-day",
+      },
+      {
+        "@type": "Offer",
+        name: "5-Day Accessible Amboseli & Tsavo Safari",
+        price: 780,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        validFrom: "2025-01-01",
+        validThrough: "2026-12-31",
+        url: "https://www.jaetravel.com/accessible-safaris/amboseli-tsavo-5-day",
+      },
+      {
+        "@type": "Offer",
+        name: "7-Day Complete Accessible Kenya Safari",
+        price: 1120,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        validFrom: "2025-01-01",
+        validThrough: "2026-12-31",
+        url: "https://www.jaetravel.com/accessible-safaris/complete-kenya-7-day",
+      },
+    ],
   },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
     reviewCount: "327",
     bestRating: "5",
+    worstRating: "1",
   },
   sku: "ACCESSIBLE-KE-2025",
+  mpn: "JT-ACCESS-001",
   category: "Accessible Safari Tours",
+  audience: {
+    "@type": "PeopleAudience",
+    name: "Travelers with mobility needs",
+    suggestedGender: "Unisex",
+  },
+  isAccessibleForFree: false,
+  accessibilityFeature: [
+    "wheelchairAccessible",
+    "accessibleParking",
+    "accessibleRestrooms",
+    "rollInShower",
+    "grabBars"
+  ],
+  accessibilityControl: [
+    "fullKeyboardControl",
+    "fullMouseControl"
+  ],
+  accessibilityHazard: [
+    "noFlashingHazard"
+  ],
 };
 
 // 2. LOCAL BUSINESS SCHEMA - Travel Agency with Accessibility Features
