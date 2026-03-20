@@ -566,7 +566,7 @@ export interface Hotel {
     name: "Crowne Plaza Nairobi Airport by IHG",
     location: "Nairobi",
     description: "Premium 5-star hotel conveniently located at Jomo Kenyatta International Airport. Features wheelchair accessible rooms with roll-in showers and grab bars. Perfect for transit passengers.",
-    image: "/Crowne Plaza Nairobi.jpg",
+    image: "/CrownePlazaNairobi.jpg",
     rating: 4.6,
     price: 280,
     amenities: [
@@ -936,7 +936,7 @@ export interface Hotel {
     name: "Kibo Safari Camp",
     location: "Amboseli",
     description: "Part of the prestigious Kibo Collection, this boutique hotel offers personalized service, elegant accommodations, and a tranquil setting. Fully wheelchair accessible with roll-in showers and wide doorways.",
-    image: "/unnamed (7).jpg",
+    image: "/unnamed(7).jpg",
     rating: 4.5,
     price: 260,
     amenities: [
