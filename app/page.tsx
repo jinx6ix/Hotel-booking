@@ -245,13 +245,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.jaetravel.com",
     languages: {
-      'en-US': 'https://www.jaetravel.com',
-      'en-GB': 'https://www.jaetravel.com/en-gb',
+      "en": "https://www.jaetravel.com",
+      "x-default": "https://www.jaetravel.com",
+    }
     },
   },
   openGraph: {
     title: "Jaetravel Expeditions | Kenya's #1 Safari Hotel Booking Platform",
-    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, instant confirmation, 24/7 support.",
+    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, and 24/7 support.",
     url: "https://www.jaetravel.com",
     siteName: "Jaetravel Expeditions",
     images: [{
