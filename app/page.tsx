@@ -236,7 +236,7 @@ const featuredHotels = [
 // ============================================
 export const metadata: Metadata = {
   title: "Jaetravel Expeditions | #1 Kenya Safari Hotel Booking Platform 2025",
-  description: "Book the best Kenya safari hotels & lodges online. 200+ hand-picked properties. Best price guarantee, instant confirmation, 24/7 support. Maasai Mara, Amboseli & more.",
+  description: "Book the best Kenya safari hotels & lodges online. Best price guarantee, instant confirmation, 24/7 support. Maasai Mara, Amboseli & more.",
   keywords: "kenya safari hotels, book safari lodges online, maasai mara accommodation, amboseli hotels with kilimanjaro view, tsavo lodges, samburu safari camps, lake nakuru flamingo hotels, nairobi airport hotels, best kenya luxury lodges, wheelchair accessible safari accommodation, family safari hotels kenya, great migration accommodation, budget safari camps kenya",
   authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com" }],
   creator: "Jaetravel Expeditions",
@@ -252,7 +252,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Jaetravel Expeditions | Kenya's #1 Safari Hotel Booking Platform",
-    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, and 24/7 support.",
+    description: "Book the best safari accommodations in Kenya. 200+ lodges and camps. Best rates, instant confirmation, 24/7 support.",
     url: "https://www.jaetravel.com",
     siteName: "Jaetravel Expeditions",
     images: [{
