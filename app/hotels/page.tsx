@@ -403,9 +403,9 @@ const faqSchema = {
 // 10. REVIEW SCHEMA - Aggregate Reviews
 const reviewSchema = {
   "@context": "https://schema.org",
-  "itemReviewed": {
-    "@type": "Hotel",
-    name: "Hotels in Kenya",
+  itemReviewed: {
+    "@type": "Product",
+    name: "Hotels in Kenya Collection",
     description: "Collection of hotels in Kenya including luxury safari lodges, beach resorts, and city hotels.",
   },
   "@type": "AggregateRating",
