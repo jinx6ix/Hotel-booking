@@ -13,6 +13,8 @@ export interface Room {
 }
 
 export interface Hotel {
+  slug: string;
+  updatedAt: Date;
   rooms: Room[];
   id: string;
   name: string;
@@ -31,6 +33,7 @@ export interface Hotel {
 }
 
 export interface Location {
+  updatedAt: Date;
   id: string;
   name: string;
   slug: string;
@@ -54,11 +57,9 @@ export const locations: Location[] = [
     id: "nairobi",
     name: "Nairobi",
     slug: "nairobi",
-    description:
-      "Kenya's vibrant capital city – best luxury hotels, Nairobi National Park safaris, Giraffe Centre and cultural experiences",
+    description: "Kenya's vibrant capital city – best luxury hotels, Nairobi National Park safaris, Giraffe Centre and cultural experiences",
     image: "/Nairobi.avif",
-    longDescription:
-      "Nairobi, Kenya's lively capital and major gateway to East African safaris, combines urban energy with incredible wildlife experiences. Known worldwide as the only capital city with a national park inside its borders, Nairobi offers Nairobi National Park safaris just 20 minutes from the city center. Visit the famous Giraffe Centre, Karen Blixen Museum, David Sheldrick Elephant Orphanage, and Nairobi National Museum. The city is home to luxury hotels in Nairobi, boutique lodges, rooftop restaurants, vibrant nightlife, and excellent shopping at Two Rivers Mall and The Hub Karen. Perfect base for Kenya safari tours, business travel, or city + safari combinations.",
+    longDescription: "Nairobi, Kenya's lively capital and major gateway to East African safaris, combines urban energy with incredible wildlife experiences. Known worldwide as the only capital city with a national park inside its borders, Nairobi offers Nairobi National Park safaris just 20 minutes from the city center. Visit the famous Giraffe Centre, Karen Blixen Museum, David Sheldrick Elephant Orphanage, and Nairobi National Museum. The city is home to luxury hotels in Nairobi, boutique lodges, rooftop restaurants, vibrant nightlife, and excellent shopping at Two Rivers Mall and The Hub Karen. Perfect base for Kenya safari tours, business travel, or city + safari combinations.",
     attractions: [
       "Nairobi National Park Safari",
       "Giraffe Centre – Feed Rothschild Giraffes",
@@ -71,16 +72,15 @@ export const locations: Location[] = [
       "Karura Forest – Hiking & Nature Trails",
     ],
     bestTime: "June to October (dry season) and January to February",
+    updatedAt: new Date(),
   },
   {
     id: "naivasha",
     name: "Naivasha",
     slug: "naivasha",
-    description:
-      "Lake Naivasha – boat rides, hippo watching, Hell's Gate cycling & luxury lodges near Nairobi",
+    description: "Lake Naivasha – boat rides, hippo watching, Hell's Gate cycling & luxury lodges near Nairobi",
     image: "/naivasha.jpeg",
-    longDescription:
-      "Lake Naivasha is one of Kenya's most beautiful freshwater lakes, located just 90 minutes from Nairobi along the Great Rift Valley. Famous for boat safaris where you can get close to hippos, fish eagles and hundreds of bird species. Enjoy cycling and game drives inside Hell's Gate National Park – the only park in Kenya where you can walk or cycle among zebras, giraffes and buffaloes. Visit Crescent Island for walking safaris, Crater Lake for flamingos, and geothermal hot springs. Lake Naivasha is a perfect weekend getaway from Nairobi, romantic destination, family-friendly location and excellent stopover on the way to Maasai Mara or Nakuru.",
+    longDescription: "Lake Naivasha is one of Kenya's most beautiful freshwater lakes, located just 90 minutes from Nairobi along the Great Rift Valley. Famous for boat safaris where you can get close to hippos, fish eagles and hundreds of bird species. Enjoy cycling and game drives inside Hell's Gate National Park – the only park in Kenya where you can walk or cycle among zebras, giraffes and buffaloes. Visit Crescent Island for walking safaris, Crater Lake for flamingos, and geothermal hot springs. Lake Naivasha is a perfect weekend getaway from Nairobi, romantic destination, family-friendly location and excellent stopover on the way to Maasai Mara or Nakuru.",
     attractions: [
       "Lake Naivasha Boat Safari & Hippo Watching",
       "Hell's Gate National Park – Cycling & Hiking",
@@ -92,16 +92,15 @@ export const locations: Location[] = [
       "Elsamere – Joy Adamson Museum",
     ],
     bestTime: "Year-round – best wildlife viewing June to October",
+    updatedAt: new Date()
   },
   {
     id: "nakuru",
     name: "Nakuru",
     slug: "nakuru",
-    description:
-      "Lake Nakuru National Park – flamingos, rhinos, lions – best safari destination in Rift Valley",
+    description: "Lake Nakuru National Park – flamingos, rhinos, lions – best safari destination in Rift Valley",
     image: "/nakuru.jpg",
-    longDescription:
-      "Lake Nakuru National Park is world-famous for its spectacular pink flamingo flocks that sometimes number over a million birds. This alkaline lake is one of Kenya's best places to see white and black rhinos, Rothschild giraffes, lions, leopards, buffaloes and tree-climbing lions. The park also offers excellent birdwatching with over 450 recorded species. Nakuru town provides good accommodation options, restaurants and serves as an important stop between Nairobi and the Maasai Mara or western Kenya. Menengai Crater, Lake Elementaita flamingos and Soysambu Conservancy are all within easy reach.",
+    longDescription: "Lake Nakuru National Park is world-famous for its spectacular pink flamingo flocks that sometimes number over a million birds. This alkaline lake is one of Kenya's best places to see white and black rhinos, Rothschild giraffes, lions, leopards, buffaloes and tree-climbing lions. The park also offers excellent birdwatching with over 450 recorded species. Nakuru town provides good accommodation options, restaurants and serves as an important stop between Nairobi and the Maasai Mara or western Kenya. Menengai Crater, Lake Elementaita flamingos and Soysambu Conservancy are all within easy reach.",
     attractions: [
       "Lake Nakuru Flamingo Spectacle",
       "White & Black Rhino Viewing",
@@ -113,16 +112,15 @@ export const locations: Location[] = [
       "Baboons Cliff & Outlooks",
     ],
     bestTime: "September to March (best flamingo numbers)",
+    updatedAt: new Date()
   },
   {
     id: "kisumu",
     name: "Kisumu",
     slug: "kisumu",
-    description:
-      "Kisumu – Lake Victoria, Impala Sanctuary, Dunga Hill Camp, Kit Mikayi – Gateway to Western Kenya",
+    description: "Kisumu – Lake Victoria, Impala Sanctuary, Dunga Hill Camp, Kit Mikayi – Gateway to Western Kenya",
     image: "/kisumu.jpg",
-    longDescription:
-      "Kisumu is Kenya's third-largest city and the main port on Lake Victoria, Africa's largest lake. This vibrant lakeside city offers a unique blend of urban energy and natural beauty. Visit the Kisumu Impala Sanctuary for wildlife viewing, explore the Dunga Hill Camp for bird watching and sunset views, and discover the mystical Kit Mikayi rock formation. The city is also a gateway to the diverse cultures of Western Kenya and the tea plantations of Kericho.",
+    longDescription: "Kisumu is Kenya's third-largest city and the main port on Lake Victoria, Africa's largest lake. This vibrant lakeside city offers a unique blend of urban energy and natural beauty. Visit the Kisumu Impala Sanctuary for wildlife viewing, explore the Dunga Hill Camp for bird watching and sunset views, and discover the mystical Kit Mikayi rock formation. The city is also a gateway to the diverse cultures of Western Kenya and the tea plantations of Kericho.",
     attractions: [
       "Lake Victoria Boat Rides",
       "Kisumu Impala Sanctuary",
@@ -134,16 +132,15 @@ export const locations: Location[] = [
       "Ndere Island National Park",
     ],
     bestTime: "June to October and January to March",
+    updatedAt: new Date()
   },
   {
     id: "mombasa",
     name: "Mombasa",
     slug: "mombasa",
-    description:
-      "Mombasa – Kenya's coastal gem, beautiful beaches, Fort Jesus, marine parks and Swahili culture",
+    description: "Mombasa – Kenya's coastal gem, beautiful beaches, Fort Jesus, marine parks and Swahili culture",
     image: "/mombasa.jpg",
-    longDescription:
-      "Mombasa is Kenya's second-largest city and the heart of the Kenyan coast. This historic port city offers a perfect blend of Swahili culture, stunning beaches, and world-class resorts. Explore the ancient Fort Jesus, wander through the narrow streets of Old Town, relax on the white sands of Diani and Nyali beaches, and discover vibrant marine life in the surrounding coral reefs. Mombasa is the perfect destination for beach holidays, water sports, and cultural experiences.",
+    longDescription: "Mombasa is Kenya's second-largest city and the heart of the Kenyan coast. This historic port city offers a perfect blend of Swahili culture, stunning beaches, and world-class resorts. Explore the ancient Fort Jesus, wander through the narrow streets of Old Town, relax on the white sands of Diani and Nyali beaches, and discover vibrant marine life in the surrounding coral reefs. Mombasa is the perfect destination for beach holidays, water sports, and cultural experiences.",
     attractions: [
       "Fort Jesus Museum",
       "Old Town Mombasa",
@@ -156,16 +153,15 @@ export const locations: Location[] = [
       "Shimba Hills National Reserve",
     ],
     bestTime: "December to March and July to October",
+    updatedAt: new Date()
   },
   {
     id: "samburu",
     name: "Samburu",
     slug: "samburu",
-    description:
-      "Samburu National Reserve – special five animals, Grevy's zebra, reticulated giraffe, luxury camps",
+    description: "Samburu National Reserve – special five animals, Grevy's zebra, reticulated giraffe, luxury camps",
     image: "/samburu.webp",
-    longDescription:
-      "Samburu National Reserve offers one of Kenya's most unique and remote safari experiences. Famous for the Samburu Special Five: Grevy's zebra, reticulated giraffe, Somali ostrich, beisa oryx and gerenuk. The Ewaso Nyiro River attracts large herds of elephants, lions, leopards and crocodiles – especially dramatic during dry seasons. The red dirt landscapes, domed termite mounds and dramatic rocky outcrops create a very different atmosphere from southern parks. Samburu also offers rich cultural experiences with Samburu and Turkana communities. Perfect for travelers seeking uncrowded wilderness, excellent big cat sightings and authentic safari camps.",
+    longDescription: "Samburu National Reserve offers one of Kenya's most unique and remote safari experiences. Famous for the Samburu Special Five: Grevy's zebra, reticulated giraffe, Somali ostrich, beisa oryx and gerenuk. The Ewaso Nyiro River attracts large herds of elephants, lions, leopards and crocodiles – especially dramatic during dry seasons. The red dirt landscapes, domed termite mounds and dramatic rocky outcrops create a very different atmosphere from southern parks. Samburu also offers rich cultural experiences with Samburu and Turkana communities. Perfect for travelers seeking uncrowded wilderness, excellent big cat sightings and authentic safari camps.",
     attractions: [
       "Samburu Special Five Animals",
       "Grevy's Zebra & Reticulated Giraffe",
@@ -176,16 +172,15 @@ export const locations: Location[] = [
       "Photography – Dramatic Red Landscapes",
     ],
     bestTime: "June to October and January to February",
+    updatedAt: new Date()
   },
   {
     id: "nanyuki",
     name: "Nanyuki",
     slug: "nanyuki",
-    description:
-      "Nanyuki – Mount Kenya climbing, Ol Pejeta Conservancy, equator line, luxury lodges",
+    description: "Nanyuki – Mount Kenya climbing, Ol Pejeta Conservancy, equator line, luxury lodges",
     image: "/nanyuki.jpg",
-    longDescription:
-      "Nanyuki is the main gateway town for Mount Kenya climbing expeditions and northern Kenya safaris. Located right on the equator, visitors can stand with one foot in each hemisphere. The town provides excellent access to Ol Pejeta Conservancy (home to the last two northern white rhinos), Solio Ranch, Sweetwaters Chimpanzee Sanctuary and several private game reserves. Nanyuki is also famous for its cool climate, beautiful highland scenery, coffee and flower farms. Ideal base for Mount Kenya treks (Sirimon, Chogoria, Naro Moru routes), luxury stays, family holidays and stopovers before heading to Samburu or Loisaba conservancies.",
+    longDescription: "Nanyuki is the main gateway town for Mount Kenya climbing expeditions and northern Kenya safaris. Located right on the equator, visitors can stand with one foot in each hemisphere. The town provides excellent access to Ol Pejeta Conservancy (home to the last two northern white rhinos), Solio Ranch, Sweetwaters Chimpanzee Sanctuary and several private game reserves. Nanyuki is also famous for its cool climate, beautiful highland scenery, coffee and flower farms. Ideal base for Mount Kenya treks (Sirimon, Chogoria, Naro Moru routes), luxury stays, family holidays and stopovers before heading to Samburu or Loisaba conservancies.",
     attractions: [
       "Mount Kenya Climbing & Trekking",
       "Equator Crossing Experience",
@@ -196,16 +191,15 @@ export const locations: Location[] = [
       "Nanyuki Market & Town Life",
     ],
     bestTime: "January to February and August to September",
+    updatedAt: new Date()
   },
   {
     id: "maasai-mara",
     name: "Maasai Mara",
     slug: "maasai-mara",
-    description:
-      "Maasai Mara – Great Migration, Big Five safaris, luxury tented camps, hot air balloon rides",
+    description: "Maasai Mara – Great Migration, Big Five safaris, luxury tented camps, hot air balloon rides",
     image: "/maasai mara.jpeg",
-    longDescription:
-      "The Maasai Mara National Reserve is Kenya's most famous and arguably the best wildlife destination in Africa. World-renowned for the Great Wildebeest Migration (July–October), when over 1.5 million animals cross the Mara River watched by crocodiles and big cats. Year-round excellent Big Five viewing (lion, leopard, elephant, buffalo, rhino), cheetahs, hyenas, topi, eland and huge birdlife. Stay in luxury tented camps, eco-lodges or exclusive private conservancies with off-road driving and night drives. Experience authentic Maasai village visits, bush walks and hot air balloon safaris over the plains at sunrise. The ultimate Kenya safari destination.",
+    longDescription: "The Maasai Mara National Reserve is Kenya's most famous and arguably the best wildlife destination in Africa. World-renowned for the Great Wildebeest Migration (July–October), when over 1.5 million animals cross the Mara River watched by crocodiles and big cats. Year-round excellent Big Five viewing (lion, leopard, elephant, buffalo, rhino), cheetahs, hyenas, topi, eland and huge birdlife. Stay in luxury tented camps, eco-lodges or exclusive private conservancies with off-road driving and night drives. Experience authentic Maasai village visits, bush walks and hot air balloon safaris over the plains at sunrise. The ultimate Kenya safari destination.",
     attractions: [
       "Great Wildebeest Migration River Crossings",
       "Big Five Safari – Lion, Leopard, Elephant",
@@ -217,16 +211,15 @@ export const locations: Location[] = [
       "Bush Breakfast & Sundowners",
     ],
     bestTime: "July to October (Migration) • December to March (calving season)",
+    updatedAt: new Date()
   },
   {
     id: "amboseli",
     name: "Amboseli",
     slug: "amboseli",
-    description:
-      "Amboseli National Park – Mount Kilimanjaro views, huge elephant herds, luxury lodges",
+    description: "Amboseli National Park – Mount Kilimanjaro views, huge elephant herds, luxury lodges",
     image: "/amboseli.avif",
-    longDescription:
-      "Amboseli National Park is world-famous for its breathtaking views of Mount Kilimanjaro, Africa's highest mountain, rising dramatically behind massive elephant herds. Known as the best place in Kenya to photograph elephants with Kilimanjaro backdrop. The park features large swamps attracting thousands of animals – especially elephants, buffaloes, hippos and waterbirds. Excellent big cat sightings (lion, cheetah) and over 400 bird species recorded. Amboseli offers authentic Maasai cultural experiences and stays in luxury tented camps and lodges with Kilimanjaro views. One of the most photogenic and iconic safari destinations in East Africa.",
+    longDescription: "Amboseli National Park is world-famous for its breathtaking views of Mount Kilimanjaro, Africa's highest mountain, rising dramatically behind massive elephant herds. Known as the best place in Kenya to photograph elephants with Kilimanjaro backdrop. The park features large swamps attracting thousands of animals – especially elephants, buffaloes, hippos and waterbirds. Excellent big cat sightings (lion, cheetah) and over 400 bird species recorded. Amboseli offers authentic Maasai cultural experiences and stays in luxury tented camps and lodges with Kilimanjaro views. One of the most photogenic and iconic safari destinations in East Africa.",
     attractions: [
       "Mount Kilimanjaro Views with Elephants",
       "Huge Elephant Herds – Family Groups",
@@ -238,16 +231,15 @@ export const locations: Location[] = [
       "Sunrise & Sunset Photography",
     ],
     bestTime: "June to October and January to March",
+    updatedAt: new Date()
   },
   {
     id: "tsavo-east",
     name: "Tsavo East",
     slug: "tsavo-east",
-    description:
-      "Tsavo East National Park – red dust, huge elephant herds, Yatta Plateau, classic Kenya safari",
+    description: "Tsavo East National Park – red dust, huge elephant herds, Yatta Plateau, classic Kenya safari",
     image: "/tsavo east.jpeg",
-    longDescription:
-      "Tsavo East is one of Kenya's largest and wildest national parks, famous for its distinctive red volcanic soil and massive elephant populations – often covered in red dust. The park offers classic African wilderness safaris with excellent chances to see lions, leopards, cheetahs, giraffes, zebras, oryx, gerenuk and huge herds of elephants. The Galana River is a lifeline attracting wildlife, especially in the dry season. Highlights include Mudanda Rock lookout, Yatta Plateau (world's longest lava flow), Aruba Dam and Lugard Falls. Ideal for travelers seeking uncrowded, authentic safari experiences away from mass tourism.",
+    longDescription: "Tsavo East is one of Kenya's largest and wildest national parks, famous for its distinctive red volcanic soil and massive elephant populations – often covered in red dust. The park offers classic African wilderness safaris with excellent chances to see lions, leopards, cheetahs, giraffes, zebras, oryx, gerenuk and huge herds of elephants. The Galana River is a lifeline attracting wildlife, especially in the dry season. Highlights include Mudanda Rock lookout, Yatta Plateau (world's longest lava flow), Aruba Dam and Lugard Falls. Ideal for travelers seeking uncrowded, authentic safari experiences away from mass tourism.",
     attractions: [
       "Red Dust Elephants of Tsavo",
       "Galana River Wildlife Concentration",
@@ -258,16 +250,15 @@ export const locations: Location[] = [
       "Classic Big Game Safari",
     ],
     bestTime: "June to October (dry season – best wildlife viewing)",
+    updatedAt: new Date()
   },
   {
     id: "tsavo-west",
     name: "Tsavo West",
     slug: "tsavo-west",
-    description:
-      "Tsavo West – Mzima Springs, Chyulu Hills, volcanic landscapes, black rhino sanctuary",
+    description: "Tsavo West – Mzima Springs, Chyulu Hills, volcanic landscapes, black rhino sanctuary",
     image: "/tsavo west.jpeg",
-    longDescription:
-      "Tsavo West National Park offers dramatic volcanic scenery, lush vegetation and unique attractions like Mzima Springs – crystal-clear underground springs where you can watch hippos and fish through underwater viewing chambers. The park is home to black rhinos, large elephant herds, lions, leopards, cheetahs and diverse birdlife. Highlights include the Chyulu Hills, Ngulia Rhino Sanctuary, volcanic cones, caves (Sheltam Caves), and beautiful viewpoints. Tsavo West provides a more intimate and rugged safari experience compared to Tsavo East, with excellent opportunities for walking safaris and photography. Perfect complement to a Tsavo East visit.",
+    longDescription: "Tsavo West National Park offers dramatic volcanic scenery, lush vegetation and unique attractions like Mzima Springs – crystal-clear underground springs where you can watch hippos and fish through underwater viewing chambers. The park is home to black rhinos, large elephant herds, lions, leopards, cheetahs and diverse birdlife. Highlights include the Chyulu Hills, Ngulia Rhino Sanctuary, volcanic cones, caves (Sheltam Caves), and beautiful viewpoints. Tsavo West provides a more intimate and rugged safari experience compared to Tsavo East, with excellent opportunities for walking safaris and photography. Perfect complement to a Tsavo East visit.",
     attractions: [
       "Mzima Springs Underwater Hippo Viewing",
       "Ngulia Black Rhino Sanctuary",
@@ -278,6 +269,7 @@ export const locations: Location[] = [
       "Diverse Birdlife & Mammals",
     ],
     bestTime: "June to October (dry season)",
+    updatedAt: new Date()
   },
 ];
 
@@ -437,7 +429,9 @@ export const hotels: Hotel[] = [
       family: ["/safariparkroom1.jpeg", "/safariparkroom2.jpeg", "/safariparkroom3.jpeg"],
       executive: ["/safariparkroom1.jpeg", "/safariparkroom2.jpeg", "/safariparkroom3.jpeg"],
       presidential: ["/safariparkroom1.jpeg", "/safariparkroom2.jpeg", "/safariparkroom3.jpeg"]
-    })
+    }),
+    slug: "safari-park-hotel",
+    updatedAt: new Date()
   },
   
   // CROWNE PLAZA NAIROBI AIRPORT (ACCESSIBLE)
@@ -471,7 +465,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/WhatsApp Image 2026-03-11 at 3.11.03 PM (1).jpeg", "/WhatsApp Image 2026-03-11 at 3.11.03 PM (2).jpeg"],
       accessibleDeluxe: ["/WhatsApp Image 2026-03-11 at 3.11.03 PM (1).jpeg"],
       accessibleSuite: ["/WhatsApp Image 2026-03-11 at 3.11.03 PM (1).jpeg"]
-    })
+    }),
+    slug: "crowne-plaza-nairobi-airport",
+    updatedAt: new Date()
   },
   
   {
@@ -501,7 +497,9 @@ export const hotels: Hotel[] = [
       family: ["/sroom1.jpg", "/sroom2.jpg", "/sroom3.jpg"],
       executive: ["/sroom1.jpg", "/sroom2.jpg", "/sroom3.jpg"],
       presidential: ["/sroom1.jpg", "/sroom2.jpg", "/sroom3.jpg"]
-    })
+    }),
+    slug: "serena-hotel-nairobi",
+    updatedAt: new Date()
   },
   
   {
@@ -531,7 +529,9 @@ export const hotels: Hotel[] = [
       family: ["/kroom1.avif", "/kroom2.avif", "/kroom3.jpg"],
       executive: ["/kroom1.avif", "/kroom2.avif", "/kroom3.jpg"],
       presidential: ["/kproom1.avif", "/kproom2.avif", "/kproom3.avif"]
-    })
+    }),
+    slug: "villa-rosa-kempinski",
+    updatedAt: new Date()
   },
   
   {
@@ -561,7 +561,9 @@ export const hotels: Hotel[] = [
       family: ["/broom1.jpg", "/broom2.jpg", "/broom3.jpg"],
       executive: ["/broom1.jpg", "/broom2.jpg", "/broom3.jpg"],
       presidential: ["/broom1.jpg", "/broom2.jpg", "/broom3.jpg"]
-    })
+    }),
+    slug: "bomas-of-kenya-resort",
+    updatedAt: new Date()
   },
   
   {
@@ -591,7 +593,9 @@ export const hotels: Hotel[] = [
       family: ["/hiroom1.webp", "/hiroom2.webp", "/hiroom3.jpg"],
       executive: ["/hiroom1.webp", "/hiroom2.webp", "/hiroom3.jpg"],
       presidential: ["/hiroom1.webp", "/hiroom2.webp", "/hiroom3.jpg"]
-    })
+    }),
+    slug: "hilton-nairobi",
+    updatedAt: new Date()
   },
   
   {
@@ -621,7 +625,9 @@ export const hotels: Hotel[] = [
       family: ["/ibis-standard-1.jpg", "/ibis-standard-2.jpg", "/ibis-standard-bathroom.jpg"],
       executive: ["/ibis-standard-1.jpg", "/ibis-standard-2.jpg", "/ibis-standard-bathroom.jpg"],
       presidential: ["/ibis-standard-1.jpg", "/ibis-standard-2.jpg", "/ibis-standard-bathroom.jpg"]
-    })
+    }),
+    slug: "ibis-styles-nairobi",
+    updatedAt: new Date()
   },
   
   {
@@ -651,7 +657,9 @@ export const hotels: Hotel[] = [
       family: ["/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"],
       executive: ["/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"],
       presidential: ["/raroom1.webp", "/raroom2.avif", "/raroom3.jpg"]
-    })
+    }),
+    slug: "radisson-blu-nairobi",
+    updatedAt: new Date()
   },
   
   {
@@ -681,7 +689,9 @@ export const hotels: Hotel[] = [
       family: ["/foroom1.jpeg", "/foroom2.jpg", "/foroom3.jpg"],
       executive: ["/foroom1.jpeg", "/foroom2.jpg", "/foroom3.jpg"],
       presidential: ["/foroom1.jpeg", "/foroom2.jpg", "/foroom3.jpg"]
-    })
+    }),
+    slug: "four-points-by-sheraton",
+    updatedAt: new Date()
   },
   
   {
@@ -711,7 +721,9 @@ export const hotels: Hotel[] = [
       family: ["/meroom1.jpg", "/meroom2.jpg", "/meroom3.jpg"],
       executive: ["/meroom1.jpg", "/meroom2.jpg", "/meroom3.jpg"],
       presidential: ["/meroom1.jpg", "/meroom2.jpg", "/meroom3.jpg"]
-    })
+    }),
+    slug: "mercure-hotel-nairobi",
+    updatedAt: new Date()
   },
   
   {
@@ -741,7 +753,9 @@ export const hotels: Hotel[] = [
       family: ["/coroom1.jpeg", "/coroom2.jpg", "/coroom3.avif"],
       executive: ["/coroom1.jpeg", "/coroom2.jpg", "/coroom3.avif"],
       presidential: ["/coroom1.jpeg", "/coroom2.jpg", "/coroom3.avif"]
-    })
+    }),
+    slug: "country-club-hotel",
+    updatedAt: new Date()
   },
   
   {
@@ -771,7 +785,9 @@ export const hotels: Hotel[] = [
       family: ["/giraffe-family-1.jpg", "/giraffe-family-2.jpg"],
       executive: ["/giraffe-executive-1.jpg", "/giraffe-executive-2.jpg"],
       presidential: ["/giraffe-presidential-1.jpg", "/giraffe-presidential-2.jpg"]
-    })
+    }),
+    slug: "giraffe-manor",
+    updatedAt: new Date()
   },
   
   // SAROVA PANAFRIC NAIROBI (ACCESSIBLE)
@@ -805,7 +821,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/OtXVWYZw.jpeg", "/btqCJF5g.jpeg"],
       accessibleDeluxe: ["/OtXVWYZw.jpeg"],
       accessibleSuite: ["/btqCJF5g.jpeg"]
-    })
+    }),
+    slug: "sarova-panafric-hotel",
+    updatedAt: new Date()
   },
   
   // KIBO COLLECTION (ACCESSIBLE)
@@ -839,7 +857,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/WhatsApp Image 2026-03-07 at 09.32.25.jpeg", "/unnamed (10).jpg"],
       accessibleDeluxe: ["/WhatsApp Image 2026-03-07 at 09.32.25.jpeg"],
       accessibleSuite: ["/WhatsApp Image 2026-03-07 at 09.32.25.jpeg"]
-    })
+    }),
+    slug: "kibo-safari-camp",
+    updatedAt: new Date()
   },
 
   // TAMARIND TREE NAIROBI (ACCESSIBLE)
@@ -874,7 +894,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/paraplegic rooms (1).jpg", "/paraplegic rooms (4).jpg"],
       accessibleDeluxe: ["/paraplegic rooms (1).jpg"],
       accessibleSuite: ["/paraplegic rooms (1).jpg"]
-    })
+    }),
+    slug: "tamarind-tree-hotel",
+    updatedAt: new Date()
   },
 
   // ========== NAIVASHA HOTELS ==========
@@ -905,7 +927,9 @@ export const hotels: Hotel[] = [
       family: ["/creroom1.jpg", "/creroom2.jpg", "/creroom3.avif"],
       executive: ["/creroom1.jpg", "/creroom2.jpg", "/creroom3.avif"],
       presidential: ["/creroom1.jpg", "/creroom2.jpg", "/creroom3.avif"]
-    })
+    }),
+    slug: "lake-naivasha-crescent-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -935,7 +959,9 @@ export const hotels: Hotel[] = [
       family: ["/seroom1.jpg", "/seroom2.jpg", "/seroom3.jpg"],
       executive: ["/seroom1.jpg", "/seroom2.jpg", "/seroom3.jpg"],
       presidential: ["/seroom1.jpg", "/seroom2.jpg", "/seroom3.jpg"]
-    })
+    }),
+    slug: "naivasha-serena-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -965,7 +991,9 @@ export const hotels: Hotel[] = [
       family: ["/garoom1.jpeg", "/garoom2.jpg", "/garoom3.webp"],
       executive: ["/garoom1.jpeg", "/garoom2.jpg", "/garoom3.webp"],
       presidential: ["/garoom1.jpeg", "/garoom2.jpg", "/garoom3.webp"]
-    })
+    }),
+    slug: "hells-gate-game-lodge",
+    updatedAt: new Date()
   },
 
   // ========== NAKURU HOTELS ==========
@@ -997,7 +1025,9 @@ export const hotels: Hotel[] = [
       family: ["/lake-elementaita-mountain (1).jpg", "/bb73af1f.avif", "/lake-elementaita-mountain (2).jpg"],
       executive: ["/lake-elementaita-mountain (1).jpg", "/bb73af1f.avif", "/lake-elementaita-mountain (2).jpg"],
       presidential: ["/lake-elementaita-mountain (1).jpg", "/bb73af1f.avif", "/lake-elementaita-mountain (2).jpg"]
-    })
+    }),
+    slug: "lake-elementaita-mountain-lounge",
+    updatedAt: new Date()
   },
   
   {
@@ -1027,7 +1057,9 @@ export const hotels: Hotel[] = [
       family: ["/master-bedroom-family.jpg", "/family-room-extra.jpg", "/family-bathroom.jpg"],
       executive: ["/guest-house-executive.jpg", "/executive-living.jpg", "/executive-bathroom.jpg"],
       presidential: ["/guest-house-presidential.jpg", "/presidential-living.jpg", "/presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "menengai-crater-guest-house",
+    updatedAt: new Date()
   },
   
   {
@@ -1057,7 +1089,9 @@ export const hotels: Hotel[] = [
       family: ["/panorama-family-1.jpg", "/panorama-family-2.jpg", "/panorama-family-bathroom.jpg"],
       executive: ["/panorama-executive-1.jpg", "/panorama-executive-2.jpg", "/panorama-executive-bathroom.jpg"],
       presidential: ["/panorama-presidential-1.jpg", "/panorama-presidential-2.jpg", "/panorama-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "hotel-panorama-resort",
+    updatedAt: new Date()
   },
   
   {
@@ -1087,7 +1121,9 @@ export const hotels: Hotel[] = [
       family: ["/flamingo-family-1.jpg", "/flamingo-family-2.jpg", "/flamingo-family-bathroom.jpg"],
       executive: ["/flamingo-executive-1.jpg", "/flamingo-executive-2.jpg", "/flamingo-executive-bathroom.jpg"],
       presidential: ["/flamingo-presidential-1.jpg", "/flamingo-presidential-2.jpg", "/flamingo-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "lake-nakuru-flamingo-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -1117,7 +1153,9 @@ export const hotels: Hotel[] = [
       family: ["/lake-nakuru-family-1.jpg", "/lake-nakuru-family-2.jpg", "/lake-nakuru-family-bathroom.jpg"],
       executive: ["/lake-nakuru-lodge (7).jpg", "/photo5jpg.jpg", "/lake-nakuru-lodge (9).jpg"],
       presidential: ["/lake-nakuru-presidential-1.jpg", "/lake-nakuru-presidential-2.jpg", "/lake-nakuru-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "lake-nakuru-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -1147,7 +1185,9 @@ export const hotels: Hotel[] = [
       family: ["/rock-hyrax-family-1.jpg", "/rock-hyrax-family-2.jpg", "/rock-hyrax-family-bathroom.jpg"],
       executive: ["/rock-hyrax-executive-1.jpg", "/rock-hyrax-executive-2.jpg", "/rock-hyrax-executive-bathroom.jpg"],
       presidential: ["/rock-hyrax-presidential-1.jpg", "/rock-hyrax-presidential-2.jpg", "/rock-hyrax-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "rock-hyrax-hotel",
+    updatedAt: new Date()
   },
   
   {
@@ -1177,7 +1217,9 @@ export const hotels: Hotel[] = [
       family: ["/ziwa-bush-family-1.jpg", "/ziwa-bush-family-2.jpg", "/ziwa-bush-family-bathroom.jpg"],
       executive: ["/ziwa-bush-executive-1.jpg", "/ziwa-bush-executive-2.jpg", "/ziwa-bush-executive-bathroom.jpg"],
       presidential: ["/ziwa-bush-presidential-1.jpg", "/ziwa-bush-presidential-2.jpg", "/ziwa-bush-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "ziwa-bush-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -1207,7 +1249,9 @@ export const hotels: Hotel[] = [
       family: ["/sopa-lodge-family-1.jpg", "/sopa-lodge-family-2.jpg", "/sopa-lodge-family-bathroom.jpg"],
       executive: ["/sopa-lodge-executive-1.jpg", "/sopa-lodge-executive-2.jpg", "/sopa-lodge-executive-bathroom.jpg"],
       presidential: ["/sopa-lodge-presidential-1.jpg", "/sopa-lodge-presidential-2.jpg", "/sopa-lodge-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "lake-nakuru-sopa-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -1237,7 +1281,9 @@ export const hotels: Hotel[] = [
       family: ["/punda-milias-family-1.jpg", "/punda-milias-family-2.jpg", "/punda-milias-family-bathroom.jpg"],
       executive: ["/punda-milias-executive-1.jpg", "/punda-milias-executive-2.jpg", "/punda-milias-executive-bathroom.jpg"],
       presidential: ["/punda-milias-presidential-1.jpg", "/punda-milias-presidential-2.jpg", "/punda-milias-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "punda-milias-nakuru-camp",
+    updatedAt: new Date()
   },
 
   // SAROVA LION HILL NAKURU (ACCESSIBLE)
@@ -1271,7 +1317,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/Sarova Lion Hill - Differently abled room 1.jpg", "/Bathroom.webp"],
       accessibleDeluxe: ["/Sarova Lion Hill - Differently abled room 1.jpg"],
       accessibleSuite: ["/Sarova Lion Hill - Differently abled room 5.jpg"]
-    })
+    }),
+    slug: "sarova-lion-hill-game-lodge",
+    updatedAt: new Date()
   },
 
   // SAROVA WOODLANDS NAKURU (ACCESSIBLE)
@@ -1306,7 +1354,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/Sarova Woodlands - Woodlands differently abled room 1.jpg", "/Sarova Woodlands - Woodlands differently abled room 6.jpg"],
       accessibleDeluxe: ["/Sarova Woodlands - Woodlands differently abled room 1.jpg"],
       accessibleSuite: ["/Sarova Woodlands - Woodlands differently abled room 1.jpg"]
-    })
+    }),
+    slug: "sarova-woodlands-hotel-spa",
+    updatedAt: new Date()
   },
 
   // ========== KISUMU HOTELS ==========
@@ -1342,7 +1392,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/Sarova Imperial - Differently_abled Room 1.jpg", "/Sarova imperial - Differently_abled Room 14.jpg"],
       accessibleDeluxe: ["/Sarova Imperial - Differently_abled Room 1.jpg"],
       accessibleSuite: ["/Sarova Imperial - Differently_abled Room 1.jpg"]
-    })
+    }),
+    slug: "sarova-imperial-hotel",
+    updatedAt: new Date()
   },
 
   // ========== MOMBASA HOTELS ==========
@@ -1378,7 +1430,9 @@ export const hotels: Hotel[] = [
       accessibleStandard: ["/Sarova Whitesands - Palm room 1.jpg", "/Sarova Whitesands - Paraplegic room 1.jpg", "/Sarova Whitesands - Paraplegic room 1.jpg"],
       accessibleDeluxe: ["/Sarova Whitesands - Palm room 1.jpg", "/Sarova Whitesands - Paraplegic room 1.jpg"],
       accessibleSuite: ["/Sarova Whitesands - Palm room 1.jpg"]
-    })
+    }),
+    slug: "sarova-whitesands-beach-resort-spa",
+    updatedAt: new Date()
   },
 
   // ========== SAMBURU HOTELS ==========
@@ -1419,7 +1473,9 @@ export const hotels: Hotel[] = [
       family: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
       executive: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"],
       presidential: ["/samburu-intrepids-luxury (2).jpg", "/samburu-intrepids-luxury.jpg", "/samburu-intrepids-luxury (1).jpg"]
-    })
+    }),
+    slug: "samburu-intrepids-tented-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1452,7 +1508,9 @@ export const hotels: Hotel[] = [
       family: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
       executive: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"],
       presidential: ["/saruni-samburu (5).jpg", "/saruni-samburu (4).jpg", "/saruni-samburu (6).jpg"]
-    })
+    }),
+    slug: "saruni-samburu",
+    updatedAt: new Date()
   },
   
   {
@@ -1482,7 +1540,9 @@ export const hotels: Hotel[] = [
       family: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
       executive: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"],
       presidential: ["/caption (45).jpg", "/caption (47).jpg", "/caption (49).jpg"]
-    })
+    }),
+    slug: "soroi-larsens-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1515,7 +1575,9 @@ export const hotels: Hotel[] = [
       family: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
       executive: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"],
       presidential: ["/elephant-bedroom-camp (1).jpg", "/elephant-bedroom-camp (4).jpg", "/nice-bathroom.jpg"]
-    })
+    }),
+    slug: "elephant-bedroom-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1548,7 +1610,9 @@ export const hotels: Hotel[] = [
       family: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
       executive: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"],
       presidential: ["/ashnil-samburu-camp (2).jpg", "/ashnil-samburu-camp (3).jpg", "/ashnil-samburu-camp (4).jpg"]
-    })
+    }),
+    slug: "ashnil-samburu-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1583,7 +1647,9 @@ export const hotels: Hotel[] = [
       family: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
       executive: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"],
       presidential: ["/samburu-simba-lodge (1).jpg", "/samburu-simba-lodge (4).jpg", "/samburu-simba-bathroom.jpg"]
-    })
+    }),
+    slug: "samburu-simba-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -1614,7 +1680,9 @@ export const hotels: Hotel[] = [
       family: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
       executive: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"],
       presidential: ["/elephant-watch-camp-safaris (4).jpg", "/elephant-watch-camp-safaris (3).jpg", "/eau-chaude-dans-les-seaux.jpg"]
-    })
+    }),
+    slug: "elephant-watch-camp-safaris",
+    updatedAt: new Date()
   },
 
   // ========== NANYUKI HOTELS ==========
@@ -1645,7 +1713,9 @@ export const hotels: Hotel[] = [
       family: ["/maiyan-family-1.jpg", "/maiyan-family-2.jpg", "/maiyan-family-bathroom.jpg"],
       executive: ["/maiyan-executive-1.jpg", "/maiyan-executive-2.jpg", "/maiyan-executive-bathroom.jpg"],
       presidential: ["/maiyan-presidential-1.jpg", "/maiyan-presidential-2.jpg", "/maiyan-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "maiyan-nanyuki",
+    updatedAt: new Date()
   },
   
   {
@@ -1675,7 +1745,9 @@ export const hotels: Hotel[] = [
       family: ["/fairmont-family-1.jpg", "/fairmont-family-2.jpg", "/fairmont-family-bathroom.jpg"],
       executive: ["/fairmont-executive-1.jpg", "/fairmont-executive-2.jpg", "/fairmont-executive-bathroom.jpg"],
       presidential: ["/fairmont-presidential-1.jpg", "/fairmont-presidential-2.jpg", "/fairmont-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "fairmont-mount-kenya-safari-club",
+    updatedAt: new Date()
   },
   
   {
@@ -1714,7 +1786,9 @@ export const hotels: Hotel[] = [
       family: ["/ol-pejeta-family-1.jpg", "/ol-pejeta-family-2.jpg", "/ol-pejeta-family-bathroom.jpg"],
       executive: ["/ol-pejeta-executive-1.jpg", "/ol-pejeta-executive-2.jpg", "/ol-pejeta-executive-bathroom.jpg"],
       presidential: ["/ol-pejeta-presidential-1.jpg", "/ol-pejeta-presidential-2.jpg", "/ol-pejeta-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "ol-pejeta-bush-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1744,7 +1818,9 @@ export const hotels: Hotel[] = [
       family: ["/solio-family-1.jpg", "/solio-family-2.jpg", "/solio-family-bathroom.jpg"],
       executive: ["/solio-executive-1.jpg", "/solio-executive-2.jpg", "/solio-executive-bathroom.jpg"],
       presidential: ["/solio-presidential-1.jpg", "/solio-presidential-2.jpg", "/solio-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "solio-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -1774,7 +1850,9 @@ export const hotels: Hotel[] = [
       family: ["/sweetwaters-family-1.jpg", "/sweetwaters-family-2.jpg", "/sweetwaters-family-bathroom.jpg"],
       executive: ["/sweetwaters-executive-1.jpg", "/sweetwaters-executive-2.jpg", "/sweetwaters-executive-bathroom.jpg"],
       presidential: ["/sweetwaters-presidential-1.jpg", "/sweetwaters-presidential-2.jpg", "/sweetwaters-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "maisha-sweetwaters-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1804,7 +1882,9 @@ export const hotels: Hotel[] = [
       family: ["/falcon-family-1.jpg", "/falcon-family-2.jpg", "/falcon-family-bathroom.jpg"],
       executive: ["/falcon-executive-1.jpg", "/falcon-executive-2.jpg", "/falcon-executive-bathroom.jpg"],
       presidential: ["/falcon-presidential-1.jpg", "/falcon-presidential-2.jpg", "/falcon-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "falcon-heights-hotel",
+    updatedAt: new Date()
   },
   
   {
@@ -1834,7 +1914,9 @@ export const hotels: Hotel[] = [
       family: ["/porini-family-1.jpg", "/porini-family-2.jpg", "/porini-family-bathroom.jpg"],
       executive: ["/porini-executive-1.jpg", "/porini-executive-2.jpg", "/porini-executive-bathroom.jpg"],
       presidential: ["/porini-presidential-1.jpg", "/porini-presidential-2.jpg", "/porini-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "porini-rhino-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1864,7 +1946,9 @@ export const hotels: Hotel[] = [
       family: ["/sweetwaters-serena-family-1.jpg", "/sweetwaters-serena-family-2.jpg", "/sweetwaters-serena-family-bathroom.jpg"],
       executive: ["/sweetwaters-serena-executive-1.jpg", "/sweetwaters-serena-executive-2.jpg", "/sweetwaters-serena-executive-bathroom.jpg"],
       presidential: ["/sweetwaters-serena-presidential-1.jpg", "/sweetwaters-serena-presidential-2.jpg", "/sweetwaters-serena-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "sweetwaters-serena-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -1894,7 +1978,9 @@ export const hotels: Hotel[] = [
       family: ["/nickolee-family-1.jpg", "/nickolee-family-2.jpg", "/nickolee-family-bathroom.jpg"],
       executive: ["/nickolee-executive-1.jpg", "/nickolee-executive-2.jpg", "/nickolee-executive-bathroom.jpg"],
       presidential: ["/nickolee-presidential-1.jpg", "/nickolee-presidential-2.jpg", "/nickolee-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "tha-nickolee-hotel",
+    updatedAt: new Date()
   },
   
   {
@@ -1924,7 +2010,9 @@ export const hotels: Hotel[] = [
       family: ["/olesamara-family-1.jpg", "/olesamara-family-2.jpg", "/olesamara-family-bathroom.jpg"],
       executive: ["/olesamara-executive-1.jpg", "/olesamara-executive-2.jpg", "/olesamara-executive-bathroom.jpg"],
       presidential: ["/olesamara-presidential-1.jpg", "/olesamara-presidential-2.jpg", "/olesamara-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "olesamara-collection",
+    updatedAt: new Date()
   },
   
   {
@@ -1954,7 +2042,9 @@ export const hotels: Hotel[] = [
       family: ["/comfort-gardens-family-1.jpg", "/comfort-gardens-family-2.jpg", "/comfort-gardens-family-bathroom.jpg"],
       executive: ["/comfort-gardens-executive-1.jpg", "/comfort-gardens-executive-2.jpg", "/comfort-gardens-executive-bathroom.jpg"],
       presidential: ["/comfort-gardens-presidential-1.jpg", "/comfort-gardens-presidential-2.jpg", "/comfort-gardens-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "comfort-gardens",
+    updatedAt: new Date()
   },
 
   // ========== MAASAI MARA HOTELS ==========
@@ -1985,7 +2075,9 @@ export const hotels: Hotel[] = [
       family: ["/rekero-family-1.jpg", "/rekero-family-2.jpg", "/rekero-family-bathroom.jpg"],
       executive: ["/rekero-executive-1.jpg", "/rekero-executive-2.jpg", "/rekero-executive-bathroom.jpg"],
       presidential: ["/rekero-presidential-1.jpg", "/rekero-presidential-2.jpg", "/rekero-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "rekero-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2015,7 +2107,9 @@ export const hotels: Hotel[] = [
       family: ["/hemingways-family-1.jpg", "/hemingways-family-2.jpg", "/hemingways-family-bathroom.jpg"],
       executive: ["/hemingways-executive-1.jpg", "/hemingways-executive-2.jpg", "/hemingways-executive-bathroom.jpg"],
       presidential: ["/hemingways-presidential-1.jpg", "/hemingways-presidential-2.jpg", "/hemingways-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "hemingways-ol-seki-mara",
+    updatedAt: new Date()
   },
   
   {
@@ -2045,7 +2139,9 @@ export const hotels: Hotel[] = [
       family: ["/fairmont-mara-family-1.jpg", "/fairmont-mara-family-2.jpg", "/fairmont-mara-family-bathroom.jpg"],
       executive: ["/fairmont-mara-executive-1.jpg", "/fairmont-mara-executive-2.jpg", "/fairmont-mara-executive-bathroom.jpg"],
       presidential: ["/fairmont-mara-presidential-1.jpg", "/fairmont-mara-presidential-2.jpg", "/fairmont-mara-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "fairmont-mara-safari-club",
+    updatedAt: new Date()
   },
   
   {
@@ -2075,7 +2171,9 @@ export const hotels: Hotel[] = [
       family: ["/mara-serena-family-1.jpg", "/mara-serena-family-2.jpg", "/mara-serena-family-bathroom.jpg"],
       executive: ["/mara-serena-executive-1.jpg", "/mara-serena-executive-2.jpg", "/mara-serena-executive-bathroom.jpg"],
       presidential: ["/mara-serena-presidential-1.jpg", "/mara-serena-presidential-2.jpg", "/mara-serena-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "mara-serena-safari-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2105,7 +2203,9 @@ export const hotels: Hotel[] = [
       family: ["/mara-intrepids-family-1.jpg", "/mara-intrepids-family-2.jpg", "/mara-intrepids-family-bathroom.jpg"],
       executive: ["/mara-intrepids-executive-1.jpg", "/mara-intrepids-executive-2.jpg", "/mara-intrepids-executive-bathroom.jpg"],
       presidential: ["/mara-intrepids-presidential-1.jpg", "/mara-intrepids-presidential-2.jpg", "/mara-intrepids-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "mara-intrepids",
+    updatedAt: new Date()
   },
   
   {
@@ -2135,7 +2235,9 @@ export const hotels: Hotel[] = [
       family: ["/mara-siria-family-1.jpg", "/mara-siria-family-2.jpg", "/mara-siria-family-bathroom.jpg"],
       executive: ["/mara-siria-executive-1.jpg", "/mara-siria-executive-2.jpg", "/mara-siria-executive-bathroom.jpg"],
       presidential: ["/mara-siria-presidential-1.jpg", "/mara-siria-presidential-2.jpg", "/mara-siria-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "mara-siria-tented-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2165,7 +2267,9 @@ export const hotels: Hotel[] = [
       family: ["/serenity-family-1.jpg", "/serenity-family-2.jpg", "/serenity-family-bathroom.jpg"],
       executive: ["/serenity-executive-1.jpg", "/serenity-executive-2.jpg", "/serenity-executive-bathroom.jpg"],
       presidential: ["/serenity-presidential-1.jpg", "/serenity-presidential-2.jpg", "/serenity-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "serenity-mara-legends-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2195,7 +2299,9 @@ export const hotels: Hotel[] = [
       family: ["/offbeat-family-1.jpg", "/offbeat-family-2.jpg", "/offbeat-family-bathroom.jpg"],
       executive: ["/offbeat-executive-1.jpg", "/offbeat-executive-2.jpg", "/offbeat-executive-bathroom.jpg"],
       presidential: ["/offbeat-presidential-1.jpg", "/offbeat-presidential-2.jpg", "/offbeat-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "offbeat-mara-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2225,7 +2331,9 @@ export const hotels: Hotel[] = [
       family: ["/angama-family-1.jpg", "/angama-family-2.jpg"],
       executive: ["/angama-executive-1.jpg", "/angama-executive-2.jpg"],
       presidential: ["/angama-presidential-1.jpg", "/angama-presidential-2.jpg"]
-    })
+    }),
+    slug: "angama-mara",
+    updatedAt: new Date()
   },
 
   // ========== AMBOSELI HOTELS ==========
@@ -2259,7 +2367,9 @@ export const hotels: Hotel[] = [
       family: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
       executive: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"],
       presidential: ["/ol-tukai-new-rooms.jpg", "/reception (1).jpg", "/ol-tukai-lodge (3).jpg"]
-    })
+    }),
+    slug: "ol-tukai-lodge-amboseli",
+    updatedAt: new Date()
   },
   
   {
@@ -2293,7 +2403,9 @@ export const hotels: Hotel[] = [
       family: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
       executive: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"],
       presidential: ["/caption (54).jpg", "/caption (58).jpg", "/excellent-bathroom.jpg"]
-    })
+    }),
+    slug: "sentrim-amboseli-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2327,7 +2439,9 @@ export const hotels: Hotel[] = [
       family: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
       executive: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"],
       presidential: ["/standard-double-room.jpg", "/telephone-in-the-room.jpg", "/his-and-hers-sinks.jpg"]
-    })
+    }),
+    slug: "amboseli-serena-safari-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2360,7 +2474,9 @@ export const hotels: Hotel[] = [
       family: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
       executive: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"],
       presidential: ["/superb-safari-tent-with.jpg", "/superb-safari-tent-sitting.jpg", "/caption (62).jpg"]
-    })
+    }),
+    slug: "tulia-amboseli-safari-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2393,7 +2509,9 @@ export const hotels: Hotel[] = [
       family: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
       executive: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"],
       presidential: ["/photo2jpg (4).jpg", "/luxurious-rooms-for-some.jpg", "/kibo-safari-camp (4).jpg"]
-    })
+    }),
+    slug: "kibo-safari-camp-amboseli",
+    updatedAt: new Date()
   },
   
   {
@@ -2427,7 +2545,9 @@ export const hotels: Hotel[] = [
       family: ["/maasai-simba-family-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
       executive: ["/maasai-simba-executive-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"],
       presidential: ["/maasai-simba-presidential-1.jpg", "/IMG_1452.webp", "/en-suite-bathroom.jpg"]
-    })
+    }),
+    slug: "maasai-simba-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2457,7 +2577,9 @@ export const hotels: Hotel[] = [
       family: ["/ol-donyo-family-1.jpg", "/ol-donyo-family-2.jpg"],
       executive: ["/ol-donyo-executive-1.jpg", "/ol-donyo-executive-2.jpg"],
       presidential: ["/ol-donyo-presidential-1.jpg", "/ol-donyo-presidential-2.jpg"]
-    })
+    }),
+    slug: "ol-donyo-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2492,7 +2614,9 @@ export const hotels: Hotel[] = [
       family: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
       executive: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"],
       presidential: ["/zebra-plains-amboseli (6).jpg", "/zebra-plains-amboseli (8).jpg", "/zebra-plains-amboseli (9).jpg"]
-    })
+    }),
+    slug: "zebra-plain-safari-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2525,7 +2649,9 @@ export const hotels: Hotel[] = [
       family: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-family-bathroom.jpg"],
       executive: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-executive-bathroom.jpg"],
       presidential: ["/we4kenya-guesthouses.jpg", "/we4kenya-guesthouses (3).jpg", "/we4kenya-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "we4kenya-guest-house",
+    updatedAt: new Date()
   },
 
   // ========== TSAVO EAST HOTELS ==========
@@ -2556,7 +2682,9 @@ export const hotels: Hotel[] = [
       family: ["/satao-family-1.jpg", "/satao-family-2.jpg", "/satao-family-bathroom.jpg"],
       executive: ["/satao-executive-1.jpg", "/satao-executive-2.jpg", "/satao-executive-bathroom.jpg"],
       presidential: ["/satao-presidential-1.jpg", "/satao-presidential-2.jpg", "/satao-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "satao-tented-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2586,7 +2714,9 @@ export const hotels: Hotel[] = [
       family: ["/voi-wildlife-family-1.jpg", "/voi-wildlife-family-2.jpg", "/voi-wildlife-family-bathroom.jpg"],
       executive: ["/voi-wildlife-executive-1.jpg", "/voi-wildlife-executive-2.jpg", "/voi-wildlife-executive-bathroom.jpg"],
       presidential: ["/voi-wildlife-presidential-1.jpg", "/voi-wildlife-presidential-2.jpg", "/voi-wildlife-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "voi-wildlife-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2616,7 +2746,9 @@ export const hotels: Hotel[] = [
       family: ["/red-elephant-family-1.jpg", "/red-elephant-family-2.jpg", "/red-elephant-family-bathroom.jpg"],
       executive: ["/red-elephant-executive-1.jpg", "/red-elephant-executive-2.jpg", "/red-elephant-executive-bathroom.jpg"],
       presidential: ["/red-elephant-presidential-1.jpg", "/red-elephant-presidential-2.jpg", "/red-elephant-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "red-elephant-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2647,7 +2779,9 @@ export const hotels: Hotel[] = [
       family: ["/sentrim-family-1.jpg", "/sentrim-family-2.jpg", "/sentrim-family-bathroom.jpg"],
       executive: ["/sentrim-executive-1.jpg", "/sentrim-executive-2.jpg", "/sentrim-executive-bathroom.jpg"],
       presidential: ["/sentrim-presidential-1.jpg", "/sentrim-presidential-2.jpg", "/sentrim-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "sentrim-tsavo-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2677,7 +2811,9 @@ export const hotels: Hotel[] = [
       family: ["/ithumba-family-1.jpg", "/ithumba-family-2.jpg", "/ithumba-family-bathroom.jpg"],
       executive: ["/ithumba-executive-1.jpg", "/ithumba-executive-2.jpg", "/ithumba-executive-bathroom.jpg"],
       presidential: ["/ithumba-presidential-1.jpg", "/ithumba-presidential-2.jpg", "/ithumba-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "ithumba-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2710,7 +2846,9 @@ export const hotels: Hotel[] = [
       family: ["/voi-safari-family-1.jpg", "/voi-safari-family-2.jpg", "/voi-safari-family-bathroom.jpg"],
       executive: ["/voi-safari-executive-1.jpg", "/voi-safari-executive-2.jpg", "/voi-safari-executive-bathroom.jpg"],
       presidential: ["/voi-safari-presidential-1.jpg", "/voi-safari-presidential-2.jpg", "/voi-safari-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "voi-safari-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2740,7 +2878,9 @@ export const hotels: Hotel[] = [
       family: ["/doa-doa-family-1.jpg", "/doa-doa-family-2.jpg", "/doa-doa-family-bathroom.jpg"],
       executive: ["/doa-doa-executive-1.jpg", "/doa-doa-executive-2.jpg", "/doa-doa-executive-bathroom.jpg"],
       presidential: ["/doa-doa-presidential-1.jpg", "/doa-doa-presidential-2.jpg", "/doa-doa-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "doa-doa-safari-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2772,7 +2912,9 @@ export const hotels: Hotel[] = [
       family: ["/epiya-family-1.jpg", "/epiya-family-2.jpg", "/epiya-family-bathroom.jpg"],
       executive: ["/epiya-executive-1.jpg", "/epiya-executive-2.jpg", "/epiya-executive-bathroom.jpg"],
       presidential: ["/epiya-presidential-1.jpg", "/epiya-presidential-2.jpg", "/epiya-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "epiya-chapeyu",
+    updatedAt: new Date()
   },
 
   // ========== TSAVO WEST HOTELS ==========
@@ -2803,7 +2945,9 @@ export const hotels: Hotel[] = [
       family: ["/ngulia-family-1.jpg", "/ngulia-family-2.jpg", "/ngulia-family-bathroom.jpg"],
       executive: ["/ngulia-executive-1.jpg", "/ngulia-executive-2.jpg", "/ngulia-executive-bathroom.jpg"],
       presidential: ["/ngulia-presidential-1.jpg", "/ngulia-presidential-2.jpg", "/ngulia-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "ngulia-safari-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2833,7 +2977,9 @@ export const hotels: Hotel[] = [
       family: ["/lions-bluff-family-1.jpg", "/lions-bluff-family-2.jpg", "/lions-bluff-family-bathroom.jpg"],
       executive: ["/lions-bluff-executive-1.jpg", "/lions-bluff-executive-2.jpg", "/lions-bluff-executive-bathroom.jpg"],
       presidential: ["/lions-bluff-presidential-1.jpg", "/lions-bluff-presidential-2.jpg", "/lions-bluff-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "soroi-lions-bluff-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2863,7 +3009,9 @@ export const hotels: Hotel[] = [
       family: ["/voyager-family-1.jpg", "/voyager-family-2.jpg", "/voyager-family-bathroom.jpg"],
       executive: ["/voyager-executive-1.jpg", "/voyager-executive-2.jpg", "/voyager-executive-bathroom.jpg"],
       presidential: ["/voyager-presidential-1.jpg", "/voyager-presidential-2.jpg", "/voyager-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "voyager-ziwani-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2893,7 +3041,9 @@ export const hotels: Hotel[] = [
       family: ["/salt-lick-family-1.jpg", "/salt-lick-family-2.jpg", "/salt-lick-family-bathroom.jpg"],
       executive: ["/salt-lick-executive-1.jpg", "/salt-lick-executive-2.jpg", "/salt-lick-executive-bathroom.jpg"],
       presidential: ["/salt-lick-presidential-1.jpg", "/salt-lick-presidential-2.jpg", "/salt-lick-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "salt-lick-safari-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2923,7 +3073,9 @@ export const hotels: Hotel[] = [
       family: ["/severin-family-1.jpg", "/severin-family-2.jpg", "/severin-family-bathroom.jpg"],
       executive: ["/severin-executive-1.jpg", "/severin-executive-2.jpg", "/severin-executive-bathroom.jpg"],
       presidential: ["/severin-presidential-1.jpg", "/severin-presidential-2.jpg", "/severin-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "severin-safari-camp",
+    updatedAt: new Date()
   },
   
   {
@@ -2953,7 +3105,9 @@ export const hotels: Hotel[] = [
       family: ["/kilaguni-family-1.jpg", "/kilaguni-family-2.jpg", "/kilaguni-family-bathroom.jpg"],
       executive: ["/kilaguni-executive-1.jpg", "/kilaguni-executive-2.jpg", "/kilaguni-executive-bathroom.jpg"],
       presidential: ["/kilaguni-presidential-1.jpg", "/kilaguni-presidential-2.jpg", "/kilaguni-presidential-bathroom.jpg"]
-    })
+    }),
+    slug: "kilaguni-serena-safari-lodge",
+    updatedAt: new Date()
   },
   
   {
@@ -2983,7 +3137,9 @@ export const hotels: Hotel[] = [
       family: ["/finch-family-1.jpg", "/finch-family-2.jpg"],
       executive: ["/finch-executive-1.jpg", "/finch-executive-2.jpg"],
       presidential: ["/finch-presidential-1.jpg", "/finch-presidential-2.jpg"]
-    })
+    }),
+    slug: "finch-hattons",
+    updatedAt: new Date()
   },
   // Add these to your hotels array in lib/data.ts
 
@@ -3016,7 +3172,9 @@ export const hotels: Hotel[] = [
     accessibleStandard: ["/unnamed (26).webp", "/unnamed (25).webp"],
     accessibleDeluxe: ["/unnamed (24).webp"],
     accessibleSuite: ["/unnamed (26).webp"]
-  })
+  }),
+  slug: "ashnil-mara-camp",
+  updatedAt: new Date()
 },
 
 {
@@ -3046,7 +3204,9 @@ export const hotels: Hotel[] = [
     accessibleStandard: ["/unnamed (27).webp"],
     accessibleDeluxe: ["/2024-08-07 (3).webp"],
     accessibleSuite: ["/unnamed (28).webp"]
-  })
+  }),
+  slug: "soroi-mara-bush-camp",
+  updatedAt: new Date()
 },
 
 {
@@ -3076,7 +3236,9 @@ export const hotels: Hotel[] = [
     accessibleStandard: ["/unnamed (34).webp"],
     accessibleDeluxe: ["/unnamed (34).webp"],
     accessibleSuite: ["/unnamed (33).webp"]
-  })
+  }),
+  slug: "soroi-larsens-camp-mara",
+  updatedAt: new Date()
 },
 
 {
@@ -3101,15 +3263,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 2,
   rooms: createRooms("mara-serena-private", 680, {
     standard: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
-      deluxe: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
-      suite: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
-      family: ["/2024-07-15 (2).webp", "/2025-01-13 (2).webp"],
-      executive: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
-      presidential: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
-      accessibleStandard: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
-      accessibleDeluxe: ["/2025-01-13 (3).webp"],
-      accessibleSuite: ["/2025-01-13 (3).webp"]
-  })
+    deluxe: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
+    suite: ["/mbcp_tents-52 (1).webp", "/2025-01-13 (2).webp"],
+    family: ["/2024-07-15 (2).webp", "/2025-01-13 (2).webp"],
+    executive: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
+    presidential: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
+    accessibleStandard: ["/2025-01-13 (3).webp", "/2025-01-13 (2).webp"],
+    accessibleDeluxe: ["/2025-01-13 (3).webp"],
+    accessibleSuite: ["/2025-01-13 (3).webp"]
+  }),
+  slug: "soroi-private-wing",
+  updatedAt: new Date()
 },
 
 {
@@ -3134,15 +3298,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 3,
   rooms: createRooms("mara-maisha", 450, {
     standard: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
-      deluxe: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
-      suite: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
-      family: ["/unnamed (43).webp", "/unnamed (41).webp"],
-      executive: ["/2025-12-10 (4).webp", "/unnamed (41).webp"],
-      presidential: ["/2025-12-10 (4).webp", "/unnamed (42).webp"],
-      accessibleStandard: ["/2025-12-10 (4).webp", "/unnamed (42).webp"],
-      accessibleDeluxe: ["/2025-12-10 (4).webp"],
-      accessibleSuite: ["/2025-12-10 (4).webp"]
-  })
+    deluxe: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
+    suite: ["/unnamed (44).webp", "/unnamed (40).webp", "/unnamed (41).webp"],
+    family: ["/unnamed (43).webp", "/unnamed (41).webp"],
+    executive: ["/2025-12-10 (4).webp", "/unnamed (41).webp"],
+    presidential: ["/2025-12-10 (4).webp", "/unnamed (42).webp"],
+    accessibleStandard: ["/2025-12-10 (4).webp", "/unnamed (42).webp"],
+    accessibleDeluxe: ["/2025-12-10 (4).webp"],
+    accessibleSuite: ["/2025-12-10 (4).webp"]
+  }),
+  slug: "mara-maisha",
+  updatedAt: new Date()
 },
 
 {
@@ -3167,15 +3333,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 3,
   rooms: createRooms("keekorok", 340, {
     standard: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
-      deluxe: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
-      suite: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
-      family: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
-      executive: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
-      presidential: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
-      accessibleStandard: ["/KKL-Chalet-Interior.webp", "/KKL-Premium-5.webp"],
-      accessibleDeluxe: ["/KKL-Chalet-Interior.webp"],
-      accessibleSuite: ["/KKL-Chalet-Interior.webp"]
-  })
+    deluxe: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
+    suite: ["/KKL-PS-Double-Room.webp", "/unnamed (45).webp", "/KKL-Standard-Bath.webp"],
+    family: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
+    executive: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
+    presidential: ["/KKL-Premium-4.webp", "/KKL-Premium-5.webp"],
+    accessibleStandard: ["/KKL-Chalet-Interior.webp", "/KKL-Premium-5.webp"],
+    accessibleDeluxe: ["/KKL-Chalet-Interior.webp"],
+    accessibleSuite: ["/KKL-Chalet-Interior.webp"]
+  }),
+  slug: "keekorok-lodge",
+  updatedAt: new Date()
 },
 
 // ========== LAKE NAIVASHA ADDITIONS ==========
@@ -3203,15 +3371,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 3,
   rooms: createRooms("naivasha-sopa", 280, {
     standard: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
-      deluxe: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
-      suite: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
-      family: ["/unnamed (52).webp", "/unnamed (56).webp"],
-      executive: ["/unnamed (52).webp", "/unnamed (56).webp"],
-      presidential: ["/unnamed (53).webp", "/unnamed (56).webp"],
+    deluxe: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
+    suite: ["/unnamed (51).webp", "/unnamed (57).webp", "/unnamed (50).webp"],
+    family: ["/unnamed (52).webp", "/unnamed (56).webp"],
+    executive: ["/unnamed (52).webp", "/unnamed (56).webp"],
+    presidential: ["/unnamed (53).webp", "/unnamed (56).webp"],
     accessibleStandard: ["/unnamed (54).webp", "/unnamed (56).webp"],
-      accessibleDeluxe: ["/unnamed (55).webp"],
-      accessibleSuite: ["/unnamed (55).webp"]
-  })
+    accessibleDeluxe: ["/unnamed (55).webp"],
+    accessibleSuite: ["/unnamed (55).webp"]
+  }),
+  slug: "lake-naivasha-sopa-resort",
+  updatedAt: new Date()
 },
 
 // ========== LAKE NAKURU ADDITIONS ==========
@@ -3237,15 +3407,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 3,
   rooms: createRooms("nakuru-sopa", 290, {
     standard: ["/lake-nakuru-sopa-lodge (7).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      deluxe: ["/lake-nakuru-sopa-lodge (7).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      suite: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      family: ["/lake-nakuru-sopa-lodge (10).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      executive: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      presidential: ["/lake-nakuru-sopa-lodge (10).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      accessibleStandard: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
-      accessibleDeluxe: ["/caption (66).jpg"],
-      accessibleSuite: ["/caption (66).jpg"]
-  })
+    deluxe: ["/lake-nakuru-sopa-lodge (7).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+    suite: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (8).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+    family: ["/lake-nakuru-sopa-lodge (10).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+    executive: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+    presidential: ["/lake-nakuru-sopa-lodge (10).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+    accessibleStandard: ["/lake-nakuru-sopa-lodge (9).jpg", "/lake-nakuru-sopa-lodge (11).jpg"],
+    accessibleDeluxe: ["/caption (66).jpg"],
+    accessibleSuite: ["/caption (66).jpg"]
+  }),
+  slug: "lake-nakuru-sopa-lodge",
+  updatedAt: new Date()
 },
 
 {
@@ -3270,15 +3442,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 2,
   rooms: createRooms("nakuru-lodge", 240, {
     standard: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
-      deluxe: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
-      suite: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
-      family: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
-      executive: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
-      presidential: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
-      accessibleStandard: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
-      accessibleDeluxe: ["/Lake Nakuru Lodge (27).webp"],
-      accessibleSuite: ["/Lake Nakuru Lodge (27).webp"]
-  })
+    deluxe: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
+    suite: ["/Lake Nakuru Lodge (25).webp", "/Lake Nakuru Lodge (88).webp", "/paraplegic rooms (4).jpg"],
+    family: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+    executive: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+    presidential: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+    accessibleStandard: ["/Lake Nakuru Lodge (27).webp", "/unnamed (58).webp"],
+    accessibleDeluxe: ["/Lake Nakuru Lodge (27).webp"],
+    accessibleSuite: ["/Lake Nakuru Lodge (27).webp"]
+  }),
+  slug: "lake-nakuru-lodge-nakuru",
+  updatedAt: new Date()
 },
 
 // ========== LAKE NAIVASHA MORE ==========
@@ -3295,7 +3469,7 @@ export const hotels: Hotel[] = [
     "/2021-01-08.webp",
     "/unnamed (62).webp"
   ],
-  description: "Comfortable mid-range lodge with lake proximity, good facilities and convenient base for Hell’s Gate, Crescent Island and boat safaris.",
+  description: "Comfortable mid-range lodge with lake proximity, good facilities and convenient base for Hell's Gate, Crescent Island and boat safaris.",
   amenities: ["WiFi", "Restaurant", "Bar", "Pool", "Lake Activities", "Parking"],
   address: "Lake Naivasha, Kenya",
   phone: "+254 726 485 228",
@@ -3304,15 +3478,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 2,
   rooms: createRooms("naivasha-simba", 220, {
     standard: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
-      deluxe: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
-      suite: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
-      family: ["/unnamed (66).webp", "/unnamed (70).webp"],
-      executive: ["/unnamed (66).webp", "/unnamed (70).webp"],
-      presidential: ["/unnamed (68).webp", "/unnamed (70).webp"],
-      accessibleStandard: ["/unnamed (68).webp", "/unnamed (70).webp"],
-      accessibleDeluxe: ["/unnamed (68).webp"],
-      accessibleSuite: ["/unnamed (68).webp"]
-  })
+    deluxe: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
+    suite: ["/unnamed (65).webp", "/unnamed (69).webp", "/unnamed (70).webp"],
+    family: ["/unnamed (66).webp", "/unnamed (70).webp"],
+    executive: ["/unnamed (66).webp", "/unnamed (70).webp"],
+    presidential: ["/unnamed (68).webp", "/unnamed (70).webp"],
+    accessibleStandard: ["/unnamed (68).webp", "/unnamed (70).webp"],
+    accessibleDeluxe: ["/unnamed (68).webp"],
+    accessibleSuite: ["/unnamed (68).webp"]
+  }),
+  slug: "lake-naivasha-simba-lodge",
+  updatedAt: new Date()
 },
 
 {
@@ -3337,15 +3513,17 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 3,
   rooms: createRooms("naivasha-resort", 260, {
     standard: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
-      deluxe: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
-      suite: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
-      family: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
-      executive: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
-      presidential: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
-      accessibleStandard: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
-      accessibleDeluxe: ["/2025-10-29 (2).webp"],
-      accessibleSuite: ["/2025-10-29 (2).webp"]
-  })
+    deluxe: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
+    suite: ["/2025-10-29 (3).webp", "/IMG_1385.webp", "/unnamed (72).webp"],
+    family: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+    executive: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+    presidential: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+    accessibleStandard: ["/2025-10-29 (2).webp", "/unnamed (73).webp"],
+    accessibleDeluxe: ["/2025-10-29 (2).webp"],
+    accessibleSuite: ["/2025-10-29 (2).webp"]
+  }),
+  slug: "lake-naivasha-resort",
+  updatedAt: new Date()
 },
 {
   id: "naivasha-007",
@@ -3388,7 +3566,9 @@ export const hotels: Hotel[] = [
     accessibleStandard: ["/2025-08-07 (1).webp", "/unnamed (78).webp"],
     accessibleDeluxe: ["/unnamed (77).webp"],
     accessibleSuite: ["/unnamed (77).webp"]
-  })
+  }),
+  slug: "enashipai-resort-spa",
+  updatedAt: new Date()
 },
 ];
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/header";
+import { BlogPost } from "@/lib/blog-data";
 import { Footer } from "@/components/footer";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { Clock, ChevronRight } from "lucide-react";
@@ -13,17 +14,6 @@ interface Author {
   role: string;
   bio: string;
   avatar: string;
-}
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  date: string;
-  author: string;
-  category: string;
-  readTime: string;
-  featured?: boolean;
 }
 
 interface FAQ {
@@ -273,7 +263,7 @@ function BlogCard({ post, author }: { post: BlogPost; author: Author }) {
           </div>
 
           <Link
-            href={`/blog/${post.id}`}
+            href={`/blog/${post.slug}`}
             className="text-orange-600 font-medium hover:text-orange-700 flex items-center gap-1"
           >
             Read More <ChevronRight size={16} />

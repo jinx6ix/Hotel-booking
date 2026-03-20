@@ -1,5 +1,6 @@
 // lib/vehicle-data.ts
 export type Vehicle = {
+  updatedAt: Date
   slug: string
   name: string
   price: string
