@@ -247,7 +247,6 @@ export const metadata: Metadata = {
     languages: {
       "en": "https://www.jaetravel.com",
       "x-default": "https://www.jaetravel.com",
-    }
     },
   },
   openGraph: {
