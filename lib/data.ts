@@ -1036,7 +1036,7 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.5,
     price: 260,
-    image: "/unnamed (7).jpg",
+    image: "/unnamed(7).jpg",
     gallery: [
       "/unnamed (8).jpg",
       "/unnamed (9).jpg",
@@ -1535,7 +1535,7 @@ export const hotels: Hotel[] = [
     image: "/Sarova-Woodlands-Nakuru.webp",
     gallery: [
       "/unnamed (6).webp",
-      "/unnamed (7).webp",
+      "/unnamed(7).webp",
       "/unnamed (8).webp",
       "/unnamed (9).webp",
       "/unnamed (10).webp",
