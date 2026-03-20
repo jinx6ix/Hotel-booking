@@ -111,83 +111,32 @@ export const metadata: Metadata = {
 // 1. PRODUCT SCHEMA - Accessible Safari Product
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "TouristTrip",
-
+  "@type": "Product",
   name: "Wheelchair Accessible Kenya Safari Packages 2025",
+  description: "Fully accessible safari experiences in Kenya with adapted 4x4 vehicles, wheelchair accessible hotels featuring roll-in showers and grab bars, and trained disability-friendly guides.",
+  image: "https://www.jaetravel.com/images/accessible-safari-kenya.jpg",
+  brand: {
+    "@type": "Brand",
+    name: "Jaetravel Expeditions",
+  },
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
     lowPrice: "280",
     highPrice: "1200",
-    offerCount: 25,
+    offerCount: hotels.length,
     availability: "https://schema.org/InStock",
+    priceValidUntil: "2026-12-31",
   },
-  review: {
-    "@type": "Review",
-    author: {
-      "@type": "Person",
-      name: "Jaetravel Expeditions",
-    },
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: "4.8",
-      bestRating: "5",
-    },
   aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "327",
-    },
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "327",
+    bestRating: "5",
   },
-  description:
-    "Fully accessible safari experiences in Kenya with adapted 4x4 vehicles, wheelchair accessible hotels, and trained guides.",
-
-  image: [
-    "https://www.jaetravel.com/images/accessible-safari-kenya.jpg",
-  ],
-
-  provider: {
-    "@type": "TravelAgency",
-    name: "Jaetravel Expeditions",
-    url: "https://www.jaetravel.com",
-  },
-
-  touristType: "Travelers with mobility needs",
-
-  itinerary: {
-    "@type": "ItemList",
-    itemListElement: [
-      {
-        "@type": "TouristTrip",
-        name: "3-Day Accessible Maasai Mara Safari",
-        url: "https://www.jaetravel.com/accessible-safaris/maasai-mara-3-day",
-      },
-      {
-        "@type": "TouristTrip",
-        name: "5-Day Accessible Amboseli & Tsavo Safari",
-        url: "https://www.jaetravel.com/accessible-safaris/amboseli-tsavo-5-day",
-      },
-      {
-        "@type": "TouristTrip",
-        name: "7-Day Complete Accessible Kenya Safari",
-        url: "https://www.jaetravel.com/accessible-safaris/complete-kenya-7-day",
-      },
-    ],
-  },
-
-  areaServed: {
-    "@type": "Country",
-    name: "Kenya",
-  },
-
+  sku: "ACCESSIBLE-KE-2025",
   category: "Accessible Safari Tours",
-
-  accessibilitySummary:
-    "Wheelchair accessible safari vehicles, accessible hotels with roll-in showers, grab bars, and trained guides.",
-
-  keywords:
-    "accessible safari Kenya, wheelchair safari Africa, disabled travel Kenya, accessible Maasai Mara safari",
-}
+};
 
 // 2. LOCAL BUSINESS SCHEMA - Travel Agency with Accessibility Features
 const localBusinessSchema = {
