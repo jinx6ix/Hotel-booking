@@ -258,6 +258,10 @@ const reviewSchema = {
   reviewCount: "327",
   bestRating: "5",
   worstRating: "1",
+  itemReviewed: {
+    "@type": "Product",
+    name: "Wheelchair Accessible Kenya Safari Packages 2025",
+  },
 };
 
 // 7. SPECIAL OFFER SCHEMA
