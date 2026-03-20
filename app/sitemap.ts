@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/hotels`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 1.0,
+    },
+    {
       url: `${baseUrl}/destinations`,
       lastModified: now,
       changeFrequency: "weekly",
@@ -41,6 +47,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ]
 
   // === 2. Destination Pages ===
@@ -51,7 +81,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  // === 3. Hotel Pages ===
+  // === 3. Hotel Pages (Individual Hotel Listings) ===
   const hotelRoutes: MetadataRoute.Sitemap = hotels.map((hotel) => ({
     url: `${baseUrl}/hotels/${hotel.id}`,
     lastModified: now,
@@ -59,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // === 4. Car Hire Pages ===
+  // === 4. Car Hire Pages (Individual Vehicle Listings) ===
   const carHireRoutes: MetadataRoute.Sitemap = vehicles.map((vehicle) => ({
     url: `${baseUrl}/car-hire/${vehicle.slug}`,
     lastModified: now,
@@ -67,11 +97,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  // === 5. Combine & Return ===
+  // === 5. Hotel Location Pages (Optional - Hotels by Destination) ===
+  const hotelLocationRoutes: MetadataRoute.Sitemap = locations.map((location) => ({
+    url: `${baseUrl}/hotels?location=${location.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.75,
+  }))
+
+  // === 6. Hotel Category Pages ===
+  const hotelCategoryRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/hotels/accessible`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/hotels/luxury`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/hotels/family-friendly`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/hotels/budget`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/hotels/beach-resorts`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${baseUrl}/hotels/safari-lodges`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+  ]
+
+  // === 7. Combine & Return ===
   return [
     ...staticRoutes,
     ...destinationRoutes,
     ...hotelRoutes,
     ...carHireRoutes,
+    ...hotelLocationRoutes,
+    ...hotelCategoryRoutes,
   ]
 }

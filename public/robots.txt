@@ -1,16 +1,128 @@
-# robots.txt - Allow search engines to crawl the site
+# robots.txt - Optimized for Jaetravel Kenya Hotels & Safari Site
+# Generated for https://www.jaetravel.com
+
+# Allow all search engines to crawl main content
 User-agent: *
 Allow: /
+Allow: /hotels
+Allow: /hotels/*
+Allow: /destinations
+Allow: /destinations/*
+Allow: /car-hire
+Allow: /car-hire/*
+
+# Disallow admin and API endpoints
 Disallow: /admin/
 Disallow: /api/
-Disallow: /*.json
+Disallow: /_next/
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /private/
+Disallow: /dashboard/
 
+# Crawl delay to prevent server overload (recommended for large sites)
+Crawl-delay: 2
+
+# Sitemap location
 Sitemap: https://www.jaetravel.com/sitemap.xml
 
-# Google
+# ============================================
+# Googlebot - Enhanced crawling for Google
+# ============================================
 User-agent: Googlebot
 Allow: /
+Allow: /hotels
+Allow: /destinations
+Allow: /car-hire
+Crawl-delay: 1
 
-# Bing
+# ============================================
+# Googlebot Images - Allow image crawling for rich snippets
+# ============================================
+User-agent: Googlebot-Image
+Allow: /
+Allow: /hotels/*.jpg
+Allow: /hotels/*.png
+Allow: /hotels/*.webp
+Allow: /destinations/*.jpg
+Allow: /car-hire/*.jpg
+
+# ============================================
+# Googlebot Mobile - Ensure mobile-first indexing
+# ============================================
+User-agent: Googlebot-Mobile
+Allow: /
+
+# ============================================
+# Bingbot
+# ============================================
 User-agent: Bingbot
 Allow: /
+Allow: /hotels
+Allow: /destinations
+Allow: /car-hire
+Crawl-delay: 2
+
+# ============================================
+# Yahoo! Slurp
+# ============================================
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# ============================================
+# Yandex (Russian search engine)
+# ============================================
+User-agent: Yandex
+Allow: /
+Allow: /hotels
+Allow: /destinations
+Crawl-delay: 2
+
+# ============================================
+# Baidu (Chinese search engine)
+# ============================================
+User-agent: Baiduspider
+Allow: /
+Allow: /hotels
+Allow: /destinations
+Crawl-delay: 5
+
+# ============================================
+# DuckDuckGo
+# ============================================
+User-agent: DuckDuckBot
+Allow: /
+
+# ============================================
+# Applebot (Siri, Spotlight)
+# ============================================
+User-agent: Applebot
+Allow: /
+
+# ============================================
+# Pinterest (for image crawling)
+# ============================================
+User-agent: Pinterest
+Allow: /
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.webp
+
+# ============================================
+# Block aggressive bots that waste bandwidth
+# ============================================
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
