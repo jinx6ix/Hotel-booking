@@ -261,6 +261,7 @@ const reviewSchema = {
   itemReviewed: {
     "@type": "Product",
     name: "Wheelchair Accessible Kenya Safari Packages 2025",
+    description: "Fully accessible safari experiences in Kenya with adapted 4x4 vehicles, wheelchair accessible hotels featuring roll-in showers and grab bars, and trained disability-friendly guides.",
   },
 };
 
