@@ -28,6 +28,7 @@ const nextConfig = {
   },
 
   images: {
+    domains: ['www.jaetravel.com'], // Add any image domains
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60000,
     remotePatterns: [
