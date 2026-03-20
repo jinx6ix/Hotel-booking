@@ -609,7 +609,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.8,
     price: 350,
-    image: "/safari park hotel.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/safari park hotel.jpg?height=300&width=400",
     gallery: [
       "/Safari Park Hotel1.jpg",
       "/Safari Park Hotel2.jpg",
@@ -642,7 +642,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi Airport",
     rating: 4.6,
     price: 280,
-    image: "/Crowne Plaza Nairobi.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Crowne Plaza Nairobi.jpg?height=300&width=400",
     gallery: [
       "/chero1.jpeg?height=400&width=600",
       "/chero2.webp?height=400&width=600",
@@ -677,7 +677,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.7,
     price: 320,
-    image: "/Serena Hotel Nairobi.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Serena Hotel Nairobi.jpg?height=300&width=400",
     gallery: [
       "/shero1.jpg?height=400&width=600",
       "/shero2.jpg?height=400&width=600",
@@ -709,7 +709,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.9,
     price: 400,
-    image: "/Villa Rosa Kempinski.avif?height=300&width=400",
+    image: "https://www.jaetravel.com/Villa Rosa Kempinski.avif?height=300&width=400",
     gallery: [
       "/khero1.jpg?height=400&width=600",
       "/khero2.avif?height=400&width=600",
@@ -773,7 +773,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.4,
     price: 230,
-    image: "/Hilton Nairobi.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Hilton Nairobi.jpg?height=300&width=400",
     gallery: [
       "/hihero1.jpg?height=400&width=600",
       "/hihero2.jpg?height=400&width=600",
@@ -805,7 +805,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.3,
     price: 180,
-    image: "/Ibis Styles Nairobi.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Ibis Styles Nairobi.jpg?height=300&width=400",
     gallery: [
       "/ibhero1.jpg?height=400&width=600",
       "/ibhero2.jpg?height=400&width=600",
@@ -837,7 +837,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.6,
     price: 290,
-    image: "/Radisson Blu Nairobi.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Radisson Blu Nairobi.jpg?height=300&width=400",
     gallery: [
       "/rahero1.jpg?height=400&width=600",
       "/rahero2.webp?height=400&width=600",
@@ -869,7 +869,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.5,
     price: 260,
-    image: "/Four Points by Sheraton.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Four Points by Sheraton.jpg?height=300&width=400",
     gallery: [
       "/fohero1.avif?height=400&width=600",
       "/fohero2.jpg?height=400&width=600",
@@ -901,7 +901,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.4,
     price: 200,
-    image: "/Mercure Hotel Nairobi.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/Mercure Hotel Nairobi.jpg?height=300&width=400",
     gallery: [
       "/mehero1.jpeg?height=400&width=600",
       "/mehero2.jpg?height=400&width=600",
@@ -933,7 +933,7 @@ export const hotels: Hotel[] = [
     location: "Nairobi",
     rating: 4.2,
     price: 190,
-    image: "/Country Club Hotel.jpeg?height=300&width=400",
+    image: "https://www.jaetravel.com/Country Club Hotel.jpeg?height=300&width=400",
     gallery: [
       "/cohero1.jpg?height=400&width=600",
       "/cohero2.webp?height=400&width=600",
@@ -1036,7 +1036,7 @@ export const hotels: Hotel[] = [
     location: "Amboseli",
     rating: 4.5,
     price: 260,
-    image: "/unnamed (7).jpg",
+    image: "https://www.jaetravel.com/unnamed (7).jpg",
     gallery: [
       "/unnamed (8).jpg",
       "/unnamed (9).jpg",
@@ -1109,7 +1109,7 @@ export const hotels: Hotel[] = [
     location: "Naivasha",
     rating: 4.7,
     price: 320,
-    image: "/cresent lake.avif?height=300&width=400",
+    image: "https://www.jaetravel.com/cresent lake.avif?height=300&width=400",
     gallery: [
       "/crehero1.jpeg?height=400&width=600",
       "/crehero2.jpeg?height=400&width=600",
@@ -1141,7 +1141,7 @@ export const hotels: Hotel[] = [
     location: "Naivasha",
     rating: 4.6,
     price: 300,
-    image: "/serena camp.jpg?height=300&width=400",
+    image: "https://www.jaetravel.com/serena camp.jpg?height=300&width=400",
     gallery: [
       "/sehero1.jpg?height=400&width=600",
       "/sehero2.avif?height=400&width=600",
@@ -1173,7 +1173,7 @@ export const hotels: Hotel[] = [
     location: "Naivasha",
     rating: 4.5,
     price: 280,
-    image: "/hells gate.jpeg?height=300&width=400",
+    image: "https://www.jaetravel.com/hells gate.jpeg?height=300&width=400",
     gallery: [
       "/gahero1.avif?height=400&width=600",
       "/gahero2.jpg?height=400&width=600",
