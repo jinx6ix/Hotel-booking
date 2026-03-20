@@ -403,7 +403,7 @@ const faqSchema = {
 // 10. REVIEW SCHEMA - Aggregate Reviews
 const reviewSchema = {
   "@context": "https://schema.org",
-  "@itemReviewed": {
+  "itemReviewed": {
     "@type": "Hotel",
     name: "Hotels in Kenya",
     description: "Collection of hotels in Kenya including luxury safari lodges, beach resorts, and city hotels.",
