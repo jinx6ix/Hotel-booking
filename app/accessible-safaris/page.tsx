@@ -114,7 +114,31 @@ const productSchema = {
   "@type": "TouristTrip",
 
   name: "Wheelchair Accessible Kenya Safari Packages 2025",
-
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    lowPrice: "280",
+    highPrice: "1200",
+    offerCount: 25,
+    availability: "https://schema.org/InStock",
+  },
+  review: {
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: "Jaetravel Expeditions",
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "4.8",
+      bestRating: "5",
+    },
+  aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "327",
+    },
+  },
   description:
     "Fully accessible safari experiences in Kenya with adapted 4x4 vehicles, wheelchair accessible hotels, and trained guides.",
 
@@ -149,21 +173,6 @@ const productSchema = {
         url: "https://www.jaetravel.com/accessible-safaris/complete-kenya-7-day",
       },
     ],
-  },
-
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: "280",
-    highPrice: "1200",
-    offerCount: 25,
-    availability: "https://schema.org/InStock",
-  },
-
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "327",
   },
 
   areaServed: {
