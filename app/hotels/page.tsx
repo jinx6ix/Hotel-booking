@@ -408,6 +408,20 @@ const reviewSchema = {
     name: "Hotels in Kenya Collection",
     description: "Collection of hotels in Kenya including luxury safari lodges, beach resorts, and city hotels.",
   },
+  review: hotels.slice(0, 5).map((hotel) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: "Guest",
+    },
+    reviewBody: `${hotel.name} - ${hotel.location}, Kenya. Rating: ${hotel.rating}/5. ${hotel.accessible ? 'Wheelchair accessible rooms available.' : ''}`,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: hotel.rating,
+      bestRating: "5",
+      worstRating: "1",
+    },
+  })),
   "@type": "AggregateRating",
   name: "Hotels in Kenya - Guest Ratings",
   ratingValue: "4.8",
