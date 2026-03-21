@@ -403,25 +403,11 @@ const faqSchema = {
 // 10. REVIEW SCHEMA - Aggregate Reviews
 const reviewSchema = {
   "@context": "https://schema.org",
-  itemReviewed: {
-    "@type": "Product",
-    name: "Hotels in Kenya Collection",
+  "@itemReviewed": {
+    "@type": "Hotel",
+    name: "Hotels in Kenya",
     description: "Collection of hotels in Kenya including luxury safari lodges, beach resorts, and city hotels.",
   },
-  review: hotels.slice(0, 5).map((hotel) => ({
-    "@type": "Review",
-    author: {
-      "@type": "Person",
-      name: "Guest",
-    },
-    reviewBody: `${hotel.name} - ${hotel.location}, Kenya. Rating: ${hotel.rating}/5. ${hotel.accessible ? 'Wheelchair accessible rooms available.' : ''}`,
-    reviewRating: {
-      "@type": "Rating",
-      ratingValue: hotel.rating,
-      bestRating: "5",
-      worstRating: "1",
-    },
-  })),
   "@type": "AggregateRating",
   name: "Hotels in Kenya - Guest Ratings",
   ratingValue: "4.8",
