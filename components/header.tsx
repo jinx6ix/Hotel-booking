@@ -105,6 +105,9 @@ export function Header() {
             >
               Car Hire
             </Link>
+            <Link href="/accessible-safaris" className="text-black hover:text-orange-300 font-medium transition">
+              Accessible Hotels
+            </Link>
             <Link
               href="/about"
               className="block px-4 py-2 text-white hover:text-orange-300 hover:bg-white/5 rounded transition"
