@@ -315,6 +315,333 @@ export interface FeatureDetail {
       }
     }
   ];
+
+  // ============================================
+// SWEETWATERS TENTED CAMP (nanyuki-012)
+// ============================================
+  export const sweetwatersFeatures: AccessibilityFeature[] = [
+    {
+      id: "sweetwaters-bathroom-1",
+      category: "bathroom",
+      title: "Roll-in Shower",
+      description: "Wheelchair-accessible roll-in shower with no threshold in accessible tent units",
+      measurements: "Shower area: 60\" x 36\" (152cm x 91cm) • Entrance: 36\" wide",
+      status: "available",
+      details: {
+        items: [
+          { label: "Roll-in shower", value: "No threshold entry, 36 in wide entrance", status: "available" },
+          { label: "Grab bars within shower", value: "Horizontal and vertical grab bars installed", status: "available" },
+          { label: "Fixed shower seat", value: "Fold-down shower seat attached to wall", status: "available" },
+          { label: "Handheld showerhead", value: "Adjustable handheld showerhead on slide bar", status: "available" },
+          { label: "Shower controls", value: "Lever-style controls at accessible height (36 in)", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-bathroom-2",
+      category: "bathroom",
+      title: "Toilet Area",
+      description: "Accessible toilet with grab bars and adequate clearance in accessible tents",
+      measurements: "Toilet height: 18\" (46cm) • Grab bars: 36\" (91cm) length",
+      status: "available",
+      details: {
+        items: [
+          { label: "Toilet height", value: "18 in (46cm) - comfort height", status: "available" },
+          { label: "Grab bars", value: "Side and rear grab bars installed", status: "available" },
+          { label: "Clearance beside toilet", value: "36 in (91cm) clearance on transfer side", status: "available" },
+          { label: "Flush control", value: "Push button on accessible side", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-bathroom-3",
+      category: "bathroom",
+      title: "Sink / Vanity",
+      description: "Accessible sink with knee clearance and lever handles",
+      measurements: "Sink height: 34\" (86cm) • Knee clearance: 27\" (69cm) high",
+      status: "available",
+      details: {
+        items: [
+          { label: "Sink height", value: "34 in (86cm) from floor", status: "available" },
+          { label: "Knee clearance", value: "27 in (69cm) high, 30 in (76cm) wide", status: "available" },
+          { label: "Faucet type", value: "Lever handles for easy operation", status: "available" },
+          { label: "Mirror placement", value: "Tilted mirror for seated users", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-bathroom-4",
+      category: "bathroom",
+      title: "Bathroom Interior",
+      description: "Step-free area with ample turning space within accessible tent units",
+      measurements: "Turning radius: 60\" (152cm) minimum",
+      status: "available",
+      details: {
+        items: [
+          { label: "Free turning space", value: "60 in (152cm) turning radius", status: "available" },
+          { label: "Step-free area", value: "No steps or thresholds throughout", status: "available" },
+          { label: "Emergency call system", value: "Pull cord within reach of shower and toilet", status: "available" },
+          { label: "Floor surface", value: "Non-slip flooring with tented base", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-room-1",
+      category: "room",
+      title: "Tent Entrance",
+      description: "Wide doorway with zipper/velcro closure and level entry",
+      measurements: "Door width: 36\" (91cm) minimum",
+      status: "available",
+      details: {
+        items: [
+          { label: "Door width", value: "36 in (91cm) clearance", status: "available" },
+          { label: "Door closure", value: "Easy-open zipper and velcro system", status: "available" },
+          { label: "Threshold", value: "Ramped or no threshold", status: "available" },
+          { label: "Lighting", value: "Path lighting at accessible height", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-room-2",
+      category: "room",
+      title: "Bed",
+      description: "Accessible bed height with clearance underneath",
+      measurements: "Bed height: 24\" (61cm) • Under-bed clearance: 8\" (20cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Bed height", value: "24 in (61cm) - standard accessible height", status: "available" },
+          { label: "Space under bed", value: "8 in (20cm) clearance for lift", status: "available" },
+          { label: "Space next to bed", value: "36 in (91cm) clearance on accessible side", status: "available" },
+          { label: "Mattress type", value: "Medium firm with pillow-top", status: "available" },
+          { label: "Light switches", value: "Reachable from bed at 36 in height", status: "available" },
+          { label: "Phone placement", value: "Nightstand at accessible height", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-room-3",
+      category: "room",
+      title: "Tent Amenities",
+      description: "Accessible storage and controls throughout the tent",
+      status: "available",
+      details: {
+        items: [
+          { label: "Closet access", value: "Lowered clothing rod at 48 in (122cm)", status: "available" },
+          { label: "Drawers", value: "Accessible reach height (32 in / 81cm)", status: "available" },
+          { label: "Thermostat", value: "Located at 42 in (107cm) height", status: "available" },
+          { label: "Light switches", value: "Located at 36 in (91cm) height", status: "available" },
+          { label: "Outlets", value: "Located at 18 in (46cm) height", status: "available" },
+          { label: "Curtain/blind controls", value: "Easy-pull cord at accessible height", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-room-4",
+      category: "room",
+      title: "Workspace / Writing Desk",
+      description: "Accessible desk with knee clearance",
+      measurements: "Desk height: 30\" (76cm) • Knee clearance: 27\" (69cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Desk height", value: "30 in (76cm) - standard accessible height", status: "available" },
+          { label: "Knee clearance", value: "27 in (69cm) high, 30 in (76cm) wide", status: "available" },
+          { label: "Chair", value: "Armless desk chair with back support", status: "available" },
+          { label: "Desk lamp", value: "Adjustable with easy controls", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-room-5",
+      category: "room",
+      title: "Tent Interior",
+      description: "Step-free area with smooth flooring and ample space",
+      measurements: "Turning radius: 60\" (152cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Step-free area", value: "No steps or thresholds throughout tent", status: "available" },
+          { label: "Free turning space", value: "60 in (152cm) turning radius", status: "available" },
+          { label: "Floor surface", value: "Smooth canvas flooring with low-pile rug", status: "available" },
+          { label: "Wheelchair clearance", value: "36 in (91cm) wide pathways", status: "available" },
+          { label: "Mosquito netting", value: "Easy-access netting with wide openings", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-entrance-1",
+      category: "entrance",
+      title: "Camp Entrance",
+      description: "Level entry with ramp access to main lodge and reception",
+      measurements: "Ramp width: 48\" (122cm) • Ramp slope: 1:12",
+      status: "available",
+      details: {
+        items: [
+          { label: "Level entry", value: "Ramp access at main entrance", status: "available" },
+          { label: "Ramp width", value: "48 in (122cm) clearance", status: "available" },
+          { label: "Ramp slope", value: "1:12 slope - ADA compliant", status: "available" },
+          { label: "Handrails", value: "Handrails on both sides of ramps", status: "available" },
+          { label: "Covered drop-off", value: "Covered area with level access", status: "available" },
+          { label: "Path lighting", value: "Well-lit pathways for evening navigation", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-entrance-2",
+      category: "entrance",
+      title: "Reception Desk",
+      description: "Accessible check-in counter with lowered section",
+      measurements: "Lowered section height: 34\" (86cm) • Standard section: 42\" (107cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Lowered counter", value: "34 in (86cm) height for wheelchair users", status: "available" },
+          { label: "Knee clearance", value: "27 in (69cm) clearance", status: "available" },
+          { label: "Waiting area", value: "Ample space for wheelchair maneuvering", status: "available" },
+          { label: "Staff assistance", value: "Staff trained for accessibility needs and safari adaptations", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-restaurant-1",
+      category: "restaurant",
+      title: "Dining Area",
+      description: "Accessible tables and seating arrangements in main dining tent",
+      measurements: "Table height: 30\" (76cm) • Aisle width: 36\" (91cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Accessible tables", value: "Multiple tables with knee clearance", status: "available" },
+          { label: "Table height", value: "30 in (76cm) - standard accessible height", status: "available" },
+          { label: "Aisle width", value: "36-48 in (91-122cm) between tables", status: "available" },
+          { label: "Seating", value: "Armless chairs available", status: "available" },
+          { label: "Menu accessibility", value: "Large print menus available upon request", status: "available" },
+          { label: "Floor surface", value: "Smooth flooring throughout dining area", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-restaurant-2",
+      category: "restaurant",
+      title: "Buffet Area",
+      description: "Accessible buffet counters with staff assistance",
+      measurements: "Counter height: 34\" (86cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Buffet height", value: "34 in (86cm) - accessible reach", status: "available" },
+          { label: "Staff assistance", value: "Available to help with buffet service", status: "available" },
+          { label: "Aisle width", value: "48 in (122cm) clearance around buffet", status: "available" },
+          { label: "Food labels", value: "Large print labels available", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-parking-1",
+      category: "parking",
+      title: "Accessible Parking",
+      description: "Designated accessible parking spaces near reception",
+      measurements: "Space width: 12ft (366cm) including access aisle",
+      status: "available",
+      details: {
+        items: [
+          { label: "Accessible spaces", value: "2 designated spaces near reception", status: "available" },
+          { label: "Van accessible spaces", value: "1 space with 98 in (249cm) height clearance", status: "available" },
+          { label: "Access aisle", value: "60 in (152cm) wide access aisle", status: "available" },
+          { label: "Surface", value: "Level, firm, slip-resistant surface", status: "available" },
+          { label: "Signage", value: "Clearly marked with international symbol", status: "available" },
+          { label: "Pathway", value: "Accessible path to reception", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-common-1",
+      category: "common-areas",
+      title: "Waterhole Viewing Deck",
+      description: "Wheelchair-accessible viewing platform with excellent wildlife viewing",
+      measurements: "Deck width: 96\" (244cm) • Rail height: 36\" (91cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Ramp access", value: "Gentle slope ramp to viewing deck", status: "available" },
+          { label: "Deck surface", value: "Smooth, non-slip wooden decking", status: "available" },
+          { label: "Rail height", value: "36 in (91cm) - accessible viewing height", status: "available" },
+          { label: "Seating", value: "Benches with back support available", status: "available" },
+          { label: "Turning space", value: "60 in (152cm) turning radius", status: "available" },
+          { label: "Shade structure", value: "Covered areas with accessible seating", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-common-2",
+      category: "common-areas",
+      title: "Swimming Pool",
+      description: "Accessible pool entry with pool lift available",
+      measurements: "Pool lift capacity: 400 lbs (181kg)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Pool lift", value: "Pool lift available for accessible entry", status: "available" },
+          { label: "Pool lift capacity", value: "400 lbs (181kg) maximum", status: "available" },
+          { label: "Deck access", value: "Level pool deck with non-slip surface", status: "available" },
+          { label: "Pool deck seating", value: "Accessible lounge chairs available", status: "available" },
+          { label: "Staff assistance", value: "Staff trained to assist with pool lift operation", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-common-3",
+      category: "common-areas",
+      title: "Game Drive Vehicles",
+      description: "Modified safari vehicles with wheelchair lift for wildlife viewing",
+      measurements: "Vehicle entrance: 32\" (81cm) • Wheelchair lift capacity: 350 lbs (159kg)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Wheelchair lift", value: "Hydraulic lift available upon request", status: "available" },
+          { label: "Vehicle entrance", value: "32 in (81cm) wide door opening", status: "available" },
+          { label: "Seating configuration", value: "Wheelchair securement positions available", status: "available" },
+          { label: "Advance notice", value: "24-48 hours notice required for vehicle modification", status: "available" },
+          { label: "Viewing experience", value: "Open-sided vehicles with elevated viewing", status: "available" },
+          { label: "Staff support", value: "Trained driver-guide for accessibility support", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-common-4",
+      category: "common-areas",
+      title: "Lobby & Lounge Area",
+      description: "Accessible seating and pathways throughout main lodge",
+      measurements: "Pathway width: 48\" (122cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Pathway width", value: "48 in (122cm) throughout lobby", status: "available" },
+          { label: "Seating areas", value: "Accessible seating with armrests", status: "available" },
+          { label: "Rest areas", value: "Seating available at intervals", status: "available" },
+          { label: "Signage", value: "High-contrast, large print signage", status: "available" },
+          { label: "Floor surface", value: "Smooth flooring with low-pile rugs", status: "available" }
+        ]
+      }
+    },
+    {
+      id: "sweetwaters-common-5",
+      category: "common-areas",
+      title: "Gift Shop",
+      description: "Accessible shopping with wide aisles and lowered counters",
+      measurements: "Aisle width: 36\" (91cm) • Counter height: 34\" (86cm)",
+      status: "available",
+      details: {
+        items: [
+          { label: "Aisle width", value: "36 in (91cm) minimum", status: "available" },
+          { label: "Counter height", value: "34 in (86cm) for checkout", status: "available" },
+          { label: "Turning space", value: "60 in (152cm) turning radius", status: "available" },
+          { label: "Staff assistance", value: "Staff available to assist with shopping", status: "available" }
+        ]
+      }
+    }
+  ];
   
   export const crownePlazaImages: AccessibilityImages = {
     bathroom: ["/crowne-plaza-bathroom-1.jpg", "/crowne-plaza-bathroom-2.jpg", "/crowne-plaza-bathroom-3.jpg"],

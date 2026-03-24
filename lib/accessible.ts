@@ -1172,6 +1172,254 @@ export interface Hotel {
       }
     ]
   };
+
+  // ============================================================================
+  // ============================================================================
+// SWEETWATERS TENTED CAMP - OL PEJETA CONSERVANCY
+// ============================================================================
+const sweetwatersAccessibility: AccessibilityFeature[] = [
+  {
+    id: 'sweetwaters-entrance-1',
+    category: 'entrance',
+    title: 'Main Entrance',
+    description: 'Step-free access via wooden ramp. Reception desk with lowered section at 32" height.',
+    measurements: 'Ramp gradient: 1:12 | Desk height: 32"',
+    image: '/accessibility/sweetwaters-entrance.jpg'
+  },
+  {
+    id: 'sweetwaters-entrance-2',
+    category: 'entrance',
+    title: 'Tent Entrance',
+    description: 'Dedicated wooden ramp to tent entrance. Door width: 36". Lever handle.',
+    measurements: 'Door width: 36" | Ramp gradient: 1:12',
+    image: '/accessibility/sweetwaters-tent-entrance.jpg'
+  },
+  {
+    id: 'sweetwaters-room-1',
+    category: 'room',
+    title: 'Doorway',
+    description: 'Tent door width: 36". Zero threshold. Lever handle at 36" height.',
+    measurements: 'Door width: 36"',
+    image: '/accessibility/sweetwaters-door.jpg'
+  },
+  {
+    id: 'sweetwaters-room-2',
+    category: 'room',
+    title: 'Space Under Bed',
+    description: 'Bed height: 24". Clearance under bed: 7" for lift access. Clearance on both sides: 36".',
+    measurements: 'Bed height: 24" | Clearance: 7" | Side clearance: 36"',
+    image: '/accessibility/sweetwaters-bed.jpg'
+  },
+  {
+    id: 'sweetwaters-room-3',
+    category: 'room',
+    title: 'Turning Space',
+    description: 'Free turning space of 60" in tent interior. Smooth wooden flooring throughout.',
+    measurements: 'Turning radius: 60"+',
+    image: '/accessibility/sweetwaters-interior.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-1',
+    category: 'bathroom',
+    title: 'Bathroom Entrance',
+    description: 'Door width: 36". Opens outward. Threshold: 0.5" beveled edge.',
+    measurements: 'Door width: 36"',
+    image: '/accessibility/sweetwaters-bathroom-door.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-2',
+    category: 'bathroom',
+    title: 'Roll-in Shower',
+    description: 'Wet room style roll-in shower with zero threshold. Shower area: 48" x 60". Handheld shower head adjustable 36"-72".',
+    measurements: 'Shower area: 48" x 60" | Handheld bar: 36"-72"',
+    image: '/accessibility/sweetwaters-shower.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-3',
+    category: 'bathroom',
+    title: 'Shower Seat',
+    description: 'Fixed fold-down shower seat at 18" height. Weight capacity: 300 lbs.',
+    measurements: 'Seat height: 18" | Seat dimensions: 18" x 16"',
+    image: '/accessibility/sweetwaters-shower-seat.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-4',
+    category: 'bathroom',
+    title: 'Shower Grab Bars',
+    description: 'Grab bars within shower available. Horizontal bar: 36" on back wall. Vertical bar: 24" on side wall. Angled bar: 36".',
+    measurements: 'Horizontal: 36" | Vertical: 24" | Angled: 36"',
+    image: '/accessibility/sweetwaters-grab-bars.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-5',
+    category: 'bathroom',
+    title: 'Sink',
+    description: 'The sink height is 34 in. The space under the sink is 10 in long, 30 in wide, 27 in high. The sink handle is lever. Mirror at 40" (tilted).',
+    measurements: 'Sink height: 34" | Under-sink: 10"L x 30"W x 27"H | Mirror: 40"',
+    image: '/accessibility/sweetwaters-sink.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-6',
+    category: 'bathroom',
+    title: 'Toilet',
+    description: 'Toilet height: 18" with grab bars on both sides. Emergency pull cord within reach.',
+    measurements: 'Toilet height: 18"',
+    image: '/accessibility/sweetwaters-toilet.jpg'
+  },
+  {
+    id: 'sweetwaters-bathroom-7',
+    category: 'bathroom',
+    title: 'Bathroom Space',
+    description: 'Step-free bathroom with 60" turning radius. All fixtures positioned for wheelchair access.',
+    measurements: 'Turning radius: 60"+ | Clear floor space: 60" x 60"',
+    image: '/accessibility/sweetwaters-bathroom-space.jpg'
+  },
+  {
+    id: 'sweetwaters-common-1',
+    category: 'restaurant',
+    title: 'Dining Area',
+    description: 'Step-free access to restaurant. Tables with knee clearance: 27" H x 30" W. Buffet lowered to 34". Pathways: 36"+.',
+    measurements: 'Table clearance: 27"H x 30"W | Pathways: 36"+',
+    image: '/accessibility/sweetwaters-dining.jpg'
+  },
+  {
+    id: 'sweetwaters-common-2',
+    category: 'room',
+    title: 'Lounge Area',
+    description: 'Step-free access to lounge. Accessible seating with clear pathways. Bar counter lowered section at 34".',
+    measurements: 'Bar height: 34" | Pathways: 36"+',
+    image: '/accessibility/sweetwaters-lounge.jpg'
+  },
+  {
+    id: 'sweetwaters-common-3',
+    category: 'room',
+    title: 'Game Viewing Platform',
+    description: 'Accessible game viewing platform with ramp access. Waterhole viewing area with accessible pathway.',
+    measurements: 'Ramp gradient: 1:12 | Pathway width: 36"+',
+    image: '/accessibility/sweetwaters-viewing-platform.jpg'
+  },
+  {
+    id: 'sweetwaters-parking-1',
+    category: 'parking',
+    title: 'Parking',
+    description: 'Designated accessible parking spaces near reception. Space width: 12" with 5" access aisle. Level surface.',
+    measurements: 'Space width: 12" | Access aisle: 5"',
+    image: '/accessibility/sweetwaters-parking.jpg'
+  },
+  {
+    id: 'sweetwaters-restaurant-1',
+    category: 'restaurant',
+    title: 'Buffet Access',
+    description: 'Lowered buffet section at 34" height. Staff assistance available. Wide pathways between stations.',
+    measurements: 'Buffet height: 34" | Pathways: 36"+',
+    image: '/accessibility/sweetwaters-buffet.jpg'
+  }
+];
+
+export const sweetwatersTentedCamp: Hotel = {
+  id: "nanyuki-012",
+  name: "Sweetwaters Tented Camp",
+  location: "Nanyuki",
+  description: "Luxury tented camp located within the Ol Pejeta Conservancy, offering exceptional wildlife viewing with a private waterhole and stunning views of Mount Kenya. Experience the magic of staying in the heart of the wilderness with all the comforts of a premium safari lodge.",
+  image: "/sweetwaters-tented-camp-main.jpg",
+  rating: 4.7,
+  price: 380,
+  amenities: [
+    "WiFi",
+    "Restaurant",
+    "Bar",
+    "Swimming Pool",
+    "Parking",
+    "Room Service",
+    "24hr Security",
+    "Waterhole Viewing Deck",
+    "Gift Shop",
+    "Laundry Service",
+    "Spa",
+    "Game Drives",
+    "Night Game Drives",
+    "Chimpanzee Sanctuary Visits",
+    "Accessible Facilities"
+  ],
+  accessible: true,
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessibilityFeatures: sweetwatersAccessibility,
+  accessibilityImages: {
+    bathroom: [
+      '/accessibility/sweetwaters-bathroom-1.jpg',
+      '/accessibility/sweetwaters-bathroom-2.jpg',
+      '/accessibility/sweetwaters-bathroom-3.jpg',
+      '/accessibility/sweetwaters-bathroom-4.jpg',
+      '/accessibility/sweetwaters-bathroom-5.jpg',
+      '/accessibility/sweetwaters-bathroom-6.jpg',
+      '/accessibility/sweetwaters-bathroom-7.jpg',
+      '/accessibility/sweetwaters-bathroom-8.jpg'
+    ],
+    room: [
+      '/accessibility/sweetwaters-room-1.jpg',
+      '/accessibility/sweetwaters-room-2.jpg',
+      '/accessibility/sweetwaters-room-3.jpg',
+      '/accessibility/sweetwaters-room-4.jpg'
+    ],
+    entrance: [
+      '/accessibility/sweetwaters-entrance-1.jpg',
+      '/accessibility/sweetwaters-entrance-2.jpg',
+      '/accessibility/sweetwaters-tent-entrance.jpg'
+    ],
+    restaurant: [
+      '/accessibility/sweetwaters-restaurant-1.jpg',
+      '/accessibility/sweetwaters-restaurant-2.jpg',
+      '/accessibility/sweetwaters-buffet.jpg'
+    ],
+  },
+  rooms: [
+    {
+      id: "sweetwaters-standard-1",
+      type: "Standard Room",
+      description: "Comfortable tent with basic amenities, perfect for solo travelers or couples. Features private veranda with wildlife viewing.",
+      price: 304,
+      maxOccupancy: 2,
+      available: 5,
+      amenities: ["WiFi", "Private Veranda", "Ensuite Bathroom", "Mosquito Net", "Seating Area", "Safe", "Tea/Coffee Station"],
+      images: [
+        '/rooms/sweetwaters-standard-1.jpg',
+        '/rooms/sweetwaters-standard-2.jpg',
+        '/rooms/sweetwaters-standard-3.jpg'
+      ],
+      accessible: false
+    },
+    {
+      id: "sweetwaters-accessible-1",
+      type: "Accessible Room",
+      description: "Spacious accessible tent designed for guests with mobility needs. Features wider doorways, roll-in shower, and grab bars. Private veranda overlooking the waterhole.",
+      price: 323,
+      maxOccupancy: 2,
+      available: 2,
+      amenities: ["WiFi", "Private Veranda", "Ensuite Bathroom", "Mosquito Net", "Seating Area", "Safe", "Tea/Coffee Station", "Accessible Features"],
+      images: [
+        '/rooms/sweetwaters-accessible-1.jpg',
+        '/rooms/sweetwaters-accessible-2.jpg',
+        '/rooms/sweetwaters-accessible-3.jpg'
+      ],
+      accessible: true,
+      accessibilityFeatures: [
+        "Roll-in shower with grab bars",
+        "Wider doorways (36 inches)",
+        "Space under bed for lift access",
+        "Shower seat (fold-down)",
+        "Shower grab bars (horizontal and vertical)",
+        "Lowered sink with knee clearance",
+        "Toilet grab bars on both sides",
+        "Emergency pull cord",
+        "Step-free access throughout",
+        "60\" turning radius in bathroom",
+        "Visual alarm system",
+        "Accessible safari vehicle available"
+      ]
+    }
+  ]
+};
   
   // ============================================================================
   // SAROVA LION HILL GAME LODGE

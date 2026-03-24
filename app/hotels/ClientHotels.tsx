@@ -36,8 +36,6 @@ import {
   XCircle,
 } from "lucide-react";
 
-
-
 interface Room {
   id: string;
   type: string;
@@ -70,6 +68,390 @@ interface Hotel {
 interface ClientHotelsProps {
   hotels: Hotel[];
 }
+
+// ============================================================================
+// SWEETWATERS TENTED CAMP - ACCESSIBILITY FEATURES
+// ============================================================================
+const sweetwatersAccessibilityFeatures: AccessibilityFeature[] = [
+  // ENTRANCE FEATURES
+  {
+    id: 'sweetwaters-entrance-1',
+    category: 'entrance',
+    title: 'Main Entrance & Reception',
+    description: 'Step-free access via wooden ramp. Reception desk with lowered section at 32" height for wheelchair users.',
+    measurements: 'Ramp gradient: 1:12 | Desk height: 32"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Ramp access', value: 'Wooden ramp at main entrance', status: 'available' },
+        { label: 'Reception desk', value: 'Lowered section at 32" height', status: 'available' },
+        { label: 'Check-in area', value: 'Wide enough for wheelchair turning', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-entrance-2',
+    category: 'entrance',
+    title: 'Tent Entrance',
+    description: 'Each accessible tent has a dedicated wooden ramp leading to the entrance. Door width: 36" with lever handle.',
+    measurements: 'Door width: 36" | Ramp gradient: 1:12',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Ramp access', value: 'Wooden ramp to tent entrance', status: 'available' },
+        { label: 'Door width', value: '36" (91cm) - ADA compliant', status: 'available' },
+        { label: 'Door handle', value: 'Lever handle at 36" height', status: 'available' },
+        { label: 'Threshold', value: 'No threshold - flush entry', status: 'available' }
+      ]
+    }
+  },
+
+  // ROOM FEATURES
+  {
+    id: 'sweetwaters-room-1',
+    category: 'room',
+    title: 'Tent Interior Space',
+    description: 'Spacious tent interior with 60" turning radius. Smooth wooden flooring throughout. Clear pathways to all areas.',
+    measurements: 'Turning radius: 60"+ | Pathway width: 36"+',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Turning space', value: '60" (152cm) or more', status: 'available' },
+        { label: 'Floor surface', value: 'Smooth wooden flooring', status: 'available' },
+        { label: 'Pathway clearance', value: '36"+ throughout', status: 'available' },
+        { label: 'Step-free area', value: 'No steps or thresholds', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-room-2',
+    category: 'room',
+    title: 'Doorway',
+    description: 'Tent door width: 36". Zero threshold. Lever handle at 36" height.',
+    measurements: 'Door width: 36"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Door width', value: '36" (91cm)', status: 'available' },
+        { label: 'Door handle', value: 'Lever handle', status: 'available' },
+        { label: 'Threshold', value: 'Zero threshold - flush entry', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-room-3',
+    category: 'room',
+    title: 'Bed',
+    description: 'Bed height: 24". Space under bed: 7" for lift access. Clearance on both sides: 36".',
+    measurements: 'Bed height: 24" | Side clearance: 36" each side | Under-bed clearance: 7"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Bed height', value: '24" (61cm) - Transfer-friendly', status: 'available' },
+        { label: 'Space under bed', value: '7" (18cm) for lift access', status: 'available' },
+        { label: 'Left side clearance', value: '36" (91cm)', status: 'available' },
+        { label: 'Right side clearance', value: '36" (91cm)', status: 'available' },
+        { label: 'Mattress firmness', value: 'Medium - supportive', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-room-4',
+    category: 'room',
+    title: 'Lighting & Controls',
+    description: 'Light switches and outlet height: 36". Bedside controls within easy reach. Visual alarm system for hearing impaired.',
+    measurements: 'Switch height: 36" | Outlet height: 36"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Light switches', value: '36" height - accessible', status: 'available' },
+        { label: 'Electrical outlets', value: '36" height', status: 'available' },
+        { label: 'Bedside controls', value: 'Within 24" reach from bed', status: 'available' },
+        { label: 'Visual alarms', value: 'Available for hearing impaired', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-room-5',
+    category: 'room',
+    title: 'Furniture & Storage',
+    description: 'Desk height: 30" with knee clearance 28"H x 30"W. Wardrobe with lowered hanging rod at 48". Drawers at accessible height.',
+    measurements: 'Desk height: 30" | Knee clearance: 28"H x 30"W | Wardrobe rod: 48"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Desk height', value: '30" (76cm)', status: 'available' },
+        { label: 'Knee clearance under desk', value: '28" H x 30" W', status: 'available' },
+        { label: 'Wardrobe hanging rod', value: '48" (122cm) - accessible', status: 'available' },
+        { label: 'Drawers height', value: '24"-36" range', status: 'available' },
+        { label: 'Chair', value: 'With backrest and armrests', status: 'available' }
+      ]
+    }
+  },
+
+  // BATHROOM FEATURES
+  {
+    id: 'sweetwaters-bathroom-1',
+    category: 'bathroom',
+    title: 'Bathroom Entrance',
+    description: 'Door width: 36" with lever handle. Opens outward for easy access. Threshold: 0.5" beveled edge.',
+    measurements: 'Door width: 36" | Threshold: 0.5" beveled',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Door width', value: '36" (91cm)', status: 'available' },
+        { label: 'Door operation', value: 'Opens outward - lever handle', status: 'available' },
+        { label: 'Threshold', value: '0.5" beveled edge', status: 'available' },
+        { label: 'Clearance', value: 'Clear turning space inside', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-bathroom-2',
+    category: 'bathroom',
+    title: 'Roll-in Shower',
+    description: 'Wet room style roll-in shower with zero threshold. Shower area: 48" x 60" with non-slip flooring. Handheld shower head on vertical bar (adjustable 36"-72").',
+    measurements: 'Shower area: 48" x 60" | Handheld bar: 36"-72" adjustable',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Shower type', value: 'Wet room roll-in with zero threshold', status: 'available' },
+        { label: 'Shower dimensions', value: '48" x 60" (122cm x 152cm)', status: 'available' },
+        { label: 'Flooring', value: 'Non-slip textured surface', status: 'available' },
+        { label: 'Handheld showerhead', value: 'Adjustable 36"-72" height', status: 'available' },
+        { label: 'Shower controls', value: 'Lever type at 36" height', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-bathroom-3',
+    category: 'bathroom',
+    title: 'Shower Grab Bars',
+    description: 'Grab bars in shower: 36" horizontal bar on back wall, 24" vertical bar on side wall, 36" angled bar for seated transfers.',
+    measurements: 'Horizontal bar: 36" | Vertical bar: 24" | Angled bar: 36"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Horizontal grab bar', value: '36" on back wall at 34" height', status: 'available' },
+        { label: 'Vertical grab bar', value: '24" on side wall', status: 'available' },
+        { label: 'Angled grab bar', value: '36" for seated transfers', status: 'available' },
+        { label: 'Bar material', value: 'Stainless steel - slip-resistant', status: 'available' },
+        { label: 'Weight capacity', value: '300 lbs', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-bathroom-4',
+    category: 'bathroom',
+    title: 'Shower Seat',
+    description: 'Fixed fold-down shower seat at 18" height. Weight capacity: 300 lbs. Located at optimal position for showering.',
+    measurements: 'Seat height: 18" | Seat dimensions: 18" x 16"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Seat type', value: 'Fold-down wall-mounted', status: 'available' },
+        { label: 'Seat height', value: '18" (46cm)', status: 'available' },
+        { label: 'Seat dimensions', value: '18" x 16" (46cm x 41cm)', status: 'available' },
+        { label: 'Weight capacity', value: '300 lbs', status: 'available' },
+        { label: 'Material', value: 'Waterproof, easy-clean surface', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-bathroom-5',
+    category: 'bathroom',
+    title: 'Sink & Vanity',
+    description: 'Sink height: 34". Space under sink: 10" deep x 30" wide x 27" high. Lever handles. Mirror at 40" height (tilted for seated viewing).',
+    measurements: 'Sink height: 34" | Under-sink clearance: 27"H x 30"W x 10"D | Mirror: 40"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Sink height', value: '34" (86cm)', status: 'available' },
+        { label: 'Knee clearance', value: '27" H x 30" W x 10" D', status: 'available' },
+        { label: 'Sink handle type', value: 'Lever handles', status: 'available' },
+        { label: 'Mirror height', value: '40" - tilted for seated viewing', status: 'available' },
+        { label: 'Vanity style', value: 'Wall-mounted for wheelchair access', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-bathroom-6',
+    category: 'bathroom',
+    title: 'Toilet',
+    description: 'Toilet height: 18" with grab bars on both sides (36" horizontal on left, fold-down on right). Emergency pull cord within reach.',
+    measurements: 'Toilet height: 18" | Grab bars: 36" horizontal left, fold-down right',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Toilet height', value: '18" (46cm) - Standard accessible height', status: 'available' },
+        { label: 'Left grab bar', value: '36" horizontal bar', status: 'available' },
+        { label: 'Right grab bar', value: 'Fold-down grab bar', status: 'available' },
+        { label: 'Clearance in front', value: '48" for wheelchair approach', status: 'available' },
+        { label: 'Emergency pull cord', value: 'Reachable from toilet', status: 'available' },
+        { label: 'Toilet paper holder', value: 'Within easy reach', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-bathroom-7',
+    category: 'bathroom',
+    title: 'Bathroom Space & Turning',
+    description: 'Bathroom is step-free with 60" turning radius. All fixtures positioned for wheelchair access.',
+    measurements: 'Turning radius: 60"+ | Clear floor space: 60" x 60"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Turning radius', value: '60" (152cm) or more', status: 'available' },
+        { label: 'Clear floor space', value: '60" x 60" (152cm x 152cm)', status: 'available' },
+        { label: 'Step-free access', value: 'No steps or thresholds', status: 'available' },
+        { label: 'All fixtures accessible', value: 'Positioned for wheelchair users', status: 'available' }
+      ]
+    }
+  },
+
+  // COMMON AREAS FEATURES
+  {
+    id: 'sweetwaters-common-1',
+    category: 'common-areas',
+    title: 'Dining Area',
+    description: 'Step-free access to restaurant. Tables with knee clearance (27"H x 30"W). Buffet area lowered to 34" height. Accessible pathways between tables (36"+).',
+    measurements: 'Table clearance: 27"H x 30"W | Pathways: 36"+',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Restaurant access', value: 'Step-free with ramp', status: 'available' },
+        { label: 'Accessible tables', value: 'Available with knee clearance', status: 'available' },
+        { label: 'Buffet height', value: 'Lowered section at 34"', status: 'available' },
+        { label: 'Pathway width', value: '36"+ between tables', status: 'available' },
+        { label: 'Staff assistance', value: 'Available for buffet service', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-common-2',
+    category: 'common-areas',
+    title: 'Lounge & Bar Area',
+    description: 'Step-free access to lounge. Accessible seating area with clear pathways. Bar counter has lowered section at 34".',
+    measurements: 'Bar lowered section: 34" | Pathways: 36"+',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Lounge access', value: 'Step-free with ramp', status: 'available' },
+        { label: 'Accessible seating', value: 'Designated areas with clearance', status: 'available' },
+        { label: 'Bar counter', value: 'Lowered section at 34"', status: 'available' },
+        { label: 'Fire pit area', value: 'Accessible with wide pathways', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-common-3',
+    category: 'common-areas',
+    title: 'Game Viewing Platform',
+    description: 'Accessible game viewing platform with ramp access. Waterhole viewing area with accessible pathway. Safari vehicles adapted for wheelchair users (upon request).',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Game viewing platform', value: 'Ramp access with railings', status: 'available' },
+        { label: 'Safari vehicles', value: 'Wheelchair-adapted available', status: 'available' },
+        { label: 'Waterhole viewing', value: 'Accessible pathway and seating', status: 'available' },
+        { label: 'Guided assistance', value: 'Trained staff available', status: 'available' }
+      ]
+    }
+  },
+  {
+    id: 'sweetwaters-common-4',
+    category: 'common-areas',
+    title: 'Swimming Pool',
+    description: 'Pool access via ramp with handrails. Pool lift available upon request. Accessible changing area with roll-in shower.',
+    measurements: 'Ramp gradient: 1:12 | Pool lift capacity: 300 lbs',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Pool access', value: 'Ramp with handrails', status: 'available' },
+        { label: 'Pool lift', value: 'Available upon request', status: 'available' },
+        { label: 'Changing area', value: 'Accessible with roll-in shower', status: 'available' },
+        { label: 'Pool deck', value: 'Smooth, non-slip surface', status: 'available' },
+        { label: 'Pool depth markings', value: 'Clear signage', status: 'available' }
+      ]
+    }
+  },
+
+  // PARKING FEATURES
+  {
+    id: 'sweetwaters-parking-1',
+    category: 'parking',
+    title: 'Parking',
+    description: 'Designated accessible parking spaces near reception. Space width: 12" with 5" access aisle. Level surface.',
+    measurements: 'Space width: 12" | Access aisle: 5"',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Accessible spaces', value: '2 designated spaces', status: 'available' },
+        { label: 'Space dimensions', value: '12" width x 18" length', status: 'available' },
+        { label: 'Access aisle', value: '5" (152cm) adjacent', status: 'available' },
+        { label: 'Surface', value: 'Level, smooth surface', status: 'available' },
+        { label: 'Proximity', value: 'Near reception entrance', status: 'available' }
+      ]
+    }
+  },
+
+  // RESTAURANT FEATURES
+  {
+    id: 'sweetwaters-restaurant-1',
+    category: 'restaurant',
+    title: 'Dining Experience',
+    description: 'Dining area fully accessible. Staff trained to assist with seating and buffet service. Special dietary requests accommodated.',
+    status: 'available',
+    details: {
+      items: [
+        { label: 'Seating availability', value: 'Accessible tables reserved', status: 'available' },
+        { label: 'Staff training', value: 'Accessibility awareness trained', status: 'available' },
+        { label: 'Menu formats', value: 'Large print available', status: 'available' },
+        { label: 'Dietary accommodations', value: 'Allergies and preferences accommodated', status: 'available' },
+        { label: 'Assistance', value: 'Available upon request', status: 'available' }
+      ]
+    }
+  }
+];
+
+// Accessibility images for Sweetwaters Tented Camp
+const sweetwatersAccessibilityImages: AccessibilityImages = {
+  bathroom: [
+    '/accessibility/sweetwaters-bathroom-1.jpg',
+    '/accessibility/sweetwaters-bathroom-2.jpg',
+    '/accessibility/sweetwaters-bathroom-3.jpg',
+    '/accessibility/sweetwaters-bathroom-4.jpg',
+    '/accessibility/sweetwaters-bathroom-5.jpg',
+    '/accessibility/sweetwaters-bathroom-6.jpg',
+    '/accessibility/sweetwaters-bathroom-7.jpg',
+    '/accessibility/sweetwaters-bathroom-8.jpg'
+  ],
+  room: [
+    '/accessibility/sweetwaters-room-1.jpg',
+    '/accessibility/sweetwaters-room-2.jpg',
+    '/accessibility/sweetwaters-room-3.jpg',
+    '/accessibility/sweetwaters-room-4.jpg'
+  ],
+  entrance: [
+    '/accessibility/sweetwaters-entrance-1.jpg',
+    '/accessibility/sweetwaters-entrance-2.jpg',
+    '/accessibility/sweetwaters-tent-entrance.jpg'
+  ],
+  restaurant: [
+    '/accessibility/sweetwaters-restaurant-1.jpg',
+    '/accessibility/sweetwaters-restaurant-2.jpg',
+    '/accessibility/sweetwaters-buffet.jpg'
+  ],
+  'common-areas': [
+    '/accessibility/sweetwaters-dining.jpg',
+    '/accessibility/sweetwaters-lounge.jpg',
+    '/accessibility/sweetwaters-pool.jpg',
+    '/accessibility/sweetwaters-viewing-platform.jpg'
+  ],
+  parking: [
+    '/accessibility/sweetwaters-parking.jpg'
+  ]
+};
 
 // Complete accessibility features for Sarova Panafric Hotel
 const sarovaPanafricFeatures: AccessibilityFeature[] = [
@@ -918,12 +1300,22 @@ function BedDoubleIcon(props: any) {
 export default function ClientHotels({ hotels }: ClientHotelsProps) {
   // Enhance the hotels with accessibility features for demonstration
   const enhancedHotels = hotels.map(hotel => {
+    // Sarova Panafric Hotel (nairobi-015)
     if (hotel.id === "nairobi-015" || hotel.name === "Sarova Panafric Hotel") {
       return {
         ...hotel,
         accessibilityFeatures: sarovaPanafricFeatures,
         accessibilityImages: sarovaPanafricImages,
         accessibleRoomCount: 3,
+      };
+    }
+    // Sweetwaters Tented Camp (nanyuki-012)
+    if (hotel.id === "nanyuki-012" || hotel.name === "Sweetwaters Tented Camp") {
+      return {
+        ...hotel,
+        accessibilityFeatures: sweetwatersAccessibilityFeatures,
+        accessibilityImages: sweetwatersAccessibilityImages,
+        accessibleRoomCount: 2,
       };
     }
     return hotel;
