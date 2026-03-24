@@ -3090,6 +3090,68 @@ export const hotels: Hotel[] = [
     slug: "keekorok-lodge",
     updatedAt: new Date(),
   },
+
+  // ========== NAIVASHA HOTELS ==========
+// MUTHU LAKE NAIVASHA COUNTRY CLUB (LUXURY - ACCESSIBLE)
+{
+  id: "naivasha-008",
+  name: "Muthu Lake Naivasha Country Club",
+  location: "Naivasha",
+  rating: 4.5,
+  price: 280,
+  image: "/muthu-lake-naivasha.jpg?height=300&width=400",
+  gallery: [
+    "/muthu-country-club-1.jpg",
+    "/muthu-country-club-2.jpg",
+    "/muthu-country-club-3.jpg",
+    "/muthu-country-club-4.jpg",
+    "/muthu-country-club-5.jpg",
+    "/muthu-country-club-6.jpg",
+  ],
+  description: "Set on the shores of Lake Naivasha, this elegant country club offers a perfect blend of colonial charm and modern comfort. Surrounded by lush gardens and offering stunning lake views, Muthu Lake Naivasha Country Club features spacious rooms, a swimming pool, tennis courts, and easy access to boat rides on Lake Naivasha. The property is fully wheelchair accessible with roll-in showers, grab bars, and accessible pathways throughout the gardens and common areas.",
+  amenities: [
+    "WiFi",
+    "Swimming Pool",
+    "Restaurant",
+    "Bar & Lounge",
+    "Tennis Courts",
+    "Boat Rides on Lake Naivasha",
+    "Bird Watching",
+    "Garden Views",
+    "Conference Facilities",
+    "Parking",
+    "Room Service",
+    "24-hour Security",
+    "Accessible Facilities",
+    "Roll-in Showers",
+    "Grab Bars",
+  ],
+  address: "Moi South Lake Road, Lake Naivasha, Kenya",
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessible: true,
+  accessibleRoomCount: 3,
+  videoUrl: "https://www.youtube.com/watch?v=nQGygChTgZk",
+  rooms: createRooms(
+    "muthu-naivasha",
+    280,
+    {
+      standard: [
+        "/muthu-standard-1.jpg",
+        "/muthu-standard-2.jpg",
+        "/muthu-standard-3.jpg",
+      ],
+      accessibleStandard: [
+        "/muthu-accessible-1.jpg",
+        "/muthu-accessible-2.jpg",
+        "/muthu-accessible-bathroom.jpg",
+      ],
+    },
+    true
+  ),
+  slug: "muthu-lake-naivasha-country-club",
+  updatedAt: new Date(),
+},
 ].map(addAccessibilityData);
 
 export const faqs = [

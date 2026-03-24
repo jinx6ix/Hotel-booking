@@ -1423,6 +1423,278 @@ export const sweetwatersTentedCamp: Hotel = {
 };
 
 // ============================================================================
+// MUTHU LAKE NAIVASHA COUNTRY CLUB - LAKE NAIVASHA
+// ============================================================================
+const muthuNaivashaAccessibility: AccessibilityFeature[] = [
+  {
+    id: 'muthu-naivasha-entrance-1',
+    category: 'entrance',
+    title: 'Main Entrance',
+    description: 'Step-free access via paved pathway. Reception desk with lowered section at 32" height. Automatic sliding doors.',
+    measurements: 'Pathway width: 48" | Desk height: 32" | Door width: 36"',
+    image: '/accessibility/muthu-entrance.jpg'
+  },
+  {
+    id: 'muthu-naivasha-entrance-2',
+    category: 'entrance',
+    title: 'Room Entrance',
+    description: 'Wide doorway to accessible rooms. Door width: 34". Lever handle. Zero threshold entry.',
+    measurements: 'Door width: 34" | Threshold: 0"',
+    image: '/accessibility/muthu-room-entrance.jpg'
+  },
+  {
+    id: 'muthu-naivasha-room-1',
+    category: 'room',
+    title: 'Doorway',
+    description: 'Room door width: 34". Zero threshold. Lever handle at 36" height.',
+    measurements: 'Door width: 34"',
+    image: '/accessibility/muthu-door.jpg'
+  },
+  {
+    id: 'muthu-naivasha-room-2',
+    category: 'room',
+    title: 'Space Under Bed',
+    description: 'Bed height: 24". Clearance under bed: 8" for lift access. Clearance on both sides: 36".',
+    measurements: 'Bed height: 24" | Clearance: 8" | Side clearance: 36"',
+    image: '/accessibility/muthu-bed.jpg'
+  },
+  {
+    id: 'muthu-naivasha-room-3',
+    category: 'room',
+    title: 'Turning Space',
+    description: 'Free turning space of 60" in room interior. Smooth tile flooring throughout.',
+    measurements: 'Turning radius: 60"+',
+    image: '/accessibility/muthu-interior.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-1',
+    category: 'bathroom',
+    title: 'Bathroom Entrance',
+    description: 'Door width: 34". Opens outward. Threshold: 0" level entry.',
+    measurements: 'Door width: 34"',
+    image: '/accessibility/muthu-bathroom-door.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-2',
+    category: 'bathroom',
+    title: 'Roll-in Shower',
+    description: 'Spacious roll-in shower with zero threshold. Shower area: 60" x 42". Handheld shower head adjustable 36"-72".',
+    measurements: 'Shower area: 60" x 42" | Handheld bar: 36"-72"',
+    image: '/accessibility/muthu-shower.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-3',
+    category: 'bathroom',
+    title: 'Shower Seat',
+    description: 'Built-in shower bench at 18" height with back support. Weight capacity: 400 lbs.',
+    measurements: 'Bench height: 18" | Bench dimensions: 24" x 16"',
+    image: '/accessibility/muthu-shower-seat.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-4',
+    category: 'bathroom',
+    title: 'Shower Grab Bars',
+    description: 'Grab bars within shower available. Horizontal bar: 36" on back wall. Vertical bar: 24" on side wall.',
+    measurements: 'Horizontal: 36" | Vertical: 24"',
+    image: '/accessibility/muthu-grab-bars.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-5',
+    category: 'bathroom',
+    title: 'Sink',
+    description: 'The sink height is 32 in. The space under the sink is 12 in long, 30 in wide, 27 in high. The sink handle is lever. Mirror at 38" (tilted).',
+    measurements: 'Sink height: 32" | Under-sink: 12"L x 30"W x 27"H | Mirror: 38"',
+    image: '/accessibility/muthu-sink.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-6',
+    category: 'bathroom',
+    title: 'Toilet',
+    description: 'Toilet height: 18" with grab bars on both sides. Emergency pull cord within reach.',
+    measurements: 'Toilet height: 18"',
+    image: '/accessibility/muthu-toilet.jpg'
+  },
+  {
+    id: 'muthu-naivasha-bathroom-7',
+    category: 'bathroom',
+    title: 'Bathroom Space',
+    description: 'Step-free bathroom with 60" turning radius. All fixtures positioned for wheelchair access.',
+    measurements: 'Turning radius: 60"+ | Clear floor space: 60" x 60"',
+    image: '/accessibility/muthu-bathroom-space.jpg'
+  },
+  {
+    id: 'muthu-naivasha-restaurant-1',
+    category: 'restaurant',
+    title: 'Dining Area',
+    description: 'Step-free access to restaurant. Tables with knee clearance: 27" H x 30" W. Pathways: 36"+.',
+    measurements: 'Table clearance: 27"H x 30"W | Pathways: 36"+',
+    image: '/accessibility/muthu-dining.jpg'
+  },
+  {
+    id: 'muthu-naivasha-restaurant-2',
+    category: 'restaurant',
+    title: 'Buffet Area',
+    description: 'Lowered buffet section at 34" height. Staff assistance available. Wide pathways between stations.',
+    measurements: 'Buffet height: 34" | Pathways: 36"+',
+    image: '/accessibility/muthu-buffet.jpg'
+  },
+  {
+    id: 'muthu-naivasha-common-1',
+    category: 'room',
+    title: 'Swimming Pool',
+    description: 'Accessible pool entry with ramp. Pool lift available upon request. Pool deck with non-slip surface.',
+    measurements: 'Pool ramp gradient: 1:12 | Pool lift capacity: 400 lbs',
+    image: '/accessibility/muthu-pool.jpg'
+  },
+  {
+    id: 'muthu-naivasha-common-2',
+    category: 'room',
+    title: 'Garden & Lake Access',
+    description: 'Accessible pathways through gardens to lake viewing area. Smooth, firm surface with gentle slopes.',
+    measurements: 'Pathway width: 48" | Max slope: 1:12',
+    image: '/accessibility/muthu-garden-path.jpg'
+  },
+  {
+    id: 'muthu-naivasha-common-3',
+    category: 'restaurant',
+    title: 'Lake Viewing Platform',
+    description: 'Accessible viewing platform overlooking Lake Naivasha. Ramp access with handrails.',
+    measurements: 'Platform width: 96" | Rail height: 36"',
+    image: '/accessibility/muthu-lake-view.jpg'
+  },
+  {
+    id: 'muthu-naivasha-parking-1',
+    category: 'parking',
+    title: 'Parking',
+    description: 'Designated accessible parking spaces near reception. Space width: 12" with 5" access aisle. Level surface.',
+    measurements: 'Space width: 12" | Access aisle: 5"',
+    image: '/accessibility/muthu-parking.jpg'
+  }
+];
+
+export const muthuLakeNaivashaCountryClub: Hotel = {
+  id: "naivasha-008",
+  name: "Muthu Lake Naivasha Country Club",
+  location: "Naivasha",
+  description: "Set on the shores of Lake Naivasha, this elegant country club offers a perfect blend of colonial charm and modern comfort. Surrounded by lush gardens and offering stunning lake views, the property features spacious rooms, a swimming pool, tennis courts, and easy access to boat rides on Lake Naivasha. Fully accessible with roll-in showers, grab bars, and accessible pathways throughout the gardens and common areas.",
+  image: "/muthu-lake-naivasha.jpg",
+  rating: 4.5,
+  price: 280,
+  amenities: [
+    "WiFi",
+    "Swimming Pool",
+    "Restaurant",
+    "Bar & Lounge",
+    "Tennis Courts",
+    "Boat Rides on Lake Naivasha",
+    "Bird Watching",
+    "Garden Views",
+    "Conference Facilities",
+    "Parking",
+    "Room Service",
+    "24-hour Security",
+    "Accessible Facilities",
+    "Roll-in Showers",
+    "Grab Bars",
+    "Pool Ramp"
+  ],
+  accessible: true,
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessibilityFeatures: muthuNaivashaAccessibility,
+  accessibilityImages: {
+    bathroom: [
+      '/accessibility/muthu-bathroom-1.jpg',
+      '/accessibility/muthu-bathroom-2.jpg',
+      '/accessibility/muthu-bathroom-3.jpg',
+      '/accessibility/muthu-bathroom-4.jpg',
+      '/accessibility/muthu-bathroom-5.jpg',
+      '/accessibility/muthu-bathroom-6.jpg',
+      '/accessibility/muthu-bathroom-7.jpg',
+      '/accessibility/muthu-bathroom-8.jpg'
+    ],
+    room: [
+      '/accessibility/muthu-room-1.jpg',
+      '/accessibility/muthu-room-2.jpg',
+      '/accessibility/muthu-room-3.jpg',
+      '/accessibility/muthu-room-4.jpg'
+    ],
+    entrance: [
+      '/accessibility/muthu-entrance-1.jpg',
+      '/accessibility/muthu-entrance-2.jpg',
+      '/accessibility/muthu-room-entrance.jpg'
+    ],
+    restaurant: [
+      '/accessibility/muthu-restaurant-1.jpg',
+      '/accessibility/muthu-restaurant-2.jpg',
+      '/accessibility/muthu-buffet.jpg'
+    ],
+  },
+  rooms: [
+    {
+      id: "muthu-naivasha-standard-1",
+      type: "Standard Room",
+      description: "Comfortable room with basic amenities, perfect for solo travelers or couples. Features garden or lake views.",
+      price: 224,
+      maxOccupancy: 2,
+      available: 8,
+      amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Garden View", "Tea/Coffee Station"],
+      images: [
+        '/rooms/muthu-standard-1.jpg',
+        '/rooms/muthu-standard-2.jpg',
+        '/rooms/muthu-standard-3.jpg'
+      ],
+      accessible: false
+    },
+    {
+      id: "muthu-naivasha-deluxe-1",
+      type: "Deluxe Room",
+      description: "Spacious room with enhanced amenities and beautiful lake views.",
+      price: 280,
+      maxOccupancy: 3,
+      available: 5,
+      amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Mini Bar", "Work Desk", "Lake View", "Balcony"],
+      images: [
+        '/rooms/muthu-deluxe-1.jpg',
+        '/rooms/muthu-deluxe-2.jpg',
+        '/rooms/muthu-deluxe-3.jpg'
+      ],
+      accessible: false
+    },
+    {
+      id: "muthu-naivasha-accessible-1",
+      type: "Accessible Room",
+      description: "Spacious accessible room designed for guests with mobility needs. Features wider doorways, roll-in shower, and grab bars. Garden view with accessible patio.",
+      price: 238,
+      maxOccupancy: 2,
+      available: 3,
+      amenities: ["WiFi", "TV", "Air Conditioning", "Ensuite Bathroom", "Accessible Features", "Garden View", "Patio", "Tea/Coffee Station"],
+      images: [
+        '/rooms/muthu-accessible-1.jpg',
+        '/rooms/muthu-accessible-2.jpg',
+        '/rooms/muthu-accessible-3.jpg'
+      ],
+      accessible: true,
+      accessibilityFeatures: [
+        "Roll-in shower with grab bars",
+        "Wider doorways (34 inches)",
+        "Space under bed for lift access (8 inches)",
+        "Shower bench (built-in with back support)",
+        "Shower grab bars (horizontal and vertical)",
+        "Lowered sink with knee clearance",
+        "Toilet grab bars on both sides",
+        "Emergency pull cord",
+        "Step-free access throughout",
+        "60\" turning radius in bathroom",
+        "Visual alarm system",
+        "Accessible garden pathways",
+        "Pool ramp available"
+      ]
+    }
+  ]
+};
+
+// ============================================================================
 // SAROVA LION HILL GAME LODGE
 // ============================================================================
 const sarovaLionHillAccessibility: AccessibilityFeature[] = [

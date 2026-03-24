@@ -642,6 +642,255 @@ export interface FeatureDetail {
       }
     }
   ];
+
+  // ============================================
+// ============================================
+// MUTHU LAKE NAIVASHA COUNTRY CLUB (naivasha-008)
+// ============================================
+export const muthuLakeNaivashaFeatures: AccessibilityFeature[] = [
+  {
+    id: "muthu-naivasha-bathroom-1",
+    category: "bathroom",
+    title: "Roll-in Shower",
+    description: "Spacious roll-in shower with zero threshold and grab bars",
+    measurements: "Shower area: 60\" x 42\" (152cm x 107cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Roll-in shower", value: "Zero threshold entry", status: "available" },
+        { label: "Grab bars", value: "Horizontal and vertical stainless steel grab bars", status: "available" },
+        { label: "Shower seat", value: "Built-in bench with back support", status: "available" },
+        { label: "Handheld showerhead", value: "Adjustable height on slide bar", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-bathroom-2",
+    category: "bathroom",
+    title: "Toilet",
+    description: "Accessible toilet with grab bars on both sides",
+    measurements: "Toilet height: 18\" (46cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Toilet height", value: "18 in (46cm) - comfort height", status: "available" },
+        { label: "Grab bars", value: "Side and rear grab bars", status: "available" },
+        { label: "Transfer space", value: "36 in (91cm) clearance", status: "available" },
+        { label: "Emergency pull cord", value: "Within reach", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-bathroom-3",
+    category: "bathroom",
+    title: "Sink",
+    description: "Accessible sink with knee clearance and lever handles",
+    measurements: "Sink height: 32\" (81cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Sink height", value: "32 in (81cm)", status: "available" },
+        { label: "Knee clearance", value: "27 in (69cm) high", status: "available" },
+        { label: "Faucet", value: "Lever handles", status: "available" },
+        { label: "Mirror", value: "Tilted mirror for seated users", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-bathroom-4",
+    category: "bathroom",
+    title: "Bathroom Interior",
+    description: "Step-free area with ample turning space",
+    measurements: "Turning radius: 60\" (152cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Step-free area", value: "No steps or thresholds", status: "available" },
+        { label: "Turning space", value: "60 in (152cm) turning radius", status: "available" },
+        { label: "Floor surface", value: "Non-slip tile flooring", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-room-1",
+    category: "room",
+    title: "Room Entrance",
+    description: "Wide doorway with lever handle and zero threshold",
+    measurements: "Door width: 34\" (86cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Door width", value: "34 in (86cm)", status: "available" },
+        { label: "Door handle", value: "Lever handle", status: "available" },
+        { label: "Threshold", value: "Zero threshold", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-room-2",
+    category: "room",
+    title: "Bed",
+    description: "Accessible bed height with clearance underneath",
+    measurements: "Bed height: 24\" (61cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Bed height", value: "24 in (61cm)", status: "available" },
+        { label: "Space under bed", value: "8 in (20cm) clearance", status: "available" },
+        { label: "Side clearance", value: "36 in (91cm)", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-room-3",
+    category: "room",
+    title: "Room Amenities",
+    description: "Accessible storage and controls at reachable heights",
+    status: "available",
+    details: {
+      items: [
+        { label: "Closet rod", value: "48 in (122cm) height", status: "available" },
+        { label: "Light switches", value: "36 in (91cm) height", status: "available" },
+        { label: "Outlets", value: "18 in (46cm) height", status: "available" },
+        { label: "Safe location", value: "Lowered shelf at accessible height", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-room-4",
+    category: "room",
+    title: "Room Interior",
+    description: "Step-free area with smooth flooring and ample space",
+    measurements: "Turning radius: 60\" (152cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Step-free area", value: "No steps or thresholds", status: "available" },
+        { label: "Turning space", value: "60 in (152cm) turning radius", status: "available" },
+        { label: "Floor surface", value: "Smooth tile flooring", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-entrance-1",
+    category: "entrance",
+    title: "Main Entrance",
+    description: "Level entry with automatic doors and paved pathway",
+    measurements: "Door width: 36\" (91cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Level entry", value: "Step-free access", status: "available" },
+        { label: "Door type", value: "Automatic sliding doors", status: "available" },
+        { label: "Reception desk", value: "Lowered section at 32 in", status: "available" },
+        { label: "Pathway", value: "48 in (122cm) paved pathway", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-restaurant-1",
+    category: "restaurant",
+    title: "Dining Area",
+    description: "Accessible tables with knee clearance and wide aisles",
+    measurements: "Table height: 30\" (76cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Table height", value: "30 in (76cm)", status: "available" },
+        { label: "Knee clearance", value: "27 in (69cm) high", status: "available" },
+        { label: "Aisle width", value: "36-48 in (91-122cm)", status: "available" },
+        { label: "Floor surface", value: "Smooth flooring", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-restaurant-2",
+    category: "restaurant",
+    title: "Buffet Area",
+    description: "Lowered buffet counters with staff assistance",
+    measurements: "Counter height: 34\" (86cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Buffet height", value: "34 in (86cm)", status: "available" },
+        { label: "Aisle width", value: "48 in (122cm) clearance", status: "available" },
+        { label: "Staff assistance", value: "Available upon request", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-parking-1",
+    category: "parking",
+    title: "Accessible Parking",
+    description: "Designated accessible parking spaces near reception",
+    measurements: "Space width: 12ft (366cm) including aisle",
+    status: "available",
+    details: {
+      items: [
+        { label: "Accessible spaces", value: "3 designated spaces", status: "available" },
+        { label: "Access aisle", value: "60 in (152cm) wide", status: "available" },
+        { label: "Surface", value: "Level, firm, slip-resistant", status: "available" },
+        { label: "Signage", value: "International symbol displayed", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-common-1",
+    category: "common-areas",
+    title: "Swimming Pool",
+    description: "Accessible pool entry with ramp and pool lift available",
+    status: "available",
+    details: {
+      items: [
+        { label: "Pool ramp", value: "Gradual ramp entry", status: "available" },
+        { label: "Pool lift", value: "Available upon request", status: "available" },
+        { label: "Deck access", value: "Level pool deck", status: "available" },
+        { label: "Surface", value: "Non-slip deck surface", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-common-2",
+    category: "common-areas",
+    title: "Garden & Lake Access",
+    description: "Accessible pathways through gardens to lake viewing areas",
+    measurements: "Pathway width: 48\" (122cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Pathway width", value: "48 in (122cm)", status: "available" },
+        { label: "Surface", value: "Smooth, firm, slip-resistant", status: "available" },
+        { label: "Slope", value: "1:12 gradient maximum", status: "available" },
+        { label: "Rest areas", value: "Benches with back support", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "muthu-naivasha-common-3",
+    category: "common-areas",
+    title: "Lake Viewing Platform",
+    description: "Wheelchair-accessible viewing platform with ramp access",
+    measurements: "Platform width: 96\" (244cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Ramp access", value: "Gentle slope ramp", status: "available" },
+        { label: "Rail height", value: "36 in (91cm)", status: "available" },
+        { label: "Seating", value: "Benches with back support", status: "available" },
+        { label: "Turning space", value: "60 in (152cm) turning radius", status: "available" }
+      ]
+    }
+  }
+];
+
+export const muthuLakeNaivashaImages: AccessibilityImages = {
+  bathroom: ["/muthu-bathroom-1.jpg", "/muthu-bathroom-2.jpg", "/muthu-bathroom-3.jpg", "/muthu-bathroom-4.jpg"],
+  room: ["/muthu-room-1.jpg", "/muthu-room-2.jpg", "/muthu-room-3.jpg"],
+  entrance: ["/muthu-entrance-1.jpg", "/muthu-entrance-2.jpg"],
+  restaurant: ["/muthu-restaurant-1.jpg", "/muthu-restaurant-2.jpg"],
+  parking: ["/muthu-parking-1.jpg"],
+  'common-areas': ["/muthu-pool-1.jpg", "/muthu-garden-1.jpg", "/muthu-lake-view-1.jpg"]
+};
   
   export const crownePlazaImages: AccessibilityImages = {
     bathroom: ["/crowne-plaza-bathroom-1.jpg", "/crowne-plaza-bathroom-2.jpg", "/crowne-plaza-bathroom-3.jpg"],
