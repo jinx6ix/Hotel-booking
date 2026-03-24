@@ -3142,7 +3142,7 @@ export const hotels: Hotel[] = [
         "/muthu-standard-3.jpg",
       ],
       accessibleStandard: [
-        "/muthu-accessible-1.jpg",
+        "/muthu-standard-1.jpg",
         "/muthu-accessible-2.jpg",
         "/muthu-accessible-bathroom.jpg",
       ],
