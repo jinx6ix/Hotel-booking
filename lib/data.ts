@@ -692,9 +692,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-001",
       350,
@@ -801,9 +798,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-003",
       320,
@@ -846,9 +840,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-004",
       400,
@@ -891,9 +882,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-005",
       250,
@@ -936,9 +924,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-006",
       230,
@@ -981,9 +966,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-007",
       180,
@@ -1034,9 +1016,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-008",
       290,
@@ -1079,9 +1058,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-009",
       260,
@@ -1124,9 +1100,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-010",
       200,
@@ -1169,9 +1142,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nairobi-011",
       190,
@@ -1214,9 +1184,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "giraffe-manor",
       750,
@@ -1413,9 +1380,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "naivasha-001",
       320,
@@ -1458,9 +1422,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "naivasha-002",
       300,
@@ -1503,9 +1464,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "naivasha-003",
       280,
@@ -1752,9 +1710,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-003",
       260,
@@ -1805,9 +1760,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-004",
       200,
@@ -1858,9 +1810,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-005",
       210,
@@ -1911,9 +1860,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-006",
       240,
@@ -1960,9 +1906,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-007",
       220,
@@ -2012,9 +1955,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-008",
       170,
@@ -2059,9 +1999,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-009",
       150,
@@ -2108,9 +2045,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-010",
       190,
@@ -2161,9 +2095,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "nakuru-011",
       215,
@@ -2532,9 +2463,6 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: false,
     accessibleRoomCount: 0,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
-    // OR USE EMBED URL:
-    // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
       "samburu-001",
       400,
