@@ -692,7 +692,7 @@ export function AccessibleHotelClient({ hotel, accessibleRoomCount }: Accessible
                           {feature.yesNo === 'Yes' && (
                             <div className="flex items-center gap-1 mt-1 text-xs text-green-600">
                               <CheckCircle className="w-3 h-3" />
-                              <span>Available</span>
+                              <span>Yes</span>
                             </div>
                           )}
                           {feature.note && (

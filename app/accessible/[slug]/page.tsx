@@ -12,86 +12,75 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for SEO (server-side)
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const hotel = accessibleHotels.find((h) => h.id === slug);
+// app/accessible/[slug]/page.tsx
 
-  if (!hotel) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const hotel = accessibleHotels.find((h) => h.id === slug);
+  
+    if (!hotel) {
+      return {
+        title: "Accessible Hotel Not Found | Jaetravel Kenya",
+        description: "The wheelchair accessible hotel you're looking for could not be found.",
+        robots: { index: false },
+      };
+    }
+  
+    // === Make it as beautiful as the /hotels/ version ===
+    const title = `${hotel.name} – Luxury Accessible Safari Lodge & Hotel in ${hotel.location}, Kenya`;
+  
+    const description = `Stay at ${hotel.name} in ${hotel.location}, Kenya – a fully wheelchair accessible luxury hotel. Features roll-in showers, wide doorways, ${hotel.rooms?.filter(r => r.accessible).length || 1} accessible rooms with detailed mobility features including bed height, desk clearance, and supportive seating. Book your comfortable accessible safari stay today.`;
+  
+    // Use the best image possible (especially nice for Muthu)
+    const ogImage = hotel.id === "naivasha-008" 
+      ? "/muthu-signboard.jpg"   // ← Upload your nice MGM sign photo here
+      : hotel.image;
+  
     return {
-      title: "Hotel Not Found | Accessible Kenya Hotels",
-      description: "The accessible hotel you're looking for could not be found.",
-      robots: { index: false, follow: false },
+      title,
+      description,
+  
+      keywords: [
+        `${hotel.name}`,
+        `accessible hotel ${hotel.location}`,
+        `wheelchair accessible ${hotel.location}`,
+        `roll-in shower hotel ${hotel.location}`,
+        `disability friendly hotel Kenya`,
+        `accessible safari lodge ${hotel.location}`,
+        "accessible hotels Kenya",
+      ].join(", "),
+  
+      alternates: {
+        canonical: `https://www.jaetravel.com/accessible/${hotel.id}`,
+      },
+  
+      openGraph: {
+        title: `${hotel.name} – Luxury Accessible Hotel in ${hotel.location}`,
+        description,
+        url: `https://www.jaetravel.com/accessible/${hotel.id}`,
+        siteName: "Jaetravel Kenya",
+        type: "website",
+        locale: "en_KE",
+        images: [
+          {
+            url: ogImage.startsWith('/') ? `https://www.jaetravel.com${ogImage}` : ogImage,
+            width: 1200,
+            height: 630,
+            alt: `${hotel.name} – Wheelchair Accessible Luxury Hotel in ${hotel.location}, Kenya`,
+          },
+        ],
+      },
+  
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+        images: [ogImage.startsWith('/') ? `https://www.jaetravel.com${ogImage}` : ogImage],
+      },
+  
+      robots: { index: true, follow: true },
     };
   }
-
-  // Calculate accessible room count
-  const accessibleRoomCount = hotel.rooms?.filter(r => r.accessible).length || 0;
-
-  // SEO Keywords
-  const keywords = [
-    `accessible hotel ${hotel.location}`,
-    `wheelchair accessible hotel ${hotel.location}`,
-    `disability friendly hotel ${hotel.location}`,
-    `roll-in shower hotel ${hotel.location}`,
-    `accessible accommodation Kenya`,
-    `accessible safari lodge ${hotel.location}`,
-    hotel.name,
-    `${hotel.location} hotels`,
-    `accessible rooms ${hotel.location}`,
-  ].join(", ");
-
-  // Generate SEO description
-  const seoDescription = `Discover ${hotel.name}, a fully wheelchair accessible hotel in ${hotel.location}. Features ${accessibleRoomCount} accessible rooms with roll-in showers, grab bars, and wide doorways. Book your accessible stay in Kenya today!`;
-
-  return {
-    title: `${hotel.name} - Wheelchair Accessible Hotel in ${hotel.location} | Jaetravel Kenya`,
-    description: seoDescription,
-    keywords: keywords,
-    authors: [{ name: "Jaetravel Kenya", url: "https://jaetravel.co.ke" }],
-    category: "Accessible Accommodation",
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-    openGraph: {
-      title: `${hotel.name} - Accessible Hotel in ${hotel.location}`,
-      description: seoDescription,
-      url: `https://jaetravel.co.ke/accessible/${hotel.id}`,
-      siteName: "Jaetravel Kenya",
-      type: "website",
-      locale: "en_KE",
-      images: [
-        {
-          url: hotel.image,
-          width: 1200,
-          height: 630,
-          alt: `${hotel.name} - Wheelchair accessible hotel in ${hotel.location}, Kenya`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${hotel.name} - Accessible Hotel in ${hotel.location}`,
-      description: seoDescription,
-      images: [hotel.image],
-      creator: "@jaetravel",
-      site: "@jaetravel",
-    },
-    alternates: {
-      canonical: `https://jaetravel.co.ke/accessible/${hotel.id}`,
-    },
-    verification: {
-      google: "your-google-verification-code",
-    },
-  };
-}
 
 // Generate JSON-LD Structured Data for rich search results (server-side)
 function generateJsonLd(hotel: NonNullable<ReturnType<typeof accessibleHotels.find>>) {
