@@ -1149,8 +1149,9 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
                 Contact Accessibility Team
                 <ArrowRight size={14} />
               </Link>
+              {/* Use correct link based on accessibility status */}
               <Link
-                href={`/hotels/${hotel.id}`}
+                href={hotel.accessible ? `/accessible/${hotel.id}` : `/hotels/${hotel.id}`}
                 className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition"
               >
                 View Hotel Details
@@ -1188,6 +1189,9 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
   
   const accessibleRooms = hotel.rooms?.filter((r) => r.accessible) || [];
   const accessibleRoomCount = hotel.accessibleRoomCount || accessibleRooms.length;
+
+  // Determine the correct link based on accessibility status
+  const hotelDetailLink = hotel.accessible ? `/accessible/${hotel.id}` : `/hotels/${hotel.id}`;
 
   return (
     <>
@@ -1248,8 +1252,9 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
           )}
 
           <div className="flex gap-2">
+            {/* Dynamic link based on accessibility status */}
             <Link
-              href={`/hotels/${hotel.id}`}
+              href={hotelDetailLink}
               className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition flex items-center justify-center gap-1 text-sm"
             >
               View Details
@@ -1257,7 +1262,7 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
             </Link>
             {hotel.accessible && (
               <Link
-                href={`/hotels/${hotel.id}?filter=accessible`}
+                href={`${hotelDetailLink}?filter=accessible`}
                 className="px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2.5 rounded-lg font-semibold transition flex items-center justify-center"
                 title="View accessible rooms only"
               >
@@ -1558,36 +1563,41 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
             </div>
           ) : (
             <div className="space-y-4">
-              {paginatedHotels.map((hotel) => (
-                <div key={hotel.id} className="flex gap-4 bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition">
-                  <div className="relative w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
-                    <Image src={hotel.image} alt={hotel.name} fill className="object-cover" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start">
-                      <h4 className="font-bold text-lg">{hotel.name}</h4>
-                      <div className="flex items-center gap-1">
-                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        <span className="text-sm font-medium">{hotel.rating}</span>
+              {paginatedHotels.map((hotel) => {
+                const hotelDetailLink = hotel.accessible ? `/accessible/${hotel.id}` : `/hotels/${hotel.id}`;
+                return (
+                  <div key={hotel.id} className="flex gap-4 bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition">
+                    <div className="relative w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
+                      <Image src={hotel.image} alt={hotel.name} fill className="object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start">
+                        <Link href={hotelDetailLink} className="hover:text-blue-600">
+                          <h4 className="font-bold text-lg">{hotel.name}</h4>
+                        </Link>
+                        <div className="flex items-center gap-1">
+                          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          <span className="text-sm font-medium">{hotel.rating}</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-gray-500 flex items-center gap-1 mt-1"><MapPinIcon className="w-3 h-3" /> {hotel.location}</p>
+                      <p className="text-sm text-gray-600 mt-2 line-clamp-2">{hotel.description}</p>
+                      <div className="flex justify-between items-center mt-3">
+                        <div className="flex gap-2">
+                          {hotel.accessible && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">♿ Accessible</span>}
+                          {hotel.accessible && hotel.accessibleRoomCount && (
+                            <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">🏨 {hotel.accessibleRoomCount} Accessible Rooms</span>
+                          )}
+                        </div>
+                        <div className="text-right">
+                          {hotel.price && <p className="font-bold text-orange-600">${hotel.price}<span className="text-xs text-gray-500">/night</span></p>}
+                          <Link href={hotelDetailLink} className="text-xs text-blue-600 hover:underline">View Details →</Link>
+                        </div>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-500 flex items-center gap-1 mt-1"><MapPinIcon className="w-3 h-3" /> {hotel.location}</p>
-                    <p className="text-sm text-gray-600 mt-2 line-clamp-2">{hotel.description}</p>
-                    <div className="flex justify-between items-center mt-3">
-                      <div className="flex gap-2">
-                        {hotel.accessible && <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">♿ Accessible</span>}
-                        {hotel.accessible && hotel.accessibleRoomCount && (
-                          <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">🏨 {hotel.accessibleRoomCount} Accessible Rooms</span>
-                        )}
-                      </div>
-                      <div className="text-right">
-                        {hotel.price && <p className="font-bold text-orange-600">${hotel.price}<span className="text-xs text-gray-500">/night</span></p>}
-                        <p className="text-xs text-gray-400">Best rate guaranteed</p>
-                      </div>
-                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )
         ) : (
