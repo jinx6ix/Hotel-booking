@@ -315,6 +315,18 @@ const generateHotelSchemas = () => {
   }));
 };
 
+// Add this helper function outside your component
+const getDestinationSlug = (accessibleSlug: string): string => {
+  // Remove '-accessible' suffix if present
+  if (accessibleSlug.endsWith('-accessible')) {
+    return accessibleSlug.replace('-accessible', '');
+  }
+  // Handle other patterns if needed
+  return accessibleSlug;
+};
+
+
+
 export default function AccessibleSafarisPage() {
   const totalAccessibleRooms = hotels.reduce(
     (sum, h) => sum + (h.rooms?.filter((r: any) => r.accessible)?.length || 0),
@@ -531,11 +543,12 @@ export default function AccessibleSafarisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h4 className="text-3xl font-bold text-center text-gray-900 mb-12">Accessible Safari Destinations in Kenya</h4>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
             {locations.slice(0, 9).map((loc) => (
               <div key={loc.id} className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:shadow-lg transition">
                 <h5 className="text-xl font-bold text-gray-900 mb-2">{loc.name}</h5>
                 <p className="text-gray-600 text-sm mb-4">{loc.description.substring(0, 120)}...</p>
-                <Link href={`/destinations/${loc.slug}`} className="text-blue-600 font-medium hover:underline flex items-center gap-1">
+                <Link href={`/destinations/${getDestinationSlug(loc.slug)}`} className="text-blue-600 font-medium hover:underline flex items-center gap-1">
                   View accessible hotels in {loc.name} <ChevronRight size={16} />
                 </Link>
               </div>

@@ -2146,7 +2146,7 @@ export const hotels: Hotel[] = [
     email: "info@jaetravel.co.ke",
     accessible: true,
     accessibleRoomCount: 2,
-    videoUrl: "https://www.youtube.com/watch?v=YOUR_SWEETWATERS_VIDEO_ID",
+    videoUrl: "https://www.youtube.com/watch?v=5Eoxs4iqEb8",
     // OR USE EMBED URL:
     // videoEmbedUrl: "https://www.youtube.com/embed/YOUR_SWEETWATERS_VIDEO_ID",
     rooms: createRooms(
