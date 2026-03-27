@@ -511,12 +511,9 @@ export const sarovaLionHill: Hotel = {
   description: "Set within Lake Nakuru National Park, this stunning lodge offers breathtaking views of the lake and flamingos. Features wheelchair accessible rooms with roll-in showers and grab bars.",
   image: "/unnamed (1).webp",
   gallery: [
-    "/unnamed (1).webp",
-    "/unnamed (2).webp",
-    "/Honeymoon Suite.webp",
-    "/Sarova Lion Hill - Differently abled room 1.jpg",
-    "/Bathroom.webp",
-    "/unnamed (4).webp"
+    "/lionhill.jpg",
+    "/lionhil2.jpg",
+    "/lionhil3.jpg",
   ],
   rating: 4.7,
   price: 320,
