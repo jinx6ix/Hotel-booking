@@ -73,9 +73,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://www.jaetravel.com",
-  },
 }
 
 export default function RootLayout({
@@ -90,7 +87,6 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="kwFIGPeAktZ683/wY5zKWA" async></script>
-        <link rel="canonical" href="https://www.jaetravel.com" />
         <meta name="google-site-verification" content="IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U" />
         <link rel="alternate" hrefLang="en" href="https://www.jaetravel.com" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
