@@ -593,7 +593,7 @@ export const praroAmboseliCamp: Hotel = {
       amenities: ["Mosquito Netting", "Door opens with levers", "En-suite Bathroom", "Roll-in Shower", "Grab Bars", "Portable Shower Chair", "Veranda", "Bottled Water", "Solar Lighting"],
       images: ['/poraro-amboseli-tent-1.jpg', '/poraro-amboseli-bathroom-1.jpg'],
       accessible: true,
-      accessibilityFeatures: ["Wide tent opening (42 inches / 107cm)","Heigh of table from ground (28 inches)","Height of mirror from bed (9 inches)", "Roll-in shower with grab bars", "Portable shower seat available", "Hardwood floor with low-pile rug", "Bed height at 23 inches (standard chair height)", "Clear turning radius of 60 inches", "Emergency call system"],
+      accessibilityFeatures: ["Heigh of table from ground (28 inches)","Height of mirror from bed (9 inches)", "Roll-in shower with grab bars", "Portable shower seat available", "Hardwood floor with low-pile rug", "Bed height at 23 inches (standard chair height)", "Clear turning radius of 60 inches", "Emergency call system"],
       detailedAccessibility: {
         otherNotes: "Accessible safari vehicles available upon request. Staff trained to assist with accessibility needs."
       }
