@@ -2994,7 +2994,7 @@ export const hotels: Hotel[] = [
 // A BRANCH OF ZEBRA PLAINS MARA CAMPS
 {
   id: "amboseli-008",
-  name: "Poraro Amboseli Camp",
+  name: "Praro Amboseli Camp",
   location: "Amboseli",
   rating: 4.5,
   price: 250,
@@ -3006,7 +3006,7 @@ export const hotels: Hotel[] = [
     "/poraro-amboseli-game-drive-1.jpg",
     "/poraro-amboseli-bathroom-1.jpg",
   ],
-  description: "A proud branch of Zebra Plains Mara Camps, Poraro Amboseli Camp offers an authentic safari experience with accessible tented accommodations set against the majestic backdrop of Mount Kilimanjaro. Features wide tent openings (42 inches), roll-in showers with grab bars and portable shower seat, modified safari vehicles with wheelchair ramps, and compacted gravel pathways throughout the camp. The camp provides an intimate atmosphere with personalized service and stunning views of Africa's highest peak.",
+  description: "A proud branch of Zebra Plains Mara Camps, Praro Amboseli Camp offers an authentic safari experience with accessible tented accommodations set against the majestic backdrop of Mount Kilimanjaro. Features wide tent openings (42 inches), roll-in showers with grab bars and portable shower seat, modified safari vehicles with wheelchair ramps, and compacted gravel pathways throughout the camp. The camp provides an intimate atmosphere with personalized service and stunning views of Africa's highest peak.",
   amenities: [
     "Mount Kilimanjaro Views",
     "Restaurant",
@@ -3029,7 +3029,7 @@ export const hotels: Hotel[] = [
   accessibleRoomCount: 2,
   videoUrl: "https://www.youtube.com/watch?v=https://7DGOo-s4cSw",
   rooms: createRooms(
-    "poraro-amboseli",
+    "praro-amboseli",
     250,
     {
       standard: ["/poraro-amboseli-tent-1.jpg", "/poraro-amboseli-dining-1.jpg"],
@@ -3037,7 +3037,7 @@ export const hotels: Hotel[] = [
     },
     true
   ),
-  slug: "poraro-amboseli-camp",
+  slug: "praro-amboseli-camp",
   updatedAt: new Date(),
 },
 

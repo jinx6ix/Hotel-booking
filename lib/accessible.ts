@@ -558,9 +558,9 @@ const praroAmboseliAccessibility: AccessibilityFeature[] = [
 
 export const praroAmboseliCamp: Hotel = {
   id: "amboseli-014",
-  name: "Poraro Amboseli Camp",
+  name: "Praro Amboseli Camp",
   location: "Amboseli",
-  description: "Set against the majestic backdrop of Mount Kilimanjaro, Poraro Amboseli Camp offers an authentic safari experience with accessible tented accommodations. Features wide tent openings, roll-in showers with grab bars, modified safari vehicles, and compacted gravel pathways throughout the camp.",
+  description: "Set against the majestic backdrop of Mount Kilimanjaro, Praro Amboseli Camp offers an authentic safari experience with accessible tented accommodations. Features wide tent openings, roll-in showers with grab bars, modified safari vehicles, and compacted gravel pathways throughout the camp.",
   image: "/poraro-amboseli-tent-1.jpg",
   gallery: [
     "/poraro-amboseli-tent-1.jpg",
@@ -584,7 +584,7 @@ export const praroAmboseliCamp: Hotel = {
   videoUrl: "https://www.youtube.com/watch?v=7DGOo-s4cSw",
   rooms: [
     {
-      id: "poraro-accessible-1",
+      id: "praro-accessible-1",
       type: "Accessible Safari Tent",
       description: "Spacious tented room with wide openings, hardwood floors, and roll-in shower. Located close to main camp facilities for convenience.",
       price: 250,

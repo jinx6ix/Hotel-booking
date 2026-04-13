@@ -1484,7 +1484,7 @@ export const muthuLakeNaivashaImages: AccessibilityImages = {
   // ============================================
 // 7. PORARO AMBOSELI CAMP (amboseli-014)
 // ============================================
-export const poraroAmboseliFeatures: AccessibilityFeature[] = [
+export const praroAmboseliFeatures: AccessibilityFeature[] = [
   {
     id: "poraro-bathroom-1",
     category: "bathroom",
@@ -1566,7 +1566,7 @@ export const poraroAmboseliFeatures: AccessibilityFeature[] = [
   }
 ];
 
-export const poraroAmboseliImages: AccessibilityImages = {
+export const praroAmboseliImages: AccessibilityImages = {
   bathroom: ["/poraro-amboseli-bathroom-1.jpg"],
   room: ["/poraro-amboseli-tent-1.jpg"],
   entrance: ["/poraro-amboseli-entrance-1.jpg"],
