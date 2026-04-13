@@ -1480,6 +1480,100 @@ export const muthuLakeNaivashaImages: AccessibilityImages = {
     parking: ["/sarova-woodlands-parking-1.jpg"],
     'common-areas': ["/sarova-woodlands-common-1.jpg"]
   };
+
+  // ============================================
+// 7. PORARO AMBOSELI CAMP (amboseli-014)
+// ============================================
+export const poraroAmboseliFeatures: AccessibilityFeature[] = [
+  {
+    id: "poraro-bathroom-1",
+    category: "bathroom",
+    title: "Wheelchair Accessible Bathroom",
+    description: "Roll-in shower with grab bars and portable shower seat",
+    measurements: "Shower area: 54' x 36' (137cm x 91cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Roll-in shower", value: "Low threshold entry", status: "available" },
+        { label: "Grab bars", value: "Installed around toilet and shower", status: "available" },
+        { label: "Shower seat", value: "Portable shower chair available", status: "available" },
+        { label: "Handheld showerhead", value: "Flexible hose with wall mount", status: "available" },
+        { label: "Raised toilet", value: "17.5' (44cm) height", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "poraro-room-1",
+    category: "room",
+    title: "Accessible Safari Tent",
+    description: "Spacious tented room with wide openings and clear floor space",
+    measurements: "Door width: 42' (107cm) • Turning radius: 60' (152cm)",
+    status: "available",
+    details: {
+      items: [
+        { label: "Tent opening width", value: "42 in (107cm) with roll-up sides", status: "available" },
+        { label: "Turning space", value: "60 in (152cm) beside bed", status: "available" },
+        { label: "Bed height", value: "23 in (61cm) - standard chair height", status: "available" },
+        { label: "Floor surface", value: "Hardwood with low-pile rug", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "poraro-common-1",
+    category: "common-areas",
+    title: "Main Camp Area Access",
+    description: "Accessible dining and lounge areas",
+    status: "available",
+    details: {
+      items: [
+        { label: "Dining area", value: "Ramp access with wide pathways", status: "available" },
+        { label: "Table heights", value: "30 in (76cm) with knee clearance", status: "available" },
+        { label: "Lounge seating", value: "Armchairs at accessible height", status: "available" },
+        { label: "Fire pit area", value: "Hard-packed surface for wheelchair access", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "poraro-game-drive-1",
+    category: "common-areas",
+    title: "Accessible Game Drive Vehicles",
+    description: "Modified safari vehicles for wheelchair access",
+    status: "available",
+    details: {
+      items: [
+        { label: "Vehicle access", value: "Custom ramp for wheelchair boarding", status: "available" },
+        { label: "Wheelchair securement", value: "Floor tie-down system", status: "available" },
+        { label: "Seating configuration", value: "Removable seats for wheelchair space", status: "available" },
+        { label: "Viewing height", value: "Adjustable seating for optimal viewing", status: "available" }
+      ]
+    }
+  },
+  {
+    id: "poraro-pathways-1",
+    category: "common-areas",
+    title: "Camp Pathways",
+    description: "Accessible walkways between tents and main areas",
+    measurements: "Path width: 48' (122cm) • Gravel compacted surface",
+    status: "available",
+    details: {
+      items: [
+        { label: "Path width", value: "48 in (122cm) minimum", status: "available" },
+        { label: "Surface type", value: "Compacted gravel with minimal slope", status: "available" },
+        { label: "Lighting", value: "Solar path lighting at night", status: "available" },
+        { label: "Rest points", value: "Benches along main pathways", status: "available" }
+      ]
+    }
+  }
+];
+
+export const poraroAmboseliImages: AccessibilityImages = {
+  bathroom: ["/poraro-amboseli-bathroom-1.jpg"],
+  room: ["/poraro-amboseli-tent-1.jpg"],
+  entrance: ["/poraro-amboseli-entrance-1.jpg"],
+  restaurant: ["/poraro-amboseli-dining-1.jpg"],
+  parking: ["/poraro-amboseli-parking-1.jpg"],
+  'common-areas': ["/poraro-amboseli-pathways-1.jpg", "/poraro-amboseli-game-drive-1.jpg"]
+};
   
   // ============================================
   // 7. SAROVA IMPERIAL HOTEL (kisumu-001)

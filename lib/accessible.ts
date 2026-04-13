@@ -548,6 +548,59 @@ export const sarovaLionHill: Hotel = {
   ]
 };
 
+const praroAmboseliAccessibility: AccessibilityFeature[] = [
+  { id: 'poraro-entrance-1', category: 'entrance', title: 'Main Entrance', description: 'Ramped access to main camp area and reception. Compacted gravel pathway.', measurements: 'Path width: 48"', image: '/poraro-amboseli-entrance-1.jpg', yesNo: 'Yes' },
+  { id: 'poraro-room-1', category: 'room', title: 'Tent Doorway', description: 'Wide tent opening with roll-up sides for easy wheelchair access.', measurements: 'Opening width: 42"', image: '/poraro-amboseli-tent-1.jpg', yesNo: 'Yes' },
+  { id: 'poraro-bathroom-1', category: 'bathroom', title: 'Roll-in Shower', description: 'Roll-in shower with grab bars and portable shower seat.', measurements: 'Shower area: 54" x 36"', image: '/poraro-amboseli-bathroom-1.jpg', yesNo: 'Yes' },
+  { id: 'poraro-pathways-1', category: 'room', title: 'Camp Pathways', description: 'Compacted gravel pathways connecting tents to main areas.', measurements: 'Width: 48" • Compacted surface', image: '/poraro-amboseli-pathways-1.jpg', yesNo: 'Yes' },
+  { id: 'poraro-game-drive-1', category: 'room', title: 'Accessible Safari Vehicle', description: 'Modified safari vehicle with ramp for wheelchair boarding.', measurements: 'Ramp width: 32"', image: '/poraro-amboseli-game-drive-1.jpg', yesNo: 'Yes' }
+];
+
+export const praroAmboseliCamp: Hotel = {
+  id: "amboseli-014",
+  name: "Poraro Amboseli Camp",
+  location: "Amboseli",
+  description: "Set against the majestic backdrop of Mount Kilimanjaro, Poraro Amboseli Camp offers an authentic safari experience with accessible tented accommodations. Features wide tent openings, roll-in showers with grab bars, modified safari vehicles, and compacted gravel pathways throughout the camp.",
+  image: "/poraro-amboseli-tent-1.jpg",
+  gallery: [
+    "/poraro-amboseli-tent-1.jpg",
+    "/poraro-amboseli-dining-1.jpg",
+    "/poraro-amboseli-pathways-1.jpg",
+    "/poraro-amboseli-game-drive-1.jpg"
+  ],
+  rating: 4.5,
+  price: 250,
+  amenities: ["WiFi (Common Areas)", "Restaurant", "Bar", "Safari Drives", "Campfire", "Gift Shop", "Parking", "Accessible Facilities", "Solar Power"],
+  accessible: true,
+  phone: "+254 726 485 228",
+  email: "info@jaetravel.co.ke",
+  accessibilityFeatures: praroAmboseliAccessibility,
+  accessibilityImages: {
+    bathroom: ['/poraro-amboseli-bathroom-1.jpg'],
+    room: ['/poraro-amboseli-tent-1.jpg'],
+    entrance: ['/poraro-amboseli-entrance-1.jpg'],
+    restaurant: ['/poraro-amboseli-dining-1.jpg'],
+  },
+  videoUrl: "https://www.youtube.com/watch?v=7DGOo-s4cSw",
+  rooms: [
+    {
+      id: "poraro-accessible-1",
+      type: "Accessible Safari Tent",
+      description: "Spacious tented room with wide openings, hardwood floors, and roll-in shower. Located close to main camp facilities for convenience.",
+      price: 250,
+      maxOccupancy: 2,
+      available: 2,
+      amenities: ["Mosquito Netting", "Door opens with levers", "En-suite Bathroom", "Roll-in Shower", "Grab Bars", "Portable Shower Chair", "Veranda", "Bottled Water", "Solar Lighting"],
+      images: ['/poraro-amboseli-tent-1.jpg', '/poraro-amboseli-bathroom-1.jpg'],
+      accessible: true,
+      accessibilityFeatures: ["Wide tent opening (42 inches / 107cm)","Heigh of table from ground (28 inches)","Height of mirror from bed (9 inches)", "Roll-in shower with grab bars", "Portable shower seat available", "Hardwood floor with low-pile rug", "Bed height at 23 inches (standard chair height)", "Clear turning radius of 60 inches", "Emergency call system"],
+      detailedAccessibility: {
+        otherNotes: "Accessible safari vehicles available upon request. Staff trained to assist with accessibility needs."
+      }
+    }
+  ]
+};
+
 // ============================================================================
 // 8. SAROVA WOODLANDS HOTEL & SPA (nakuru-013)
 // ============================================================================
@@ -1431,6 +1484,8 @@ export const accessibleHotels: Hotel[] = [
   nakuruSopaLodge,
   nakuruLodge,
   olTukai,
+  praroAmboseliCamp,
+  
 ];
 
 export const hotels: Hotel[] = accessibleHotels;
