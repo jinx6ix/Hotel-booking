@@ -550,6 +550,7 @@ export const sarovaLionHill: Hotel = {
 
 const praroAmboseliAccessibility: AccessibilityFeature[] = [
   { id: 'poraro-entrance-1', category: 'entrance', title: 'Main Entrance', description: 'Ramped access to main camp area and reception. Compacted gravel pathway.', measurements: 'Path width: 48"', image: '/poraro-amboseli-entrance-1.jpg', yesNo: 'Yes' },
+  { id: 'poraro-room-1', category: 'room', title: 'Door', description: 'Wide and easy wheelchair access door.', measurements: 'Opening width: 33"', image: '/poraro-amboseli-tent-1.jpg', yesNo: 'Yes' },
   { id: 'poraro-bathroom-1', category: 'bathroom', title: 'Roll-in Shower', description: 'Roll-in shower with grab bars and portable shower seat.', measurements: 'Shower area: 54" x 36"', image: '/poraro-amboseli-bathroom-1.jpg', yesNo: 'Yes' },
   { id: 'poraro-pathways-1', category: 'room', title: 'Camp Pathways', description: 'Compacted gravel pathways connecting tents to main areas.', measurements: 'Width: 48" • Compacted surface', image: '/poraro-amboseli-pathways-1.jpg', yesNo: 'Yes' },
   { id: 'poraro-game-drive-1', category: 'room', title: 'Accessible Safari Vehicle', description: 'Modified safari vehicle with ramp for wheelchair boarding.', measurements: 'Ramp width: 32"', image: '/poraro-amboseli-game-drive-1.jpg', yesNo: 'Yes' }
