@@ -26,14 +26,14 @@ export const viewport: Viewport = {
 // Metadata - Title: 60 chars | Description: 115 chars
 // ────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Hotels in Kenya 2025-2026 | 120+ Luxury Safari Lodges & Resorts",
-  description: "Discover the best hotels in Kenya for 2025-2026. From luxury safari lodges in Maasai Mara to beach resorts in Mombasa. Book 120+ hotels with best rates.",
+  title: "Hotels in Kenya 2026-2027 | 120+ Luxury Safari Lodges & Resorts",
+  description: "Discover the best hotels in Kenya for 2026-2027. From luxury safari lodges in Maasai Mara to beach resorts in Mombasa. Book 120+ hotels with best rates.",
   keywords: "hotels in kenya, hotels in kenya 2025, hotels in kenya 2026, luxury hotels kenya, safari lodges kenya, best hotels in kenya, maasai mara hotels, amboseli hotels, nairobi hotels, mombasa hotels, tsavo hotels, nakuru hotels, naivasha hotels, samburu hotels, kenya safari accommodation, hotels in nairobi kenya, beach hotels kenya, 5 star hotels kenya, hotels in maasai mara, hotels in mombasa, hotels in amboseli, hotels in tsavo, hotels in nakuru, hotels in naivasha, hotels in nanyuki, hotels in samburu",
   authors: [{ name: "Jaetravel Expeditions" }],
   publisher: "Jaetravel Expeditions",
   openGraph: {
-    title: "Hotels in Kenya 2025-2026 | 120+ Luxury Safari Lodges",
-    description: "Discover the best hotels in Kenya for 2025-2026. From luxury safari lodges in Maasai Mara to beach resorts in Mombasa. Best rates guaranteed.",
+    title: "Hotels in Kenya 2026-2027 | 120+ Luxury Safari Lodges",
+    description: "Discover the best hotels in Kenya for 2026-2027. From luxury safari lodges in Maasai Mara to beach resorts in Mombasa. Best rates guaranteed.",
     url: "https://www.jaetravel.com/hotels",
     siteName: "Jaetravel Expeditions",
     images: [
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hotels in Kenya 2025-2026 | 120+ Luxury Safari Lodges",
-    description: "Discover the best hotels in Kenya for 2025-2026. From Maasai Mara to Mombasa. Best rates guaranteed.",
+    title: "Hotels in Kenya 2026-2027 | 120+ Luxury Safari Lodges",
+    description: "Discover the best hotels in Kenya for 2026-2027. From Maasai Mara to Mombasa. Best rates guaranteed.",
     images: ["/og-hotels-kenya.jpg"],
     site: "@jaetravel",
     creator: "@jaetravel",
@@ -146,7 +146,7 @@ const productSchema = {
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Best Hotels in Kenya 2025-2026",
+  name: "Best Hotels in Kenya 2026-2027",
   description: "Curated collection of the finest hotels in Kenya including luxury safari lodges, beach resorts, and city hotels.",
   numberOfItems: hotels.length,
   itemListElement: hotels.slice(0, 30).map((hotel, i) => ({
@@ -186,7 +186,7 @@ const itemListSchema = {
 const aggregateOfferSchema = {
   "@context": "https://schema.org",
   "@type": "AggregateOffer",
-  name: "Hotels in Kenya - Best Rates 2025-2026",
+  name: "Hotels in Kenya - Best Rates 2026-2027",
   description: "Best price guaranteed on all hotels in Kenya. Book luxury safari lodges, beach resorts, and city hotels.",
   priceCurrency: "USD",
   lowPrice: "80",
@@ -362,7 +362,7 @@ const faqItems = [
     answer: "The best hotels in Kenya for safari include Angama Mara and &Beyond Kichwa Tembo in Maasai Mara for Great Migration viewing, Ol Tukai Lodge in Amboseli for Kilimanjaro views, Sarova Whitesands in Mombasa for beach luxury, and Fairmont Mount Kenya Safari Club in Nanyuki for mountain experiences.",
   },
   {
-    question: "How do I book hotels in Kenya for 2025-2026?",
+    question: "How do I book hotels in Kenya for 2026-2027?",
     answer: "Book hotels in Kenya directly through Jaetravel for best rates guaranteed. We offer 120+ handpicked properties including luxury lodges, tented camps, beach resorts, and city hotels. Contact us with your travel dates and preferences for personalized recommendations.",
   },
   {
@@ -448,7 +448,7 @@ const organizationSchema = {
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Hotels in Kenya 2025-2026 | Luxury Safari Lodges & Resorts",
+  name: "Hotels in Kenya 2026-2027 | Luxury Safari Lodges & Resorts",
   description: "Complete guide to hotels in Kenya including Maasai Mara luxury camps, Amboseli Kilimanjaro-view lodges, Mombasa beach resorts, and Nairobi 5-star hotels.",
   url: "https://www.jaetravel.com/hotels",
   mainEntity: {
@@ -525,7 +525,7 @@ export default function HotelsPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "VideoObject",
-            name: "Best Hotels in Kenya - Virtual Tour 2025-2026",
+            name: "Best Hotels in Kenya - Virtual Tour 2026-2027",
             description: "Take a virtual tour of the best hotels in Kenya including luxury safari lodges in Maasai Mara, beach resorts in Mombasa, and 5-star hotels in Nairobi.",
             thumbnailUrl: "https://www.jaetravel.com/hotels-kenya-thumbnail.jpg",
             uploadDate: "2025-01-01T00:00:00Z",
@@ -567,7 +567,7 @@ export default function HotelsPage() {
           />
 
           <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-            Hotels in Kenya 2025-2026
+            Hotels in Kenya 2026-2027
           </h1>
 
           <h2 className="mt-6 text-xl md:text-2xl max-w-4xl leading-relaxed font-medium">
@@ -906,7 +906,7 @@ export default function HotelsPage() {
       <section className="bg-gradient-to-br from-orange-600 to-amber-700 text-white py-20 md:py-28">
         <div className="max-w-5xl mx-auto px-5 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
-            Ready to Book Your Hotels in Kenya for 2025-2026?
+            Ready to Book Your Hotels in Kenya for 2026-2027?
           </h2>
           <h3 className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-95">
             Best rates guaranteed • Exclusive perks • Personalized planning • 120+ handpicked hotels
