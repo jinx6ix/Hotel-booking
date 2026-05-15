@@ -4,7 +4,8 @@
       "Bash(npm install *)",
       "Bash(pnpm add *)",
       "Bash(pnpm build *)",
-      "Bash(dir \"C:\\\\Users\\\\Jinx\\\\Desktop\\\\New folder\\\\Hotel Booking\\\\my-app\\\\.next\\\\server\\\\app\")"
+      "Bash(dir \"C:\\\\Users\\\\Jinx\\\\Desktop\\\\New folder\\\\Hotel Booking\\\\my-app\\\\.next\\\\server\\\\app\")",
+      "Bash(Remove-Item *)"
     ]
   }
 }
