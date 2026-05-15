@@ -1,0 +1,210 @@
+{
+  "Navigation": {
+    "home": "Inicio",
+    "hotels": "Hoteles",
+    "destinations": "Destinos",
+    "carHire": "Alquiler de Coches",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "faq": "Preguntas",
+    "blog": "Blog",
+    "luxurySafaris": "Safaris de Lujo",
+    "safariLodges": "Lodge de Safari",
+    "safariCamps": "Campamentos de Safari",
+    "accessibleSafaris": "Safaris Accesibles",
+    "safariVehicles": "Vehículos de Safari"
+  },
+  "Home": {
+    "hero": {
+      "title": "Safaris en Kenia & Reserva de Hoteles",
+      "subtitle": "Vive safaris auténticos en Kenia en 9 destinos increíbles. Explora Maasai Mara, Amboseli, Nairobi y más con alojamiento de lujo."
+    },
+    "search": {
+      "title": "Encuentra Tu Safari Perfecto",
+      "destination": "Destino",
+      "checkIn": "Llegada",
+      "checkOut": "Salida",
+      "guests": "Huéspedes",
+      "search": "Buscar Hoteles",
+      "selectDestination": "Seleccionar destino"
+    },
+    "featured": {
+      "title": "Destinos Destacados",
+      "viewAll": "Ver Todos los Destinos"
+    },
+    "safariTypes": {
+      "title": "Experiencias de Safari",
+      "luxury": "Safaris de Lujo",
+      "budget": "Safaris Económicos",
+      "family": "Safaris Familiares",
+      "honeymoon": "Luna de Miel",
+      "photography": "Fotografía",
+      "accessible": "Accesibles"
+    },
+    "featuredHotels": {
+      "title": "Hoteles Destacados",
+      "viewAll": "Ver Todos los Hoteles"
+    },
+    "cta": {
+      "title": "¿Listo para Tu Aventura Safari?",
+      "subtitle": "Reserva tu safari soñado en Kenia hoy",
+      "button": "Contáctanos"
+    },
+    "trustBadges": {
+      "travelers": "Viajeros",
+      "since": "Desde 2012",
+      "rating": "Puntuación",
+      "reviews": "Basado en reseñas",
+      "secure": "100% Seguro",
+      "bookWithConfidence": "Reserva con confianza",
+      "experts": "Guías Expertos",
+      "localExperts": "Expertos locales"
+    }
+  },
+  "Common": {
+    "bookNow": "Reservar",
+    "viewDetails": "Ver Detalles",
+    "learnMore": "Más Información",
+    "perNight": "por noche",
+    "perPerson": "por persona",
+    "rating": "Puntuación",
+    "reviews": "reseñas",
+    "guests": "Huéspedes",
+    "nights": "noches",
+    "adults": "Adultos",
+    "children": "Niños",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "price": "Precio",
+    "amenities": "Servicios",
+    "location": "Ubicación",
+    "description": "Descripción",
+    "rooms": "Habitaciones",
+    "amenitiesLabel": "Servicios",
+    "reviewsLabel": "Reseñas",
+    "photos": "Fotos",
+    "map": "Mapa",
+    "contact": "Contacto",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "address": "Dirección",
+    "checkIn": "Llegada",
+    "checkOut": "Salida",
+    "freeCancellation": "Cancelación Gratuita",
+    "breakfastIncluded": "Desayuno Incluido",
+    "wifi": "WiFi Gratis",
+    "parking": "Aparcamiento Gratis",
+    "pool": "Piscina",
+    "spa": "Spa",
+    "restaurant": "Restaurante",
+    "gym": "Gimnasio",
+    "airportTransfer": "Traslado al Aeropuerto",
+    "loading": "Cargando...",
+    "noResults": "No se encontraron resultados",
+    "error": "Ha ocurrido un error"
+  },
+  "Hotels": {
+    "title": "Hoteles en Kenia",
+    "subtitle": "Encuentra el hotel perfecto para tu Safari",
+    "featuredHotels": "Hoteles Destacados",
+    "allHotels": "Todos los Hoteles",
+    "sortBy": {
+      "recommended": "Recomendado",
+      "priceLow": "Precio: Menor a Mayor",
+      "priceHigh": "Precio: Mayor a Menor",
+      "rating": "Puntuación"
+    },
+    "filters": {
+      "priceRange": "Rango de Precio",
+      "starRating": "Estrellas",
+      "amenities": "Servicios"
+    }
+  },
+  "Destinations": {
+    "title": "Destinos Safari en Kenia",
+    "subtitle": "Explora los mejores destinos safari de Kenia",
+    "maasaiMara": {
+      "name": "Maasai Mara",
+      "description": "Witness the Great Migration and see the Big Cats in their natural habitat",
+      "highlights": ["Gran Migración", "Grandes Felinos", "Globos Aerostáticos", "Cultura Maasai"]
+    },
+    "amboseli": {
+      "name": "Amboseli",
+      "description": "See elephants with Kilimanjaro as your backdrop",
+      "highlights": ["Reyes de Elefantes", "Vistas del Kilimanjaro", "Observación de Aves", "Tour de Pantanos"]
+    },
+    "tsavo": {
+      "name": "Tsavo",
+      "description": "Explore Kenya's largest national park with its famous red elephants",
+      "highlights": ["Elefantes Rojos", "Naturaleza Vasta", "Devoradores de Hombres", "Vistas de Volcanes"]
+    },
+    "nairobi": {
+      "name": "Nairobi",
+      "description": "Experience urban wildlife and visit Giraffe Manor",
+      "highlights": ["Safari Urbano", "Giraffe Manor", "Orfanato de Elefantes", "Museo Nacional"]
+    },
+    "samburu": {
+      "name": "Samburu",
+      "description": "Spot the Special Five in the beautiful northern landscape",
+      "highlights": ["Cinco Especiales", "Paisajes Desérticos", "Cultura Samburu", "Actividades en el Río"]
+    },
+    "nakuru": {
+      "name": "Lago Nakuru",
+      "description": "See millions of flamingos and rhinos at this alkaline lake",
+      "highlights": ["Flamencos", "Santuario de Rinocerontes", "Observación de Aves", "Vistas Escénicas"]
+    },
+    "naivasha": {
+      "name": "Lago Naivasha",
+      "description": "Relax at this beautiful freshwater lake with hippos and boat trips",
+      "highlights": ["Hipopótamos", "Isla Crescent", "Paseos en Barco", "Caminatas Naturales"]
+    },
+    "meru": {
+      "name": "Meru",
+      "description": "Discover the untamed wilderness of Meru National Park",
+      "highlights": ["Naturaleza Salvaje", "Felinos Raros", "Sistemas Fluviales", "Safari Todoterreno"]
+    },
+    "tsavoEast": {
+      "name": "Tsavo Este",
+      "description": "See the famous maneless lions and vast landscapes",
+      "highlights": ["Aardvark", "Elefantes Gigantes", "Leones", "Llanuras Polvorientas"]
+    }
+  },
+  "Footer": {
+    "description": "El principal operador de safaris en Kenia desde 2012. Más de 10.000 viajeros satisfechos.",
+    "quickLinks": "Enlaces Rápidos",
+    "contactInfo": "Información de Contacto",
+    "followUs": "Síguenos",
+    "copyright": "© 2026 Jaetravel Expeditions. Todos los derechos reservados.",
+    "address": "Nairobi, Kenia",
+    "phone": "+254 726 485 228",
+    "email": "info@jaetravel.co.ke"
+  },
+  "About": {
+    "title": "Sobre Jaetravel Expeditions",
+    "subtitle": "Expertos en safaris de Kenia desde 2012"
+  },
+  "Contact": {
+    "title": "Contáctenos",
+    "subtitle": "Póngase en contacto para su reserva de safari",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "submit": "Enviar"
+    }
+  },
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "subtitle": "Encuentre respuestas a preguntas comunes sobre safaris"
+  },
+  "CarHire": {
+    "title": "Alquiler de Coches en Kenia",
+    "subtitle": "Alquiler de vehículos safari con conductores expertos"
+  },
+  "Blog": {
+    "title": "Blog Safari",
+    "subtitle": "Últimos consejos e historias de Kenia"
+  }
+}

@@ -3,30 +3,49 @@
 export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "TravelAgency",
     name: "Jaetravel Expeditions",
     url: "https://www.jaetravel.com",
     logo: "https://www.jaetravel.com/logo.png",
-    description: "Kenya safari tours and hotel bookings across 9 destinations",
+    description: "Kenya's premier safari hotel booking platform since 2012. Book luxury safari lodges, tented camps, and hotels across Maasai Mara, Amboseli, Tsavo, Samburu & 9 destinations. 10,000+ happy travelers, 4.8★ rating.",
+    image: "https://www.jaetravel.com/og-image.jpg",
     sameAs: [
-      "https://www.facebook.com/jaetravel",
-      "https://www.instagram.com/jaetravel",
-      "https://www.twitter.com/jaetravel",
+      "https://www.facebook.com/jaetravelexpeditions",
+      "https://www.instagram.com/jaetravelexpeditions",
+      "https://twitter.com/jaetravel",
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+254-20-2000000",
+      telephone: "+254-726-485228",
       contactType: "Customer Service",
-      email: "info@jaetravel.com",
+      email: "info@jaetravel.co.ke",
+      availableLanguage: ["English", "Swahili"],
+      areaServed: "KE",
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Tourist Board, Nairobi",
+      streetAddress: "Westlands",
       addressLocality: "Nairobi",
-      addressRegion: "Kenya",
+      addressRegion: "Nairobi",
       postalCode: "00100",
       addressCountry: "KE",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: -1.286389,
+      longitude: 36.817223,
+    },
+    openingHours: "Mo-Su 08:00-20:00",
+    priceRange: "$$$",
+    currenciesAccepted: "USD, KES, EUR, GBP",
+    paymentAccepted: "Credit Card, Debit Card, Bank Transfer, M-Pesa",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "1247",
+      bestRating: "5",
+    },
+    foundingDate: "2012",
   }
 }
 

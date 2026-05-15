@@ -51,13 +51,13 @@ export async function generateMetadata({ params }: HotelPageProps): Promise<Meta
     ].join(", "),
 
     alternates: {
-      canonical: `https://www.jaetravelexpeditions.com/hotels/${hotel.id}`,
+      canonical: `https://www.jaetravel.com/hotels/${hotel.id}`,
     },
 
     openGraph: {
       title,
       description,
-      url: `https://www.jaetravelexpeditions.com/hotels/${hotel.id}`,
+      url: `https://www.jaetravel.com/hotels/${hotel.id}`,
       images: [
         {
           url: hotel.image,

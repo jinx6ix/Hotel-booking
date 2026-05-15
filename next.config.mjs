@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin';
+
+const withNextIntl = createNextIntlPlugin('./i18n/config.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -7,12 +11,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // 🔒 Canonical URL control
   trailingSlash: false,
 
   async redirects() {
     return [
-      // Force HTTPS + www
       {
         source: "/:path*",
         has: [
@@ -28,7 +30,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['www.jaetravel.com'], // Add any image domains
+    domains: ['www.jaetravel.com'],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60000,
     remotePatterns: [
@@ -41,9 +43,8 @@ const nextConfig = {
   },
 
   compress: true,
-  swcMinify: true,
   poweredByHeader: false,
   generateEtags: true,
 }
 
-export default nextConfig
+export default withNextIntl(nextConfig);

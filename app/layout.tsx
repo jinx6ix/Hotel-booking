@@ -6,7 +6,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 import { SchemaRenderer } from "@/components/schema-renderer"
 import { generateOrganizationSchema } from "@/lib/schema"
-import Script from "next/script"
 
 const geist = Geist({
   subsets: ["latin"],
@@ -80,8 +79,6 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const organizationSchema = generateOrganizationSchema()
-  
-  // GTM and GA IDs
   const GTM_ID = "GTM-5MCS8TS6"
   const GA_ID = "G-Q6Y2Y3PSXH"
 
@@ -89,98 +86,46 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
-        
-        {/* Google Site Verification */}
         <meta name="google-site-verification" content="IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U" />
-        
-        {/* Alternate language */}
+
+        {/* Alternate language - hreflang for SEO */}
         <link rel="alternate" hrefLang="en" href="https://www.jaetravel.com" />
-        
-        {/* Favicon */}
+        <link rel="alternate" hrefLang="fr" href="https://www.jaetravel.com/fr" />
+        <link rel="alternate" hrefLang="es" href="https://www.jaetravel.com/es" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.jaetravel.com" />
+
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" href="/favicon.png" />
-        
-        {/* Mobile web app */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        
-        {/* Preconnect to external domains */}
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-        
-        {/* DNS prefetch */}
         <link rel="dns-prefetch" href="https://cdn.vercel-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        
-        {/* Schema Organization */}
+
         <SchemaRenderer schema={organizationSchema} />
-        
-        {/* ============================================ */}
-        {/* GOOGLE TAG MANAGER - GTM-5MCS8TS6 */}
-        {/* ============================================ */}
-        <Script
-          id="google-tag-manager"
-          strategy="beforeInteractive"
+
+        <script
           dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){
-                w[l]=w[l]||[];
-                w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
-                var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
-                j.async=true;
-                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-                f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${GTM_ID}');
-            `,
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`,
           }}
         />
-        
-        {/* ============================================ */}
-        {/* GOOGLE ANALYTICS 4 - G-Q6Y2Y3PSXH */}
-        {/* ============================================ */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          strategy="afterInteractive"
+        <script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} async />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${GA_ID}', { page_path: window.location.pathname, transport_type: 'beacon', send_page_view: true });`,
+          }}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}', { 
-              page_path: window.location.pathname,
-              transport_type: 'beacon',
-              send_page_view: true
-            });
-          `}
-        </Script>
-        
-        {/* ============================================ */}
-        {/* AHREFS ANALYTICS */}
-        {/* ============================================ */}
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="kwFIGPeAktZ683/wY5zKWA"
-          strategy="afterInteractive"
-          async
-        />
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="kwFIGPeAktZ683/wY5zKWA" async />
       </head>
       <body className={`${geist.className} antialiased bg-white text-gray-900`} suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) - Required fallback for users without JavaScript */}
         <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
+          <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
         </noscript>
-        
         {children}
         <Analytics />
         <SpeedInsights />

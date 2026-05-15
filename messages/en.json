@@ -1,0 +1,210 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "hotels": "Hotels",
+    "destinations": "Destinations",
+    "carHire": "Car Hire",
+    "about": "About",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "luxurySafaris": "Luxury Safaris",
+    "safariLodges": "Safari Lodges",
+    "safariCamps": "Safari Camps",
+    "accessibleSafaris": "Accessible Safaris",
+    "safariVehicles": "Safari Vehicles"
+  },
+  "Home": {
+    "hero": {
+      "title": "Kenya Safari Tours & Hotel Bookings",
+      "subtitle": "Experience authentic Kenya hotel-based tours across 9 incredible destinations. Explore Maasai Mara, Amboseli, Nairobi & more with luxury accommodations."
+    },
+    "search": {
+      "title": "Find Your Perfect Safari",
+      "destination": "Destination",
+      "checkIn": "Check-in",
+      "checkOut": "Check-out",
+      "guests": "Guests",
+      "search": "Search Hotels",
+      "selectDestination": "Select destination"
+    },
+    "featured": {
+      "title": "Featured Destinations",
+      "viewAll": "View All Destinations"
+    },
+    "safariTypes": {
+      "title": "Safari Experiences",
+      "luxury": "Luxury Safaris",
+      "budget": "Budget Safaris",
+      "family": "Family Safaris",
+      "honeymoon": "Honeymoon",
+      "photography": "Photography",
+      "accessible": "Accessible"
+    },
+    "featuredHotels": {
+      "title": "Featured Hotels & Lodges",
+      "viewAll": "View All Hotels"
+    },
+    "cta": {
+      "title": "Ready for Your Safari Adventure?",
+      "subtitle": "Book your dream Kenya safari today",
+      "button": "Contact Us"
+    },
+    "trustBadges": {
+      "travelers": "Travelers",
+      "since": "Since 2012",
+      "rating": "Rating",
+      "reviews": "Based on reviews",
+      "secure": "100% Secure",
+      "bookWithConfidence": "Book with confidence",
+      "experts": "Expert Guides",
+      "localExperts": "Local experts"
+    }
+  },
+  "Common": {
+    "bookNow": "Book Now",
+    "viewDetails": "View Details",
+    "learnMore": "Learn More",
+    "perNight": "per night",
+    "perPerson": "per person",
+    "rating": "Rating",
+    "reviews": "reviews",
+    "guests": "Guests",
+    "nights": "nights",
+    "adults": "Adults",
+    "children": "Children",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "price": "Price",
+    "amenities": "Amenities",
+    "location": "Location",
+    "description": "Description",
+    "rooms": "Rooms",
+    "amenitiesLabel": "Amenities",
+    "reviewsLabel": "Reviews",
+    "photos": "Photos",
+    "map": "Map",
+    "contact": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "freeCancellation": "Free Cancellation",
+    "breakfastIncluded": "Breakfast Included",
+    "wifi": "Free WiFi",
+    "parking": "Free Parking",
+    "pool": "Swimming Pool",
+    "spa": "Spa",
+    "restaurant": "Restaurant",
+    "gym": "Fitness Center",
+    "airportTransfer": "Airport Transfer",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "error": "An error occurred"
+  },
+  "Hotels": {
+    "title": "Hotels in Kenya",
+    "subtitle": "Find the perfect hotel for your Safari",
+    "featuredHotels": "Featured Hotels",
+    "allHotels": "All Hotels",
+    "sortBy": {
+      "recommended": "Recommended",
+      "priceLow": "Price: Low to High",
+      "priceHigh": "Price: High to Low",
+      "rating": "Rating"
+    },
+    "filters": {
+      "priceRange": "Price Range",
+      "starRating": "Star Rating",
+      "amenities": "Amenities"
+    }
+  },
+  "Destinations": {
+    "title": "Kenya Safari Destinations",
+    "subtitle": "Explore Kenya's top safari destinations",
+    "maasaiMara": {
+      "name": "Maasai Mara",
+      "description": "Witness the Great Migration and see the Big Cats in their natural habitat",
+      "highlights": ["Great Migration", "Big Cats", "Hot Air Balloons", "Maasai Culture"]
+    },
+    "amboseli": {
+      "name": "Amboseli",
+      "description": "See elephants with Kilimanjaro as your backdrop",
+      "highlights": ["Elephant Kings", "Kilimanjaro Views", "Bird Watching", "Swamp Tours"]
+    },
+    "tsavo": {
+      "name": "Tsavo",
+      "description": "Explore Kenya's largest national park with its famous red elephants",
+      "highlights": ["Red Elephants", "Vast Wilderness", "Man-Eaters", "Volcano Views"]
+    },
+    "nairobi": {
+      "name": "Nairobi",
+      "description": "Experience urban wildlife and visit Giraffe Manor",
+      "highlights": ["Urban Safari", "Giraffe Manor", "Elephant Orphanage", "National Museum"]
+    },
+    "samburu": {
+      "name": "Samburu",
+      "description": "Spot the Special Five in the beautiful northern landscape",
+      "highlights": ["Special Five", "Desert Landscapes", "Samburu Culture", "River Activities"]
+    },
+    "nakuru": {
+      "name": "Lake Nakuru",
+      "description": "See millions of flamingos and rhinos at this alkaline lake",
+      "highlights": ["Flamingos", "Rhino Sanctuary", "Bird Watching", "Scenic Views"]
+    },
+    "naivasha": {
+      "name": "Lake Naivasha",
+      "description": "Relax at this beautiful freshwater lake with hippos and boat trips",
+      "highlights": ["Hippos", "Crescent Island", "Boat Trips", "Nature Walks"]
+    },
+    "meru": {
+      "name": "Meru",
+      "description": "Discover the untamed wilderness of Meru National Park",
+      "highlights": ["Untamed Wilderness", "Rare Cats", "River Systems", "Off-Road Safari"]
+    },
+    "tsavoEast": {
+      "name": "Tsavo East",
+      "description": "See the famous maneless lions and vast landscapes",
+      "highlights": ["Aardvark", "Giant Elephants", "Lions", "Dusty Plains"]
+    }
+  },
+  "Footer": {
+    "description": "Kenya's premier safari tour operator since 2012. 10,000+ happy travelers.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "followUs": "Follow Us",
+    "copyright": "© 2026 Jaetravel Expeditions. All rights reserved.",
+    "address": "Nairobi, Kenya",
+    "phone": "+254 726 485 228",
+    "email": "info@jaetravel.co.ke"
+  },
+  "About": {
+    "title": "About Jaetravel Expeditions",
+    "subtitle": "Kenya's trusted safari experts since 2012"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch for your safari booking",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common safari questions"
+  },
+  "CarHire": {
+    "title": "Car Hire Kenya",
+    "subtitle": "Safari vehicle rental with expert drivers"
+  },
+  "Blog": {
+    "title": "Safari Blog",
+    "subtitle": "Latest tips and stories from Kenya"
+  }
+}
