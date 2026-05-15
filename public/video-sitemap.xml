@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- Note: Add real YouTube video URLs for video sitemap to work properly.
+       Replace placeholder IDs with actual video IDs from YouTube.
+       Example: <video:player_loc>https://www.youtube.com/watch?v=YOUR_VIDEO_ID</video:player_loc> -->
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.jaetravel.com</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.jaetravel.com/kenya-safari-landscape.webp</video:thumbnail_loc>
+      <video:title>Kenya Safari Tours - Jaetravel Expeditions</video:title>
+      <video:description>Experience the adventure of a lifetime with Kenya safari tours.</video:description>
+      <video:duration>60</video:duration>
+      <video:upload_date>2026-01-01</video:upload_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <!-- Maasai Mara -->
+  <url>
+    <loc>https://www.jaetravel.com/destinations/maasai-mara</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.jaetravel.com/maasai-mara.jpeg</video:thumbnail_loc>
+      <video:title>Maasai Mara Great Migration Safari</video:title>
+      <video:description>Witness the world-famous Great Migration in Maasai Mara.</video:description>
+      <video:duration>120</video:duration>
+      <video:upload_date>2026-01-15</video:upload_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <!-- Luxury Safaris -->
+  <url>
+    <loc>https://www.jaetravel.com/luxury-safaris</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.jaetravel.com/kenya-safari-landscape.webp</video:thumbnail_loc>
+      <video:title>Luxury Kenya Safari Experience</video:title>
+      <video:description>Experience the ultimate luxury safari in Kenya.</video:description>
+      <video:duration>90</video:duration>
+      <video:upload_date>2026-02-01</video:upload_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <!-- Car Hire -->
+  <url>
+    <loc>https://www.jaetravel.com/car-hire</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.jaetravel.com/kenya-safari-landscape.webp</video:thumbnail_loc>
+      <video:title>Safari Vehicle Rental Kenya - 4x4 Landcruiser</video:title>
+      <video:description>Rent a 4x4 safari vehicle with professional driver in Kenya.</video:description>
+      <video:duration>60</video:duration>
+      <video:upload_date>2026-03-01</video:upload_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+</urlset>
