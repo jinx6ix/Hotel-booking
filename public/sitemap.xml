@@ -258,6 +258,15 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.jaetravel.com/fr/faq" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.jaetravel.com/es/faq" />
   </url>
+  <url>
+    <loc>https://www.jaetravel.com/fr/blog</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaetravel.com/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.jaetravel.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaetravel.com/es/blog" />
+  </url>
 
   <!-- ==================== SPANISH VERSION (/es) - with localized URLs ==================== -->
   <url>
@@ -313,5 +322,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.jaetravel.com/faq" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://www.jaetravel.com/fr/faq" />
     <xhtml:link rel="alternate" hreflang="es" href="https://www.jaetravel.com/es/preguntas-frecuentes" />
+  </url>
+  <url>
+    <loc>https://www.jaetravel.com/es/blog</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.jaetravel.com/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.jaetravel.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.jaetravel.com/es/blog" />
   </url>
 </urlset>
