@@ -22,14 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const destinations = [
   { id: "maasai-mara", name: "Maasai Mara", description: "Great Migration, Big Cats", count: 45, image: "/maasai-mara.jpeg", slug: "maasai-mara", color: "from-amber-600 to-amber-800", lightColor: "bg-amber-50" },
-  { id: "amboseli", name: "Amboseli", description: "Elephant Kings, Kilimanjaro Views", count: 28, image: "/amboseli.jpeg", slug: "amboseli", color: "from-slate-600 to-slate-800", lightColor: "bg-slate-50" },
-  { id: "tsavo", name: "Tsavo", description: "Red Elephants, Vast Wilderness", count: 32, image: "/tsavo.jpeg", slug: "tsavo", color: "from-red-600 to-red-800", lightColor: "bg-red-50" },
-  { id: "nairobi", name: "Nairobi", description: "Urban Safari, Giraffe Manor", count: 56, image: "/nairobi-hero.jpg", slug: "nairobi", color: "from-emerald-600 to-emerald-800", lightColor: "bg-emerald-50" },
-  { id: "samburu", name: "Samburu", description: "Special Five, Desert Landscapes", count: 18, image: "/samburu.jpg", slug: "samburu", color: "from-orange-600 to-orange-800", lightColor: "bg-orange-50" },
-  { id: "nakuru", name: "Lake Nakuru", description: "Flamingos, Rhino Sanctuary", count: 24, image: "/lake-nakuru.jpg", slug: "nakuru", color: "from-pink-600 to-pink-800", lightColor: "bg-pink-50" },
-  { id: "naivasha", name: "Lake Naivasha", description: "Hippos, Crescent Island", count: 15, image: "/naivasha.jpg", slug: "naivasha", color: "from-teal-600 to-teal-800", lightColor: "bg-teal-50" },
-  { id: "tsavo-east", name: "Tsavo East", description: "Aardvark, Giant Elephants", count: 22, image: "/tsavo-east.jpg", slug: "tsavo-east", color: "from-yellow-700 to-yellow-900", lightColor: "bg-yellow-50" },
-  { id: "meru", name: "Meru", description: "Untamed Wilderness, Rare Cats", count: 8, image: "/meru.jpg", slug: "meru", color: "from-green-600 to-green-800", lightColor: "bg-green-50" },
+  { id: "amboseli", name: "Amboseli", description: "Elephant Kings, Kilimanjaro Views", count: 28, image: "/naivasha.jpeg", slug: "amboseli", color: "from-slate-600 to-slate-800", lightColor: "bg-slate-50" },
+  { id: "tsavo", name: "Tsavo", description: "Red Elephants, Vast Wilderness", count: 32, image: "/tsavo-east.jpeg", slug: "tsavo", color: "from-red-600 to-red-800", lightColor: "bg-red-50" },
+  { id: "nairobi", name: "Nairobi", description: "Urban Safari, Giraffe Manor", count: 56, image: "/Hero2.jpg", slug: "nairobi", color: "from-emerald-600 to-emerald-800", lightColor: "bg-emerald-50" },
+  { id: "samburu", name: "Samburu", description: "Special Five, Desert Landscapes", count: 18, image: "/samburu.webp", slug: "samburu", color: "from-orange-600 to-orange-800", lightColor: "bg-orange-50" },
+  { id: "nakuru", name: "Lake Nakuru", description: "Flamingos, Rhino Sanctuary", count: 24, image: "/nakuru.jpg", slug: "nakuru", color: "from-pink-600 to-pink-800", lightColor: "bg-pink-50" },
+  { id: "naivasha", name: "Lake Naivasha", description: "Hippos, Crescent Island", count: 15, image: "/naivasha.jpeg", slug: "naivasha", color: "from-teal-600 to-teal-800", lightColor: "bg-teal-50" },
+  { id: "tsavo-east", name: "Tsavo East", description: "Aardvark, Giant Elephants", count: 22, image: "/tsavo-east.jpeg", slug: "tsavo-east", color: "from-yellow-700 to-yellow-900", lightColor: "bg-yellow-50" },
+  { id: "meru", name: "Meru", description: "Untamed Wilderness, Rare Cats", count: 8, image: "/kenya-safari-landscape.webp", slug: "meru", color: "from-green-600 to-green-800", lightColor: "bg-green-50" },
 ];
 
 const safariTypes = [
@@ -57,7 +57,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         {/* Hero Section */}
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">
-            <Image src="/hero-safari.jpg" alt="Kenya Safari" fill className="object-cover" priority />
+            <Image src="/kenya-safari-landscape.webp" alt="Kenya Safari" fill className="object-cover" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center text-white">

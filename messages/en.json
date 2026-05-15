@@ -4,7 +4,7 @@
     "hotels": "Hotels",
     "destinations": "Destinations",
     "carHire": "Car Hire",
-    "about": "About",
+    "about": "About Us",
     "contact": "Contact",
     "faq": "FAQ",
     "blog": "Blog",
@@ -12,12 +12,17 @@
     "safariLodges": "Safari Lodges",
     "safariCamps": "Safari Camps",
     "accessibleSafaris": "Accessible Safaris",
-    "safariVehicles": "Safari Vehicles"
+    "safariVehicles": "Safari Vehicles",
+    "bookNow": "Book Now",
+    "search": "Search",
+    "menu": "Menu",
+    "closeMenu": "Close Menu"
   },
   "Home": {
     "hero": {
       "title": "Kenya Safari Tours & Hotel Bookings",
-      "subtitle": "Experience authentic Kenya hotel-based tours across 9 incredible destinations. Explore Maasai Mara, Amboseli, Nairobi & more with luxury accommodations."
+      "subtitle": "Experience authentic Kenya hotel-based tours across 9 incredible destinations. Explore Maasai Mara, Amboseli, Nairobi & more with luxury accommodations.",
+      "cta": "Find Your Safari"
     },
     "search": {
       "title": "Find Your Perfect Safari",
@@ -26,11 +31,14 @@
       "checkOut": "Check-out",
       "guests": "Guests",
       "search": "Search Hotels",
-      "selectDestination": "Select destination"
+      "selectDestination": "Select destination",
+      "anyDestination": "Any Destination"
     },
     "featured": {
       "title": "Featured Destinations",
-      "viewAll": "View All Destinations"
+      "viewAll": "View All Destinations",
+      "safariPackages": "Safari Packages",
+      "hotelsCount": "hotels available"
     },
     "safariTypes": {
       "title": "Safari Experiences",
@@ -39,16 +47,20 @@
       "family": "Family Safaris",
       "honeymoon": "Honeymoon",
       "photography": "Photography",
-      "accessible": "Accessible"
+      "accessible": "Accessible",
+      "options": "options"
     },
     "featuredHotels": {
       "title": "Featured Hotels & Lodges",
-      "viewAll": "View All Hotels"
+      "viewAll": "View All Hotels",
+      "perNight": "per night",
+      "bookDirect": "Book Direct"
     },
     "cta": {
       "title": "Ready for Your Safari Adventure?",
       "subtitle": "Book your dream Kenya safari today",
-      "button": "Contact Us"
+      "button": "Contact Us",
+      "whyBook": "Why Book With Us"
     },
     "trustBadges": {
       "travelers": "Travelers",
@@ -59,6 +71,17 @@
       "bookWithConfidence": "Book with confidence",
       "experts": "Expert Guides",
       "localExperts": "Local experts"
+    },
+    "whyChoose": {
+      "title": "Why Choose Jaetravel",
+      "localExpertise": "Local Expertise",
+      "localExpertiseDesc": "Born and raised in Kenya, our guides know every corner of this beautiful country.",
+      "bestPrices": "Best Prices",
+      "bestPricesDesc": "Direct booking means no middleman fees. Best rates guaranteed.",
+      "support24": "24/7 Support",
+      "support24Desc": "We're always here for you, before, during and after your safari.",
+      "secureBooking": "Secure Booking",
+      "secureBookingDesc": "Your payment and personal data are always protected."
     }
   },
   "Common": {
@@ -102,7 +125,13 @@
     "airportTransfer": "Airport Transfer",
     "loading": "Loading...",
     "noResults": "No results found",
-    "error": "An error occurred"
+    "error": "An error occurred",
+    "from": "From",
+    "includes": "Includes",
+    "viewOnMap": "View on Map",
+    "getDirections": "Get Directions",
+    "share": "Share",
+    "print": "Print"
   },
   "Hotels": {
     "title": "Hotels in Kenya",
@@ -118,56 +147,78 @@
     "filters": {
       "priceRange": "Price Range",
       "starRating": "Star Rating",
-      "amenities": "Amenities"
-    }
+      "amenities": "Amenities",
+      "clearAll": "Clear All"
+    },
+    "noHotels": "No hotels found matching your criteria",
+    "showMap": "Show on Map",
+    "filtersApplied": "Filters Applied"
   },
   "Destinations": {
     "title": "Kenya Safari Destinations",
     "subtitle": "Explore Kenya's top safari destinations",
     "maasaiMara": {
       "name": "Maasai Mara",
-      "description": "Witness the Great Migration and see the Big Cats in their natural habitat",
-      "highlights": ["Great Migration", "Big Cats", "Hot Air Balloons", "Maasai Culture"]
+      "description": "Witness the Great Migration and see the Big Cats in their natural habitat. The most iconic safari destination in Africa.",
+      "highlights": ["Great Migration (July-October)", "Big Cats (Lions, Leopards, Cheetahs)", "Hot Air Balloons", "Maasai Culture"],
+      "bestTime": "July to March",
+      "highlightsTitle": "Highlights"
     },
     "amboseli": {
       "name": "Amboseli",
-      "description": "See elephants with Kilimanjaro as your backdrop",
-      "highlights": ["Elephant Kings", "Kilimanjaro Views", "Bird Watching", "Swamp Tours"]
+      "description": "See elephants with Kilimanjaro as your backdrop. One of the best places in Africa for wildlife photography.",
+      "highlights": ["Elephant Kings", "Kilimanjaro Views", "Bird Watching", "Swamp Tours"],
+      "bestTime": "October to March",
+      "highlightsTitle": "Highlights"
     },
     "tsavo": {
       "name": "Tsavo",
-      "description": "Explore Kenya's largest national park with its famous red elephants",
-      "highlights": ["Red Elephants", "Vast Wilderness", "Man-Eaters", "Volcano Views"]
+      "description": "Explore Kenya's largest national park with its famous red elephants and vast wilderness.",
+      "highlights": ["Red Elephants", "Vast Wilderness", "Man-Eaters of Tsavo", "Volcano Views"],
+      "bestTime": "October to March",
+      "highlightsTitle": "Highlights"
     },
     "nairobi": {
       "name": "Nairobi",
-      "description": "Experience urban wildlife and visit Giraffe Manor",
-      "highlights": ["Urban Safari", "Giraffe Manor", "Elephant Orphanage", "National Museum"]
+      "description": "Experience urban wildlife and visit Giraffe Manor. The only capital city with a national park inside.",
+      "highlights": ["Urban Safari", "Giraffe Manor", "Elephant Orphanage", "National Museum"],
+      "bestTime": "June to October",
+      "highlightsTitle": "Highlights"
     },
     "samburu": {
       "name": "Samburu",
-      "description": "Spot the Special Five in the beautiful northern landscape",
-      "highlights": ["Special Five", "Desert Landscapes", "Samburu Culture", "River Activities"]
+      "description": "Spot the Special Five in the beautiful northern landscape. Unique wildlife found nowhere else.",
+      "highlights": ["Special Five (Reticulated Giraffe, Grevy's Zebra)", "Desert Landscapes", "Samburu Culture", "River Activities"],
+      "bestTime": "October to March",
+      "highlightsTitle": "Highlights"
     },
     "nakuru": {
       "name": "Lake Nakuru",
-      "description": "See millions of flamingos and rhinos at this alkaline lake",
-      "highlights": ["Flamingos", "Rhino Sanctuary", "Bird Watching", "Scenic Views"]
+      "description": "See millions of flamingos and rhinoceros at this alkaline lake. A bird photographer's paradise.",
+      "highlights": ["Flamingos", "Rhino Sanctuary", "Bird Watching", "Scenic Views"],
+      "bestTime": "October to March",
+      "highlightsTitle": "Highlights"
     },
     "naivasha": {
       "name": "Lake Naivasha",
-      "description": "Relax at this beautiful freshwater lake with hippos and boat trips",
-      "highlights": ["Hippos", "Crescent Island", "Boat Trips", "Nature Walks"]
+      "description": "Relax at this beautiful freshwater lake with hippos and boat trips. Perfect weekend getaway.",
+      "highlights": ["Hippos", "Crescent Island", "Boat Trips", "Hell's Gate Cycling"],
+      "bestTime": "Year-round",
+      "highlightsTitle": "Highlights"
     },
     "meru": {
       "name": "Meru",
-      "description": "Discover the untamed wilderness of Meru National Park",
-      "highlights": ["Untamed Wilderness", "Rare Cats", "River Systems", "Off-Road Safari"]
+      "description": "Discover the untamed wilderness of Meru National Park. Authentic safari experience off the beaten path.",
+      "highlights": ["Untamed Wilderness", "Black Rhinos", "Off-Road Safari", "Authentic Experience"],
+      "bestTime": "October to March",
+      "highlightsTitle": "Highlights"
     },
     "tsavoEast": {
       "name": "Tsavo East",
-      "description": "See the famous maneless lions and vast landscapes",
-      "highlights": ["Aardvark", "Giant Elephants", "Lions", "Dusty Plains"]
+      "description": "See the famous maneless lions and vast landscapes of Kenya's largest national park.",
+      "highlights": ["Maneless Lions", "Giant Elephants", "Vast Landscapes", "Exclusive Safari"],
+      "bestTime": "October to March",
+      "highlightsTitle": "Highlights"
     }
   },
   "Footer": {
@@ -178,33 +229,139 @@
     "copyright": "© 2026 Jaetravel Expeditions. All rights reserved.",
     "address": "Nairobi, Kenya",
     "phone": "+254 726 485 228",
-    "email": "info@jaetravel.co.ke"
+    "email": "info@jaetravel.co.ke",
+    "aboutUs": "About Us",
+    "ourTeam": "Our Team",
+    "careers": "Careers",
+    "termsConditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "paymentMethods": "Payment Methods"
   },
   "About": {
     "title": "About Jaetravel Expeditions",
-    "subtitle": "Kenya's trusted safari experts since 2012"
+    "subtitle": "Kenya's trusted safari experts since 2012",
+    "ourStory": "Our Story",
+    "ourStoryText": "Jaetravel Expeditions was born in 2012 with a simple mission: to share the magic of Kenya with the world. Since then, we've helped over 10,000 travelers experience unforgettable safari adventures.",
+    "ourMission": "Our Mission",
+    "ourMissionText": "To provide authentic, responsible, and unforgettable safari experiences that connect people with Kenya's incredible wildlife and culture.",
+    "ourTeam": "Our Team",
+    "ourTeamText": "Our team of expert guides, all born and raised in Kenya, share their deep knowledge of wildlife, culture, and the best-kept secrets of this beautiful country.",
+    "stats": {
+      "travelers": "Travelers",
+      "years": "Years of Experience",
+      "destinations": "Destinations",
+      "rating": "Rating"
+    },
+    "whyChooseUs": "Why Choose Us",
+    "localExperts": "Local Experts",
+    "localExpertsText": "Born and raised in Kenya",
+    "personalizedService": "Personalized Service",
+    "personalizedServiceText": "Tailored to your needs",
+    "support247": "24/7 Support",
+    "support247Text": "Always here for you",
+    "bestValue": "Best Value",
+    "bestValueText": "Direct booking, no middlemen"
   },
   "Contact": {
     "title": "Contact Us",
     "subtitle": "Get in touch for your safari booking",
+    "getInTouch": "Get in Touch",
+    "getInTouchText": "We're here to help you plan your perfect safari adventure. Reach out to us anytime.",
     "form": {
-      "name": "Name",
-      "email": "Email",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Your Message",
+      "subject": "Subject",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    },
+    "info": {
       "phone": "Phone",
-      "message": "Message",
-      "submit": "Send Message"
-    }
+      "email": "Email",
+      "address": "Address",
+      "hours": "Business Hours"
+    },
+    "responseTime": "We typically respond within 24 hours."
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Find answers to common safari questions"
+    "subtitle": "Find answers to common safari questions",
+    "generalTitle": "General Questions",
+    "planningTitle": "Planning Your Safari",
+    "bookingTitle": "Booking & Payments",
+    "onSafariTitle": "On Safari",
+    "searchPlaceholder": "Search FAQ..."
   },
   "CarHire": {
     "title": "Car Hire Kenya",
-    "subtitle": "Safari vehicle rental with expert drivers"
+    "subtitle": "Safari vehicle rental with expert drivers",
+    "ourFleet": "Our Fleet",
+    "whyChooseUs": "Why Choose Our Vehicles",
+    "includes": "What's Included",
+    "perDay": "per day",
+    "unlimitedMileage": "Unlimited mileage",
+    "expertDriver": "Expert driver",
+    "support24": "24/7 support",
+    "insurance": "Full insurance"
   },
   "Blog": {
     "title": "Safari Blog",
-    "subtitle": "Latest tips and stories from Kenya"
+    "subtitle": "Latest tips and stories from Kenya",
+    "readMore": "Read More",
+    "by": "By",
+    "minutes": "min read",
+    "categories": "Categories",
+    "recentPosts": "Recent Posts",
+    "popularTags": "Popular Tags"
+  },
+  "LuxurySafaris": {
+    "title": "Luxury Safaris",
+    "subtitle": "The ultimate safari experience",
+    "exclusiveTitle": "Exclusive Experience",
+    "includes": "What's Included",
+    "fiveStarLodges": "5-Star Lodges",
+    "personalButler": "Personal Butler",
+    "spaWellness": "Spa & Wellness",
+    "gourmetDining": "Gourmet Dining",
+    "privateGameDrives": "Private Game Drives",
+    "helicopterTours": "Helicopter Tours",
+    "startingFrom": "Starting from",
+    "perPersonPerNight": "per person/night"
+  },
+  "SafariLodges": {
+    "title": "Safari Lodges",
+    "subtitle": "Luxury accommodation in the heart of nature",
+    "viewLodges": "View All Lodges"
+  },
+  "SafariCamps": {
+    "title": "Safari Camps",
+    "subtitle": "Authentic tented camp experiences",
+    "authenticExperience": "Authentic Experience",
+    "underTheStars": "Sleep under the stars"
+  },
+  "SafariVehicles": {
+    "title": "Safari Vehicles",
+    "subtitle": "Premium 4x4 safari transport",
+    "ourVehicles": "Our Vehicles"
+  },
+  "AccessibleSafaris": {
+    "title": "Accessible Safaris",
+    "subtitle": "Safari for everyone, no barriers",
+    "features": "Accessibility Features",
+    "accessibleRooms": "Accessible Rooms",
+    "wheelchairVehicles": "Wheelchair Vehicles",
+    "trainedStaff": "Trained Staff"
+  },
+  "Accessibility": {
+    "wheelchairAccessible": "Wheelchair Accessible",
+    "accessibleRoom": "Accessible Room",
+    "rollInShower": "Roll-in Shower",
+    "wideDoorways": "Wide Doorways",
+    "hearingLoop": "Hearing Loop",
+    "visualAids": "Visual Aids",
+    "accessibleVehicle": "Accessible Vehicle"
   }
 }

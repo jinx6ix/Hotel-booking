@@ -12,12 +12,17 @@
     "safariLodges": "Lodges de Safari",
     "safariCamps": "Camps de Safari",
     "accessibleSafaris": "Safaris Accessibles",
-    "safariVehicles": "Véhicules de Safari"
+    "safariVehicles": "Véhicules de Safari",
+    "bookNow": "Réserver",
+    "search": "Rechercher",
+    "menu": "Menu",
+    "closeMenu": "Fermer le Menu"
   },
   "Home": {
     "hero": {
       "title": "Safaris au Kenya & Réservation d'Hôtels",
-      "subtitle": "Vivez des safaris authentiques au Kenya dans 9 destinations incroyables. Explorez Maasai Mara, Amboseli, Nairobi et plus encore avec des hébergements de luxe."
+      "subtitle": "Vivez des safaris authentiques au Kenya dans 9 destinations incroyables. Explorez Maasai Mara, Amboseli, Nairobi et plus encore avec des hébergements de luxe.",
+      "cta": "Trouvez Votre Safari"
     },
     "search": {
       "title": "Trouvez Votre Safari Parfait",
@@ -26,11 +31,14 @@
       "checkOut": "Départ",
       "guests": "Voyageurs",
       "search": "Rechercher",
-      "selectDestination": "Sélectionner une destination"
+      "selectDestination": "Sélectionner une destination",
+      "anyDestination": "Toutes Destinations"
     },
     "featured": {
       "title": "Destinations en Vedette",
-      "viewAll": "Voir Toutes les Destinations"
+      "viewAll": "Voir Toutes les Destinations",
+      "safariPackages": "Forfaits Safari",
+      "hotelsCount": "hébergement disponible"
     },
     "safariTypes": {
       "title": "Expériences de Safari",
@@ -39,16 +47,20 @@
       "family": "Safaris Familiaux",
       "honeymoon": "Lune de Miel",
       "photography": "Photographie",
-      "accessible": "Accessibles"
+      "accessible": "Accessibles",
+      "options": "options"
     },
     "featuredHotels": {
       "title": "Hébergements en Vedette",
-      "viewAll": "Voir Tous les Hébergements"
+      "viewAll": "Voir Tous les Hébergements",
+      "perNight": "par nuit",
+      "bookDirect": "Réserver Direct"
     },
     "cta": {
       "title": "Prêt pour Votre Aventure Safari?",
       "subtitle": "Réservez votre safari au Kenya rêvé aujourd'hui",
-      "button": "Contactez-Nous"
+      "button": "Contactez-Nous",
+      "whyBook": "Pourquoi Réserver Avec Nous"
     },
     "trustBadges": {
       "travelers": "Voyageurs",
@@ -59,6 +71,17 @@
       "bookWithConfidence": "Réservez en confiance",
       "experts": "Guides Experts",
       "localExperts": "Experts locaux"
+    },
+    "whyChoose": {
+      "title": "Pourquoi Choisir Jaetravel",
+      "localExpertise": "Expertise Locale",
+      "localExpertiseDesc": "Nos guides sont nés et ont grandi au Kenya, ils connaissent chaque recoin de ce beau pays.",
+      "bestPrices": "Meilleurs Prix",
+      "bestPricesDesc": "La réservation directe signifie pas de frais intermédiaires. Meilleurs tarifs garantis.",
+      "support24": "Support 24/7",
+      "support24Desc": "Nous sommes toujours là pour vous, avant, pendant et après votre safari.",
+      "secureBooking": "Réservation Sécurisée",
+      "secureBookingDesc": "Votre paiement et vos données personnelles sont toujours protégés."
     }
   },
   "Common": {
@@ -102,7 +125,13 @@
     "airportTransfer": "Transfert Aéroport",
     "loading": "Chargement...",
     "noResults": "Aucun résultat trouvé",
-    "error": "Une erreur est survenue"
+    "error": "Une erreur est survenue",
+    "from": "À partir de",
+    "includes": "Inclus",
+    "viewOnMap": "Voir sur la Carte",
+    "getDirections": "Itinéraire",
+    "share": "Partager",
+    "print": "Imprimer"
   },
   "Hotels": {
     "title": "Hébergements au Kenya",
@@ -118,56 +147,78 @@
     "filters": {
       "priceRange": "Fourchette de Prix",
       "starRating": "Nombre d'Étoiles",
-      "amenities": "Équipements"
-    }
+      "amenities": "Équipements",
+      "clearAll": "Tout Effacer"
+    },
+    "noHotels": "Aucun hébergement ne correspond à vos critères",
+    "showMap": "Afficher sur la Carte",
+    "filtersApplied": "Filtres Appliqués"
   },
   "Destinations": {
     "title": "Destinations Safari au Kenya",
     "subtitle": "Explorez les meilleures destinations safari du Kenya",
     "maasaiMara": {
       "name": "Maasai Mara",
-      "description": "Witness the Great Migration and see the Big Cats in their natural habitat",
-      "highlights": ["Grande Migration", "Grands Félins", "Montgolfière", "Culture Maasai"]
+      "description": "Vivez la Grande Migration et observez les Grands Félins dans leur habitat naturel. La destination safari la plus emblématique d'Afrique.",
+      "highlights": ["Grande Migration (Juillet-Octobre)", "Grands Félins (Lions, Léopards, Guépards)", "Montgolfière", "Culture Maasai"],
+      "bestTime": "Juillet à Mars",
+      "highlightsTitle": "Points Forts"
     },
     "amboseli": {
       "name": "Amboseli",
-      "description": "See elephants with Kilimanjaro as your backdrop",
-      "highlights": ["Rois des Éléphants", "Vues du Kilimanjaro", "Observation des Oiseaux", "Visites des Marais"]
+      "description": "Observez les éléphants avec le Kilimandjaro en arrière-plan. L'un des meilleurs endroits d'Afrique pour la photographie animalière.",
+      "highlights": ["Rois des Éléphants", "Vues du Kilimanjaro", "Observation des Oiseaux", "Visites des Marais"],
+      "bestTime": "Octobre à Mars",
+      "highlightsTitle": "Points Forts"
     },
     "tsavo": {
       "name": "Tsavo",
-      "description": "Explore Kenya's largest national park with its famous red elephants",
-      "highlights": ["Éléphants Rouges", "Immensité Sauvage", "Mangeurs d'Hommes", "Vues des Volcans"]
+      "description": "Explorez le plus grand parc national du Kenya avec ses éléphants rouges emblématiques et son immensité sauvage.",
+      "highlights": ["Éléphants Rouges", "Immensité Sauvage", "Mangeurs d'Hommes de Tsavo", "Vues des Volcans"],
+      "bestTime": "Octobre à Mars",
+      "highlightsTitle": "Points Forts"
     },
     "nairobi": {
       "name": "Nairobi",
-      "description": "Experience urban wildlife and visit Giraffe Manor",
-      "highlights": ["Safari Urbain", "Giraffe Manor", "Orphelinat d'Éléphants", "Musée National"]
+      "description": "Vivez le safari urbain et visitez Giraffe Manor. La seule capitale au monde avec un parc national en son sein.",
+      "highlights": ["Safari Urbain", "Giraffe Manor", "Orphelinat d'Éléphants", "Musée National"],
+      "bestTime": "Juin à Octobre",
+      "highlightsTitle": "Points Forts"
     },
     "samburu": {
       "name": "Samburu",
-      "description": "Spot the Special Five in the beautiful northern landscape",
-      "highlights": ["Cinq Spéciaux", "Paysages Désertiques", "Culture Samburu", "Activités sur la Rivière"]
+      "description": "Découvrez les Cinq Spéciaux dans les magnifique paysages du nord. Faune unique qu'on ne trouve nulle part ailleurs.",
+      "highlights": ["Cinq Spéciaux (Girafe Réticulée, Zèbre de Grévy)", "Paysages Désertiques", "Culture Samburu", "Activités sur la Rivière"],
+      "bestTime": "Octobre à Mars",
+      "highlightsTitle": "Points Forts"
     },
     "nakuru": {
       "name": "Lac Nakuru",
-      "description": "See millions of flamingos and rhinos at this alkaline lake",
-      "highlights": ["Flamants Roses", "Sanctuaire de Rhinocéros", "Observation des Oiseaux", "Vues Pittoresques"]
+      "description": "Observez des millions de flamants roses et rhinocéros sur ce lac alcalin. Un paradis pour les fotografes animaliers.",
+      "highlights": ["Flamants Roses", "Sanctuaire de Rhinocéros", "Observation des Oiseaux", "Vues Pittoresques"],
+      "bestTime": "Octobre à Mars",
+      "highlightsTitle": "Points Forts"
     },
     "naivasha": {
       "name": "Lac Naivasha",
-      "description": "Relax at this beautiful freshwater lake with hippos and boat trips",
-      "highlights": ["Hippopotames", "Île du Croissant", "Balades en Bateau", "Randonnées Nature"]
+      "description": "Détendez-vous au bord de ce beau lac d'eau douce avec des hippopotames et des excursions en bateau. Parfait pour un week-end.",
+      "highlights": ["Hippopotames", "Île du Croissant", "Balades en Bateau", "Vélotourisme à Hell's Gate"],
+      "bestTime": "Toute l'année",
+      "highlightsTitle": "Points Forts"
     },
     "meru": {
       "name": "Meru",
-      "description": "Discover the untamed wilderness of Meru National Park",
-      "highlights": ["Nature Sauvage", "Félins Rares", "Systèmes Fluviaux", "Safari Hors Piste"]
+      "description": "Découvrez la nature préservée du parc national de Meru. Expérience safari authentique hors des sentiers battus.",
+      "highlights": ["Nature Sauvage", "Rhinocéros Noirs", "Safari Hors Piste", "Expérience Authentique"],
+      "bestTime": "Octobre à Mars",
+      "highlightsTitle": "Points Forts"
     },
     "tsavoEast": {
       "name": "Tsavo Est",
-      "description": "See the famous maneless lions and vast landscapes",
-      "highlights": ["Protélien", "Éléphants Géants", "Lions", "Plaines dustées"]
+      "description": "Observez les lions sans crinière emblématiques et les vastes paysages du plus grand parc national du Kenya.",
+      "highlights": ["Lions sans Crinière", "Éléphants Géants", "Paysages Vastes", "Safari Exclusif"],
+      "bestTime": "Octobre à Mars",
+      "highlightsTitle": "Points Forts"
     }
   },
   "Footer": {
@@ -178,33 +229,139 @@
     "copyright": "© 2026 Jaetravel Expeditions. Tous droits réservés.",
     "address": "Nairobi, Kenya",
     "phone": "+254 726 485 228",
-    "email": "info@jaetravel.co.ke"
+    "email": "info@jaetravel.co.ke",
+    "aboutUs": "À Propos de Nous",
+    "ourTeam": "Notre Équipe",
+    "careers": "Carrières",
+    "termsConditions": "Conditions Générales",
+    "privacyPolicy": "Politique de Confidentialité",
+    "paymentMethods": "Modes de Paiement"
   },
   "About": {
     "title": "À Propos de Jaetravel Expeditions",
-    "subtitle": "Experts safari du Kenya depuis 2012"
+    "subtitle": "Experts safari du Kenya depuis 2012",
+    "ourStory": "Notre Histoire",
+    "ourStoryText": "Jaetravel Expeditions est né en 2012 avec une mission simple: partager la magie du Kenya avec le monde. Depuis, nous avons aidé plus de 10 000 voyageurs à vivre des aventures safari inoubliables.",
+    "ourMission": "Notre Mission",
+    "ourMissionText": "Offrir des expériences safari authentiques, responsables et inoubliables qui connectent les gens à l'incroyable faune et culture du Kenya.",
+    "ourTeam": "Notre Équipe",
+    "ourTeamText": "Notre équipe de guides experts, tous nés et élevés au Kenya, partage leur connaissance approfondie de la faune, de la culture et des secrets mieux gardés de ce beau pays.",
+    "stats": {
+      "travelers": "Voyageurs",
+      "years": "Années d'Expérience",
+      "destinations": "Destinations",
+      "rating": "Note"
+    },
+    "whyChooseUs": "Pourquoi Nous Choisir",
+    "localExperts": "Experts Locaux",
+    "localExpertsText": "Nés et élevés au Kenya",
+    "personalizedService": "Service Personnalisé",
+    "personalizedServiceText": "Adapté à vos besoins",
+    "support247": "Support 24/7",
+    "support247Text": "Toujours là pour vous",
+    "bestValue": "Meilleur Rapport Qualité-Prix",
+    "bestValueText": "Réservation directe, pas d'intermédiaires"
   },
   "Contact": {
     "title": "Contactez-Nous",
     "subtitle": "Contactez-nous pour votre réservation de safari",
+    "getInTouch": "Contactez-Nous",
+    "getInTouchText": "Nous sommes là pour vous aider à planifier votre safari parfait. N'hésitez pas à nous contacter.",
     "form": {
-      "name": "Nom",
-      "email": "Email",
+      "name": "Nom Complet",
+      "email": "Adresse Email",
+      "phone": "Numéro de Téléphone",
+      "message": "Votre Message",
+      "subject": "Sujet",
+      "submit": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "success": "Message envoyé avec succès!",
+      "error": "Échec de l'envoi. Veuillez réessayer."
+    },
+    "info": {
       "phone": "Téléphone",
-      "message": "Message",
-      "submit": "Envoyer"
-    }
+      "email": "Email",
+      "address": "Adresse",
+      "hours": "Heures d'Ouverture"
+    },
+    "responseTime": "Nous répondons généralement sous 24 heures."
   },
   "FAQ": {
     "title": "Questions Fréquemment Posées",
-    "subtitle": "Trouvez les réponses aux questions courantes sur les safaris"
+    "subtitle": "Trouvez les réponses aux questions courantes sur les safaris",
+    "generalTitle": "Questions Générales",
+    "planningTitle": "Planification de Votre Safari",
+    "bookingTitle": "Réservation et Paiements",
+    "onSafariTitle": "Sur Safari",
+    "searchPlaceholder": "Rechercher dans la FAQ..."
   },
   "CarHire": {
     "title": "Location de Voiture au Kenya",
-    "subtitle": "Location de véhicules de safari avec chauffeurs experts"
+    "subtitle": "Location de véhicules de safari avec chauffeurs experts",
+    "ourFleet": "Notre Flotte",
+    "whyChooseUs": "Pourquoi Choisir Nos Véhicules",
+    "includes": "Ce qui est Inclus",
+    "perDay": "par jour",
+    "unlimitedMileage": "Kilométrage illimité",
+    "expertDriver": "Chauffeur expert",
+    "support24": "Support 24/7",
+    "insurance": "Assurance complète"
   },
   "Blog": {
     "title": "Blog Safari",
-    "subtitle": "Derniers conseils et histoires du Kenya"
+    "subtitle": "Derniers conseils et histoires du Kenya",
+    "readMore": "Lire Plus",
+    "by": "Par",
+    "minutes": "min de lecture",
+    "categories": "Catégories",
+    "recentPosts": "Articles Récents",
+    "popularTags": "Tags Populaires"
+  },
+  "LuxurySafaris": {
+    "title": "Safaris de Luxe",
+    "subtitle": "L'expérience safari ultime",
+    "exclusiveTitle": "Expérience Exclusive",
+    "includes": "Ce qui est Inclus",
+    "fiveStarLodges": "Hébergements 5 Étoiles",
+    "personalButler": "Majordome Personnel",
+    "spaWellness": "Spa et Bien-être",
+    "gourmetDining": "Gastronomie",
+    "privateGameDrives": "Safaris Privés",
+    "helicopterTours": "Visites en Hélicoptère",
+    "startingFrom": "À partir de",
+    "perPersonPerNight": "par personne/nuit"
+  },
+  "SafariLodges": {
+    "title": "Lodges de Safari",
+    "subtitle": "Hébergement de luxe au cœur de la nature",
+    "viewLodges": "Voir Tous les Lodges"
+  },
+  "SafariCamps": {
+    "title": "Camps de Safari",
+    "subtitle": "Expériences authentiques en campement",
+    "authenticExperience": "Expérience Authentique",
+    "underTheStars": "Dormir sous les étoiles"
+  },
+  "SafariVehicles": {
+    "title": "Véhicules de Safari",
+    "subtitle": "Transport safari 4x4 premium",
+    "ourVehicles": "Nos Véhicules"
+  },
+  "AccessibleSafaris": {
+    "title": "Safaris Accessibles",
+    "subtitle": "Safari pour tous, sans barrières",
+    "features": "Accessibilité",
+    "accessibleRooms": "Chambres Accessibles",
+    "wheelchairVehicles": "Véhicules pour Fauteuils Roulants",
+    "trainedStaff": "Personnel Formé"
+  },
+  "Accessibility": {
+    "wheelchairAccessible": "Accessible Fauteuil Roulant",
+    "accessibleRoom": "Chambre Accessible",
+    "rollInShower": "Douche à l'Italienne",
+    "wideDoorways": "Portes Larges",
+    "hearingLoop": "Boucle Magnétique",
+    "visualAids": "Aides Visuelles",
+    "accessibleVehicle": "Véhicule Accessible"
   }
 }

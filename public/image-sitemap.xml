@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
+  <!-- ==================== ENGLISH ==================== -->
+
   <!-- Homepage -->
   <url>
     <loc>https://www.jaetravel.com</loc>
@@ -16,6 +18,14 @@
   </url>
 
   <!-- Destinations -->
+  <url>
+    <loc>https://www.jaetravel.com/destinations</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Kenya Safari Destinations</image:title>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://www.jaetravel.com/destinations/maasai-mara</loc>
     <image:image>
@@ -66,30 +76,40 @@
 
   <!-- Hotels -->
   <url>
-    <loc>https://www.jaetravel.com/hotels/nairobi-001</loc>
+    <loc>https://www.jaetravel.com/hotels</loc>
     <image:image>
       <image:loc>https://www.jaetravel.com/safariparkhotel.jpg</image:loc>
-      <image:title>Safari Park Hotel Nairobi</image:title>
+      <image:title>Hotels in Kenya</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://www.jaetravel.com/hotels/nairobi-002</loc>
+    <loc>https://www.jaetravel.com/car-hire</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/CrownePlazaNairobi.jpg</image:loc>
-      <image:title>Crowne Plaza Nairobi</image:title>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Car Hire Kenya Safari</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://www.jaetravel.com/hotels/nairobi-003</loc>
+    <loc>https://www.jaetravel.com/luxury-safaris</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/SerenaHotelNairobi.jpg</image:loc>
-      <image:title>Serena Hotel Nairobi</image:title>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Luxury Safari Kenya</image:title>
     </image:image>
   </url>
 
-  <!-- French Version -->
+  <url>
+    <loc>https://www.jaetravel.com/accessible-safaris</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Accessible Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- ==================== FRENCH (/fr) ==================== -->
+
+  <!-- French Homepage -->
   <url>
     <loc>https://www.jaetravel.com/fr</loc>
     <image:image>
@@ -98,7 +118,130 @@
     </image:image>
   </url>
 
-  <!-- Spanish Version -->
+  <!-- French Hotels -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/hotels</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/safariparkhotel.jpg</image:loc>
+      <image:title>Hébergements au Kenya - Jaetravel</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Destinations -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
+      <image:title>Destinations Safari au Kenya</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations/maasai-mara</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
+      <image:title>Maasai Mara - Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations/amboseli</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/naivasha.jpeg</image:loc>
+      <image:title>Amboseli - Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations/tsavo-east</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/tsavo-east.jpeg</image:loc>
+      <image:title>Tsavo Est - Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations/samburu</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/samburu.webp</image:loc>
+      <image:title>Samburu - Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations/nakuru</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/nakuru.jpg</image:loc>
+      <image:title>Lac Nakuru - Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Car Hire -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/car-hire</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Location de Voiture Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Luxury Safaris -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/luxury-safaris</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Safari de Luxe Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Contact -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/contact</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Contact - Jaetravel Expeditions</image:title>
+    </image:image>
+  </url>
+
+  <!-- French About -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/about</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>À Propos - Jaetravel Expeditions</image:title>
+    </image:image>
+  </url>
+
+  <!-- French FAQ -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/faq</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>FAQ Safaris Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Blog -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/blog</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Blog Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Accessible Safaris -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/accessible-safaris</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Safaris Accessibles Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- ==================== SPANISH (/es) ==================== -->
+
+  <!-- Spanish Homepage -->
   <url>
     <loc>https://www.jaetravel.com/es</loc>
     <image:image>
@@ -107,11 +250,142 @@
     </image:image>
   </url>
 
+  <!-- Spanish Hotels -->
+  <url>
+    <loc>https://www.jaetravel.com/es/hoteles</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/safariparkhotel.jpg</image:loc>
+      <image:title>Hoteles en Kenia - Jaetravel</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Destinations -->
   <url>
     <loc>https://www.jaetravel.com/es/destinos</loc>
     <image:image>
       <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
       <image:title>Destinos Safari en Kenia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/es/destinos/maasai-mara</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
+      <image:title>Maasai Mara - Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/es/destinos/amboseli</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/naivasha.jpeg</image:loc>
+      <image:title>Amboseli - Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/es/destinos/tsavo-east</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/tsavo-east.jpeg</image:loc>
+      <image:title>Tsavo Este - Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/es/destinos/samburu</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/samburu.webp</image:loc>
+      <image:title>Samburu - Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.jaetravel.com/es/destinos/nakuru</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/nakuru.jpg</image:loc>
+      <image:title>Lago Nakuru - Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Car Hire -->
+  <url>
+    <loc>https://www.jaetravel.com/es/car-hire</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Alquiler de Coches Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Luxury Safaris -->
+  <url>
+    <loc>https://www.jaetravel.com/es/luxury-safaris</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Safari de Lujo Kenia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Contact -->
+  <url>
+    <loc>https://www.jaetravel.com/es/contacto</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Contacto - Jaetravel Expeditions</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish About -->
+  <url>
+    <loc>https://www.jaetravel.com/es/nosotros</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Nosotros - Jaetravel Expeditions</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish FAQ -->
+  <url>
+    <loc>https://www.jaetravel.com/es/preguntas-frecuentes</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Preguntas Frecuentes Safaris Kenia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Blog -->
+  <url>
+    <loc>https://www.jaetravel.com/es/blog</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Blog Safari Kenia</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Accessible Safaris -->
+  <url>
+    <loc>https://www.jaetravel.com/es/accessible-safaris</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
+      <image:title>Safaris Accesibles Kenia</image:title>
+    </image:image>
+  </url>
+
+  <!-- French Destination Detail -->
+  <url>
+    <loc>https://www.jaetravel.com/fr/destinations/maasai-mara</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
+      <image:title>Maasai Mara - Safari Kenya</image:title>
+    </image:image>
+  </url>
+
+  <!-- Spanish Destination Detail -->
+  <url>
+    <loc>https://www.jaetravel.com/es/destinos/maasai-mara</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
+      <image:title>Maasai Mara - Safari Kenia</image:title>
     </image:image>
   </url>
 
