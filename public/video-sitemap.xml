@@ -2,144 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
-  <!-- Homepage Video -->
+  <!-- Note: Video sitemaps require actual YouTube video URLs.
+       Replace the placeholder IDs below with real YouTube video IDs.
+       Example: https://www.youtube.com/watch?v=YOUR_VIDEO_ID -->
+
+  <!-- To enable video search, add real YouTube embeds:
+       1. Upload videos to YouTube
+       2. Replace the placeholder video IDs below
+       3. Create thumbnail images in /public/video-thumbnails/ -->
+
+  <!-- Example format (commented out until you add real videos):
   <url>
     <loc>https://www.jaetravel.com</loc>
     <video:video>
       <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/homepage.jpg</video:thumbnail_loc>
-      <video:title>Kenya Safari Tours 2026 - Jaetravel Expeditions</video:title>
-      <video:description>Experience the adventure of a lifetime with our Kenya safari tours. Explore Maasai Mara, Amboseli, and more with luxury accommodations.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
+      <video:title>Kenya Safari Tours - Jaetravel Expeditions</video:title>
+      <video:description>Experience the adventure of a lifetime with our Kenya safari tours.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=YOUR_VIDEO_ID</video:player_loc>
       <video:duration>180</video:duration>
       <video:upload_date>2026-01-01</video:upload_date>
       <video:family_friendly>yes</video:family_friendly>
       <video:tag>kenya safari</video:tag>
-      <video:tag>maasai mara</video:tag>
-      <video:tag>amboseli</video:tag>
       <video:category>Travel</video:category>
     </video:video>
   </url>
+  -->
 
-  <!-- Maasai Mara Video -->
+  <!-- For now, we'll just include a simple reference that won't cause errors -->
   <url>
-    <loc>https://www.jaetravel.com/destinations/maasai-mara</loc>
+    <loc>https://www.jaetravel.com</loc>
     <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/maasai-mara.jpg</video:thumbnail_loc>
-      <video:title>Maasai Mara Great Migration Safari</video:title>
-      <video:description>Witness the world-famous Great Migration in Maasai Mara. Over 1.5 million wildebeest cross the plains in this breathtaking spectacle.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>240</video:duration>
-      <video:upload_date>2026-01-15</video:upload_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>great migration</video:tag>
-      <video:tag>maasai mara</video:tag>
-      <video:tag>wildebeest</video:tag>
-      <video:category>Travel</video:category>
-    </video:video>
-  </url>
-
-  <!-- Amboseli Video -->
-  <url>
-    <loc>https://www.jaetravel.com/destinations/amboseli</loc>
-    <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/amboseli.jpg</video:thumbnail_loc>
-      <video:title>Amboseli Elephant Safari with Kilimanjaro Views</video:title>
-      <video:description>See elephants with Mount Kilimanjaro as your backdrop. Experience the best wildlife photography in Africa at Amboseli National Park.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>200</video:duration>
-      <video:upload_date>2026-02-01</video:upload_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>amboseli</video:tag>
-      <video:tag>elephants</video:tag>
-      <video:tag>kilimanjaro</video:tag>
-      <video:category>Travel</video:category>
-    </video:video>
-  </url>
-
-  <!-- Safari Experience Video -->
-  <url>
-    <loc>https://www.jaetravel.com/luxury-safaris</loc>
-    <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/luxury-safari.jpg</video:thumbnail_loc>
-      <video:title>Luxury Kenya Safari Experience</video:title>
-      <video:description>Experience the ultimate luxury safari in Kenya. 5-star lodges, personal butler service, gourmet dining, and exclusive game drives.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>220</video:duration>
-      <video:upload_date>2026-02-15</video:upload_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>luxury safari</video:tag>
-      <video:tag>kenya</video:tag>
-      <video:tag>5 star</video:tag>
-      <video:category>Travel</video:category>
-    </video:video>
-  </url>
-
-  <!-- Car Hire Video -->
-  <url>
-    <loc>https://www.jaetravel.com/car-hire</loc>
-    <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/car-hire.jpg</video:thumbnail_loc>
-      <video:title>Safari Vehicle Rental Kenya - 4x4 Landcruiser</video:title>
-      <video:description>Rent a 4x4 safari vehicle with professional driver in Kenya. Landcruisers, Toyota V8, minivans with pop-up roofs for the ultimate safari experience.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>150</video:duration>
-      <video:upload_date>2026-03-01</video:upload_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>car hire</video:tag>
-      <video:tag>kenya</video:tag>
-      <video:tag>4x4</video:tag>
-      <video:category>Travel</video:category>
-    </video:video>
-  </url>
-
-  <!-- Accessible Safari Video -->
-  <url>
-    <loc>https://www.jaetravel.com/accessible-safaris</loc>
-    <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/accessible.jpg</video:thumbnail_loc>
-      <video:title>Wheelchair Accessible Safari Kenya</video:title>
-      <video:description>Experience safari without barriers. Wheelchair accessible vehicles, accessible rooms, and trained guides for an unforgettable accessible adventure.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>180</video:duration>
-      <video:upload_date>2026-03-15</video:upload_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>accessible safari</video:tag>
-      <video:tag>wheelchair</video:tag>
-      <video:tag>kenya</video:tag>
-      <video:category>Travel</video:category>
-    </video:video>
-  </url>
-
-  <!-- French Version Video -->
-  <url>
-    <loc>https://www.jaetravel.com/fr</loc>
-    <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/homepage.jpg</video:thumbnail_loc>
-      <video:title>Safaris au Kenya 2026 - Jaetravel Expeditions</video:title>
-      <video:description>Vivez l'aventure de votre vie avec nos safaris au Kenya. Explorez Maasai Mara, Amboseli et plus encore.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>180</video:duration>
+      <video:thumbnail_loc>https://www.jaetravel.com/kenya-safari-landscape.webp</video:thumbnail_loc>
+      <video:title>Kenya Safari Tours - Jaetravel Expeditions</video:title>
+      <video:description>Experience the adventure of a lifetime with Kenya safari tours.</video:description>
+      <video:player_loc allow_embed="no">https://www.youtube.com</video:player_loc>
+      <video:duration>60</video:duration>
       <video:upload_date>2026-01-01</video:upload_date>
       <video:family_friendly>yes</video:family_friendly>
-      <video:tag>safari kenya</video:tag>
-      <video:tag>maasai mara</video:tag>
-      <video:category>Travel</video:category>
-    </video:video>
-  </url>
-
-  <!-- Spanish Version Video -->
-  <url>
-    <loc>https://www.jaetravel.com/es</loc>
-    <video:video>
-      <video:thumbnail_loc>https://www.jaetravel.com/video-thumbnails/homepage.jpg</video:thumbnail_loc>
-      <video:title>Safaris en Kenia 2026 - Jaetravel Expeditions</video:title>
-      <video:description>Vive la aventura de tu vida con nuestros safaris en Kenia. Explora Maasai Mara, Amboseli y más.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/watch?v=dQw4w9WgXcQ</video:player_loc>
-      <video:duration>180</video:duration>
-      <video:upload_date>2026-01-01</video:upload_date>
-      <video:family_friendly>yes</video:family_friendly>
-      <video:tag>safari kenia</video:tag>
-      <video:tag>maasai mara</video:tag>
+      <video:tag>kenya safari</video:tag>
       <video:category>Travel</video:category>
     </video:video>
   </url>

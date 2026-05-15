@@ -2,133 +2,107 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage Images -->
+  <!-- Homepage -->
   <url>
     <loc>https://www.jaetravel.com</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/hero-safari.jpg</image:loc>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
       <image:title>Kenya Safari Tours - Jaetravel Expeditions</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.jaetravel.com/og-image.jpg</image:loc>
-      <image:title>Jaetravel Expeditions - Kenya Safari Tours</image:title>
+      <image:loc>https://www.jaetravel.com/Hero2.jpg</image:loc>
+      <image:title>Kenya Safari - Jaetravel Expeditions</image:title>
     </image:image>
   </url>
 
-  <!-- Destinations Images -->
-  <url>
-    <loc>https://www.jaetravel.com/destinations</loc>
-    <image:image>
-      <image:loc>https://www.jaetravel.com/og-kenya-safari-destinations.jpg</image:loc>
-      <image:title>Kenya Safari Destinations - Maasai Mara, Amboseli, Tsavo</image:title>
-    </image:image>
-  </url>
-
+  <!-- Destinations -->
   <url>
     <loc>https://www.jaetravel.com/destinations/maasai-mara</loc>
     <image:image>
       <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
-      <image:title>Maasai Mara National Reserve - Kenya Safari</image:title>
+      <image:title>Maasai Mara National Reserve</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.jaetravel.com/destinations/amboseli</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/amboseli.jpeg</image:loc>
-      <image:title>Amboseli National Park - Elephant Safari</image:title>
+      <image:loc>https://www.jaetravel.com/naivasha.jpeg</image:loc>
+      <image:title>Amboseli National Park</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.jaetravel.com/destinations/tsavo-east</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/tsavo-east.jpg</image:loc>
-      <image:title>Tsavo East National Park - Red Elephants</image:title>
+      <image:loc>https://www.jaetravel.com/tsavo-east.jpeg</image:loc>
+      <image:title>Tsavo East National Park</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.jaetravel.com/destinations/samburu</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/samburu.jpg</image:loc>
-      <image:title>Samburu National Reserve - Special Five</image:title>
+      <image:loc>https://www.jaetravel.com/samburu.webp</image:loc>
+      <image:title>Samburu National Reserve</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.jaetravel.com/destinations/nakuru</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/lake-nakuru.jpg</image:loc>
-      <image:title>Lake Nakuru - Flamingos Safari</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.jaetravel.com/destinations/nairobi</loc>
-    <image:image>
-      <image:loc>https://www.jaetravel.com/nairobi-hero.jpg</image:loc>
-      <image:title>Nairobi - Kenya Capital Safari</image:title>
+      <image:loc>https://www.jaetravel.com/nakuru.jpg</image:loc>
+      <image:title>Lake Nakuru National Park</image:title>
     </image:image>
   </url>
 
   <url>
     <loc>https://www.jaetravel.com/destinations/naivasha</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/naivasha.jpg</image:loc>
-      <image:title>Lake Naivasha - Boat Safari</image:title>
+      <image:loc>https://www.jaetravel.com/naivasha.jpeg</image:loc>
+      <image:title>Lake Naivasha</image:title>
+    </image:image>
+  </url>
+
+  <!-- Sample Hotels (using existing images) -->
+  <url>
+    <loc>https://www.jaetravel.com/hotels/nairobi-001</loc>
+    <image:image>
+      <image:loc>https://www.jaetravel.com/safariparkhotel.jpg</image:loc>
+      <image:title>Safari Park Hotel Nairobi</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://www.jaetravel.com/destinations/meru</loc>
+    <loc>https://www.jaetravel.com/hotels/nairobi-002</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/meru.jpg</image:loc>
-      <image:title>Meru National Park - Wilderness Safari</image:title>
+      <image:loc>https://www.jaetravel.com/CrownePlazaNairobi.jpg</image:loc>
+      <image:title>Crowne Plaza Nairobi</image:title>
     </image:image>
   </url>
 
-  <!-- Hotels Images -->
   <url>
-    <loc>https://www.jaetravel.com/hotels</loc>
+    <loc>https://www.jaetravel.com/hotels/nairobi-003</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/og-hotels-kenya.jpg</image:loc>
-      <image:title>Best Hotels in Kenya - Luxury Safari Lodges</image:title>
+      <image:loc>https://www.jaetravel.com/SerenaHotelNairobi.jpg</image:loc>
+      <image:title>Serena Hotel Nairobi</image:title>
     </image:image>
   </url>
 
-  <!-- Accessible Safaris -->
-  <url>
-    <loc>https://www.jaetravel.com/accessible-safaris</loc>
-    <image:image>
-      <image:loc>https://www.jaetravel.com/accessible-safaris-kenya.jpg</image:loc>
-      <image:title>Wheelchair Accessible Kenya Safari Tours</image:title>
-    </image:image>
-  </url>
-
-  <!-- Car Hire -->
-  <url>
-    <loc>https://www.jaetravel.com/car-hire</loc>
-    <image:image>
-      <image:loc>https://www.jaetravel.com/car-hire/safari-landcruiser.jpg</image:loc>
-      <image:title>Safari Landcruiser - 4x4 Rental Kenya</image:title>
-    </image:image>
-  </url>
-
-  <!-- French Version Images -->
+  <!-- French Version -->
   <url>
     <loc>https://www.jaetravel.com/fr</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/hero-safari.jpg</image:loc>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
       <image:title>Safaris au Kenya - Jaetravel Expeditions</image:title>
     </image:image>
   </url>
 
-  <!-- Spanish Version Images -->
+  <!-- Spanish Version -->
   <url>
     <loc>https://www.jaetravel.com/es</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/hero-safari.jpg</image:loc>
+      <image:loc>https://www.jaetravel.com/kenya-safari-landscape.webp</image:loc>
       <image:title>Safaris en Kenia - Jaetravel Expeditions</image:title>
     </image:image>
   </url>
@@ -136,16 +110,8 @@
   <url>
     <loc>https://www.jaetravel.com/es/destinos</loc>
     <image:image>
-      <image:loc>https://www.jaetravel.com/og-kenya-safari-destinations.jpg</image:loc>
-      <image:title>Destinos Safari en Kenia - Maasai Mara, Amboseli</image:title>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.jaetravel.com/es/hoteles</loc>
-    <image:image>
-      <image:loc>https://www.jaetravel.com/og-hotels-kenya.jpg</image:loc>
-      <image:title>Hoteles en Kenia - Lodge de Safari de Lujo</image:title>
+      <image:loc>https://www.jaetravel.com/maasai-mara.jpeg</image:loc>
+      <image:title>Destinos Safari en Kenia</image:title>
     </image:image>
   </url>
 
