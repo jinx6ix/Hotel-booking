@@ -5,6 +5,7 @@ import { AccessibilityFeature, AccessibilityImages } from "@/lib/accessibility-d
 import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search,
   ChevronLeft,
@@ -1184,38 +1185,58 @@ function AccessibilityModal({ hotel, onClose }: { hotel: Hotel; onClose: () => v
 // ──────────────────────────────────────────────────────────────────────────────
 // CUSTOM HOTEL CARD WITH ACCESSIBILITY BUTTON
 // ──────────────────────────────────────────────────────────────────────────────
-function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
+function HotelCardWithAccessibility({ hotel, index = 0 }: { hotel: Hotel; index?: number }) {
   const [showModal, setShowModal] = useState(false);
-  
+
   const accessibleRooms = hotel.rooms?.filter((r) => r.accessible) || [];
   const accessibleRoomCount = hotel.accessibleRoomCount || accessibleRooms.length;
 
-  // Determine the correct link based on accessibility status
   const hotelDetailLink = hotel.accessible ? `/accessible/${hotel.id}` : `/hotels/${hotel.id}`;
 
   return (
     <>
-      <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: index * 0.08 }}
+        className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
+      >
         <div className="relative h-64 overflow-hidden bg-gray-200">
-          <Image
-            src={hotel.image}
-            alt={`${hotel.name} – ${hotel.accessible ? 'wheelchair accessible' : ''} hotel in ${hotel.location}`}
-            fill
-            className="object-cover group-hover:scale-110 transition duration-700"
-          />
+          <motion.div
+            className="absolute inset-0"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src={hotel.image}
+              alt={`${hotel.name} – ${hotel.accessible ? 'wheelchair accessible' : ''} hotel in ${hotel.location}`}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
           {hotel.accessible && (
-            <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg z-10">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.08 + 0.2 }}
+              className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1.5 rounded-full text-sm font-bold flex items-center gap-1 shadow-lg z-10"
+            >
               <Accessibility size={16} />
               Wheelchair Accessible
-            </div>
+            </motion.div>
           )}
 
-          <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-bold text-gray-800 flex items-center gap-1 shadow-lg z-10">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.08 + 0.2 }}
+            className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-bold text-gray-800 flex items-center gap-1 shadow-lg z-10"
+          >
             <Star className="text-yellow-500 fill-yellow-500" size={16} />
             {hotel.rating}
-          </div>
+          </motion.div>
 
           <div className="absolute bottom-4 left-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm flex items-center gap-1 z-10">
             <MapPinIcon className="w-3.5 h-3.5" />
@@ -1231,7 +1252,7 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
         </div>
 
         <div className="p-5">
-          <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-1">{hotel.name}</h3>
+          <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-1 group-hover:text-orange-600 transition-colors">{hotel.name}</h3>
           <p className="text-gray-600 text-sm mb-3 line-clamp-2">{hotel.description}</p>
 
           {hotel.price && (
@@ -1240,46 +1261,51 @@ function HotelCardWithAccessibility({ hotel }: { hotel: Hotel }) {
             </p>
           )}
 
-          {/* SEE ALL ACCESSIBLE FEATURES BUTTON - Shows for ALL accessible hotels */}
           {hotel.accessible && (
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setShowModal(true)}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-xl font-semibold flex items-center justify-center gap-2 transition mb-3 shadow-sm hover:shadow-md text-sm"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-xl font-semibold flex items-center justify-center gap-2 mb-3 shadow-sm hover:shadow-md text-sm"
             >
               <Accessibility size={18} />
               See All Accessible Features
-            </button>
+            </motion.button>
           )}
 
           <div className="flex gap-2">
-            {/* Dynamic link based on accessibility status */}
-            <Link
-              href={hotelDetailLink}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition flex items-center justify-center gap-1 text-sm"
-            >
-              View Details
-              <ChevronRight size={16} />
-            </Link>
-            {hotel.accessible && (
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="flex-1">
               <Link
-                href={`${hotelDetailLink}?filter=accessible`}
-                className="px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2.5 rounded-lg font-semibold transition flex items-center justify-center"
-                title="View accessible rooms only"
+                href={hotelDetailLink}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2.5 rounded-lg font-semibold transition flex items-center justify-center gap-1 text-sm"
               >
-                <Accessibility size={18} />
+                View Details
+                <ChevronRight size={16} />
               </Link>
+            </motion.div>
+            {hotel.accessible && (
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  href={`${hotelDetailLink}?filter=accessible`}
+                  className="px-3 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2.5 rounded-lg font-semibold transition flex items-center justify-center"
+                  title="View accessible rooms only"
+                >
+                  <Accessibility size={18} />
+                </Link>
+              </motion.div>
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Accessibility Modal */}
-      {showModal && (
-        <AccessibilityModal
-          hotel={hotel}
-          onClose={() => setShowModal(false)}
-        />
-      )}
+      <AnimatePresence>
+        {showModal && (
+          <AccessibilityModal
+            hotel={hotel}
+            onClose={() => setShowModal(false)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 }
@@ -1401,26 +1427,46 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
     <section className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* H2 - Hotels Grid Title with Shopping Info */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6"
+        >
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               All Hotels in Kenya
             </h2>
             <p className="text-gray-500 mt-1">{enhancedHotels.length} properties available</p>
           </div>
-          <div className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full"
+          >
             <Tag className="w-4 h-4 text-orange-600" />
             <span className="text-sm text-gray-700">Price range: ${minPrice} - ${maxPrice}</span>
             <span className="text-xs text-gray-500">| Avg: ${avgPrice}</span>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <h3 className="text-xl text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+        <motion.h3
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-xl text-gray-600 text-center mb-8 max-w-3xl mx-auto"
+        >
           Browse our complete collection of {enhancedHotels.length}+ handpicked hotels, safari lodges, and resorts across Kenya
-        </h3>
+        </motion.h3>
 
         {/* Shopping Promo Banner */}
-        <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl p-4 mb-8 text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl p-4 mb-8 text-white"
+        >
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <Gift className="w-6 h-6" />
@@ -1434,39 +1480,54 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
               <span className="text-sm font-medium">Limited Time Offer</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* View Mode Toggle */}
-        <div className="flex justify-end mb-4 gap-2">
-          <button
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="flex justify-end mb-4 gap-2"
+        >
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => setViewMode("grid")}
             className={`p-2 rounded-lg transition ${viewMode === "grid" ? "bg-orange-100 text-orange-600" : "bg-gray-100 text-gray-500"}`}
             aria-label="Grid view"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => setViewMode("list")}
             className={`p-2 rounded-lg transition ${viewMode === "list" ? "bg-orange-100 text-orange-600" : "bg-gray-100 text-gray-500"}`}
             aria-label="List view"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" /></svg>
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {/* Mobile Filter Toggle */}
         <div className="md:hidden mb-6">
-          <button
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={() => setIsFilterOpen(!isFilterOpen)}
             className="w-full flex items-center justify-center gap-2 bg-orange-600 text-white px-6 py-3 rounded-xl font-medium"
           >
             <Filter size={20} />
             {isFilterOpen ? "Hide Filters" : "Show Filters"}
-          </button>
+          </motion.button>
         </div>
 
         {/* Filters Section */}
-        <div className={`mb-8 bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm ${isFilterOpen ? 'block' : 'hidden md:block'}`}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className={`mb-8 bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm ${isFilterOpen ? 'block' : 'hidden md:block'}`}
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
@@ -1539,7 +1600,7 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
               <button onClick={clearAllFilters} className="text-sm text-orange-600 hover:text-orange-700 font-medium">Clear all</button>
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Results count with shopping info */}
         <div className="flex flex-wrap justify-between items-center mb-6">
@@ -1557,16 +1618,31 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
         {paginatedHotels.length > 0 ? (
           viewMode === "grid" ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7 lg:gap-9">
-              {paginatedHotels.map((hotel) => (
-                <HotelCardWithAccessibility key={hotel.id} hotel={hotel} />
+              {paginatedHotels.map((hotel, index) => (
+                <motion.div
+                  key={hotel.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <HotelCardWithAccessibility hotel={hotel} index={index} />
+                </motion.div>
               ))}
             </div>
           ) : (
             <div className="space-y-4">
-              {paginatedHotels.map((hotel) => {
+              {paginatedHotels.map((hotel, index) => {
                 const hotelDetailLink = hotel.accessible ? `/accessible/${hotel.id}` : `/hotels/${hotel.id}`;
                 return (
-                  <div key={hotel.id} className="flex gap-4 bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition">
+                  <motion.div
+                    key={hotel.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    whileHover={{ scale: 1.01 }}
+                    className="flex gap-4 bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition"
+                  >
                     <div className="relative w-32 h-32 rounded-lg overflow-hidden flex-shrink-0">
                       <Image src={hotel.image} alt={hotel.name} fill className="object-cover" />
                     </div>
@@ -1595,43 +1671,66 @@ export default function ClientHotels({ hotels }: ClientHotelsProps) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
           )
         ) : (
-          <div className="text-center py-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center py-20"
+          >
             <div className="text-6xl text-gray-300 mb-6">🏨</div>
             <h4 className="text-2xl font-bold text-gray-700 mb-4">No hotels found</h4>
             <p className="text-gray-600 mb-8">We couldn&apos;t find any hotels in Kenya matching your current filters.</p>
             <button onClick={clearAllFilters} className="bg-orange-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-orange-700 transition">
               View All Hotels in Kenya
             </button>
-          </div>
+          </motion.div>
         )}
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <nav className="flex items-center justify-center gap-4 mt-16">
-            <button onClick={(e) => goToPage(currentPage - 1, e)} disabled={currentPage === 1} className="px-6 py-3 bg-white border border-gray-300 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition flex items-center gap-2">
+          <motion.nav
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center justify-center gap-4 mt-16"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => goToPage(currentPage - 1, e)} disabled={currentPage === 1} className="px-6 py-3 bg-white border border-gray-300 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition flex items-center gap-2"
+            >
               <ChevronLeft size={18} /> Previous
-            </button>
+            </motion.button>
             <span className="font-medium text-gray-700 px-4">Page <span className="font-bold">{currentPage}</span> of <span className="font-bold">{totalPages}</span></span>
-            <button onClick={(e) => goToPage(currentPage + 1, e)} disabled={currentPage === totalPages} className="px-6 py-3 bg-white border border-gray-300 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition flex items-center gap-2">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={(e) => goToPage(currentPage + 1, e)} disabled={currentPage === totalPages} className="px-6 py-3 bg-white border border-gray-300 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 transition flex items-center gap-2"
+            >
               Next <ChevronRight size={18} />
-            </button>
-          </nav>
+            </motion.button>
+          </motion.nav>
         )}
 
         {/* Help CTA with Shopping Bag */}
-        <div className="text-center mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          whileHover={{ scale: 1.02 }}
+          className="text-center mt-16"
+        >
           <Link href="/contact" className="inline-flex items-center gap-3 bg-orange-600 hover:bg-orange-700 text-white px-10 py-5 rounded-xl font-bold text-xl transition shadow-lg">
             <ShoppingBag className="w-6 h-6" />
             Need Help Finding the Perfect Hotel in Kenya?
             <span className="text-2xl">→</span>
           </Link>
-        </div>
+        </motion.div>
 
         {/* Trust Badges */}
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-wrap justify-center gap-8 text-sm text-gray-500">
