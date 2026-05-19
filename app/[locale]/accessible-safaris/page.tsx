@@ -48,7 +48,7 @@ export default async function AccessibleSafarisPage({ params }: { params: Promis
             <h2 className="text-2xl font-bold mb-8">{locale === 'es' ? "Hoteles Accesibles" : "Hôtels Accessibles"}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {accessibleHotels.map((hotel) => (
-                <Link key={hotel.id} href={`/${locale}/accessible/${hotel.id}`} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
+                <Link key={hotel.id} href={`/hotels/${hotel.id}`} className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all">
                   <div className="relative h-56">
                     <Image src={hotel.image} alt={hotel.name} fill className="object-cover group-hover:scale-105 transition-transform" />
                     <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
