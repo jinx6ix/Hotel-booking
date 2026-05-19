@@ -5,19 +5,19 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div>
+          <div className="min-w-0">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">JT</span>
+              <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <span className="text-white font-bold text-sm">JT</span>
               </div>
-              <h3 className="font-bold text-lg">Jaetravel Expeditions</h3>
+              <h3 className="font-bold text-lg whitespace-nowrap">Jaetravel</h3>
             </div>
-            <p className="text-gray-400 text-sm">
-              Your gateway to authentic Kenya safari experiences and luxury hotel accommodations.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Your gateway to authentic Kenya safari experiences.
             </p>
           </div>
 

@@ -122,11 +122,13 @@ export default function RootLayout({
         />
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="kwFIGPeAktZ683/wY5zKWA" async />
       </head>
-      <body className={`${geist.className} antialiased bg-white text-gray-900`} suppressHydrationWarning>
+      <body className={`${geist.className} antialiased bg-white text-gray-900 min-h-screen flex flex-col`} suppressHydrationWarning>
         <noscript>
           <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
         </noscript>
-        {children}
+        <div className="flex flex-col min-h-screen">
+          {children}
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>
