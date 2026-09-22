@@ -409,6 +409,7 @@ export function AccessibleHotelClient({ hotel, accessibleRoomCount }: Accessible
     adults: 2,
     children: 0,
     roomType: "",
+    userEmail: "",
   });
 
   // Gallery images array - NOW USING hotel.gallery from the updated accessible.ts
@@ -449,10 +450,41 @@ export function AccessibleHotelClient({ hotel, accessibleRoomCount }: Accessible
     );
   };
 
-  const handleBookingSubmit = (e: React.FormEvent) => {
+  const handleBookingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Booking request sent for ${hotel.name}`);
-    setShowBookingModal(false);
+
+    // Simple validation
+    if (!bookingForm.userEmail) {
+      alert("Please provide your email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/book-hotel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          hotelName: hotel.name,
+          hotelEmail: hotel.email,
+          bookingForm,
+          userEmail: bookingForm.userEmail,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Booking request sent successfully!");
+        setShowBookingModal(false);
+      } else {
+        alert("Failed to send booking request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Booking error:", error);
+      alert("An error occurred while booking. Please try again.");
+    }
   };
 
   const today = new Date().toISOString().split('T')[0];
@@ -1218,14 +1250,24 @@ export function AccessibleHotelClient({ hotel, accessibleRoomCount }: Accessible
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">Children</label>
-                    <select 
+                    <select
                       title="Children"
-                      value={bookingForm.children} 
-                      onChange={(e) => setBookingForm({...bookingForm, children: parseInt(e.target.value)})} 
+                      value={bookingForm.children}
+                      onChange={(e) => setBookingForm({...bookingForm, children: parseInt(e.target.value)})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     >
                       {[0,1,2,3,4].map(num => (<option key={num} value={num}>{num} Child{num !== 1 ? 'ren' : ''}</option>))}
                     </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Your Email</label>
+                    <input
+                      type="email"
+                      value={bookingForm.userEmail}
+                      onChange={(e) => setBookingForm({...bookingForm, userEmail: e.target.value})}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      required
+                    />
                   </div>
                 </div>
                 <div>

@@ -624,6 +624,7 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
     adults: 2,
     children: 0,
     roomType: "",
+    userEmail: "",
   });
 
   // Refs for smooth scrolling
@@ -694,10 +695,41 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
     { icon: <RefreshCw size={20} />, text: "Free cancellation up to 48 hours before arrival" },
   ];
 
-  const handleBookingSubmit = (e: React.FormEvent) => {
+  const handleBookingSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Booking request sent for ${hotel.name}`);
-    setShowBookingModal(false);
+
+    // Simple validation
+    if (!bookingForm.userEmail) {
+      alert("Please provide your email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/book-hotel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          hotelName: hotel.name,
+          hotelEmail: hotel.email,
+          bookingForm,
+          userEmail: bookingForm.userEmail,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Booking request sent successfully!");
+        setShowBookingModal(false);
+      } else {
+        alert("Failed to send booking request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Booking error:", error);
+      alert("An error occurred while booking. Please try again.");
+    }
   };
 
   return (
@@ -1326,6 +1358,7 @@ export default function HotelClient({ hotel, location }: HotelClientProps) {
                 <div><label className="block text-sm font-medium text-gray-700 mb-2">Adults</label><select value={bookingForm.adults} onChange={(e) => setBookingForm({...bookingForm, adults: parseInt(e.target.value)})} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">{ [1,2,3,4].map(num => (<option key={num} value={num}>{num} Adult{num > 1 ? 's' : ''}</option>)) }</select></div>
                 <div><label className="block text-sm font-medium text-gray-700 mb-2">Children</label><select value={bookingForm.children} onChange={(e) => setBookingForm({...bookingForm, children: parseInt(e.target.value)})} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">{ [0,1,2,3,4].map(num => (<option key={num} value={num}>{num} Child{num !== 1 ? 'ren' : ''}</option>)) }</select></div>
               </div>
+              <div><label className="block text-sm font-medium text-gray-700 mb-2">Your Email</label><input type="email" value={bookingForm.userEmail} onChange={(e) => setBookingForm({...bookingForm, userEmail: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" required placeholder="you@example.com" /></div>
               <div><label className="block text-sm font-medium text-gray-700 mb-2">Room Type</label><select value={bookingForm.roomType} onChange={(e) => setBookingForm({...bookingForm, roomType: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" required><option value="">Select Room Type</option>{hotel.rooms.map(room => (<option key={room.id} value={room.type}>{room.type} - ${room.price}/night</option>))}</select></div>
               <div className="bg-orange-50 p-6 rounded-xl"><h4 className="font-bold text-gray-900 mb-2">Best Rate Guarantee</h4><ul className="space-y-2 text-gray-700"><li className="flex items-center gap-2"><span className="text-green-500">✓</span> Lowest price available</li><li className="flex items-center gap-2"><span className="text-green-500">✓</span> Free cancellation</li><li className="flex items-center gap-2"><span className="text-green-500">✓</span> Complimentary breakfast</li><li className="flex items-center gap-2"><span className="text-green-500">✓</span> No booking fees</li></ul></div>
               <button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-bold text-lg transition-colors">Check Availability & Book Now</button>
