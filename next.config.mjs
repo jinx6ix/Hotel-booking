@@ -4,9 +4,6 @@ const withNextIntl = createNextIntlPlugin('./i18n/config.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -30,7 +27,6 @@ const nextConfig = {
   },
 
   images: {
-    domains: ['www.jaetravel.com'],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60000,
     remotePatterns: [

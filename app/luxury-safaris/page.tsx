@@ -36,8 +36,8 @@ import { hotels } from "@/lib/data";
 // METADATA - Title: 60 chars | Description: 115 chars
 // ============================================
 export const metadata: Metadata = {
-  title: "Luxury Kenya Safari Tours 2025 | 5-Star Lodges & Private Game Drives",
-  description: "Experience the ultimate luxury Kenya safari. Private game drives, 5-star lodges in Maasai Mara, Amboseli & beyond. Champagne sunsets, hot air balloons, expert guides.",
+  title: "Luxury Kenya Safaris 2026–2027 | 5-Star Lodges & Private Game Drives",
+  description: "Experience the ultimate luxury Kenya safari for 2026–2027. Private game drives, 5-star lodges in Maasai Mara, Amboseli & beyond. Champagne sunsets & balloon safaris.",
   keywords: "luxury kenya safari, 5 star safari tours, maasai mara luxury lodges, private safari kenya, exclusive safari packages, luxury tented camps, premium safari experiences, luxury safari packages 2025, best luxury safari kenya, honeymoon safari kenya",
   authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com" }],
   creator: "Jaetravel Expeditions",

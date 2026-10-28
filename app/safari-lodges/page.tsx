@@ -49,8 +49,8 @@ const topRatedLodges = [...safariLodges].sort((a, b) => b.rating - a.rating).sli
 // METADATA - Title: 60 chars | Description: 115 chars
 // ============================================
 export const metadata: Metadata = {
-  title: "Safari Lodges in Kenya 2025 | Best Luxury Safari Accommodations",
-  description: "Discover 50+ best safari lodges in Kenya for 2025. Luxury lodges in Maasai Mara, Amboseli, Tsavo. Swimming pools, fine dining, spas. Best rate guaranteed.",
+  title: "Safari Lodges in Kenya 2026–2027 | Best Luxury Safari Accommodations",
+  description: "Discover the best safari lodges in Kenya for 2026–2027. Luxury lodges in Maasai Mara, Amboseli, Tsavo. Swimming pools, fine dining & spas. Best rates guaranteed.",
   keywords: "safari lodges kenya, luxury safari lodges, maasai mara lodges, amboseli lodges, tsavo lodges, best safari accommodation kenya, kenya safari lodges 2025, lodge safari kenya, 5 star safari lodges, family safari lodges, wheelchair accessible safari lodges",
   authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com" }],
   creator: "Jaetravel Expeditions",

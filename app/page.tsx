@@ -5,8 +5,8 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Jaetravel Expeditions | #1 Kenya Safari Hotel Booking Platform 2025",
-  description: "Book the best Kenya safari hotels & lodges online. Best price guarantee, instant confirmation, 24/7 support. Maasai Mara, Amboseli & more.",
+  title: "Kenya Safari Hotels & Lodges 2026–2027 | Jaetravel Expeditions",
+  description: "Book the best Kenya safari hotels & lodges for 2026–2027. Best price guarantee, instant confirmation, 24/7 support. Maasai Mara, Amboseli & more.",
   keywords: "kenya safari hotels, book safari lodges online, maasai mara accommodation, amboseli hotels with kilimanjaro view, tsavo lodges, samburu safari camps, lake nakuru flamingo hotels, nairobi airport hotels, best kenya luxury lodges, wheelchair accessible safari accommodation, family safari hotels kenya, great migration accommodation, budget safari camps kenya",
   authors: [{ name: "Jaetravel Expeditions", url: "https://www.jaetravel.com" }],
   creator: "Jaetravel Expeditions",

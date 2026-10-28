@@ -26,8 +26,8 @@ export const viewport: Viewport = {
 // Metadata - Title: 60 chars | Description: 115 chars
 // ────────────────────────────────────────────────
 export const metadata: Metadata = {
-  title: "Hotels in Kenya 2026-2027 | 120+ Luxury Safari Lodges & Resorts",
-  description: "Discover the best hotels in Kenya for 2026-2027. From luxury safari lodges in Maasai Mara to beach resorts in Mombasa. Book 120+ hotels with best rates.",
+  title: "Hotels in Kenya (2026–2027) | 120+ Safari Lodges & Resorts",
+  description: "Discover the best hotels in Kenya for 2026–2027. From luxury safari lodges in Maasai Mara to beach resorts in Mombasa. Book 120+ hotels with best rates.",
   keywords: "hotels in kenya, hotels in kenya 2025, hotels in kenya 2026, luxury hotels kenya, safari lodges kenya, best hotels in kenya, maasai mara hotels, amboseli hotels, nairobi hotels, mombasa hotels, tsavo hotels, nakuru hotels, naivasha hotels, samburu hotels, kenya safari accommodation, hotels in nairobi kenya, beach hotels kenya, 5 star hotels kenya, hotels in maasai mara, hotels in mombasa, hotels in amboseli, hotels in tsavo, hotels in nakuru, hotels in naivasha, hotels in nanyuki, hotels in samburu",
   authors: [{ name: "Jaetravel Expeditions" }],
   publisher: "Jaetravel Expeditions",

@@ -36,8 +36,8 @@ import { accessibleHotels as hotels, accessibleLocations as locations } from "@/
 // ──────────────────────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.jaetravel.com"),
-  title: "Accessible Hotels Kenya | Wheelchair Friendly Safari Lodges 2025",
-  description: "Discover wheelchair accessible hotels in Kenya. Crown Plaza Nairobi Airport, Sarova Hotels, Kibo Collection. Roll-in showers, wide doorways, grab bars. Free consultation.",
+  title: "Accessible Hotels Kenya 2026–2027 | Wheelchair Friendly Safari Lodges",
+  description: "Discover wheelchair accessible hotels in Kenya for 2026–2027. Crown Plaza Nairobi, Sarova Hotels & more. Roll-in showers, wide doorways, grab bars. Free consultation.",
   keywords: [
     "accessible hotels kenya",
     "wheelchair friendly hotels nairobi",

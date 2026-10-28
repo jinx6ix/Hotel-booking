@@ -38,13 +38,13 @@ export interface BlogPost {
         slug: "best-time-to-visit-masai-mara",
         title: "Best Time to Visit Masai Mara (Complete Guide 2026)",
         excerpt: "Discover the best months to visit Masai Mara, including the Great Migration, weather patterns, and travel tips.",
-        date: "2025-01-10",
+        date: "2026-01-10",
         author: "Jae Travel Team",
         category: "Safari Guides",
         readTime: "6 min read",
         image: "/blog/masai-mara-best-time.jpg",
         tags: ["masai mara", "kenya safari", "travel tips", "great migration"],
-        updatedAt: new Date("2025-01-10"),
+        updatedAt: new Date("2026-01-10"),
         content: `
   # Best Time to Visit Masai Mara
   
@@ -82,13 +82,13 @@ export interface BlogPost {
         slug: "kenya-safari-cost-guide",
         title: "Kenya Safari Cost Guide (2026 Prices Explained)",
         excerpt: "Learn how much a Kenya safari costs, including budget, mid-range, and luxury options.",
-        date: "2025-02-15",
+        date: "2026-02-15",
         author: "Jae Travel Team",
         category: "Travel Planning",
         readTime: "7 min read",
         image: "/blog/kenya-safari-cost.jpg",
         tags: ["kenya safari cost", "budget travel", "luxury safari"],
-        updatedAt: new Date("2025-02-15"),
+        updatedAt: new Date("2026-02-15"),
         content: `
   # Kenya Safari Cost Guide
   
@@ -130,13 +130,13 @@ export interface BlogPost {
         slug: "top-5-safari-destinations-kenya",
         title: "Top 5 Safari Destinations in Kenya",
         excerpt: "Explore the best safari destinations in Kenya, from Masai Mara to Amboseli.",
-        date: "2025-03-01",
+        date: "2026-03-01",
         author: "Jae Travel Team",
         category: "Destinations",
         readTime: "5 min read",
         image: "/blog/top-destinations-kenya.jpg",
         tags: ["kenya destinations", "safari parks", "travel guide"],
-        updatedAt: new Date("2025-03-01"),
+        updatedAt: new Date("2026-03-01"),
         content: `
   # Top 5 Safari Destinations in Kenya
   

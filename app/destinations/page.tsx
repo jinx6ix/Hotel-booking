@@ -14,9 +14,9 @@ import { Star, Accessibility, MapPin, Calendar, Users, Shield, Camera, Heart } f
 // ────────────────────────────────────────────────
 export const metadata: Metadata = {
   title:
-    "Best Kenya Safari Destinations 2025–2026 | Maasai Mara Great Migration, Amboseli Kilimanjaro, Tsavo, Samburu, Nakuru",
+    "Kenya Safari Destinations 2026–2027 | Maasai Mara Migration, Amboseli & Tsavo",
   description:
-    "Plan your 2025–2026 Kenya safari: Great Migration in Maasai Mara, Kilimanjaro & elephants in Amboseli, flamingos & rhinos in Lake Nakuru, Special Five in Samburu, red landscapes in Tsavo, Nairobi city safari, Lake Naivasha. Luxury lodges, family safaris, photography tours, accessible options & best time to visit.",
+    "Plan your 2026–2027 Kenya safari: Great Migration in Maasai Mara, Kilimanjaro views in Amboseli, flamingos in Lake Nakuru, Special Five in Samburu, and Tsavo safaris.",
   keywords:
     "kenya safari destinations 2025, best safari in kenya 2025 2026, maasai mara safari great migration, amboseli national park kilimanjaro, tsavo east tsavo west safari, samburu special five, lake nakuru flamingos, nairobi national park safari, lake naivasha boat safari, luxury safari lodges kenya, best time to visit kenya safari 2025, kenya wildlife safari tours 2026, family safari kenya, photography safari kenya, accessible safari kenya, wheelchair accessible kenya safari, maasai mara luxury lodges, amboseli best time to visit, tsavo red elephants, samburu unique wildlife, book kenya safari online",
   openGraph: {
